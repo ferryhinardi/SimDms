@@ -1,0 +1,220 @@
+﻿.slidein 
+{
+-webkit-transition: height 0.5s ease-out;
+}
+
+.std-bg .x-panel-body{
+    background  : url(resources/images/bgnoise.png) 0 0 repeat!important;
+}
+
+#content-panel {
+	background  : url(resources/images/bgnoise.png) 0 0 repeat;	
+}
+
+/*  Icons
+    -----------------------------------------------------------------------------------------------*/
+
+.icon-expand-all     { background-image : url(resources/images/expand-all.gif) !important; }
+.icon-collapse-all   { background-image : url(resources/images/collapse-all.gif) !important; }
+
+.icon-desktop        { background-image : url(resources/icons/desktop.png) !important; }
+.icon-viewport       { background-image : url(resources/icons/viewport.png) !important; }
+.icon-tab            { background-image : url(resources/icons/tab.png) !important; }
+.icon-tabpanel       { background-image : url(resources/icons/tabpanel.png) !important; }
+.icon-toolbar        { background-image : url(resources/icons/toolbar.png) !important; }
+.icon-asterisk        { background-image : url(resources/icons/asterisk.png) !important; }
+
+.icon-sitemap        { background-image : url(resources/icons/signpost.png) !important; }
+.icon-home        { background-image : url(resources/icons/Home003.png) !important; }
+.icon-overview        { background-image : url(resources/icons/App-button-access.png) !important; }
+.icon-history        { background-image : url(resources/icons/script.png) !important; }
+.icon-about        { background-image : url(resources/icons/info_rhombus.png) !important; }
+.icon-help        { background-image : url(resources/icons/onebit_37.png) !important; }
+.icon-ihelp        { background-image : url(resources/icons/help02.png) !important; }
+.icon-logout        { background-image : url(resources/icons/Action_Exit.png) !important; }
+
+.icon-monitoring        { background-image : url(resources/icons/presentation_chart.png) !important; }
+.icon-mon-scheduling        { background-image : url(resources/icons/sheduled_task.png) !important; }
+.icon-mon-abnormal        { background-image : url(resources/icons/schedule3.png) !important; }
+
+.icon-scheduling        { background-image : url(resources/icons/Scheduled.png) !important; }
+.icon-sch-sorting        { background-image : url(resources/icons/ModelEditor_Alphabetic.png) !important; }
+.icon-sch-change        { background-image : url(resources/icons/spellcheck.png) !important; }
+.icon-sch-pending        { background-image : url(resources/icons/application_go.png) !important; }
+.icon-sch-calendar        { background-image : url(resources/icons/calendar7.png) !important; }
+
+.icon-report        { background-image : url(resources/icons/BO_Report.png) !important; }
+.icon-rpt-abnormal        { background-image : url(resources/icons/application_from_storage.png) !important; }
+.icon-rpt-pending        { background-image : url(resources/icons/application_get.png) !important; }
+.icon-rpt-material        { background-image : url(resources/icons/blogs.png) !important; }
+.icon-rpt-plan        { background-image : url(resources/icons/Action_Export_ToExcel.png) !important; }
+.icon-rpt-operation        { background-image : url(resources/icons/BO_PivotChart.png) !important; }
+
+.icon-security        { background-image : url(resources/icons/BO_Security_Permission.png) !important; }
+.icon-sc-access        { background-image : url(resources/icons/BO_Role.png) !important; }
+.icon-sc-user        { background-image : url(resources/icons/BO_Person.png) !important; }
+.icon-company        { background-image : url(resources/icons/company002.png) !important; }
+
+.icon-filter        { background-image : url(resources/icons/Action_Filter.png) !important; }
+.icon-search        { background-image : url(resources/icons/search001.png)  !important; }
+.icon-form        { background-image : url(resources/icons/application_form.png)  !important; }
+.icon-machinegroup        { background-image : url(resources/icons/Action_CloneMerge_Clone_Object.png)  !important; }
+.icon-material        { background-image : url(resources/icons/Action_Totals_Row.png)  !important; }
+.icon-save        { background-image : url(resources/icons/save.png)  !important; }
+.icon-synch        { background-image : url(resources/icons/Action_Copy_CellValue.png)  !important; }
+.icon-reset        { background-image : url(resources/icons/BO_Rules.png)  !important; }
+.icon-generate        { background-image : url(resources/icons/Dateandtime.png)  !important; }
+.icon-reschedule        { background-image : url(resources/icons/reschedule.png)  !important; }
+.icon-list-po        { background-image : url(resources/icons/application_from_storage.png)  !important; }
+.icon-sort-lock        { background-image : url(resources/icons/BO_Security_Permission.png)  !important; }
+.icon-sort-simulation        { background-image : url(resources/icons/clock_history_frame.png)  !important; }
+.icon-preview        { background-image : url(resources/icons/Action_Printing_Preview.png)  !important; }
+
+.icon-fixed        { background-image : url(resources/icons/tick001.png)  !important; }
+.icon-plan        { background-image : url(resources/icons/to_do_list_cheked_1.png)  !important; }
+
+.icon-addinfo        { background-image : url(resources/icons/Action-button-info.png)  !important; }
+.icon-adjust        { background-image : url(resources/icons/Action_PivotChart_Data_Unbind.png)  !important; }
+.icon-pending-split        { background-image : url(resources/icons/pin2_blue.png)  !important; }
+.icon-moveplan        { background-image : url(resources/icons/signpost.png)  !important; }
+.icon-exchangeplan        { background-image : url(resources/icons/reschedule.png)  !important; }
+.icon-quit        { background-image : url(resources/icons/Action_Deny.png)  !important; }
+
+.icon-searchprint        { background-image : url(resources/icons/Action_Pivot_Printing_Preview.png)  !important; }
+.icon-print        { background-image : url(resources/icons/print001.png)  !important; }
+.icon-pdf        { background-image : url(resources/icons/file_extension_pdf.png)  !important; }
+
+.icon-allow        { background-image : url(resources/icons/accept.png)  !important; }
+.icon-stop        { background-image : url(resources/icons/Action-button-stop.png)  !important; }
+.icon-deny        { background-image : url(resources/icons/Action_Deny.png)  !important; }
+.icon-ro        { background-image : url(resources/icons/shape_square_select.png)  !important; }
+
+.icon-permission        { background-image : url(resources/icons/akeys.png)  !important; }
+.icon-load-permission        { background-image : url(resources/icons/control_panel_access.png)  !important; }
+.icon-change-password        { background-image : url(resources/icons/change_password.png)  !important; }
+.icon-btnlogout        { background-image : url(resources/icons/BO_Security_Permission.png)  !important; }
+.icon-userdetail        { background-image : url(resources/icons/BO_MyDetails.png)  !important; }
+.icon-my-profile        { background-image : url(resources/icons/my-profile.png)  !important; }
+
+.date-one { 
+ 	background-color:#FFFFFF ;
+}
+
+.date-two {
+ 	background-color:#FCFCDE ;
+}
+
+
+/*
+.x-tree-icon-leaf {
+    background-image: url("/extjs/resources/themes/images/gray/tree/leaf-gif/ext.axd");
+}
+*/
+
+/*  TreePanel
+    -----------------------------------------------------------------------------------------------*/
+
+#exampleTree .x-grid-cell-inner span {
+    margin-left  : 8px;
+    padding-left : 25px;
+    background   : transparent url(resources/images/new.gif) no-repeat 0px 4px;
+}
+
+#exampleTree .x-grid-tree-node-expanded .x-grid-cell-inner span {
+    background : transparent url(resources/images/newgray.gif) no-repeat 0px 4px;
+}
+
+#exampleTree-body div {
+	font-family : 'TTbold' !important;
+    font-size   : 15px;
+	color       : #515151;
+}
+
+.dirty-row .x-grid-cell, .dirty-row .x-grid-rowwrap-div {
+	background-color: #ffffff !important;
+}
+
+.new-row .x-grid-cell, .new-row .x-grid-rowwrap-div {
+	background-color: #FFFFC9 !important;
+} 
+
+.stop-row .x-grid-cell, .stop-row .x-grid-rowwrap-div {
+	background-color: #FCCBD1 !important;
+} 
+
+tr.x-grid-row-selected td div.x-grid-cell-inner .x-grid-rowwrap-div{
+    background-color : #9DE5FC !important;
+	background: -moz-linear-gradient(top, #F5F8FD, #CFE7F9);
+	background: -ms-linear-gradient(bottom, #F5F8FD, #CFE7F9);
+	background: -o-linear-gradient(bottom, #F5F8FD, #CFE7F9);
+	background: -webkit-linear-gradient(top, #F5F8FD, #CFE7F9);
+	background: linear-gradient(bottom, #F5F8FD, #CFE7F9);
+}
+
+.x-grid-item-selected .x-grid-cell, .x-grid-row-selected .x-grid-rowwrap-div {
+    background-color : #9DE5FC !important;
+	background: -moz-linear-gradient(top, #F5F8FD, #CFE7F9);
+	background: -ms-linear-gradient(bottom, #F5F8FD, #CFE7F9);
+	background: -o-linear-gradient(bottom, #F5F8FD, #CFE7F9);
+	background: -webkit-linear-gradient(top, #F5F8FD, #CFE7F9);
+	background: linear-gradient(bottom, #F5F8FD, #CFE7F9);
+}
+
+.x-grid-cell-inner {
+  padding-top : 1px !important;
+  line-height : 16px !important;
+}
+		
+.x-tree-icon-parent {
+    margin-right : 5px !important;
+	padding-top : 3px !important;
+	line-height : 22px !important;
+}
+
+.x-tree-icon-child {
+    margin-right : 5px !important;
+	line-height : 22px !important;
+}
+
+.x-tree-panel .x-grid-cell a { 
+    color   : #005588; 
+    outline : 0 none;
+    text-decoration : none;
+	font-family : 'TTmed' !important;    
+}
+
+.x-tree-panel .x-grid-cell a:hover { 
+   text-decoration : none; 
+}
+
+.x-tree-arrows .x-tree-elbow-plus, 
+.x-tree-arrows .x-tree-elbow-minus, 
+.x-tree-arrows .x-tree-elbow-end-plus, 
+.x-tree-arrows .x-tree-elbow-end-minus {
+    background-image : none;
+}
+
+
+.x-tree-panel .x-grid-row .x-grid-cell-inner {
+  height : 22px !important;
+  padding-top : 4px !important;
+    background-color : none !important;
+}
+
+.x-component .x-abs-layout-item .x-component-default
+{
+    
+}
+/*  Fonts
+    -----------------------------------------------------------------------------------------------*/
+
+@font-face {
+    font-family : 'TTbold';
+    src : url('resources/fonts/TitilliumText22L005-webfont.eot');
+    src : url('resources/fonts/TitilliumText22L005-webfont.eot?#iefix') format('embedded-opentype'),
+         url('resources/fonts/TitilliumText22L005-webfont.woff') format('woff'),
+         url('resources/fonts/TitilliumText22L005-webfont.ttf') format('truetype'),
+         url('resources/fonts/TitilliumText22L005-webfont.svg#TTbold') format('svg');
+    font-weight : normal;
+    font-style  : normal;
+}

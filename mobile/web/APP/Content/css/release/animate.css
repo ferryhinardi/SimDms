@@ -1,0 +1,34 @@
+﻿div[ng-view].ng-enter {
+  -webkit-animation: fadeInRight 0.25s linear; /* Safari/Chrome */
+  animation: fadeInRight 0.25s linear; /* IE10+ and Future Browsers */
+  right:0;
+}
+@-webkit-keyframes enter_sequence {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+@keyframes enter_sequence {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+div[ng-view].ng-leave {
+    -webkit-animation: fadeOutRight 0.25s;
+    animation: fadeOutRight 0.25s;
+}
+
+.ng-hide-remove {
+    -webkit-animation: fadeInRight 0.20s;
+    animation: fadeInRight 0.20s;
+}
+
+.ng-show-add {
+    -webkit-animation: fadeInLeft 0.25s;
+    animation: fadeInLeft 0.25s;
+}
+ 
+/*.ng-hide-add {
+    -webkit-animation: fadeOutRight 1.0s;
+    animation: fadeOutRight 1.0s;
+    display: block !important;
+}*/

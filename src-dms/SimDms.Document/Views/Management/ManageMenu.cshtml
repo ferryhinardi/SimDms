@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "ManageMenu";
+    Layout = null;
+}
+<div class="toolbar fullfill" style="height: 50px">
+    <div class=" pull-right">
+        <input type="button" id="btnSave" class="btn btn-primary" value="Save" />
+        <input type="button" id="btnCancel" class="btn btn-primary" value="Cancel" />
+        <input type="button" id="btnAddSib" class="btn btn-primary" value="Add New Item" />
+        <input type="button" id="btnAddSub" class="btn btn-primary" value="Add New SubItem" />
+        <input type="button" id="btnEditPrnt" class="btn btn-primary" value="Edit Parent Item"/>
+        <input type="button" id="btnEditChld" class="btn btn-primary" value="Edit Child Item" disabled="disabled" />
+        <input type="button" id="btnDel" class="btn btn-primary" value="Delete" disabled="disabled" />
+    </div>
+    <div class=" pull-right">
+        
+    </div>
+</div>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "frmManageIndex" }))
+{
+    <div class="clearfix divider">
+        <label class=" labelwidth pull-left">
+            Select Index Item
+        </label>
+        <div class="pull-left span5">
+            @Html.DropDownList("ListIndex", new SelectList((List<SelectListItem>)ViewData["ListIndex"], "Value", "Text"), new { @class = "fullfill" })
+        </div>
+    </div>
+}

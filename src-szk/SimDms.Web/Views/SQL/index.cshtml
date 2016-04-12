@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="SQL Tool for SIMDMS">
+    <meta name="author" content="Osen Kusnadi">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link href="@Url.Content("~/assets/js/components/bootstrap/dist/css/bootstrap.min.css")" rel="stylesheet" />
+
+    <script src="@ViewBag.SocketUrl"></script>
+
+    <link href="@Url.Content("~/assets/js/components/codemirror/lib/codemirror.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/codemirror/theme/monokai.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/codemirror/addon/fold/foldgutter.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/codemirror/addon/scroll/simplescrollbars.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/codemirror/addon/search/matchesonscrollbar.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/codemirror/addon/tern/tern.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/codemirror/addon/lint/lint.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/codemirror/addon/hint/show-hint.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/codemirror/addon/display/fullscreen.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/toastr.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/vendors/kendo/themes/kendo.common.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/vendors/kendo/themes/kendo.bootstrap.min.css")" rel="stylesheet" />
+
+
+    <link href="@Url.Content("~/assets/js/components/handsontable/dist/handsontable.full.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/handsontable/plugins/bootstrap/handsontable.bootstrap.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/ladda-bootstrap/dist/ladda-themeless.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/ladda-bootstrap/dist/prism.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/assets/js/components/jquery/dist/jquery.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/bootstrap/dist/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/handsontable/dist/handsontable.full.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/kendo/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/underscore.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/toastr.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/lib/codemirror.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/mode/sql/sql.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/addon.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/keymap/sublime.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/fold/foldcode.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/fold/foldgutter.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/fold/indent-fold.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/fold/comment-fold.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/fold/brace-fold.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/selection/active-line.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/selection/mark-selection.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/selection/selection-pointer.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/search/search.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/search/matchesonscrollbar.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/search/searchcursor.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/search/match-highlighter.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/scroll/annotatescrollbar.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/scroll/scrollpastend.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/scroll/simplescrollbars.js")"></script>
+
+    <script src="@Url.Content("~/assets/js/components/ladda-bootstrap/dist/spin.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/ladda-bootstrap/dist/ladda.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/ladda-bootstrap/dist/prism.js")"></script>
+
+</head>
+<body>
+
+    <span>Dealer Code </span><input id="DealerCode" value="6015401"/>
+    <button class="btn btn-info ladda-button" id="btnTest" data-style="slide-left"><span class="ladda-label"> Execute </span></button>
+
+    <form>
+        <textarea id="code" name="code" rows="10">SELECT * FROM INFORMATION_SCHEMA.TABLES ORDER BY TABLE_NAME
+        </textarea>
+    </form>
+
+    <div style="padding:10px 10px 10px 10px;">
+        <div id="myGrid"></div>
+    </div>
+
+    <script type="text/javascript">
+
+    var data = ["6002401", "6002401001", "6006400001A", "6006400001B", "6006400001C", "6006406", "6006408", "6006410", "6007402", "6014401", "6015401", "6019401", "6021406", "6023401", "6026401", "6031401", "6039401", "6039401002", "6039401003", "6039401004", "6040401", "6045401", "6051401", "6052401", "6055201", "6058401", "6060401", "6062401", "6063401", "6071201", "6071401", "6074201", "6074401", "6078401", "6079401", "6080401", "6081401", "6083401", "6083401002", "6083401100", "6088401", "6089401", "6092401", "6092401100", "6093401", "6111201", "6113204", "6114201", "6115202", "6115204", "6115204001ACH", "6115204001BDG", "6115204001BLI", "6115204001HLD", "6115204001JKT", "6115204001KDR", "6115204001LPG", "6115204001MDN", "6115204001PLB", "6115204001SBY", "6115204001SLO", "6115204001SMR", "6115206", "6115207", "6115208", "6115209", "6118201", "6118201012", "6120201", "6130201", "6145201", "6145202", "6145203", "6145205", "6156401", "6156401000", "6158401", "6159401", "6159401000", "6162401", "6340401", "6346401", "6354401", "6419401", "6432401", "6435201", "6435202", "6435203", "6437201", "6468401", "6469401", "6477401", "6482401", "6489401", "6491401", "6500401", "6506201", "6515201", "6525201", "6545201", "6548201", "6552201", "6554201", "6558201", "6583401", "6585201", "6623401", "6630401", "6641401", "6641401DEMO"];
+
+    var MyProgress = Ladda.create(document.getElementById('btnTest'));
+
+    var IsLoading = false;
+
+    //create AutoComplete UI component
+    $("#DealerCode").kendoAutoComplete({
+        dataSource: data,
+        filter: "startswith"
+    });
+
+    window.currentpassword = "";
+
+    window.sqlEditor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        tabMode: "indent",
+        mode: "text/x-mssql",
+        styleActiveLine: true,
+        dragDrop: true,
+        //lineWrapping: true,
+        foldGutter: true,
+        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+        keyMap: "sublime",
+        autoCloseBrackets: true,
+        matchBrackets: true,
+        showCursorWhenSelecting: true,
+        height: 200
+
+    });
+
+    $("#btnTest").on("click", function (e) {
+
+        e.preventDefault();
+
+        if (window.currentpassword == "") {
+            window.currentpassword = prompt("Please enter a password to continue");
+        }
+
+        $.ajax({
+            async: false,
+            type: "GET",
+            url: "sql/checkpwd/" + window.currentpassword,
+        }).done(function (data) {
+            if (data == "1") {
+                var _sql = window.sqlEditor.getValue();
+                var params = { to: $("#DealerCode").val(), type: 'sqlRaw', command: _sql };
+
+                if (!IsLoading) {
+                    socketClient.emit('pm', params);
+                    IsLoading = true;
+
+                    MyProgress.start();
+
+                    setTimeout(function () {
+                        MyProgress.stop();
+                        toastr["warning"]("Timeout");
+                        IsLoading = false;
+                    }, 300 * 1000)
+                }
+
+            } else {
+                alert("Access Denied")
+                window.currentpassword = ""
+            }
+        });        
+    });
+
+    var socketClient = io('@ViewBag.BaseAddress');
+
+        var data = [
+              ["", "", "", "", "", ""],
+              ["", "", "", "", "", ""],
+        ];
+
+        window.hot = $("#myGrid").handsontable({
+            data: data,
+            //minSpareRows: 1,
+            //height:300,
+            rowHeaders: true,
+            colHeaders: true,
+            contextMenu: true
+        });
+
+        window.sessionid = "";
+
+        socketClient.on('connect', function () {
+
+            var urlSessionId = "@ViewBag.BaseAddress/sessionid";
+
+            $.ajax({
+                async: false,
+                type: "GET",
+                url: urlSessionId,
+            }).done(function (data) {
+                window.sessionid = data;
+                socketClient.emit('add user', data, data, data, true);
+            });
+
+            socketClient.on('result', function (from, result, err, info) {
+
+                MyProgress.stop();
+
+                if (result != null) {
+                    var cols = [];
+                    var defData = [];
+
+                    if (IsLoading) {
+                        _.map(result.meta, function (o) {
+                            cols.push(o.name);
+                            defData.push("");
+                        })
+
+                        var dataRows = result.rows;
+
+                        if (dataRows.length == 0) {
+                            dataRows.push(defData)
+                        }
+
+                        $("#myGrid").data('handsontable').updateSettings({
+                            data: dataRows,
+                            colHeaders: cols
+                        })
+
+                        $("#myGrid").data('handsontable').render();
+                        IsLoading = false;
+                    }
+                } else {
+                    if (IsLoading) {
+                        IsLoading = false;
+                        toastr["error"](JSON.stringify(err))
+                    }
+                }
+            })
+        });
+
+
+    </script>
+
+</body>
+
+</html>

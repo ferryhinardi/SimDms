@@ -1,0 +1,109 @@
+﻿.k-grid tbody .k-button 
+{
+    min-width: 12px;
+    width: 18px;
+    height: 24px;
+}
+
+.k-grid tr td {
+    border-bottom: 1px solid #ccc;
+}
+
+.k-grid-header
+{
+   padding: 0 !important;
+}
+
+/*.k-grid-content
+{
+   overflow-y: visible;
+}
+
+.k-grid-toolbar {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}*/
+
+.k-grid  td {
+    padding: 5px 5px !important;
+}
+
+div.k-window-content {
+    padding: 0 7px 0 7px;
+}
+
+div.k-window-content .jarviswidget .widget-body {
+    margin-top: -15px;
+}
+ 
+.form-horizontal .control-label {
+    padding-right: 10px;
+}
+
+/*.modal-body {
+    padding-top: 0 !important;
+}*/
+
+/*.well > form {
+    padding-left: 15px;
+    padding-right: 20px;
+}*/
+
+/*.well > form > fieldset {
+    padding-left: 15px;
+    padding-right: 20px;
+    background-color: #fbfbfb !important;
+}
+
+.well > form > fieldset > legend {
+    margin-left: -15px;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}*/
+
+.k-grid-header
+{
+   padding: 0 !important;
+}
+
+.k-grid-content
+{
+   overflow-y: visible;
+}
+    
+.k-grid-content td .k-icon.k-i-none {
+    padding-left: 5px;
+}
+
+.dialog-header-error {
+    background-color: #d2322d;
+}
+
+.dialog-header-wait {
+    background-color: #428bca;
+}
+
+.dialog-header-notify {
+    background-color: #eeeeee;
+}
+
+.dialog-header-confirm {
+    background-color: #333333;
+}
+
+.dialog-header-error span,
+.dialog-header-error h4,
+.dialog-header-wait span,
+.dialog-header-wait h4,
+.dialog-header-confirm span,
+.dialog-header-confirm h4 {
+    color: #ffffff;
+}
+/* Ease Display */
+.form-group {
+  margin-bottom: 5px !important;
+}
+
+.pad {
+    padding: 25px;
+}

@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Manage Help";
+}
+
+<div class="bs-docs-sidebar" id="HelpIndex">
+    <ul id="docTree" class="filetree ">
+        <li><span class="file"><a id="MngIndex">Manage Help Index</a></span></li>
+        <li><span class="file"><a id="MngContent">Manage Content</a></span></li>
+    </ul>
+</div>
+<div class="  ContentHelp" id="HelpContent">
+
+</div>
+<script>
+    $(document).ready(function () {
+        $("#docTree").treeview({
+            collapsed: true
+        });
+        
+
+        $('#MngIndex').click(function ()
+        {
+            $('#HelpContent').load('@Url.Content("~/Management/ManageIndex")');
+        })
+
+        $('#MngContent').click(function () {
+            $('#HelpContent').load('@Url.Content("~/Management/ManageContent")');
+        })
+
+        $('#MngIndex').click();
+    });
+</script>

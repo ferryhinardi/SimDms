@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc?xsd=xsd3" filename="TransOutService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc?xsd=xsd2" filename="TransOutService0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc?wsdl" filename="TransOutService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc?xsd=xsd0" filename="TransOutService1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc?xsd=xsd1" filename="TransOutService2.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

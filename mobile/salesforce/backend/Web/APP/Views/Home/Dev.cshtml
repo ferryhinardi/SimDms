@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDevAMD.cshtml";
+}
+
+
+<section id="widget-grid" class="">
+    <div class="row" style="margin-left:0;">
+        <div id="codeeditor" style="width:100%;height:100px;position:absolute" class="layout-hide">
+            <div id="code-html" class="editor ui-layout-west ">
+                <textarea></textarea>
+                <span class="html-logo" id="html-mode"></span>
+                <a id="fullscreen-html-toggle"><span class="fullscreen-small" id="fullscreen-html"></span></a>
+            </div>
+            <div id="code-js" class="editor ui-layout-center">
+                <textarea></textarea>
+                <span class="js-logo" id="js-mode"></span>
+                <a id="fullscreen-js-toggle"><span class="fullscreen-small" id="fullscreen-js"></span></a>
+            </div>
+            <div id="code-css" class="editor ui-layout-east">
+                <textarea></textarea>
+                <span class="css-logo" id="css-mode"></span>
+                <a id="fullscreen-css-toggle"><span class="fullscreen-small" id="fullscreen-css"></span></a>
+            </div>
+            <div id="code-bottom" class="ui-layout-south">
+                <div id="bottom-widget">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default active" data-toggle="tooltip" title="Output">
+                            <input type="radio" name="btntabs" id="optOutput" autocomplete="off" checked data-value="Output">
+                            <i class="fa fa-lg fa-terminal"></i>
+                        </label>
+                        <label class="btn btn-default" data-toggle="tooltip" title="Tasks">
+                            <input type="radio" name="btntabs" id="optTask" autocomplete="off" data-value="Task">
+                            <i class="fa fa-lg fa-list-ol"></i>
+                        </label>
+                        <label class="btn btn-default" data-toggle="tooltip" title="User Requirement">
+                            <input type="radio" name="btntabs" id="optUserReq" autocomplete="off" data-value="UserReq">
+                            <i class="fa fa-lg fa-user-md"></i>
+                        </label>
+                        <label class="btn btn-default" data-toggle="tooltip" title="Design & Intruction">
+                            <input type="radio" name="btntabs" id="optDesign" autocomplete="off" data-value="Design">
+                            <i class="fa fa-lg fa-pencil-square-o"></i>
+                        </label>
+                        <label class="btn btn-default" data-toggle="tooltip" title="Database Information">
+                            <input type="radio" name="btntabs" id="optDB" autocomplete="off" data-value="DB">
+                            <i class="fa fa-lg fa-database"></i>
+                        </label>
+                        <label class="btn btn-default" data-toggle="tooltip" title="Data Initialize">
+                            <input type="radio" name="btntabs" id="optData" autocomplete="off" data-value="Data">
+                            <i class="fa fa-lg fa-table"></i>
+                        </label>
+                        <label class="btn btn-default" data-toggle="tooltip" title="News">
+                            <input type="radio" name="btntabs" id="optNews" autocomplete="off" data-value="News">
+                            <i class="fa fa-lg fa-newspaper-o"></i>
+                        </label>
+                        <label class="btn btn-default" data-toggle="tooltip" title="Sosial sharing">
+                            <input type="radio" name="btntabs" id="optShare" autocomplete="off" data-value="Share">
+                            <i class="fa fa-lg fa-comments-o"></i>
+                        </label>
+                        <label class="btn btn-default" data-toggle="tooltip" title="Notes">
+                            <input type="radio" name="btntabs" id="optNotes" autocomplete="off" data-value="Notes">
+                            <i class="fa fa-lg fa-asterisk"></i>
+                        </label>
+                        <label class="btn btn-default" data-toggle="tooltip" title="User Documentation">
+                            <input type="radio" name="btntabs" id="optDoc" autocomplete="off" data-value="Doc">
+                            <i class="fa fa-lg fa-question-circle"></i>
+                        </label>
+                    </div>
+
+                    <label class="btn btn-success" data-toggle="tooltip" title="Generate Schema" id="btnTestExecute">
+                        <i class="fa fa-lg fa-cogs"></i>
+                    </label>
+                    @*
+                        <label class="btn btn-default" data-toggle="tooltip" title="Load" id="btnLoad">
+                            <i class="fa fa-lg fa-gears"></i>
+                        </label>*@
+
+                    <a id="fullscreen-wgt-toggle"><span class="fullscreen-small" id="fullscreen-css"></span></a>
+                </div>
+                <div class="widget-body-botttom">
+                    <div class="widget-group console" id="content-optOutput">Output</div>
+                    <div class="widget-group" id="content-optTask">Task</div>
+                    <div class="widget-group" id="content-optUserReq">User Requirement</div>
+                    <div class="widget-group" id="content-optDesign">Design</div>
+                    <div class="widget-group" id="content-optDB">Database Info</div>
+                    <div class="widget-group" id="content-optData"><textarea></textarea></div>
+                    <div class="widget-group" id="content-optShare">Sosial Sharing</div>
+                    <div class="widget-group" id="content-optNotes">Notes</div>
+                    <div class="widget-group" id="content-optDoc">User Documentation</div>
+                    <div class="widget-group" id="content-optNews">News</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section pagespecific {
+    @*@Scripts.Render("~/content/scripts/app/layout.min.js")*@
+
+
+
+}

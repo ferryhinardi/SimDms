@@ -1,0 +1,90 @@
+﻿a{
+    cursor:pointer;
+}
+ul.no-border {
+    border: none;
+}
+
+.sidebar {
+    padding-left: 1%;
+}
+
+.sidebar-active {
+    font-weight: bold;
+}
+
+.navbar-inverse .navbar-inner{
+    min-height:56px;
+}
+.container-fluid{
+    padding-top: 20px;
+}
+
+.container-fluid-header
+{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.bannerHead
+{
+    position:absolute;
+    color: #777777;
+    display: block;
+    float: left;
+    font-size: 30px;
+    font-weight: 200;
+    margin-left: -20px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    color:#FFFFFF;
+}
+
+.bannerDesc
+{
+    color: #777777;
+    display: block;
+    float: left;
+    font-size: 15px;
+    font-weight: 200;
+    margin-left: -20px;
+    margin-top: 35px;
+    padding: 0px 20px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    position:absolute;
+    color:#FFFFFF;
+}
+
+.row-fluid .span9
+{
+    min-height:600px;
+}
+
+.labelwidth
+{
+    padding: 0px 0px 0px 10px;
+    width: 180px;
+}
+
+.fullfill
+{
+    width: 99.5%;
+}
+
+.divider
+{
+    padding-top: 10px;
+}
+
+.toolbar
+{
+    background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2);
+    border: #808080 solid;
+}
+
+div.toolbar > div
+{
+    margin: 12px 6px 7px 8px;
+}
+

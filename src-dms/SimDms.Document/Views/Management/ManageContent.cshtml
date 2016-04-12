@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "ManageMenu";
+    Layout = null;
+}
+<style>
+    .photo
+    {
+        margin-left:20px !important;
+        margin-top:10px; 
+        cursor:move;
+        width:90%;
+    }
+</style>
+<div class="toolbar fullfill" style="height: 50px">
+    <div class=" pull-right">
+        <input type="button" id="btnEdit" class="btn btn-primary" value="Edit" />
+        <input type="button" id="btnSave" class="btn btn-primary" value="Save" />
+        <input type="button" id="btnCancel" class="btn btn-primary" value="Cancel" />
+    </div>
+    <div class=" pull-right">
+    </div>
+</div>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "frmManageIndex" }))
+{
+    <div class="clearfix divider">
+        <label class=" labelwidth pull-left">
+            Select Index Item
+        </label>
+        <div class="pull-left span5">
+            @Html.DropDownList("ListIndex", new SelectList((List<SelectListItem>)ViewData["ListIndex"], "Value", "Text"), new { @class = "fullfill" })
+        </div>
+    </div>
+    <div class="clearfix divider">
+        <div id="content">
+        </div>
+    </div>
+    <div class="clearfix divider" id="editor">
+        <textarea class="editor-wysiwyg span10 fullfill" style="height: 500px" id="textEditor"></textarea>
+        <input type="hidden" id="txtFileContent"/>
+        <div id="listPhoto" class="span2" style="overflow:auto;height:500px; padding-right:0px; position:absolute !important; top:225px !important; right:5px !important"></div>
+    </div>
+}
+
+<div class="image-upload-modal modal hide fade">
+    @Html.Action("ImageForm", "Image")
+</div>
+<script>
+    $(document).ready(function () {
+        function LoadContent(MenuID) {
+            $.ajax({
+                url: '@Url.Content("~/Management/GetContent")',
+                data: { MenuID: MenuID, GetFrom:"edit" },
+                type: 'POST',
+                success: function (value) {
+                    //$('#content').html(value.Content);
+                    $('#content').html(value.content);
+                    $('#textEditor').val(value.content);
+                    $('iframe').contents().find('body').html(value.content);
+                    $('#listPhoto').load('@Url.Content("~/Management/ListImageDoc")'+"?MenuID=" + $('#ListIndex').val());
+                }
+            });
+        }
+
+        function readSingleFile(evt) {
+            //Retrieve the first (and only!) File from the FileList object
+            var file = evt.target.files[0];
+            console.log(file.name);
+            var ext = file.name.split('.')[1];
+            extension = ext;
+            console.log(ext);
+            console.log(file.size);
+            if (file) {
+                var r = new FileReader();
+                r.onload = function (e) {
+                    var contents = e.target.result;
+                    contentOfFile = contents;
+                    console.log(contentOfFile);
+                    $('#txtFileContent').val(contents);
+                }
+                r.readAsDataURL(file);
+            } else {
+                alert("Failed to load file");
+            }
+        }
+
+
+        //function load on load page
+        LoadContent($('#ListIndex').val());
+        $('#ListIndex').select2();
+        $('#btnSave, #btnCancel').hide();
+        $("#editor").hide();
+        $('#listPhoto').hide();
+        $('#listPhoto').load('@Url.Content("~/Management/ListImageDoc")' + "?MenuID=" + $('#ListIndex').val());
+        
+
+
+        $('#btnEdit').click(function () {
+            $('#content').slideUp();
+            $("#editor").slideDown();
+            $('#listPhoto').slideDown();
+            $(".wysihtml5-sandbox").slideDown();
+            $('.wysihtml5-toolbar').slideDown();
+            $('#btnEdit').fadeOut(function () { $('#btnSave, #btnCancel').fadeIn() });
+            
+            var bodyText = $('iframe').contents().find('body').text();
+            if (bodyText === "No Content") {
+                $('iframe').contents().find('body').html("");
+            }
+        });
+
+        $('#btnCancel').click(function () {
+            $('#btnSave, #btnCancel').fadeOut(function () { $('#btnEdit').fadeIn()})
+            $('#content').slideDown();
+            $("#editor").slideUp();
+            $('#listPhoto').slideUp();
+            $(".wysihtml5-sandbox").slideUp();
+            $('.wysihtml5-toolbar').slideUp();
+        });
+
+        $('#btnSave').click(function () {
+            var menuID = $('#ListIndex').val();
+            var content = $('iframe').contents().find('body').html();
+            $.ajax({
+                url: '@Url.Content("~/Management/SaveContent")',
+                data: { MenuID: menuID, Content: content },
+                type: 'POST',
+                success: function (value) {
+                    LoadContent($('#ListIndex').val());
+                    $('#content').slideDown();
+                    $("#editor").slideUp();
+                    $('#listPhoto').slideUp();
+                    $(".wysihtml5-sandbox").slideUp();
+                    $('.wysihtml5-toolbar').slideUp();
+                    $('#btnSave, #btnCancel').fadeOut(function () { $('#btnEdit').fadeIn() })
+                }
+            });
+        });
+
+        $('#ListIndex').change(function () {
+            LoadContent($('#ListIndex').val());
+        });
+
+        $('div.button-upload > button').click(function () {
+            var menuID = $('#ListIndex').val();
+            var content = $('#txtFileContent').val();
+            $.ajax({
+                url: '@Url.Content("~/Management/UploadImage")',
+                data: { MenuID: menuID, ImageData: content },
+                 type: 'POST',
+                 success: function (value) {
+                     $("[data-dismiss='fileupload']").click();
+                     $('#listPhoto').load('@Url.Content("~/Management/ListImageDoc")' + "?MenuID=" + $('#ListIndex').val());
+                     $(".image-upload-modal").modal("hide");
+                 }
+             });
+        });
+
+        document.getElementById('file-item-upload').addEventListener('change', readSingleFile, false);
+
+
+    });
+</script>
+<script src="@Url.Content("~/assets/js/ImageUpload.js")">
+</script>

@@ -1,0 +1,292 @@
+﻿@base-color: #035bc9;
+
+@font-face
+{
+	font-family: 'Open Sans';
+	src: url('../fonts/OpenSans.eot');
+	src: url('../fonts/OpenSans.eot?iefix') format('eot'), url('../fonts/OpenSans.woff') format('woff'), url('../fonts/OpenSans.ttf') format('truetype'), url('../fonts/OpenSans.svg#webfont') format('svg');
+}
+
+@font-face
+{
+	font-family: 'Sans Bold';
+	src: url('../fonts/ClearSans-Bold-webfont.eot');
+	src: url('../fonts/ClearSans-Bold-webfont.eot?iefix') format('eot'), url('../fonts/ClearSans-Bold-webfont.woff') format('woff'), url('../fonts/ClearSans-Bold-webfont.ttf') format('truetype'), url('../fonts/ClearSans-Bold-webfont.svg#webfont') format('svg');
+}
+
+body
+{
+	font-family: 'Open Sans', sans-serif;
+	overflow-x: hidden;
+}
+
+#main
+{
+	.page
+	{
+		> .header
+		{
+			background-color: @base-color;
+			height: 50px;
+			padding: 0 5px;
+
+			.toolbar
+			{
+				color: lighten(@base-color, 60%);
+				font-size: 24px;
+				padding: 0 5px;
+				margin: 0 0;
+				float: left;
+				min-height: 50px;
+
+				&.right
+				{
+					float: right;
+				}
+
+				i
+				{
+					padding: 12px 10px;
+
+					&.left
+					{
+						padding: 12px 5px;
+					}
+				}
+
+				&:hover
+				{
+					/*background-color: darken( @base-color, 10%);*/
+					color: lighten(yellow, 30%);
+					cursor: pointer;
+
+					&.blank
+					{
+						background-color: @base-color;
+						cursor: default;
+					}
+				}
+			}
+
+			.title
+			{
+				.title-brand
+				{
+					font-size: 14px;
+					padding-top: 4px;
+				}
+
+				.title-page
+				{
+					font-size: 22px;
+					font-family: 'Sans Bold';
+					padding-top: 0;
+					margin-top: -8px;
+				}
+
+				color: lighten(@base-color, 60%);
+			}
+		}
+
+		> .logo
+		{
+			margin-top: 50px;
+			text-align: center;
+
+			img
+			{
+				height: 100px;
+			}
+		}
+
+		> .content
+		{
+			padding: 20px 25px;
+			/*border: 1px solid;*/
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 50px;
+			bottom: 0;
+			overflow-y: auto;
+
+			i
+			{
+				padding-right: 10px;
+			}
+
+			.title
+			{
+				color: @base-color;
+				font-size: 20px;
+			}
+
+			.list
+			{
+				padding-top: 10px;
+
+				> .row
+				{
+					padding: 10px 0 10px 15px;
+					color: @base-color;
+
+					.icon
+					{
+						font-size: 22px;
+						padding-top: 10px;
+					}
+
+					.list-title
+					{
+						margin-left: -15px;
+						font-size: 16px;
+
+						i
+						{
+							padding-left: 8px;
+						}
+					}
+
+					.list-detail
+					{
+						margin-left: -15px;
+						font-size: 11px;
+
+						i
+						{
+							padding-left: 8px;
+						}
+					}
+
+					&:hover
+					{
+						cursor: pointer;
+						color: darken(@base-color, 20%);
+						/*background-color: lighten(@base-color, 60%);*/
+						.right
+						{
+							display: block;
+						}
+					}
+				}
+
+				.right
+				{
+					float: right;
+					display: none;
+				}
+			}
+
+			.form
+			{
+				/*margin-top: -20px;*/
+
+				.row
+				{
+					margin-bottom: 10px;
+					color: @base-color;
+
+					.col-6
+					{
+						float: left;
+						width: 50%;
+						padding-right: 5px;
+					}
+
+					.panel
+					{
+						border: 1px solid;
+						min-height: 100px;
+					}
+				}
+
+				table
+				{
+					border: 1px solid lighten(@base-color, 25%);
+
+					th
+					{
+						border-top: 1px solid lighten(@base-color, 25%);
+					}
+
+					td
+					{
+						border-top: 1px solid lighten(@base-color, 25%);
+
+						&.number
+						{
+							text-align: right;
+						}
+					}
+
+					tbody
+					{
+						border-top: 3px solid lighten(@base-color, 25%);
+					}
+				}
+
+				.table-wrapper
+				{
+					background-color: lighten(@base-color, 75%);
+				}
+			}
+
+			.col-xs-2
+			{
+				width: 50px;
+			}
+		}
+	}
+
+	#login
+	{
+		.form-wrapper
+		{
+			padding: 10px;
+			margin-top: 50px;
+			height: 200px;
+
+			.form-group
+			{
+				input
+				{
+					margin: 4px 0;
+				}
+			}
+		}
+	}
+}
+
+#shortcut
+{
+	border: 1px solid lighten(@base-color, 0%);
+	background-color: lighten(@base-color, 65%);
+	position: absolute;
+	top: 49px;
+	right: 5px;
+	min-width: 200px;
+	z-index: 1000;
+	display: none;
+
+	li
+	{
+		padding: 0;
+		margin: 0;
+
+		&.divider
+		{
+			height: 1px;
+			background-color: lighten(@base-color, 40%);
+		}
+
+		a
+		{
+			border-radius: 0;
+
+			&:hover
+			{
+				background-color: lighten(@base-color, 50%);
+			}
+		}
+	}
+}

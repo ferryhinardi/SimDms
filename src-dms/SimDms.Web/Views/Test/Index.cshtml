@@ -1,0 +1,249 @@
+﻿
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>SIMDMS</title>
+
+    <!-- CSS reference section -->
+    <link rel="stylesheet" href="assets/lib/css/bootstrap.css">
+    <script src="assets/lib/js/jquery-1.8.3.min.js"></script>
+    <script src="assets/lib/js/knockout-3.4.0.js"></script>
+
+    <script src="@Url.Content("~/assets/js/app/login.js")"></script>
+    <style>
+        .testx {
+            font-height: 72px;
+            font-weight: 700;
+        }
+
+        .labelA {
+            font-height: 32px;
+            font-weight: 700;
+            colour: blue;
+        }
+
+        .input-lgx {
+            height: 44px;
+            padding: 10px 16px;
+            font-size: 28px;
+            line-height: 1.15;
+            border-radius: 6px;
+        }
+
+        .myCTL {
+            padding-top: 10px;
+            padding-left: 30px;
+            padding-bottom: 30px;
+            padding-right: 15px;
+        }
+    </style>
+
+</head>
+
+<body style="padding:30px">
+
+    <script language="JScript">
+
+        var xhttp;
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        } else {
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        function ClearDoc() {
+            if (window.XMLHttpRequest) {
+                xhttp = new XMLHttpRequest();
+            } else {
+                xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            txtVIN.value = "";
+            txtDriver.value = "";
+            Engine.value = "";
+            SalesModel.value = "";
+            Colour.value = "";
+            ServiceBookNo.value = "";
+            KeyNo.value = "";
+            Dealer.value = "";
+            DONo.value = "";
+
+            txtVIN.autofocus;
+        }
+
+        function LoadDoc() {
+
+            var url = "om.api/ReceivingUnit/GeData?Vehicle=" + txtVIN.value;
+
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+                    var response = JSON.parse(xhttp.responseText);
+                    if (response != null && response.data != undefined) {
+                        Engine.value = response.data.EngineCode + response.data.EngineNo;
+                        SalesModel.value = response.data.SalesModelCode + response.data.SalesModelYear;
+                        Colour.value = response.Colour + '(' + response.data.ColourCode + ')';
+                        ServiceBookNo.value = response.data.ServiceBookNo;
+                        KeyNo.value = response.data.KeyNo;
+                        Dealer.value = response.DealerAbbreviation + '(' + response.data.CompanyCode + ')';
+                        DONo.value = response.data.DONo;
+                    } else {
+                        txtVIN.value = "";
+                        txtDriver.value = "";
+                        Engine.value = ""
+                        SalesModel.value = "";
+                        Colour.value = "";
+                        ServiceBookNo.value = "";
+                        KeyNo.value = "";
+                        Dealer.value = "";
+                        DONo.value = "";
+
+                        alert("Silakan Scan Ulang!");
+                    }
+                    if (window.XMLHttpRequest) {
+                        xhttp = new XMLHttpRequest();
+                    } else {
+                        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                }
+            };
+
+            xhttp.open("POST", url, true);
+            xhttp.send();
+
+        }
+
+        function SaveDoc() {
+
+            var url = "om.api/ReceivingUnit/Save?Vehicle=" + txtVIN.value + '&Driver=' + txtDriver.value;
+
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+                    var response = JSON.parse(xhttp.responseText);
+                    if (response.success == true) {
+                        txtVIN.value = "";
+                        txtDriver.value = "";
+                        Engine.value = ""
+                        SalesModel.value = "";
+                        Colour.value = "";
+                        ServiceBookNo.value = "";
+                        KeyNo.value = "";
+                        Dealer.value = "";
+                        DONo.value = "";
+
+                        alert(response.message);
+
+                    } else {
+                        alert(response.message);
+                    }
+                    if (window.XMLHttpRequest) {
+                        xhttp = new XMLHttpRequest();
+                    } else {
+                        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                }
+            };
+
+            xhttp.open("POST", url, true);
+            xhttp.send();
+
+
+
+        }
+    </script>
+
+    <div class="logout">
+        <form method="post">
+            <div class="row">
+                <div class="form-group">
+                    <div class="labelA"><h1>Welcome,@User.Identity.Name</h1></div>
+                    <div>
+                        <a href="@Url.Content("~/Test/LogOut")" class="btn btn-primary" id="btnlogout">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="form-group">
+            <div class="labelA"><b>VIN</b></div>
+            <input id="txtVIN" name="txtVIN" type="text" class="testx form-control input-lgx" autofocus onkeydown="if (event.keyCode == 13) LoadDoc()">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div for="code"><span class="labelA"><b>DRIVER</b></span></div>
+            <input type="text" id="txtDriver" class="testx form-control input-lgx">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <button type="button" id="btnSave" class="btn btn-success btn-lg" onclick=" SaveDoc()">Save</button>
+            <button type="button" id="btnCancel" class="btn btn-danger  btn-lg" onclick="ClearDoc()">Cancel</button>
+            <button type="button" id="btnLoad" class="btn btn-primary hide" onclick="LoadDoc()">Check</button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="form-group form-inline">
+            <label for="code">Engine</label>
+            <input type="text" class="form-control" readonly id="idEngine" name="Engine">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group form-inline">
+            <label for="code">Sales Model</label>
+            <input type="text" class="form-control" readonly id="idSalesModel" name="SalesModel">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group form-inline">
+            <label for="code">Colour</label>
+            <input type="text" class="form-control" readonly id="idColour" name="Colour">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group form-inline">
+            <label for="code">Service Book No</label>
+            <input type="text" class="form-control" readonly id="idServiceBookNo" name="ServiceBookNo">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group form-inline">
+            <label for="code">Key No</label>
+            <input type="text" class="form-control" readonly id="idKeyNo" name="KeyNo">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group form-inline">
+            <label for="code">Dealer</label>
+            <input type="text" class="form-control" readonly id="idDealer" name="Dealer">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group form-inline">
+            <label for="code">DO No</label>
+            <input type="text" class="form-control" readonly id="idDONo" name="DONo">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group form-inline">
+            <label for="code">SJ No</label>
+            <input type="text" class="form-control" readonly id="idSJNo" name="SJNo">
+        </div>
+    </div>
+
+    <hr>
+
+
+
+</body>
+</html>

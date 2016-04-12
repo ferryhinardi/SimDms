@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="6.5in" Name="ChartMonitoringByDate" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="SELECT '3 Days Call' AS 'Text', '3DaysCall' AS 'Value'&#xD;&#xA;UNION&#xD;&#xA;SELECT 'Birthday' AS 'Text', 'Birthday' AS 'Value'&#xD;&#xA;UNION&#xD;&#xA;SELECT 'BPKB Reminder' AS 'Text', 'CsCustBpkb' AS 'Value'&#xD;&#xA;UNION&#xD;&#xA;SELECT 'STNK Extension' AS 'Text', 'CsStnkExt' AS 'Value'" Name="InquiryDS" />
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="exec uspfn_CsChartMonitoringExport @Inquiry, @DateFrom, @DateTo, @DealerCode" Name="MonitoringDB" ParameterValues="{&quot;@Inquiry&quot;:&quot;3DaysCall&quot;,&quot;@DateFrom&quot;:&quot;2015-12-01&quot;,&quot;@DateTo&quot;:&quot;2015-12-31&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@Inquiry">
+          <Value>
+            <String>= Parameters.Inquiry.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="DateTime" Name="@DateFrom">
+          <Value>
+            <String>= Parameters.DateFrom.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="DateTime" Name="@DateTo">
+          <Value>
+            <String>= Parameters.DateTo.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@DealerCode">
+          <Value>
+            <String>= Parameters.Dealer.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="10.53333568573in" Name="detailSection1">
+      <Items>
+        <Graph DataSourceName="MonitoringDB" Width="5.90547227859497in" Height="10.53333568573in" Left="0.00003937880198168in" Top="0in" Name="graph1">
+          <PlotAreaStyle LineWidth="0in" LineColor="LightGray" />
+          <Axes>
+            <GraphAxis Name="graphAxis1">
+              <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <NumericalScale />
+              </Scale>
+            </GraphAxis>
+            <GraphAxis Name="graphAxis2" LabelFormat="{0:g}" Title="= &quot;Day&quot;">
+              <MajorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <CategoryScale />
+              </Scale>
+            </GraphAxis>
+          </Axes>
+          <CoordinateSystems>
+            <CartesianCoordinateSystem XAxis="graphAxis1" YAxis="graphAxis2" Name="cartesianCoordinateSystem1" />
+          </CoordinateSystems>
+          <Style>
+            <Padding Left="10px" Right="10px" Top="10px" Bottom="10px" />
+          </Style>
+          <SeriesGroups>
+            <GraphGroup Name="dealerNameGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.DealerName" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.DealerName" Direction="Asc" />
+              </Sortings>
+            </GraphGroup>
+          </SeriesGroups>
+          <CategoryGroups>
+            <GraphGroup Label="= Fields.InputDate.Day + &quot;/&quot; + Fields.InputDate.Month + &quot;/&quot; + Fields.InputDate.Year" Name="inputDateGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.InputDate" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.InputDate" Direction="Asc" />
+              </Sortings>
+            </GraphGroup>
+          </CategoryGroups>
+          <Series>
+            <BarSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="inputDateGroup" SeriesGroup="dealerNameGroup" X="= Sum(Fields.DataCount)" DataPointLabel="= Sum(Fields.DataCount)" Name="barSeries1">
+              <DataPointStyle Visible="True" LineWidth="0in" />
+              <DataPointLabelStyle Visible="False" />
+              <DataPointLabelConnectorStyle>
+                <Padding Top="2pt" Bottom="2pt" />
+              </DataPointLabelConnectorStyle>
+              <LegendItem Value="= Fields.DealerName" />
+            </BarSeries>
+          </Series>
+          <Legend>
+            <Style LineWidth="0in" LineColor="LightGray" />
+          </Legend>
+          <Titles>
+            <GraphTitle Text="" Position="TopCenter">
+              <Style LineWidth="0in" LineColor="LightGray" />
+            </GraphTitle>
+          </Titles>
+        </Graph>
+      </Items>
+    </DetailSection>
+    <PageHeaderSection Height="1in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="5.905511805in" Height="0.787401574in" Left="0in" Top="0in" Value="Chart Monitoring" Name="ReportNameTextBox">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.70000012715658in" Height="0.200078845024109in" Left="2.10000006357829in" Top="0.787480354309082in" Value="= Parameters.Inquiry.Label" Name="textBox1">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Segoe UI" Size="11pt" Bold="False" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="1in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="1.574803148in" Height="0.393700787in" Left="4.925196852in" Top="0.606299213in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+      <Margins>
+        <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="Inquiry" Text="Inquiry" Visible="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="InquiryDS" DisplayMember="= Fields.Text" ValueMember="= Fields.Value" />
+    </ReportParameter>
+    <ReportParameter Name="DateFrom" Type="DateTime" Text="DateFrom" Visible="True" AutoRefresh="True">
+      <Value>
+        <String>2015-12-01</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="DateTo" Type="DateTime" Text="DateTo" Visible="True" AutoRefresh="True">
+      <Value>
+        <String>2015-12-31</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Dealer" Text="Dealer" Visible="True" AllowNull="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="MonitoringDB" DisplayMember="= Fields.DealerName" ValueMember="= Fields.DealerCode">
+        <Sortings>
+          <Sorting Expression="= Fields.DealerCode" Direction="Asc" />
+        </Sortings>
+      </AvailableValues>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

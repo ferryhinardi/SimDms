@@ -1,0 +1,28 @@
+<ion-view title="Sign In">   
+
+    <ion-content id="social-login" class="bg-white">
+       
+
+        <form class="fakeLogin-form">
+            <div>
+                <img src="img/suzuki.png"/>
+            </div>
+            <div class="title"><b>Sign in to application</b></div>
+
+            <div id="fakeLogin">
+                <md-input-container md-no-float="">
+                    <input class="user-name" placeholder="Username" ng-model="data.UserName">
+                </md-input-container>
+                <hr/>
+                <md-input-container md-no-float="">
+                    <input class="user-password" type="password" placeholder="Password" ng-model="data.Password">
+                </md-input-container>
+            </div>
+            <div>
+                <a class="md-raised social-button md-button md-default-theme material-background" ng-click="login()">
+                    Sign In
+                </a>                
+            </div>
+        </form>  
+    </ion-content> 
+</ion-view>

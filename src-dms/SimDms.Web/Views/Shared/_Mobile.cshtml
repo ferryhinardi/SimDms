@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/assets/css/vendor/kendo/kendo.common.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/kendo/kendo.metro.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/assets/js/vendors/modernizr.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery-2.0.3.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/highcharts.js")"></script>
+
+    <script src="@Url.Content("~/assets/js/SimDms.core.js")"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            SimDms.baseUrl = "@Url.Content("~/")";
+        });
+    </script>
+</head>
+
+<body>
+    @RenderBody()
+</body>
+</html>

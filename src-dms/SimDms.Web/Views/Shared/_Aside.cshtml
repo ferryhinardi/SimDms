@@ -1,0 +1,182 @@
+﻿<aside id="left-panel">
+
+
+    <div class="login-info">
+        <span id="mylogo"></span>
+    </div>
+
+    <div>
+        <select id="theSelect" class="isearch js-example-basic-single">
+            <option value="#">Quick Access</option>
+            @foreach (var nav in Model)
+            {
+                <optgroup label="@nav.MenuCaption">
+                    @foreach (var item in (ViewBag.menus as List<SimDms.Web.Models.SysNavigation>).Where(x => x.ModuleName == nav.MenuCaption).ToList())
+                    {
+                        <option value="@item.Url" data-tag="@item.ParentName">@item.MenuCaption</option>
+                    }
+                </optgroup>
+            }
+
+</select>
+    </div>
+
+    <nav>
+        <ul>
+
+            @foreach (var nav in Model)
+            {
+                <li id="module-@nav.MenuId">
+                    <a href="#" title="@nav.MenuCaption">
+                        <span class="menu-item-parent">@nav.MenuCaption</span>
+                    </a>
+                    @if (nav.Detail.Count > 0)
+                    {
+                        <ul>
+                            @foreach (var nav1 in nav.Detail)
+                            {
+                                <li>
+                                    <a href="@nav1.Url">@nav1.MenuCaption</a>
+                                    @if (nav1.Detail.Count > 0)
+                                    {
+                                        <ul>
+                                            @foreach (var nav2 in nav1.Detail)
+                                            {
+                                                <li>
+                                                    <a href="@nav2.Url" onclick="renderPage(this)" data-tag="@nav2.ParentName" data-link="@nav2.Url">@nav2.MenuCaption</a>
+                                                    @if (nav2.Detail.Count > 0)
+                                                    {
+                                                        <ul>
+                                                            @foreach (var nav3 in nav2.Detail)
+                                                            {
+                                                                <li>
+                                                                    <a href="@nav3.Url" onclick="renderPage(this)" data-tag="@nav3.ParentName" data-link="@nav3.Url">@nav3.MenuCaption</a>
+                                                                    @if (nav3.Detail.Count > 0)
+                                                                    {
+                                                                        <ul>
+                                                                            @foreach (var nav4 in nav3.Detail)
+                                                                            {
+                                                                                <li>
+                                                                                    <a href="@nav4.Url" onclick="renderPage(this)" data-tag="@nav4.ParentName" data-link="@nav4.Url">@nav4.MenuCaption</a>
+                                                                                </li>
+                                                                            }
+                                                                        </ul>
+                                                                    }
+                                                                </li>
+                                                            }
+                                                        </ul>
+                                                    }
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    }
+                </li>
+
+            }
+        </ul>
+    </nav>
+
+    <span class="minifyme" data-action="toggleMenu">
+        <i class="fa fa-arrow-circle-left hit"></i>
+    </span>
+
+</aside>
+<!-- END NAVIGATION -->
+<script src="@Url.Content("~/assets/js/nav.js")"></script>
+
+<script type="text/javascript">
+    pageSetUp();
+
+    $searchBox = $("#theSelect");
+
+    $searchBox.select2({
+        placeHolder: "Select a menu to go...",
+        allowClear: true
+    }).on("change", function (e) {
+        if (e.val !== "#" && e.val !== undefined && e.val !== null) {
+            location.href = e.val;
+            $searchBox.select2().select2("val", '#');
+            var result = _.find(window.navitems, function (obj) { return obj.Url == e.val });
+            if (result !== undefined) {
+                $(".breadcrumb").html(result.ParentName);
+                $("#btnRefresh").data("link", e.val);
+            }
+        }
+    })
+
+    $searchBox.select2().select2("val", '#');
+
+    function renderPage(me) {
+        var tag = me.dataset.tag;
+        $("#btnRefresh").data("link", me.dataset.link);
+        $(".breadcrumb").html(tag);
+    }
+
+    function RefreshEvent(me)
+    {
+        var mylink = $("#btnRefresh").data("link");
+        if (mylink !== undefined)
+        {
+            var link = ($("#btnRefresh").data("link"));
+            location.href = "#lnk/gn/posting/welcome";
+        }
+
+    }
+
+    $.ajax({
+        type: "POST",
+        url: 'gn.api/Posting/PostingStatus',
+        dataType: 'json',
+        success: function (response) {
+
+            if (response.spsrv == "0") {
+                $('#module-sv').remove()
+                $('#module-sp').remove()
+            }
+
+            if (response.sales == "0") {
+                $('#module-om').remove()
+            }
+
+            if (response.tax == "0") {
+                $('#module-tax').remove()
+            }
+
+            if (response.sales == "0" || response.spsrv == "0") {
+
+                $("#theSelect").select2('disable');
+
+                var strTemplate =
+'<div class="alert alert-block alert-info" style="padding-top:50px">' +
+'<div  style="margin:10px 10px 0 10px;padding:10px 10px 0 10px;"><h1 class="alert-heading"><i class="fa fa-warning"></i><font color="red"> PERHATIAN !!!</font></h1></div>' +
+'    <div style="margin:10px 10px;padding:10px 10px;font-weight:bold;line-height:150%;font-size:20px;">' + response.info +
+'    </div>' +
+'</div>'
+                $(".page .body .main").slideUp();
+                $(".page .title h3").html("&nbsp;").removeClass("fadeInLeft");
+                $(".page .body .main").html(strTemplate);
+                $(".page .body .main").slideDown();
+
+                $.ajax({
+                    type: "POST",
+                    url: 'gn.api/Posting/AllowPosting',
+                    dataType: 'json',
+                    success: function (response) {
+                        console.log(response)
+                        if (response.allow == 1) {
+                            window.location = "#lnk/gn/posting/daily";
+                        }
+                    }
+                });
+
+            }
+        }
+    });
+
+</script>
+
+

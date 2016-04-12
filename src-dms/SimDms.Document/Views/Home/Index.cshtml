@@ -1,0 +1,85 @@
+﻿@using SimDms.Document.Controllers;
+@using SimDms.Document.Models;
+@{
+    ViewBag.Title = "SDMS Documentation";
+}
+<div  >
+    <ul id="docTree" class="nav bs-docs-sidenav  filetree affix">
+        @foreach (var item in HelperController.GetMenuHeader())
+        {
+            if (HelperController.GetListOfModule(item.MenuID, (Session["Session"] ==null? "" : Session["Session"].ToString())).Count > 0)
+            {
+                <li><span class="folder" id="@item.MenuID" onclick="loadContent('@item.MenuID')" data-id="Header">@item.MenuTitle</span>
+                    <ul>
+                        @HelperForm.CreateTreeViewChild(item)
+                    </ul>
+                </li>
+            }
+            else
+            {
+                if(item.IsContainModule != null)
+                {
+                    if(!item.IsContainModule.Value)
+                    {
+                        if(Request.IsAuthenticated)
+                        {
+                        <li><span class="folder" id="@item.MenuID" onclick="loadContent('@item.MenuID')">@item.MenuTitle</span>
+                            <ul>
+                                @HelperForm.CreateTreeViewChild(item)
+                            </ul>
+                        </li>
+                        }
+                        else{
+                            <text><li><span class="file" id="@item.MenuID" onclick="loadContent('@item.MenuID')" ><a>@item.MenuTitle</a></span></li></text>
+                        }
+                    }
+                    else{
+                           <text><li><span class="file" id="@item.MenuID" data-id="Header" onclick="loadContent('@item.MenuID')" ><a>@item.MenuTitle</a></span></li></text>
+                    }
+                }
+            }
+        }
+    </ul>
+</div>
+<div id="HelpContent"  >
+</div>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+    function loadContent(MenuID) {
+        $.ajax({
+            url: '@Url.Content("~/Home/GetContent")',
+            data: { MenuID: MenuID },
+            type: 'POST',
+            success: function (value) {
+                if (value.content !== null) {
+                    $('html, body').animate({ scrollTop: 0 }, 'slow', function () {
+                        $('#HelpContent').html(value.content);
+                    });
+                }
+            }
+        });
+    }
+    $(document).ready(function () {
+        $('[data-id="Header"]').click();
+        $("#docTree").treeview({
+            animated: "fast",
+            collapsed: true,
+            unique: true,
+            persist: "cookie",
+            toggle: function () {
+                window.console && console.log("%o was toggled", this);
+            }
+        });
+
+        
+
+        //$('li').click(function () {
+        //    alert('li clicked');
+        //});
+
+        //$('ul > li').click(function () {
+        //    alert('li ul clicked');
+        //});
+    });
+</script>

@@ -1,0 +1,105 @@
+span.total {
+  font-size: 22px;
+  font-weight: 600;
+  float:right;
+  line-height: 30px;
+}
+
+span.label {
+  font-size: 22px;
+  font-weight: 500;
+  float:left;
+  line-height: 30px;
+}
+
+span.totalx {
+  font-size: 24px;
+  font-weight: 700;
+  color:darkred;
+  float:right;
+  line-height: 30px;
+}
+
+span.labelx {
+  font-size: 24px;
+  font-weight: 600;
+  float:left;
+  padding-right:25px;
+  color: darkred;
+  line-height: 30px;
+}
+
+
+#sparks {
+  display: block;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  text-align: right;
+}
+
+#sparks li {
+  display: inline-block;
+  max-height: 60px;
+  overflow: hidden;
+  text-align: left;
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+}
+
+#sparks li h5 {
+  color: #555;
+  float: left;
+  font-size: 11px;
+  font-weight: normal;
+  margin: -3px 0 0 0;
+  padding: 0;
+  border: none;
+  text-transform: uppercase;
+}
+
+#sparks li span {
+  color: #636363;
+  display: block;
+}
+
+#sparks li {
+  border-left: 1px dotted #c7c7c7;
+  padding: 0 10px;
+}
+
+#sparks li:last-child {
+  padding-right: 0;
+}
+#sparks li:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.sparks-info {
+  min-width: 70px;
+}
+
+.sparks-info span {
+  font-size: 22px;
+  line-height: 30px;
+  margin: 0;
+  text-transform: none;
+}
+
+.sparks-info .sparkline {
+  display: block;
+  float: right;
+  margin: 5px 0 0 30px;
+}
+
+
+[data-sparkline-width="100%"] > canvas {
+  width: 100% !important;
+}
+
+
+.dataTable [data-sparkline-width="100%"] > canvas {
+  max-width: 100px !important;
+}

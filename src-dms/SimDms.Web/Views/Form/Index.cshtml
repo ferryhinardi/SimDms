@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>   
+    @{ Html.RenderPartial("_scripts"); }
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            SimDms.baseUrl = "@Url.Content("~/")";
+            SimDms.defaultEmployeePhoto = (SimDms.baseUrl + SimDms.defaultEmployeePhoto).replace("//", "/");
+            SimDms.defaultIdentityCardPhoto = (SimDms.baseUrl + SimDms.defaultIdentityCardPhoto).replace("//", "/");
+
+            layout = new SimDms.Layout();
+            layout.render();    
+            //layout.autoMovePopup();
+            layout.loadAjaxLoader();
+
+            $(".page .body .main").slideUp();
+            $(".page .title h3").html("&nbsp;").removeClass("fadeInLeft");
+
+            var url = localStorage.getItem("webFormUrl");
+            var myBaseUrl = window.location.href.substr(0, window.location.href.length - 4);
+            var link = SimDms.baseUrl + url;
+
+
+            $(".page .body .main").load(link, function () {
+                $("title").text($(".page .title h3").addClass("fadeInLeft").text());
+                $(".page .body .main").slideDown();
+                $("div.gl-widget").css("top", "45px");
+                $("div.toolbar").css("top", "-25px");
+                $("div.toolbar").css("padding-right", "15px");
+                $(".demo").hide();
+            });
+
+        });
+    </script>
+</head>
+
+<body class="hidden-menu minified">
+    <div id="main" role="main">
+        <div id="content" style="padding-right:30px">
+        </div>
+    </div>
+</body>
+</html>

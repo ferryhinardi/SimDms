@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Projects\PublishReport</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>09/06/2015 22:53:58</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>09/06/2015 22:54:12</publishTime>
+    </File>
+    <File Include="bin/eXpressReport.dll">
+      <publishTime>10/20/2015 17:16:41</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CSharp.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>09/06/2015 22:54:43</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/06/2015 22:54:47</publishTime>
+    </File>
+    <File Include="bin/System.ComponentModel.DataAnnotations.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Configuration.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Data.DataSetExtensions.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Data.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Drawing.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.EnterpriseServices.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>09/06/2015 22:54:16</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.Serialization.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Security.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Abstractions.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.ApplicationServices.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.DynamicData.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Entity.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Extensions.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>09/06/2015 22:54:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>09/06/2015 22:54:17</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>09/06/2015 22:54:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>09/06/2015 22:54:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>09/06/2015 22:54:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>09/06/2015 22:54:15</publishTime>
+    </File>
+    <File Include="bin/System.Web.Routing.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Services.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>09/06/2015 22:54:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>09/06/2015 22:54:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>09/06/2015 22:54:18</publishTime>
+    </File>
+    <File Include="bin/System.Xml.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/System.Xml.Linq.dll">
+      <publishTime>09/26/2012 03:16:08</publishTime>
+    </File>
+    <File Include="bin/Telerik.Reporting.dll">
+      <publishTime>10/16/2015 06:24:47</publishTime>
+    </File>
+    <File Include="bin/Telerik.Reporting.OpenXmlRendering.dll">
+      <publishTime>10/16/2015 06:24:48</publishTime>
+    </File>
+    <File Include="bin/Telerik.Reporting.Service.dll">
+      <publishTime>10/16/2015 06:24:47</publishTime>
+    </File>
+    <File Include="bin/Telerik.Reporting.Services.WebApi.dll">
+      <publishTime>10/16/2015 06:24:48</publishTime>
+    </File>
+    <File Include="bin/Telerik.Reporting.XpsRendering.dll">
+      <publishTime>10/16/2015 06:24:48</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>09/06/2015 22:55:11</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/19/2015 09:12:20</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/19/2015 14:31:28</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/20/2015 10:33:24</publishTime>
+    </File>
+    <File Include="Reports/DealerList.trdx">
+      <publishTime>10/20/2015 17:08:15</publishTime>
+    </File>
+    <File Include="Reports/masterdealer.trdx">
+      <publishTime>10/20/2015 17:08:29</publishTime>
+    </File>
+    <File Include="ReportViewer/js/basket-loader.js">
+      <publishTime>10/19/2015 14:31:39</publishTime>
+    </File>
+    <File Include="ReportViewer/js/basket.full.min.js">
+      <publishTime>10/19/2015 14:31:39</publishTime>
+    </File>
+    <File Include="ReportViewer/js/general.js">
+      <publishTime>10/19/2015 14:31:39</publishTime>
+    </File>
+    <File Include="ReportViewer/js/jquery-1.9.1.min.js">
+      <publishTime>10/19/2015 14:31:39</publishTime>
+    </File>
+    <File Include="ReportViewer/js/kendo.web.min.js">
+      <publishTime>10/19/2015 14:31:40</publishTime>
+    </File>
+    <File Include="ReportViewer/js/telerikReportViewer-9.2.15.930.js">
+      <publishTime>10/19/2015 14:31:40</publishTime>
+    </File>
+    <File Include="ReportViewer/js/telerikReportViewer-9.2.15.930.min.js">
+      <publishTime>10/19/2015 14:31:40</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/editor.png">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/imagebrowser.png">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/indeterminate.gif">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/loading-image.gif">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/loading.gif">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/loading_2x.gif">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/slider-h.gif">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/slider-v.gif">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/sprite.png">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/sprite_2x.png">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/sprite_kpi.png">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/BlueOpal/sprite_kpi_2x.png">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/adaptive.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/all.less">
+      <publishTime>10/19/2015 14:31:32</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/base.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/calendar.less">
+      <publishTime>10/19/2015 14:31:32</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/core.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/editor.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/forms.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/gantt.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/grid.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/ie7.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/imagebrowser.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/inputs.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/menu.less">
+      <publishTime>10/19/2015 14:31:32</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/mixins.less">
+      <publishTime>10/19/2015 14:31:32</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/notification.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/panelbar.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/pivot.less">
+      <publishTime>10/19/2015 14:31:32</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/progressbar.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/responsivepanel.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/scheduler.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/slider.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/splitter.less">
+      <publishTime>10/19/2015 14:31:32</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/tabstrip.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/toolbar.less">
+      <publishTime>10/19/2015 14:31:32</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/tooltip.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/treelist.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/treeview.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/upload.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/virtuallist.less">
+      <publishTime>10/19/2015 14:31:31</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/common/window.less">
+      <publishTime>10/19/2015 14:31:32</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/editor.png">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/imagebrowser.png">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/indeterminate.gif">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/loading-image.gif">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/loading.gif">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/loading_2x.gif">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/slider-h.gif">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/slider-v.gif">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/sprite.png">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/sprite_2x.png">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/sprite_kpi.png">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/Default/sprite_kpi_2x.png">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/font-awesome.min.css">
+      <publishTime>10/19/2015 14:31:39</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/dejavu.less">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSans-Bold.ttf">
+      <publishTime>10/19/2015 14:31:38</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSans-BoldOblique.ttf">
+      <publishTime>10/19/2015 14:31:38</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf">
+      <publishTime>10/19/2015 14:31:38</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSans.ttf">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSansMono-Bold.ttf">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSansMono-BoldOblique.ttf">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSansMono-Oblique.ttf">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSansMono.ttf">
+      <publishTime>10/19/2015 14:31:38</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSerif-Bold.ttf">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSerif-BoldItalic.ttf">
+      <publishTime>10/19/2015 14:31:38</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSerif-Italic.ttf">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/DejaVuSerif.ttf">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/DejaVu/LICENSE.txt">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/fontawesome-webfont.eot">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/fontawesome-webfont.svg">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/fontawesome-webfont.ttf">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/fontawesome-webfont.woff">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/fontawesome-webfont.woff2">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/FontAwesome.otf">
+      <publishTime>10/19/2015 14:31:39</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/icons.ttf">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/icons.woff">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/fonts/img.svg">
+      <publishTime>10/19/2015 14:31:37</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/images/kendoui.ttf">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/images/kendoui.woff">
+      <publishTime>10/19/2015 14:31:30</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/kendo.blueopal.min.css">
+      <publishTime>10/19/2015 14:31:39</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/kendo.common.min.css">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/telerikReportViewer-9.2.15.930.css">
+      <publishTime>10/19/2015 14:31:36</publishTime>
+    </File>
+    <File Include="ReportViewer/styles/telerikReportViewer-9.2.15.930.min.css">
+      <publishTime>10/19/2015 14:31:39</publishTime>
+    </File>
+    <File Include="ReportViewer/templates/telerikReportViewerTemplate-9.2.15.930.html">
+      <publishTime>10/19/2015 14:31:40</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>10/19/2015 14:31:29</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>10/19/2015 14:31:28</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>10/19/2015 14:31:28</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/19/2015 14:31:28</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/20/2015 17:16:43</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

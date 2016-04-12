@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <script src="jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.wg-editor {
+	 		padding: 20px 10px;
+		}
+
+	 	.wg-editor #editor {
+	        width: 50%;
+	        height: 400px;
+	        border: 1px solid #ccc;
+	    }
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function (argument) {
+			var editor = ace.edit("editor");
+			editor.setTheme("ace/theme/crimson_editor");
+   			editor.getSession().setMode("ace/mode/sql");
+		})
+	</script>
+</head>
+<body>
+	<div class="wg-editor">
+	  	<div id="editor">some text</div>
+	</div>
+</body>
+</html>

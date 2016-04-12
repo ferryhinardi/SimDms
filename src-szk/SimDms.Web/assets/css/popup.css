@@ -1,0 +1,50 @@
+﻿.overlay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+.popup-frame {
+  display: none;
+}
+.popup-frame.outer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 25%;
+  height: 25%;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1%;
+}
+.popup-frame.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #F7F7F7;
+}
+/*
+    Crop Image Style    
+*/
+.crop-image {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 10px 10px 0px 10px;
+}
+.crop-image .content {
+  width: 100%;
+  height: 85%;
+  background-color: #E6E6E6;
+}
+.crop-image .footer {
+  text-align: center;
+  border-top: 2px solid #2AA1C4;
+}
+.crop-image .footer button {
+  margin-left: 5px;
+  width: 90px;
+  margin-top: 5px;
+}

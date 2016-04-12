@@ -1,0 +1,120 @@
+﻿<script type="text/javascript">
+    function templateById(id) {
+        return "@Settings.Home" + "api/files/templates/" + id + "/html";
+    }
+    function controllerById(id) {
+        return "@Settings.Home" + "api/files/templates/" + id + "/js";
+    }
+    function cssById(id) {
+        return "@Settings.Home" + "api/files/templates/" + id + "/css";
+    };
+        
+    window.DevelopmentMode = "@Settings.DevelopmentMode";
+    window.BaseAddress = "@ViewBag.BaseAddress";       
+
+    function loadScript(url, callback) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        if (script.readyState) { //IE
+            script.onreadystatechange = function() {
+                if (script.readyState == "loaded" ||
+                    script.readyState == "complete") {
+                    script.onreadystatechange = null;
+                    callback();
+                }
+            };
+        } else { //Others
+            script.onload = function() {
+                callback();
+            };
+        }
+        script.src = url;
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }
+</script>
+
+@if (@Model is HelperResult)
+{
+    @Model
+}
+
+<script src="@Url.Content("~/cdn/system/content/scripts/jquery-bundle.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular/angular.min.js")"></script>
+
+<script src="@Url.Content("~/cdn/system/content/scripts/codemirror-bundle.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular-ui/toastr.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/jquery/jquery.layout.js")"></script>
+
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular/angular-route.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular/angular-animate.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular/angular-sanitize.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular/angular-resource.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular/angular-cookies.min.js")"></script>
+
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/jquery/superbox.min.js")"></script>
+
+<script src="@Url.Content("~/cdn/system/content/kendoui/js/kendo.all.min.js")"></script>
+
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular-ui/ui-bootstrap-tpls-0.14.3.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/jquery/superbox.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/jszip.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular-ui/angular-moment.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular-ui/ui-utils.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular-ui/angular-block-ui.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular-ui/angular-css.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/grid/handsontable/handsontable.full.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/grid/datatables/datatables.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular-ui/adapt-strap.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular-ui/adapt-strap.tpl.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular-ui/angular-idle.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/angular-ui/angular-modal-service.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/jsnlog.min.js")"></script>
+<script src="@Url.Content("~/cdn/system/content/scripts/libs/jquery/fileupload/jquery.fileupload-angular.js")"></script>
+
+<script src="@Url.Content("~/cdn/system/content/kendoui/js/kendo.ext.min.js")"></script>
+
+@if (ViewBag.Developer == true)
+{
+    <script  type="text/javascript">
+        if (window.IsDeveloper == "True") {
+            loadScript('@Url.Content("~/cdn/system/content/scripts/app/layout.min.js")', function() {
+                $('#btn-clear-cache').on('click', function(e) {
+                    toastr["success"]("cache clear", "Success");
+                });
+                $('#btn-save-editor').removeClass("hide");
+                $("#btn-load-schema").removeClass("hide");
+                $("#btn-clear-cache").removeClass("hide");
+                $("#search-fld").width(500);
+
+                   
+                $("#btnTestExecute").on('click', function () {
+                         $.ajax({
+                            type: "POST",
+                            url: "appengine/execute",
+                            data: cfg_editor.getValue()
+                        })
+                        .done(function (ret) {
+                            console.log(ret)
+                            toastr["success"]( "Source code has been compiled")
+                        });
+                }) 
+
+            });
+        }
+    </script>
+}
+else
+{
+    <script type="text/javascript">
+        loadjscssfile(controllerById('GLOBALAPP'), "js");
+        var url = templateById('GLOBALFN');
+
+        $.ajax({
+            url: url
+        }).done(function(data) {
+            $(data).appendTo(document.body);
+        });
+    </script>
+
+    <script data-main="@Url.Content("~/cdn/system/content/r-config")" src="@Url.Content("~/cdn/system/content/scripts/require.js")"></script>
+}

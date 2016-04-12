@@ -1,0 +1,492 @@
+@base-color: #007acc;
+
+.kgrid
+{
+	.k-grid-toolbar
+	{
+		.k-filter
+		{
+			margin: 0;
+			max-width: 900px;
+			min-width: 480px;
+			padding: 12px 0;
+
+			> div
+			{
+				float: left;
+				width: 100%;
+				margin: -2px 0 0 0;
+				padding: 0 8px;
+
+				> label
+				{
+					margin: 0;
+				}
+
+				> div
+				{
+					margin: -24px 0 0 0;
+					padding: 0 0 0 120px;
+
+					> .controls
+					{
+						margin-right: -4px;
+
+						> div
+						{
+							float: left;
+							padding: 0 4px 0 0;
+
+							&.span1
+							{
+								width: 12.5%;
+							}
+
+							&.span2
+							{
+								width: 25%;
+							}
+
+							&.span3
+							{
+								width: 37.5%;
+							}
+
+							&.span4
+							{
+								width: 50%;
+							}
+
+							&.span5
+							{
+								width: 62.5%;
+							}
+
+							&.span6
+							{
+								width: 75%;
+							}
+
+							&.span7
+							{
+								width: 87.5%;
+							}
+
+							&.span8
+							{
+								width: 100%;
+							}
+						}
+					}
+				}
+
+				&.full-length
+				{
+					> div
+					{
+						margin-top: 6px;
+						padding-left: 0px;
+					}
+				}
+
+				&.span1
+				{
+					width: 12.5%;
+				}
+
+				&.span2
+				{
+					width: 25%;
+				}
+
+				&.span3
+				{
+					width: 37.5%;
+				}
+
+				&.span4
+				{
+					width: 50%;
+				}
+
+				&.span5
+				{
+					width: 62.5%;
+				}
+
+				&.span6
+				{
+					width: 75%;
+				}
+
+				&.span7
+				{
+					width: 87.5%;
+				}
+
+				&.span8
+				{
+					width: 100%;
+				}
+			}
+		}
+
+		.k-toolbars
+		{
+			button
+			{
+				margin: 0 4px 0 0;
+				padding: 5px 10px;
+
+				.icon
+				{
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+
+	.k-grid-header
+	{
+		padding-right: 0!important;
+		/*height: 31px;*/
+		.k-grid-header-wrap
+		{
+			border: none;
+			background-color: transparent;
+			height: 31px;
+
+			th.k-header
+			{
+				height: 30px;
+				border: none;
+				padding: 4px 10px;
+
+				a.k-link.right
+				{
+					margin-right: 0px;
+					text-align: right;
+				}
+			}
+		}
+	}
+
+	.k-grid-content
+	{
+		overflow-y: auto;
+		height: auto !important;
+
+		> table
+		{
+			margin: 0;
+
+			td
+			{
+				padding: 4px 10px;
+				border: none;
+			}
+
+			.k-state-selected
+			{
+				td
+				{
+					color: white;
+					background-color: lighten(@base-color, 20%);
+				}
+			}
+		}
+	}
+
+	.k-grid-footer
+	{
+		padding-right: 0!important;
+		height: 31px;
+
+		.k-grid-footer-wrap
+		{
+			border: none;
+			background-color: transparent;
+			height: 30px;
+
+			td
+			{
+				border: none;
+				text-align: right;
+			}
+		}
+	}
+
+	.k-grid-pager
+	{
+		height: 31px;
+
+		.k-pager-sizes
+		{
+			.k-widget.k-dropdown.k-header
+			{
+				margin: -4px 8px 0 !important;
+				width: 65px;
+			}
+		}
+	}
+
+	.right
+	{
+		text-align: right;
+	}
+}
+
+.panel.kgrid
+{
+	max-width: 100%;
+
+	&.k-panel
+	{
+		max-width: 1100px;
+		min-width: 570px;
+	}
+
+	> div
+	{
+		&.divider
+		{
+			margin: 0;
+		}
+
+		&.subtitle
+		{
+			margin: 0;
+		}
+
+		> div
+		{
+			margin: 0 -10px 10px 0;
+			padding: 0;
+		}
+	}
+}
+
+.k-datepicker-wrapper
+{
+	margin: 1px 0 14px;
+
+	.k-datepicker, .k-timepicker, .k-datetimepicker
+	{
+		width: 100%;
+
+		.k-picker-wrap
+		{
+			border: none;
+
+			input
+			{
+				border: 1px solid lighten(@base-color, 25%);
+				font-size: 14px;
+				padding-left: 4px;
+				height: 32px;
+				box-shadow: 0px 1px 2px rgb(179, 224, 255) inset;
+			}
+
+			.k-select
+			{
+				border: 1px solid lighten(@base-color, 25%);
+				border-left: none;
+
+				.k-icon
+				{
+					margin-top: -2px;
+					margin-right: -2px;
+				}
+			}
+
+			label.error
+			{
+				display: none !important;
+			}
+		}
+	}
+
+	.k-datepicker, .k-timepicker
+	{
+		.k-picker-wrap
+		{
+			padding-right: 28px;
+		}
+	}
+
+	.k-datetimepicker
+	{
+		.k-picker-wrap
+		{
+			padding-right: 48px;
+
+			.k-select
+			{
+				.k-icon.k-i-clock
+				{
+					margin-right: -10px;
+				}
+			}
+		}
+	}
+}
+
+.k-number-wrapper
+{
+	margin: 1px 0 14px;
+
+	.k-numerictextbox
+	{
+		width: 100%;
+
+		.k-numeric-wrap
+		{
+			border: none;
+			padding-right: 28px;
+
+			input
+			{
+				font-size: 14px;
+				text-align: right;
+				height: 32px;
+				margin-top: -1px;
+				padding: 0 8px;
+			}
+
+			.k-select
+			{
+				border: 1px solid lighten(@base-color, 25%);
+				border-left: none;
+
+				.k-icon
+				{
+					margin-top: -2px;
+					margin-right: -2px;
+				}
+			}
+		}
+	}
+}
+
+.k-richtext-wrapper
+{
+	margin: 1px 0 14px;
+
+	.k-editor
+	{
+		border: 1px solid lighten(@base-color, 25%);
+		margin: 0;
+
+		.k-editor-toolbar-wrap
+		{
+
+			.k-editor-toolbar
+			{
+				.k-tool-group
+				{
+					margin-right: 4px;
+
+					.k-dropdown
+					{
+						.k-input
+						{
+							padding: 0 2px;
+						}
+
+						.k-select
+						{
+							margin-top: -2px;
+						}
+					}
+
+					a
+					{
+						display: inline-block;
+						width: 26px;
+						text-indent: -1000px;
+						border: 1px solid;
+						margin: 0 1px;
+						padding: 2px 1px;
+					}
+				}
+			}
+		}
+
+		.k-editable-area
+		{
+			border: 1px solid lighten(@base-color, 25%);
+		}
+	}
+}
+
+.k-state-border-down
+{
+	padding-bottom: 0 !important;
+}
+
+.k-calendar-container
+{
+	background-color: white;
+	margin: 2px 0;
+	padding: 0;
+
+	.k-calendar
+	{
+		font-size: 14px;
+
+		.k-header
+		{
+			font-weight: bold;
+		}
+
+		.k-footer
+		{
+			font-size: 12px;
+		}
+	}
+}
+
+.k-list-container
+{
+	min-width: 180px;
+
+	ul
+	{
+		li
+		{
+			font-size: 14px;
+		}
+	}
+}
+
+
+.k-grid-content
+{
+    > .k-selectable {
+        > tbody {
+            > tr {
+                > td {
+                    > input.check_item {
+                        box-shadow: 0 0 0px #ffffff;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.k-grid-header-wrap {
+    > table {
+        > thead {
+            > tr {
+                > th {
+                    input[type='checkbox'] {
+                        box-shadow: 0 0 0 #ffffff;
+                        height: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Trans X</title>
+    <link href="assets/css/style.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="impress"></div>
+    <script src="assets/js/jquery-2.0.3.min.js"></script>
+    <script src="assets/js/impress.js"></script>
+    <script src="assets/js/gelang.js"></script>
+    <script src="assets/js/gelang.slide.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var slide = new GeLang.Slide({
+                slides: [
+                    { name: "slide1", title: "Slide 01", x: 1000, y: 0, z: 0, rx: 0, ry: 0, rz: 0 },
+                    { name: "slide2", title: "Slide 02", x: 2000, y: 0, z: 0, rx: 0, ry: 0, rz: 0 },
+                    { name: "slide3", title: "Slide 03", x: 3000, y: 0, z: 0, rx: 0, ry: 0, rz: 0 },
+                    { name: "slide4", title: "Slide 04", x: 4000, y: 0, z: 0, rx: 0, ry: 0, rz: 0 },
+                ]
+            });
+            slide.render();
+        });
+    </script>
+</body>
+</html>

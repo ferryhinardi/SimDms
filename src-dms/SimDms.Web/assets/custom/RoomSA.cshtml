@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>ROOM SA</title>
+    <link href="~/assets/css/vendor/kendo/kendo.common.css" rel="stylesheet" />
+    <link href="~/assets/css/vendor/kendo/kendo.metro.css" rel="stylesheet" />
+    <link href="~/assets/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="~/assets/js/vendors/modernizr.js"></script>
+    <script src="~/assets/js/vendors/jquery-2.1.3.min.js"></script>
+    <script src="~/assets/js/vendors/kendo.all.min.js"></script>
+    <script src="~/assets/js/vendors/bootstrap/bootstrap.min.js"></script>
+
+</head>
+
+<body style="background-color:black">
+    <script>
+        var Serving = [
+            { RegNo: "B1234ABC", QueueNo: "B-001", Counter: "COUNTER 1" },
+            { RegNo: "B1234DEF", QueueNo: "N-001", Counter: "COUNTER 2" },
+            { RegNo: "B1234GHI", QueueNo: "D-001", Counter: "COUNTER 3" },
+            { RegNo: "B1234GHI", QueueNo: "D-001", Counter: "COUNTER 3" },
+            { RegNo: "B1234GHI", QueueNo: "D-001", Counter: "COUNTER 3" },
+        ];
+        var Waiting = [
+            { RegNo: "B1234ABC", QueueNo: "B-001", Estimation: "1 mins" },
+            { RegNo: "B1234DEF", QueueNo: "N-001", Estimation: "5 mins" },
+            { RegNo: "B1234GHI", QueueNo: "D-001", Estimation: "30 mins" },
+            { RegNo: "B1234GHI", QueueNo: "D-001", Estimation: "30 mins" },
+            { RegNo: "B1234GHI", QueueNo: "D-001", Estimation: "30 mins" },
+        ];
+    </script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <h1 id="lblID" style="text-align:center; background-color:darkgrey; color:white; font-weight:700">SA - 01</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="col-md-12" style="text-align:center;font-weight:700; font-size:50px; border:inset; color:white; height:135px">
+                            <label id="QueueNo">B-001</label>
+                        </div>
+                        <div class="col-md-12" style="text-align:center;vertical-align:bottom; font-weight:700; font-size:50px; border:inset; color:white; height:135px">
+                            <label id="QueueNo">2</label>
+                            @*<input type="text" class="form-control" id="txtCounter">*@
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-12" style="border:inset;  background-color:grey; color:white">
+                            <label class="col-md-12" for="process" style="font-size:20px">Waiting Time</label>
+                            <label class="col-md-12" for="Counter" style="font-size:35px">6" 22'</label>
+                        </div>
+                        <div class="col-md-12" style="border:inset; background-color:grey; color:white">
+                            <label class="col-md-12" for="process" style="font-size:20px">Avg. Waiting Time</label>
+                            <label class="col-md-12" for="Counter" style="font-size:35px">2" 62'</label>
+                        </div>
+                        <div class="col-md-12" style="border:inset; background-color:grey; color:white">
+                            <label class="col-md-12" for="process" style="font-size:20px">Timer</label>
+                            <label class="col-md-12" for="Counter" style="font-size:35px">0" 33'</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row"><br/></div>
+                <div class="row">
+                    <button id="btnCall" type="submit" class="btn btn-default col-md-4" style="font-size:50px; font-weight:bold; background-color:mediumvioletred; color:white">Call</button>
+                    <button id="btnRecall" type="submit" class="btn btn-default col-md-4"style="font-size:50px; font-weight:bold; background-color:mediumvioletred;color:white">Recall</button>
+                    <button id="btnHold" type="submit" class="btn btn-default col-md-4"style="font-size:50px; font-weight:bold; background-color:mediumvioletred;color:white">Hold</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <button id="btnCancel" type="submit" class="btn btn-default col-md-4"style="font-size:50px; font-weight:bold; background-color:mediumvioletred;color:white">Cancel</button>
+                    <button id="btnSend" type="submit" class="btn btn-default col-md-4"style="font-size:50px; font-weight:bold; background-color:mediumvioletred;color:white">Send</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1 style="text-align:center; background-color:darkgrey; color:white; font-weight:700">NOW SERVING</h1>
+                <div id="gridserving">
+                    <script>
+                        $(document).ready(function () {
+                            $("#gridserving").kendoGrid({
+                                dataSource: {
+                                    data: Serving,
+                                },
+                                groupable: false,
+                                sortable: false,
+                                pageable: false,
+                                scrollable: false,
+                                columns: [
+                                    { field: "RegNo", title: "Reg. No" },
+                                    { field: "QueueNo", title: "Que. No" },
+                                    { field: "Counter", title: "Counter" }
+                                ]
+                            })
+                        });
+                    </script>
+                    <style type="text/css">
+                        .k-header {
+                            font-weight: bold !important;
+                            text-align: center !important;
+                            /*font-size: larger !important;*/
+                            background-color: cadetblue !important;
+                            color: black;
+                        }
+                    </style>
+                </div>
+                <h1 style="text-align:center; background-color:saddlebrown; color:white; font-weight:700">WAITING LIST</h1>
+                <div id="gridwaiting">
+                    <script>
+                        $(document).ready(function () {
+                            $("#gridwaiting").kendoGrid({
+                                dataSource: {
+                                    data: Waiting,
+                                },
+                                groupable: false,
+                                sortable: false,
+                                pageable: false,
+                                scrollable: false,
+                                selectable: true,
+                                columns: [
+                                    { field: "RegNo", title: "Reg. No" },
+                                    { field: "QueueNo", title: "Que. No" },
+                                    { field: "Estimation", title: "Est. Time" }
+                                ]
+                            })
+                        });
+                    </script>
+                    <style type="text/css">
+                        #gridwaiting .k-header {
+                            font-weight: bold !important;
+                            text-align: center !important;
+                            /*font-size: larger !important;*/
+                            background-color: forestgreen !important;
+                            color: white;
+                        }
+                        .k-grid {
+                            /*font-size: 20px;*/
+                            text-align: center;
+                            font-weight: bold;
+                            /*color: blue;*/
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

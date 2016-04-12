@@ -1,0 +1,19 @@
+{
+  "name": "SIMDMS",
+  "version": "1.0.0",
+  "authors": [
+    "Osen Kusnadi <sdms.osen.kusnadi@suzuki.co.id>"
+  ],
+  "description": "SUZUKI Dealer Management System",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handsontable": "~0.15.0"
+  }
+}

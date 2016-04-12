@@ -1,0 +1,29 @@
+﻿@using eXpressAPI
+@using eXpressAPI.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutApp.cshtml";
+}
+
+
+@section pagespecific {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //var url = templateById('GLOBALFN');
+            //console.log(url)
+
+            loadjscssfile(controllerById('GLOBALAPP'), "js");
+            $('#btn-save-editor').hide();
+            $("#btn-load-schema").hide();
+
+            //$.ajax({
+            //    url: url
+            //}).done(function (data) {
+            //    console.log(data)
+            //    $(data).appendTo(document.body);
+            //});
+        });
+    </script>
+    <script data-main="Content/Scripts/main.min" src="~/Content/Scripts/require.js"></script>
+}

@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Login.cshtml";
+    ViewBag.Title = "Login Info";
+    bool authenticated = User.Identity.IsAuthenticated;
+}
+<script src="@Url.Content("~/assets/js/app/loginfo.js")"></script>
+<div class="logout">
+    <form method="post">
+        <div>
+            <label>User Login</label>
+            <div>
+                <input type="text" placeholder="User Login" value="@User.Identity.Name" readonly="readonly"/>
+            </div>
+        </div>
+        <div>
+            <label>&nbsp;</label>
+            <div>
+                <a href="@Url.Content("~/Account/LogOut")" class="button small" >Log Out</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modules"></div>

@@ -1,0 +1,399 @@
+﻿@using SimDms.Document.Models;
+@{
+    ViewBag.Title = "ManageIndex";
+    Layout = null;
+}
+<style>
+    .pull-left {
+  float: left !important;
+}
+</style>
+<div class="toolbar fullfill" style="height: 50px">
+    <div class=" pull-right">
+        <input type="button" id="btnSave" class="btn btn-primary" value="Save" />
+        <input type="button" id="btnCancel" class="btn btn-primary" value="Cancel" />
+        <button type="button" class="btn btn-primary"  id="btnAddSub"><i class="icon-file"></i> Add SubItem</button>
+        <button type="button" class="btn btn-primary" id="btnEditChld" disabled="disabled"><i class="icon-edit"></i> Edit</button>
+        <button type="button" class="btn btn-primary" id="btnDelChld" disabled="disabled"><i class="icon-remove"></i> Delete</button>
+    </div>
+    <div class=" pull-right">
+        
+    </div>
+</div>
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "frmManageIndex" }))
+{
+    <div class="clearfix divider" id="AddNew" style="display:none">
+        <label class="labelwidth pull-left" id="lblAddItem">
+            
+        </label>
+        <div class="pull-left span4">
+            @Html.TextBox("txtMenuTitle", "", new { @class = "fullfill" })
+            @Html.Hidden("txtMenuVal", "")
+            @Html.Hidden("txtLevel", "")
+            @Html.Hidden("txtMenuID", "")
+            <span id="IsHeader" style="display:none">Contain Module ?  @Html.CheckBox("chkIsContainModule", false)</span>
+         </div>
+    </div>
+    <div class="clearfix divider">
+        <label class=" labelwidth pull-left">
+            Select Parent Item
+        </label>
+        <div class="pull-left span8">
+            @Html.DropDownList("ListIndex", new SelectList((List<SelectListItem>)ViewData["ListIndex"], "Value", "Text"), new { @style="width:60%;"})
+@*            <button type="button" class="btn btn-primary" id="btnAddSib"><i class="icon-file"></i> Add Item</button>*@
+            @*<button type="button" class="btn btn-primary" id="btnEditPrnt"><i class="icon-edit"></i> Edit</button>*@
+        </div>
+    </div>
+    <div class="clearfix divider">
+        <label class=" labelwidth pull-left">
+            List Child Item
+        </label>
+        <div class="pull-left span8">
+            @Html.DropDownList("ListChild", new SelectList("", ""), new { @style="width:50%;", @Size = "5" })
+        <button type="button" id="btnUp" class="btn btn-primary" disabled="disabled"><i class="icon-arrow-up"></i> Up</button>
+        <button type="button" id="btnDown" class="btn btn-primary" disabled="disabled"><i class="icon-arrow-down"></i> Down</button>
+        </div>
+        @*<input type="button" value="Up" id="btnUp" class="btn btn-primary" disabled="disabled"/>
+          <input type="button" value="Down" id="btnDown" class="btn btn-primary" disabled="disabled" />*@
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        var highSeq;
+        var minSeq;
+        var SelectedMenuID;
+        $('#ListIndex').select2();
+        EditButton();
+        if (GetSubItem($('#ListIndex').find(":selected").text()) > 0) {
+            $('#btnDelPrnt').attr('disabled', 'disabled');
+        }
+        else {
+            $('#btnDelPrnt').removeAttr('disabled');
+        }
+        GetChildList($('#ListIndex').val());
+
+        function CancelEdit() {
+            EditButton();
+            $('#lblAddItem').text("");
+            $('#AddNew').slideUp();
+            $('#txtMenuTitle').val("");
+            $('#txtMenuVal').val("");
+            $('#txtLevel').val("");
+            $('#txtMenuID').val("");
+        }
+
+        function EditButton() {
+            $('#btnSave, #btnCancel').fadeOut(function () {
+                $('#btnAddSub, #btnEditChld, #btnDelChld, #btnDelPrnt').fadeIn();
+            });
+        }
+
+        function SaveButton() {
+            $('#btnAddSub, #btnEditChld, #btnDel, #btnDelChld, #btnDelPrnt').fadeOut(function () {
+                $('#btnSave, #btnCancel').fadeIn();
+            });
+        }
+
+        function AddButton() {
+            $('#btnEditChld').attr('disabled', 'disabled');
+            $('#btnDelChld').attr('disabled', 'disabled');
+        }
+
+        function PopulateIndex() {
+            $('#ListIndex')
+            .find('option')
+            .remove()
+            .end();
+            $.ajax({
+                url: '@Url.Content("~/Management/GetAllItem")',
+                data: { MenuID: 0 },
+                type: 'POST',
+                success: function (value) {
+                    var htmlTag = "";
+                    var maxObj = value.length;
+                    var item = 0;
+                    $.each(value, function (key, val) {
+                        var arrayVal = val.Value.split("|");
+                        if (minSeq == 0)
+                            minSeq = arrayVal[1]
+                        item++;
+                        if (item == maxObj) {
+                            highSeq = arrayVal[1];
+                        }
+                        htmlTag += "<option value='" + arrayVal[0] + "' menuseq='" + arrayVal[1] + "'>" + val.Text + "</option>";
+                    });
+                    if (value.length > 0) {
+                        $('#ListIndex').append(htmlTag);
+                    }
+                }
+            });
+        }
+
+        function GetSubItem(selectedText) {
+            if (selectedText.indexOf("Parent") == -1) {
+                var arrVal = selectedText.split('(');
+                var val = arrVal[1].split(')');
+                item = val[0].split(' ');
+                return item[0];
+            }
+        }
+
+        function DeleteItem(itemVal, parentItem) {
+            $.ajax({
+                url: '@Url.Content("~/Management/DeleteItem")',
+                data: { MenuID: itemVal },
+                type: 'POST',
+                success: function (value) {
+                    alert('Data Berhasil Dihapus');
+                    GetChildList(parentItem);
+                }
+            });
+        }
+
+        function GetIsContainModule() {
+            var menuID = $('#ListChild').find(":selected").val()
+            if ($('#ListIndex').find(":selected").val() == 0) {
+                $.ajax({
+                    url: '@Url.Content("~/Management/GetStatusHeader")',
+                    data: { MenuID: menuID },
+                    type: 'POST',
+                    success: function (value) {
+                        $('#chkIsContainModule').prop('checked', value);
+                    }
+                });
+            }
+        }
+
+        function CheckModule() {
+            if ($('#ListIndex').find(":selected").val() == 0) {
+                $('#IsHeader').show();
+            }
+            else {
+                $('#IsHeader').hide();
+            }
+        }
+
+        function VisibleSibButton() {
+            if ($('#ListIndex').find(":selected").text().indexOf('>') == -1) {
+                $('#btnAddSib').show();
+            }
+            else {
+                $('#btnAddSib').hide();
+            }
+        }
+
+        function GetChildList(MenuID) {
+            $('#ListChild')
+           .find('option')
+           .remove()
+           .end();
+            minSeq = 0;
+            highSeq = 0;
+            $.ajax({
+                url: '@Url.Content("~/Management/GetMenuChild")',
+                data: { MenuID: MenuID },
+                type: 'POST',
+                success: function (value) {
+                    var htmlTag = "";
+                    var maxObj = value.length;
+                    var item = 0;
+                    $.each(value, function (key, val) {
+                        var arrayVal = val.Value.split("|");
+                        if (minSeq == 0)
+                            minSeq = arrayVal[1]
+                        item++;
+                        if (item == maxObj) {
+                            highSeq = arrayVal[1];
+                        }
+                        htmlTag += "<option value='" + arrayVal[0] + "' menuseq='" + arrayVal[1] + "'>" + val.Text + "</option>";
+                    });
+                    if (value.length > 0) {
+                        $('#ListChild').append(htmlTag);
+                    }
+                }
+            });
+        }
+
+        function EnableUpDownButton(MenuID) {
+            $.ajax({
+                url: '@Url.Content("~/Management/EnableUpDownButton")',
+                data: { MenuID: MenuID},
+                type: 'POST',
+                success: function (value) {
+                    console.log(value);
+                    if (value == "up") {
+                        $("#btnUp").removeAttr('disabled');
+                        $("#btnDown").attr('disabled', 'disabled');
+                    }
+                    else if (value == "down") {
+                        $("#btnUp").attr('disabled', 'disabled');
+                        $("#btnDown").removeAttr('disabled');
+                    }
+                    else {
+                        $("#btnUp,#btnDown").removeAttr('disabled');
+                    }
+                }
+            });
+        }
+
+        $('#btnUp, #btnDown').click(function (evt) {
+            var menuID = $('#ListChild').find(":selected").val();
+            var operation = "";
+            if (evt.currentTarget.id === "btnUp") {
+                operation = "up";
+            } else {
+                operation = "down";
+            }
+            $.ajax({
+                url: '@Url.Content("~/Management/MoveUpDownSequence")',
+                data: { MenuID: menuID, Operation:operation },
+                type: 'POST',
+                success: function (value) {
+                    GetChildList($('#ListIndex').val());
+                }
+            });
+            $('#btnUp, #btnDown').attr('disabled', 'disabled');
+        });
+
+        $('#btnDelChld').click(function () {
+            if(confirm("Apakah anda angin menghapus content Index ini?"))
+            {
+                var selectedValue = $('#ListIndex').find(":selected").val();
+                var deleteItem = $('#ListChild').find(":selected").val();
+                DeleteItem(deleteItem, selectedValue);
+            }
+        });
+
+
+        $('#btnAdd').click(function () {
+            $('#lblAddItem').text("Add New Item");
+            $('#AddNew').slideDown();
+        });
+
+        $('#btnEditChld').click(function () {
+            CheckModule();
+            $('#lblAddItem').text("Edit Item");
+            $('#AddNew').slideDown();
+            $('#txtMenuTitle').val('');
+            var menuTitle = $('#ListChild').find(":selected").text()
+            
+            $('#txtMenuTitle').val(menuTitle.substring(0,menuTitle.indexOf('(')-1));
+            SaveButton();
+            $('#txtMenuID').val($('#ListChild').find(":selected").val());
+        });
+        
+        $('#ListIndex').change(function () {
+            SelectedMenuID = $('#ListIndex').find(":selected").val();
+            GetChildList($('#ListIndex').val());
+            AddButton();
+            CancelEdit();
+            if (GetSubItem($('#ListIndex').find(":selected").text()) > 0) {
+                $('#btnDelPrnt').attr('disabled', 'disabled');
+            }
+            else {
+                $('#btnDelPrnt').removeAttr('disabled');
+            }
+        });
+
+        $('#ListChild').change(function () {
+            GetIsContainModule();
+            $('#btnEditChld').removeAttr('disabled');
+            $('#btnDelChld').removeAttr('disabled');
+            CancelEdit();
+            if (GetSubItem($('#ListChild').find(":selected").text()) > 0) {
+                $('#btnDelChld').attr('disabled', 'disabled');
+            }
+            else {
+                $('#btnDelChld').removeAttr('disabled');
+            }
+            var MenuID= $('#ListChild').find(":selected").val();
+            EnableUpDownButton(MenuID);
+        });
+
+
+        $('#ListChild').dblclick(function () {
+            var selValue = $('#ListChild').find(":selected").val();
+            console.log(selValue);
+            if (selValue !== undefined) {
+                $('#ListIndex').select2("val", selValue);
+                $('#ListIndex').change();
+            }
+            $('#btnEditChld').attr('disabled', 'disabled');
+            $('#btnUp, #btnDown').attr('disabled', 'disabled');
+        });
+
+        $('#btnAddSib').click(function () {
+            $('#lblAddItem').text("Add New Sibling Item");
+            $('#AddNew').slideDown();
+            $('#txtMenuVal').val("0");
+            $('#txtLevel').val("0");
+            $('#txtMenuID').val("0");
+            SaveButton();
+        });
+
+        $('#btnAddSub').click(function () {
+            CheckModule();
+            $('#lblAddItem').text("Add New Sub Item");
+            $('#AddNew').slideDown();
+            $('#txtLevel').val("1");
+            if (SelectedMenuID === undefined) {
+                SelectedMenuID = $('#ListIndex').find(":selected").val();
+            }
+
+            $('#txtMenuVal').val(SelectedMenuID);
+            SaveButton();
+            if ($('#ListIndex').find(":selected").text().indexOf("Parent") !== -1) {
+                $('#txtMenuVal').val("0");
+                $('#txtLevel').val("0");
+                $('#txtMenuID').val("0");
+            }
+        });
+
+        $('#btnCancel').click(function () {
+            $('#txtMenuTitle, #txtMenuVal, #txtMenuID, #txtLevel').val('');
+            $('#btnDel').fadeOut();
+            EditButton();
+            $('#AddNew').slideUp();
+        });
+
+        $('#btnSave').click(function () {
+            var MenuID =$("#txtMenuID").val();
+            var MenuVal = $("#txtMenuVal").val();
+            var MenuLvl =$("#txtLevel").val();
+            var MenuTitle = $("#txtMenuTitle").val();
+            var isHeader = isHeader = $("#chkIsContainModule").prop('checked');
+            if (SelectedMenuID === undefined) {
+                SelectedMenuID = $('#ListIndex').find(":selected").val();
+            }
+
+            if ($('#txtLevel').val() !== "") {
+                //Add Item
+                $.ajax({
+                    url: '@Url.Content("~/Management/AddItemIndex")',
+                     data: { MenuID: MenuVal, MenuTitle:MenuTitle,  MenuLevel :MenuLvl, IsHeader:isHeader},
+                     type: 'POST',
+                     success: function (value) {
+                         $('#AddNew').slideUp();
+                         EditButton();
+                         PopulateIndex();
+                         GetChildList(SelectedMenuID);
+                     }
+                 });
+            } else {
+                //Edit Item
+                $.ajax({
+                    url: '@Url.Content("~/Management/EditItemIndex")',
+                    data: { MenuID: MenuID, MenuTitle: MenuTitle, IsHeader: isHeader },
+                     type: 'POST',
+                     success: function (value) {
+                         GetChildList(SelectedMenuID);
+                         AddButton();
+                     }
+                 });
+            }
+            CancelEdit();
+        });
+
+    });
+</script>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <title>SimDms Widget</title>
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="impress"></div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/impress.js"></script>
+    <script src="assets/js/simdms.js"></script>
+    <script src="assets/js/simdms.slide.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var slide = new SimDms.Slide({
+                //debug: true,
+                contents: [
+                    { cls: "step overview", x: 3600, y: 2000, scale: 7, h2: "SDMS Development" },
+                    { cls: "step slide home", h2: "SimDms.Widget", h5: "by Wawan Sugiri", x: 0 },
+                    {
+                        cls: "step slide", h2: "Agenda", x: 1200,
+                        items: [
+                            { text: "What...?" },
+                            { text: "Why...?" },
+                            { text: "Features" },
+                            { text: "Concept" },
+                            { text: "Widget In Action" },
+                        ]
+                    },
+                    {
+                        cls: "step slide", h2: "What...?", x: 2400,
+                        items: [
+                            { text: "JS Library" },
+                            { text: "UI helper" },
+                            { text: "Data helper" },
+                            { text: "Inspired from Senca ExtJs" },
+                        ]
+                    },
+                    {
+                        cls: "step slide", h2: "Why...?", x: 3600,
+                        items: [
+                            { text: "Html 5 is good (or incredible), but sometimes it will be complex" },
+                            { text: "Need to standardize html, css & javascript" },
+                            { text: "Write code \"as simple as possible\"" },
+                            { text: "Avoid overuse of external javascript and css" },
+                        ]
+                    },
+                    {
+                        cls: "step slide", h2: "Features", x: 4800,
+                        items: [
+                            { text: "Generate layout based on json object as parameter" },
+                            { text: "Populate data to layout" },
+                            { text: "Serialize data from layout" },
+                        ]
+                    },
+                    {
+                        cls: "step slide", h2: "Concept", x: 6000,
+                        items: [
+                            { text: "Write json data as parameter to generate layout" },
+                            { text: "Generate standard UX (generic look and feel)" },
+                            { text: "No need to write html" },
+                            { text: "Minimize write javacript code" },
+                            { text: "Maintainable code" },
+                        ]
+                    },
+                    {
+                        cls: "step slide", h2: "Widger in Action", x: 7200,
+                        items: [
+                            { text: "Title & Toolbar" },
+                            { text: "Textbox & TextArea" },
+                            { text: "Spinner & Datepicker" },
+                            { text: "Select & Switch" },
+                            { text: "span, 8 columns fluid width" },
+                            { text: "Populate & Serialize" },
+                        ]
+                    },
+                    { cls: "step slide", h2: "Title & Toolbar", img: "screen_01.png", x: 7200, y: 800 },
+                    { cls: "step slide", h2: "Title & Toolbar (Code)", img: "screen_02.png", x: 7180, y: 800, z: 0, ry: 90 },
+                    { cls: "step slide", h2: "Textbox & TextArea", img: "screen_03.png", x: 7200, y: 1600, ry: 0 },
+                    { cls: "step slide", h2: "Textbox & TextArea (Code)", img: "screen_04.png", x: 7180, y: 1600, ry: 90 },
+                    { cls: "step slide", h2: "Spinner & Datepicker", img: "screen_05.png", x: 7200, y: 2400, ry: 0 },
+                    { cls: "step slide", h2: "Spinner & Datepicker (Code)", img: "screen_06.png", x: 7180, y: 2400, ry: 90 },
+                    { cls: "step slide", h2: "Select & Switch", img: "screen_07.png", x: 7200, y: 3200, ry: 0 },
+                    { cls: "step slide", h2: "Select & Switch (Code)", img: "screen_08.png", x: 7180, y: 3200, ry: 90 },
+                    { cls: "step slide", h2: "span, 8 columns fluid width", img: "screen_09.png", x: 7200, y: 4000, ry: 0 },
+                    { cls: "step slide", h2: "span, 8 columns fluid width (Code)", img: "screen_10.png", x: 7180, y: 4000, ry: 90 },
+                    { cls: "step slide", h2: "Populate & Serialize", img: "screen_11.png", x: 7200, y: 4800, ry: 0 },
+                    { name: "end", cls: "step overview", x: 3600, y: 2000, scale: 7, h2: "Thanks" },
+                ]
+            });
+            slide.render();
+            //impress().init();
+        });
+    </script>
+</body>
+</html>
+

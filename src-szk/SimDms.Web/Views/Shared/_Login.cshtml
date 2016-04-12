@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/assets/css/vendor/foundation.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/animate.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/animate.delay.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/login.min.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/assets/js/vendors/jquery-2.0.3.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.core.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        SimDms.baseUrl = "@Url.Content("~/")";
+    </script>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="profile">
+                <div class="title">
+                    Suzuki
+                </div>
+                <div class="subtitle">
+                    PT. Suzuki Indomobil Motor
+                </div>
+                @if (Request.Url.Authority=="tbsdmsap01")
+                {
+                    <div class="info">
+                        Data Warehouse
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class="body">
+            <div class="helpdesk">
+                <ul>
+                    Perlu bantuan ?
+                    <li>Harap hubungi PIC departemen terkait</li>
+                    @*<li>Phone: (021) 882 8773, (021) 882 3080</li>*@
+                   @* <li>SDMS Support: <a href="@String.Format("{0}://{1}/osticket", Request.Url.Scheme, Request.Url.Authority)" target="_blank">http://dms.suzuki.co.id/osticket</a>  </li>*@
+                </ul>
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+</body>
+</html>
+

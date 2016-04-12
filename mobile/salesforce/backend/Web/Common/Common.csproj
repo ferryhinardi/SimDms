@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE3937AA-1A7A-4C03-9B0A-0975051158EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AspNet.Identity.MongoDB, Version=2.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.Identity.MongoDB.2.0.8\lib\net45\AspNet.Identity.MongoDB.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=4.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityManager.1.0.0-build-10061\lib\net45\IdentityManager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityManager.AspNetIdentity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityManager.AspNetIdentity.1.0.0-beta5-1\lib\net45\IdentityManager.AspNetIdentity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityModel.1.5.1\lib\net45\IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityServer3, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityServer3.2.4.0\lib\net45\IdentityServer3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityServer3.EntityFramework, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityServer3.EntityFramework.2.4.1\lib\net45\IdentityServer3.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.1.1.1\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.1.1.1\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.1.1.1\lib\net45\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.VisualBasic.1.1.1\lib\net45\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces.1.1.1\lib\net45\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.1.1\lib\net45\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces.Desktop, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.1.1.1\lib\net45\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.FileSystems.3.0.1\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.3.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.1\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.2.3\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.2.3\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.2.2.3\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MoonSharp.Interpreter, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MoonSharp.1.5.0.1\lib\net40-client\MoonSharp.Interpreter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.37.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.37\lib\dotnet\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.1.0\lib\dotnet5.2\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting, Version=9.2.15.1105, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\libs\Report Designer\Bin\Telerik.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.Service, Version=9.2.15.1105, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\libs\Report Designer\Bin\Telerik.Reporting.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.Services.WebApi, Version=9.2.15.1105, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\libs\Report Designer\Bin\Telerik.Reporting.Services.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting.XpsRendering, Version=9.2.15.1105, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\libs\Report Designer\Bin\Telerik.Reporting.XpsRendering.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.ReportViewer.Mvc, Version=9.2.15.1105, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\libs\Report Designer\Bin\Telerik.ReportViewer.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Core, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Core.1.4.0\lib\net45\Thinktecture.IdentityModel.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Owin.ResourceAuthorization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Owin.ResourceAuthorization.1.1.0\lib\net45\Thinktecture.IdentityModel.Owin.ResourceAuthorization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Owin.ResourceAuthorization.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Owin.ResourceAuthorization.Mvc.2.0.0\lib\net45\Thinktecture.IdentityModel.Owin.ResourceAuthorization.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Owin.ScopeValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Owin.ScopeValidation.2.0.0\lib\net45\Thinktecture.IdentityModel.Owin.ScopeValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Api\Controllers\AdminPageController.cs" />
+    <Compile Include="Admin\Api\Controllers\ReportsController.cs" />
+    <Compile Include="Admin\Api\Controllers\ClientController.cs" />
+    <Compile Include="Admin\Api\Controllers\MetaController.cs" />
+    <Compile Include="Admin\Api\Controllers\ScopeController.cs" />
+    <Compile Include="Admin\Api\Filters\NoCacheAttribute.cs" />
+    <Compile Include="Admin\Api\Filters\SecurityHeadersAttribute.cs" />
+    <Compile Include="Admin\Api\Models\Client\ClientDetailDataResource.cs" />
+    <Compile Include="Admin\Api\Models\Client\ClientDetailResource.cs" />
+    <Compile Include="Admin\Api\Models\Client\ClientQueryResultResource.cs" />
+    <Compile Include="Admin\Api\Models\Client\ClientQueryResultResourceData.cs" />
+    <Compile Include="Admin\Api\Models\Client\ClientResultResource.cs" />
+    <Compile Include="Admin\Api\Models\Client\CreateClientLink.cs" />
+    <Compile Include="Admin\Api\Models\ErrorModel.cs" />
+    <Compile Include="Admin\Api\Models\Scope\CreateScopeLink.cs" />
+    <Compile Include="Admin\Api\Models\Scope\ScopeDetailDataResource.cs" />
+    <Compile Include="Admin\Api\Models\Scope\ScopeDetailResource.cs" />
+    <Compile Include="Admin\Api\Models\Scope\ScopeQueryResultResource.cs" />
+    <Compile Include="Admin\Api\Models\Scope\ScopeQueryResultResourceData.cs" />
+    <Compile Include="Admin\Api\Models\Scope\ScopeResultResource.cs" />
+    <Compile Include="Admin\App_Packages\LibLog.1.4\LibLog.cs" />
+    <Compile Include="Admin\Assets\AssetManager.cs" />
+    <Compile Include="Admin\Assets\EmbeddedHtmlResult.cs" />
+    <Compile Include="Admin\Configuration\AdminHostSecurityConfiguration.cs" />
+    <Compile Include="Admin\Configuration\AdminSecurityConfiguration.cs" />
+    <Compile Include="Admin\Configuration\AutofacConfig.cs" />
+    <Compile Include="Admin\Configuration\ExternalBearerTokenConfiguration.cs" />
+    <Compile Include="Admin\Configuration\Hosting\AdminTraceLogger.cs" />
+    <Compile Include="Admin\Configuration\Hosting\AsyncHelper.cs" />
+    <Compile Include="Admin\Configuration\Hosting\AutofacAdminDependencyResolver.cs" />
+    <Compile Include="Admin\Configuration\Hosting\AutofacContainerMiddleware.cs" />
+    <Compile Include="Admin\Configuration\Hosting\AutofacScope.cs" />
+    <Compile Include="Admin\Configuration\Hosting\KatanaDependencyResolver.cs" />
+    <Compile Include="Admin\Configuration\Hosting\LocalAuthenticationMiddleware\LocalhostAdminAuthenticationHandler.cs" />
+    <Compile Include="Admin\Configuration\Hosting\LocalAuthenticationMiddleware\LocalhostAdminAuthenticationMiddleware.cs" />
+    <Compile Include="Admin\Configuration\Hosting\LocalAuthenticationMiddleware\LocalhostAdminAuthenticationOptions.cs" />
+    <Compile Include="Admin\Configuration\Hosting\LogProviderExceptionLogger.cs" />
+    <Compile Include="Admin\Configuration\Hosting\OAuthAdminServerExtensions.cs" />
+    <Compile Include="Admin\Configuration\IAdminDependencyResolver.cs" />
+    <Compile Include="Admin\Configuration\IdentityAdminAppBuilderExtensions.cs" />
+    <Compile Include="Admin\Configuration\IdentityAdminOptions.cs" />
+    <Compile Include="Admin\Configuration\IdentityAdminServiceFactory.cs" />
+    <Compile Include="Admin\Configuration\LocalhostSecurityConfiguration.cs" />
+    <Compile Include="Admin\Configuration\Registration.cs" />
+    <Compile Include="Admin\Configuration\WebApiConfig.cs" />
+    <Compile Include="Admin\Constants.cs" />
+    <Compile Include="Admin\Core\Client\BaseClientValue.cs" />
+    <Compile Include="Admin\Core\Client\ClientClaimValue.cs" />
+    <Compile Include="Admin\Core\Client\ClientCorsOriginValue.cs" />
+    <Compile Include="Admin\Core\Client\ClientCustomGrantTypeValue.cs" />
+    <Compile Include="Admin\Core\Client\ClientDetail.cs" />
+    <Compile Include="Admin\Core\Client\ClientIdPRestrictionValue.cs" />
+    <Compile Include="Admin\Core\Client\ClientMetaData.cs" />
+    <Compile Include="Admin\Core\Client\ClientPostLogoutRedirectUriValue.cs" />
+    <Compile Include="Admin\Core\Client\ClientRedirectUriValue.cs" />
+    <Compile Include="Admin\Core\Client\ClientScopeValue.cs" />
+    <Compile Include="Admin\Core\Client\ClientSecretValue.cs" />
+    <Compile Include="Admin\Core\Client\ClientSummary.cs" />
+    <Compile Include="Admin\Core\CreateResult.cs" />
+    <Compile Include="Admin\Core\IdentityAdminResult.cs" />
+    <Compile Include="Admin\Core\IdentityManagerResult`1.cs" />
+    <Compile Include="Admin\Core\IIdentityAdminService.cs" />
+    <Compile Include="Admin\Core\Metadata\ExecutablePropertyMetadata.cs" />
+    <Compile Include="Admin\Core\Metadata\ExpressionPropertyMetadata.cs" />
+    <Compile Include="Admin\Core\Metadata\IdentityAdminMetadata.cs" />
+    <Compile Include="Admin\Core\Metadata\PropertyDataType.cs" />
+    <Compile Include="Admin\Core\Metadata\PropertyMetadata.cs" />
+    <Compile Include="Admin\Core\Metadata\ReflectedPropertyMetadata.cs" />
+    <Compile Include="Admin\Core\OwinEnvironmentService.cs" />
+    <Compile Include="Admin\Core\PropertyValue.cs" />
+    <Compile Include="Admin\Core\QueryResult.cs" />
+    <Compile Include="Admin\Core\Scope\BaseScopeValue.cs" />
+    <Compile Include="Admin\Core\Scope\ScopeClaimValue.cs" />
+    <Compile Include="Admin\Core\Scope\ScopeDetail.cs" />
+    <Compile Include="Admin\Core\Scope\ScopeMetaData.cs" />
+    <Compile Include="Admin\Core\Scope\ScopeSummary.cs" />
+    <Compile Include="Admin\Entities\IdentityClient.cs" />
+    <Compile Include="Admin\Entities\IdentityScope.cs" />
+    <Compile Include="Admin\Extensions\ClaimsExtensions.cs" />
+    <Compile Include="Admin\Extensions\IdentityAdminResultExtensions.cs" />
+    <Compile Include="Admin\Extensions\ModelStateDictionaryExtensions.cs" />
+    <Compile Include="Admin\Extensions\OwinExtensions.cs" />
+    <Compile Include="Admin\Extensions\PropertyInfoExtensions.cs" />
+    <Compile Include="Admin\Extensions\PropertyMetadataExtensions.cs" />
+    <Compile Include="Admin\Extensions\StringExtensions.cs" />
+    <Compile Include="Admin\IdentityAdminCoreManager.cs" />
+    <Compile Include="Admin\Interfaces\IClient.cs" />
+    <Compile Include="Admin\Interfaces\IScope.cs" />
+    <Compile Include="Admin\Logging\DiagnosticsTraceLogProvider.cs" />
+    <Compile Include="Admin\Logging\LibLogLoggerFactory.cs" />
+    <Compile Include="Admin\Logging\LibLogTraceListener.cs" />
+    <Compile Include="Admin\Logging\LogSerializer.cs" />
+    <Compile Include="Admin\Logging\RequestResponseLogger.cs" />
+    <Compile Include="Admin\Logging\TraceSourceLogProvider.cs" />
+    <Compile Include="Admin\Resources\Messages.Designer.cs" />
+    <Compile Include="App_Packages\LibLog.4.2\LibLog.cs" />
+    <Compile Include="Helper\AuditLog.cs" />
+    <Compile Include="Helper\Helper.cs" />
+    <Compile Include="Helper\Repository.cs" />
+    <Compile Include="IdentityServer\IdSrv\Admin.cs" />
+    <Compile Include="Mongo.Identity\AppIdentitModel.cs" />
+    <Compile Include="Mongo.Identity\AppIdentityConfig.cs" />
+    <Compile Include="Mongo.Identity\AppIdentityUserService.cs" />
+    <Compile Include="Mongo.Identity\AppIdentityDB.cs" />
+    <Compile Include="Helper\Constants.cs" />
+    <Compile Include="Helper\Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdentityServer\EF\AspNetIdentity.cs" />
+    <Compile Include="IdentityServer\EF\SimpleEntity.cs" />
+    <Compile Include="IdentityServer\Filters\AuthAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdentityServer\Filters\AuthorizationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IdentityServer\IdMgr\IdMgr.cs" />
+    <Compile Include="IdentityServer\IdSrv\Certificate.cs" />
+    <Compile Include="IdentityServer\IdSrv\Clients.cs" />
+    <Compile Include="IdentityServer\IdSrv\Factory.cs" />
+    <Compile Include="IdentityServer\IdSrv\Scopes.cs" />
+    <Compile Include="IdentityServer\IdSrv\UserService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\basket-loader.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\basket.full.min.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\jquery-1.9.1.min.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\kendo.web.min.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\telerikReportViewer-9.2.15.1126.min.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\codemirror-bundle.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\jquery-bundle.js" />
+    <EmbeddedResource Include="Admin\Assets\Content\Bootstrap.min.css">
+      <DependentUpon>Bootstrap.css</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Assets\Content\Bundle.min.css">
+      <DependentUpon>Bundle.css</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Admin\Assets\Content\font-awesome-animation.css" />
+    <EmbeddedResource Include="Admin\Assets\Content\font-awesome-animation.min.css">
+      <DependentUpon>font-awesome-animation.css</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Admin\Assets\Content\font-awesome.css" />
+    <EmbeddedResource Include="Admin\Assets\Content\font-awesome.min.css">
+      <DependentUpon>font-awesome.css</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Admin\Assets\Content\material-design-icons.css" />
+    <EmbeddedResource Include="Admin\Assets\Content\material-design-icons.min.css">
+      <DependentUpon>material-design-icons.css</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Admin\Assets\Content\md.css" />
+    <EmbeddedResource Include="Admin\Assets\Content\md.min.css">
+      <DependentUpon>md.css</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Admin\Assets\Content\Style.css" />
+    <Content Include="Admin\Assets\Content\Style.less" />
+    <EmbeddedResource Include="Admin\Assets\fonts\glyphicons-halflings-regular.eot" />
+    <EmbeddedResource Include="Admin\Assets\fonts\glyphicons-halflings-regular.ttf" />
+    <EmbeddedResource Include="Admin\Assets\fonts\glyphicons-halflings-regular.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\glyphicons-halflings-regular.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\-2n2p-_Y08sg57CNWQfKNvesZW2xOQ-xsNqO47m55DA.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\-L14Jk06m6pUHB-5mXQQnRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\0eC6fl06luXEYWpBSJvXCBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\77FXFjRbGzN4aCrSFhlh3hJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\97uahxiqZRoncBaCEI3aWxJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\CWB0XYA8bzo0kSThX0UTuA.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\ek4gzZ-GeXAPcSbHtCeQI_esZW2xOQ-xsNqO47m55DA.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\Fcx7Wwv8OzT71A3E1XOAjvesZW2xOQ-xsNqO47m55DA.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\Fl4y0QdOxyyTHEGMXX8kcRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\fontawesome-webfont.eot" />
+    <EmbeddedResource Include="Admin\Assets\fonts\fontawesome-webfont.ttf" />
+    <EmbeddedResource Include="Admin\Assets\fonts\fontawesome-webfont.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\fontawesome-webfont.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\FontAwesome.otf" />
+    <EmbeddedResource Include="Admin\Assets\fonts\Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\I3S1wsgSg9YCurV6PUkTORJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\icons.ttf" />
+    <EmbeddedResource Include="Admin\Assets\fonts\icons.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\isZ-wbCXNKAbnjo6_TwHThJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\jSN2CGVDbcVyCnfJfjSdfBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\mbmhprMH69Zi6eEPBYVFhRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\mx9Uck6uB63VIKFYnEMXrRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\NdF9MtnOpLzo-noMoG0miPesZW2xOQ-xsNqO47m55DA.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\NYDWBdD4gIq26G5XYbHsFBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\oHi30kwQWvpCWqAhzHcCSBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\oOeFwZNlrTefzLYmlVV1UBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\Pru33qjShpZSmG3z6VYwnRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\PwZc-YbIL414wB9rB1IAPRJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\rGvHdJnr2l75qb0YND9NyBJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\roboto-bold.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\roboto-light.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\roboto.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\RxZJdnzeo3R5zSexge8UUVtXRa8TVwTICgirnJhmVJw.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\u0TOpm082MNkS5K0Q4rhqvesZW2xOQ-xsNqO47m55DA.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\UX6i4JxQDm3fVTc1CPuwqhJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\ZLqKeelYbATG60EpZBSDyxJtnKITppOI_IvcXXDNrsc.woff2" />
+    <EmbeddedResource Include="Admin\Assets\fonts\TelerikWebUI.eot" />
+    <EmbeddedResource Include="Admin\Assets\fonts\TelerikWebUI.ttf" />
+    <EmbeddedResource Include="Admin\Assets\fonts\TelerikWebUI.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\sourcesanspro\sourcesanspro-bold.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\sourcesanspro\sourcesanspro-light.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\sourcesanspro\sourcesanspro.woff" />
+    <EmbeddedResource Include="Admin\Assets\fonts\Material-Design-Icons.eot" />
+    <EmbeddedResource Include="Admin\Assets\fonts\Material-Design-Icons.ttf" />
+    <EmbeddedResource Include="Admin\Assets\fonts\Material-Design-Icons.woff" />
+    <None Include="Admin\Assets\Scripts\Bundle.min.js.map">
+      <DependentUpon>Bundle.min.js</DependentUpon>
+    </None>
+    <None Include="App.config" />
+    <EmbeddedResource Include="Admin\Resources\Messages.resx" />
+    <EmbeddedResource Include="IdentityServer\idsrv3test.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Admin\Assets\fonts\img.svg" />
+    <EmbeddedResource Include="Admin\Assets\fonts\fonticons.css" />
+    <EmbeddedResource Include="Admin\Assets\Content\Style.min.css">
+      <DependentUpon>Style.css</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Assets\fonts\Material-Design-Icons.svg" />
+    <Content Include="Admin\Assets\Scripts\Bundle.min.js">
+      <DependentUpon>Bundle.js</DependentUpon>
+    </Content>
+    <Content Include="Admin\Assets\Content\Bootstrap.css" />
+    <Content Include="Admin\Assets\Content\Bundle.css" />
+    <EmbeddedResource Include="Admin\Assets\Content\favicon.ico" />
+    <EmbeddedResource Include="Admin\Assets\Content\logo.jpg" />
+    <EmbeddedResource Include="Admin\Assets\Content\logo.png" />
+    <EmbeddedResource Include="Admin\Assets\fonts\glyphicons-halflings-regular.svg" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\App\ttidAdm.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\App\ttidAdmApp.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\App\ttidAdmClients.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\App\ttidAdmScopes.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\App\ttidAdmUI.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Bundle.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\angular-route.min.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\angular.min.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\bootstrap.min.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\jquery-2.1.0.min.js" />
+    <EmbeddedResource Include="Admin\Assets\Scripts\Libs\oidc-token-manager.min.js" />
+    <EmbeddedResource Include="Admin\Assets\Templates\clients\edit.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\clients\list.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\clients\new.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\editor\property.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\home.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\index.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\message.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\modal.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\navbar.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\pager\buttons.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\pager\summary.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\scopes\edit.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\scopes\list.html" />
+    <EmbeddedResource Include="Admin\Assets\Templates\scopes\new.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.1.1\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,25 @@
+﻿body {
+  background-color: #808080;
+}
+.app-name-wrapper {
+  border: none;
+  background-color: #9a9a9a;
+}
+.app-name-wrapper .app-name {
+  background-color: #b3b3b3;
+}
+.login-screen-wrapper {
+  border: none;
+  background-color: #000099;
+}
+.login-screen-wrapper .login-screen {
+  border: none;
+  background-color: #0000cc;
+}
+.login-screen-wrapper .login-screen .login-screen-panel .controls > label {
+  color: white;
+}
+.login-screen-wrapper .login-screen .login-screen-panel .controls > div .metro-button {
+  border: 2px solid white;
+  color: white;
+}

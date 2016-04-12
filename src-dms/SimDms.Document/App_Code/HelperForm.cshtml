@@ -1,0 +1,26 @@
+﻿@using SimDms.Document.Controllers;
+@using SimDms.Document.Models;
+@helper CreateTreeViewChild(SysHelp MenuItem)
+{
+    if (HelperController.GetMenuChild(MenuItem.MenuID).Count == 0)
+    {
+    <text><li><span class="file">@MenuItem.MenuTitle</span></li></text>
+    }
+    else
+    {
+        foreach (var item in HelperController.GetListOfModule(MenuItem.MenuID, (Session["Session"] == null ? "" : Session["Session"].ToString()), Request.IsAuthenticated))
+        {
+            if (HelperController.GetMenuChild(item.MenuID).Count == 0)
+            {
+                <text><li><span class="file" id="@item.MenuID"><a onclick="loadContent('@item.MenuID')">@item.MenuTitle</a></span></li></text>
+            }else
+            {
+                <li><span class="folder" id="@item.MenuID" onclick="loadContent('@item.MenuID')">@item.MenuTitle</span>
+                    <ul>
+                        @HelperForm.CreateTreeViewChild(item)
+                    </ul>
+                </li>
+            }
+        }
+    }
+}

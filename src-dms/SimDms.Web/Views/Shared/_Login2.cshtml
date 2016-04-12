@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+
+    <script src="@Url.Content("~/assets/js/vendors/jquery-2.0.3.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.core.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/assets/js/vendors/angular/angular.all.js")"></script>
+
+    <script type="text/javascript">
+        SimDms.baseUrl = "@Url.Content("~/")";
+    </script>
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en-us" id="@ViewBag.PageId" class="@Settings.CurrentTheme" >
+<head>
+
+    <meta charset=" utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@Settings.AppName</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    @Styles.Render("cdn/system/content/kendoui/css/kendo.common-material.css")
+    @Styles.Render("cdn/system/content/kendoui/css/kendo.material.css")
+
+    @Styles.Render("cdn/system/content/release.css")
+    @Styles.Render("cdn/system/content/codemirror.css")
+    @Styles.Render("cdn/system/content/css/overrides.css")
+
+    <style type="text/css">
+        html {
+            background: url('cdn/system/content/img/mybg.png') #ffffff !important;
+        }
+
+        body {
+            background: url('cdn/system/content/img/mybg.png') #ffffff !important;
+        }
+
+        #logo img {
+        /* 	width: 80px !important; */
+        /* 	height: auto !important; */
+	        padding-left: 3px !important;
+  	        padding-top: 7px !important;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        window.IsDeveloper = 0;
+    </script>
+       
+    <link rel="shortcut icon" href="@Url.Content("~/cdn/FAVICON")" type="image/x-icon">
+    <link rel="icon" href="@Url.Content("~/cdn/FAVICON")" type="image/x-icon">
+
+</head>
+<body data-smart-device-detect
+      data-smart-fast-click
+      data-smart-layout
+      data-smart-page-title="APP"
+      class="desktop-detected fixed-header fixed-navigation fixed-page-footer fixed-ribbon" data-ng-controller="bodyController">
+
+    @{ Html.RenderPartial("_Header", RenderSection("topright", false)); }
+    @{ Html.RenderPartialIf("_Aside", Request.IsAuthenticated); }
+
+    <div id="main" role="main">
+        @{ Html.RenderPartialIf("_Ribbon", Request.IsAuthenticated); }
+        <div id="content" ng-view>@RenderBody()</div>
+    </div>
+
+    @if (Request.IsAuthenticated)
+    {
+        Html.RenderPartial("_Footer");
+        
+        Html.RenderPartialIf("_Tiles", Settings.EnableTiles);
+    }
+
+    @{ Html.RenderPartial("_ScriptsAMD", RenderSection("pagespecific", false)); }
+
+</body>
+</html>

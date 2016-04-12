@@ -1,0 +1,5 @@
+D:\Suzuki_DMS\Suzuki_DMS\bin\Suzuki_DMS.dll
+D:\Suzuki_DMS\Suzuki_DMS\bin\Suzuki_DMS.pdb
+D:\Suzuki_DMS\Suzuki_DMS\obj\Debug\Suzuki_DMS.csprojResolveAssemblyReference.cache
+D:\Suzuki_DMS\Suzuki_DMS\obj\Debug\Suzuki_DMS.dll
+D:\Suzuki_DMS\Suzuki_DMS\obj\Debug\Suzuki_DMS.pdb

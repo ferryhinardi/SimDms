@@ -1,0 +1,16 @@
+<ion-view view-title="{{param.EventName}}">
+    <ion-content>
+
+        <ion-list>
+            <ion-item>
+                <span class="labelx">TOTAL SPK</span>
+                <span class="totalx">{{data.Total}}</span>
+            </ion-item>
+            <ion-item ng-repeat="item in data.SummaryByType" href="#/app/detail/{{item.TipeKendaraan}}">
+                <span class="label">{{item.TipeKendaraan}}</span>
+                <span class="total">{{item.Total}}</span>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

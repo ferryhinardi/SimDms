@@ -1,0 +1,192 @@
+﻿@font-face {
+  font-family: 'Open Sans';
+  src: url('../fonts/OpenSans.eot');
+  src: url('../fonts/OpenSans.eot?iefix') format('eot'), url('../fonts/OpenSans.woff') format('woff'), url('../fonts/OpenSans.ttf') format('truetype'), url('../fonts/OpenSans.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'Sans Bold';
+  src: url('../fonts/ClearSans-Bold-webfont.eot');
+  src: url('../fonts/ClearSans-Bold-webfont.eot?iefix') format('eot'), url('../fonts/ClearSans-Bold-webfont.woff') format('woff'), url('../fonts/ClearSans-Bold-webfont.ttf') format('truetype'), url('../fonts/ClearSans-Bold-webfont.svg#webfont') format('svg');
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+#main .page > .header {
+  background-color: #035bc9;
+  height: 50px;
+  padding: 0 5px;
+}
+#main .page > .header .toolbar {
+  color: #ffffff;
+  font-size: 24px;
+  padding: 0 5px;
+  margin: 0 0;
+  float: left;
+  min-height: 50px;
+}
+#main .page > .header .toolbar.right {
+  float: right;
+}
+#main .page > .header .toolbar i {
+  padding: 12px 10px;
+}
+#main .page > .header .toolbar i.left {
+  padding: 12px 5px;
+}
+#main .page > .header .toolbar:hover {
+  /*background-color: darken( @base-color, 10%);*/
+
+  color: #ffff99;
+  cursor: pointer;
+}
+#main .page > .header .toolbar:hover.blank {
+  background-color: #035bc9;
+  cursor: default;
+}
+#main .page > .header .title {
+  color: #ffffff;
+}
+#main .page > .header .title .title-brand {
+  font-size: 14px;
+  padding-top: 4px;
+}
+#main .page > .header .title .title-page {
+  font-size: 22px;
+  font-family: 'Sans Bold';
+  padding-top: 0;
+  margin-top: -8px;
+}
+#main .page > .logo {
+  margin-top: 50px;
+  text-align: center;
+}
+#main .page > .logo img {
+  height: 100px;
+}
+#main .page > .content {
+  padding: 20px 25px;
+  /*border: 1px solid;*/
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  bottom: 0;
+  overflow-y: auto;
+}
+#main .page > .content i {
+  padding-right: 10px;
+}
+#main .page > .content .title {
+  color: #035bc9;
+  font-size: 20px;
+}
+#main .page > .content .list {
+  padding-top: 10px;
+}
+#main .page > .content .list > .row {
+  padding: 10px 0 10px 15px;
+  color: #035bc9;
+}
+#main .page > .content .list > .row .icon {
+  font-size: 22px;
+  padding-top: 10px;
+}
+#main .page > .content .list > .row .list-title {
+  margin-left: -15px;
+  font-size: 16px;
+}
+#main .page > .content .list > .row .list-title i {
+  padding-left: 8px;
+}
+#main .page > .content .list > .row .list-detail {
+  margin-left: -15px;
+  font-size: 11px;
+}
+#main .page > .content .list > .row .list-detail i {
+  padding-left: 8px;
+}
+#main .page > .content .list > .row:hover {
+  cursor: pointer;
+  color: #012d64;
+  /*background-color: lighten(@base-color, 60%);*/
+
+}
+#main .page > .content .list > .row:hover .right {
+  display: block;
+}
+#main .page > .content .list .right {
+  float: right;
+  display: none;
+}
+#main .page > .content .form {
+  /*margin-top: -20px;*/
+
+}
+#main .page > .content .form .row {
+  margin-bottom: 10px;
+  color: #035bc9;
+}
+#main .page > .content .form .row .col-6 {
+  float: left;
+  width: 50%;
+  padding-right: 5px;
+}
+#main .page > .content .form .row .panel {
+  border: 1px solid;
+  min-height: 100px;
+}
+#main .page > .content .form table {
+  border: 1px solid #4f9cfc;
+}
+#main .page > .content .form table th {
+  border-top: 1px solid #4f9cfc;
+}
+#main .page > .content .form table td {
+  border-top: 1px solid #4f9cfc;
+}
+#main .page > .content .form table td.number {
+  text-align: right;
+}
+#main .page > .content .form table tbody {
+  border-top: 3px solid #4f9cfc;
+}
+#main .page > .content .form .table-wrapper {
+  background-color: #ffffff;
+}
+#main .page > .content .col-xs-2 {
+  width: 50px;
+}
+#main #login .form-wrapper {
+  padding: 10px;
+  margin-top: 50px;
+  height: 200px;
+}
+#main #login .form-wrapper .form-group input {
+  margin: 4px 0;
+}
+#shortcut {
+  border: 1px solid #035bc9;
+  background-color: #ffffff;
+  position: absolute;
+  top: 49px;
+  right: 5px;
+  min-width: 200px;
+  z-index: 1000;
+  display: none;
+}
+#shortcut li {
+  padding: 0;
+  margin: 0;
+}
+#shortcut li.divider {
+  height: 1px;
+  background-color: #9bc7fe;
+}
+#shortcut li a {
+  border-radius: 0;
+}
+#shortcut li a:hover {
+  background-color: #cde3fe;
+}

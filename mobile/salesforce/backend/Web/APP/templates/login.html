@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en-us" id="extr-page" ng-app="app" ng-controller="LoginCtrl">
+<head>
+    <meta charset=" utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Login</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- #CSS Links -->
+    <!-- Basic Styles -->
+    <link href="../cdn/system/content/release.css" rel="stylesheet"/>
+    <link href="../cdn/system/content/css/overrides.css" rel="stylesheet" />
+
+    <style type="text/css">
+        html {
+            background: url('../cdn/system/content/img/mybg.png') #ffffff !important;
+        }
+
+        body {
+            background: url('../cdn/system/content/img/mybg.png') #ffffff !important;
+        }
+    </style>
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="../cdn/FAVICON" type="image/x-icon">
+    <link rel="icon" href="../cdn/FAVICON" type="image/x-icon">
+</head>
+<body class="animated fadeInDown">
+    <header id="header">
+        <div id="logo-group">
+            <span id="logo"> <img src="../cdn/CompanyLogo" alt="Company Logo"> </span>
+        </div>
+    </header>
+
+    <div id="main" role="main">
+
+        <!-- MAIN CONTENT -->
+        <div id="content" class="container">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+                    <div class="well no-padding">
+                        <form name="form" method="post" action="{{model.loginUrl}}" id="login-form" class="smart-form client-form">
+                            <header>
+                                Sign In
+                            </header>
+
+                            <anti-forgery-token token="model.antiForgery"></anti-forgery-token>
+
+                            <div class="alert alert-danger alert-block" ng-show="model.errorMessage">
+                                <button class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <div>
+                                    {{model.errorMessage}}
+                                </div>
+                            </div>
+
+                            <fieldset>
+                                <section>
+                                    <label class="label">Username</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-user"></i>
+                                        <input type="text" name="username" ng-model="model.username">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter username</b>
+                                    </label>
+                                </section>
+
+                                <section>
+                                    <label class="label">Password</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-lock"></i>
+                                        <input type="password" name="password" ng-model="model.password">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b>
+                                    </label>
+                                </section>
+
+                                <section ng-show="model.allowRememberMe">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="rememberMe" ng-model="model.rememberMe" value="true">
+                                        <i></i>Stay signed in
+                                    </label>
+                                </section>
+                            </fieldset>
+
+                            <footer>
+                                <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">
+                                    Sign in
+                                </button>
+                            </footer>
+                        </form>
+                    </div>
+
+                    <h5 class="text-center" ng-show="model.externalProviders"> - Or sign in using -</h5>
+
+                    <ul class="list-inline text-center" ng-show="model.externalProviders">
+                        <li ng-repeat="provider in model.externalProviders">
+                            <a href="{{provider.href}}" class="{{provider.text | split:'~':0}}">
+                                <i class="{{provider.text | split:'~':1}}"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--================================================== -->
+    <!-- Identity Server Model -->
+    <script id='modelJson' type='application/json'>
+        {model}
+    </script>
+
+    <!-- jQuery + jQueryUI -->
+    <script src="../cdn/system/content/scripts/libs/jquery/jquery-2.1.4.min.js"></script>
+    <script src="../cdn/system/content/scripts/libs/jquery/jquery-ui.min.js"></script>
+
+    <!-- ANGULAR JS -->
+    <script src="../cdn/system/content/scripts/libs/angular/angular.min.js"></script>
+
+    <!-- ENCODER -->
+    <script src="../cdn/system/content/scripts/libs/encoder/encoder.min.js"></script>
+
+    <!-- IMPORTANT: APP CONFIG -->
+    <script src="../cdn/system/content/scripts/app.config.js"></script>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="../cdn/system/content/scripts/libs/bootstrap/bootstrap.min.js"></script>
+
+    <!-- JQUERY VALIDATE -->
+    <script src="../cdn/system/content/scripts/libs/jquery/jquery.validate.min.js"></script>
+
+    <!--[if IE 8]>
+
+        <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+    <![endif]-->
+    <!-- MAIN APP JS FILE -->
+    <script src="../cdn/system/content/scripts/app.min.js"></script>
+    <script src="../cdn/system/content/scripts/app.login.js"></script>
+</body>
+</html>

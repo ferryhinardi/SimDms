@@ -1,0 +1,185 @@
+﻿@font-face
+{
+	font-family: 'segoeui';
+	src: url('../font/segoe-ui.eot');
+	src: url('../font/segoe-ui.eot?#iefix') format('embedded-opentype'), url('../font/segoe-ui.woff') format('woff'), url('../font/segoe-ui.ttf') format('truetype'), url('../font/segoe-ui.svg#segoe-ui') format('svg');
+}
+
+@base-color: #2d89ef;
+@base-color: #338559;
+@base-color: #007acc;
+/*@base-color: white;*/
+@header-height: 46px;
+@sideleft-width: 220px;
+
+@base-color: #0043A2;
+
+body
+{
+	background-color: darken(@base-color, 20%);
+	font-family: "segoeui";
+	margin: 0;
+	// DISABLED STATE
+	// --------------
+	// Disabled and read-only inputs
+	input[disabled],
+	select[disabled],
+	textarea[disabled],
+	input[readonly],
+	select[readonly],
+	textarea[readonly]
+	{
+		cursor: not-allowed;
+		background-color: lighten(lightgray, 10%);
+	}
+	// Explicitly reset the colors here
+	input[type="radio"][disabled],
+	input[type="checkbox"][disabled],
+	input[type="radio"][readonly],
+	input[type="checkbox"][readonly]
+	{
+		background-color: transparent;
+	}
+}
+
+.page
+{
+	width: 100%;
+
+	.header
+	{
+		min-height: 300px;
+		background-color: lighten(@base-color, 70%);
+
+		.profile
+		{
+			padding: 10px 20px;
+			font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+
+			.title
+			{
+				color: @base-color;
+				font-size: 32px;
+				font-weight: 900;
+				margin: 0;
+				padding: 0;
+				text-transform: uppercase;
+				text-shadow: 0 0 1px #0094FF;
+			}
+
+			.subtitle
+			{
+				font-size: 18px;
+				font-weight: bolder;
+				color: darken(@base-color, 10%);
+			}
+
+			.info
+			{
+				float: right;
+				font-size: 18px;
+				font-weight: bolder;
+				color: @base-color;
+				text-shadow: 0 0 1px #0094FF;
+				margin-top: -50px;
+			}
+		}
+	}
+
+	.body
+	{
+		.helpdesk
+		{
+			padding: 10px 20px;
+			color: lighten(@base-color, 70%);
+			font-weight: normal;
+			font-size: 16px;
+
+			li
+			{
+				display: block;
+				padding-left: 0px;
+				font-weight: normal;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.login, .logout
+	{
+		position: absolute;
+		top: 192px;
+		right: 100px;
+		width: 400px;
+
+		form
+		{
+			> div
+			{
+				margin-top: 4px;
+				padding: 0 10px 0 0;
+				float: left;
+				width: 100%;
+
+				> label
+				{
+					display: block;
+					line-height: 10px;
+				}
+
+				> div
+				{
+					margin-top: -24px;
+					padding-left: 120px;
+				}
+			}
+		}
+	}
+
+	.modules
+	{
+		position: absolute;
+		top: 310px;
+		right: 100px;
+		width: 285px;
+		color: lighten(@base-color, 70%);
+		font-weight: 600;
+		font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+
+		ul
+		{
+			font-size: 24px;
+
+			li
+			{
+				font-size: 14px;
+				display: block;
+				
+				label
+				{
+					font-size: 14px;
+					font-weight: bold;
+				}
+
+				a
+				{
+					color: lighten(@base-color, 70%);
+					text-decoration: none;
+				}
+
+				&:hover
+				{
+					a
+					{
+						color: lighten(@base-color, 50%);
+					}
+				}
+			}
+		}
+	}
+}
+
+.hide
+{
+	display: none;
+}

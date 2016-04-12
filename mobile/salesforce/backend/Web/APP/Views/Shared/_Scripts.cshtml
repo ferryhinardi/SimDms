@@ -1,0 +1,145 @@
+﻿
+<script type="text/javascript">
+
+    function templateById(id) {
+        return "@Settings.Home" + "api/files/templates/" + id + "/html";
+    }
+    function controllerById(id) {
+        return "@Settings.Home" + "api/files/templates/" + id + "/js";
+    }
+    function cssById(id) {
+        return "@Settings.Home" + "api/files/templates/" + id + "/css";
+    };
+
+    //basket.clear();
+
+    window.DevelopmentMode = "@Settings.DevelopmentMode";
+    window.BaseAddress = "@ViewBag.BaseAddress";
+
+    basket.require(
+            { url: 'cdn/system/content/scripts/jquery-bundle.js', key: 'jquery', unique: 2 },
+            { url: 'cdn/system/content/scripts/libs/angular/angular.min.js', key: 'angular', unique: 147 },
+            { url: 'cdn/system/content/scripts/libs/angular-ui/toastr.min.js', key: 'toastr' }
+        )
+        .then(function () {
+
+            basket.require(
+                    { url: 'cdn/system/content/scripts/codemirror-bundle.js', key: 'codemirror' },
+                    { url: 'cdn/system/content/kendoui/js/kendo.all.min.js', key: 'kendoui', unique: 20161 },
+                    { url: 'cdn/system/content/scripts/libs/jquery/jquery.layout.min.js', key: 'jquery-layout' },
+                    { url: 'cdn/system/content/scripts/libs/angular/angular-cookies.min.js', key: 'ng-cookie', unique: 147 },
+                    { url: 'cdn/system/content/scripts/libs/angular/angular-resource.min.js', key: 'ng-resource', unique: 147 },
+                    { url: 'cdn/system/content/scripts/libs/angular/angular-sanitize.min.js', key: 'ng-sanitize', unique: 147 },
+                    { url: 'cdn/system/content/scripts/libs/angular/angular-animate.min.js', key: 'ng-animate', unique: 147 },
+                    { url: 'cdn/system/content/scripts/libs/angular/angular-route.min.js', key: 'ng-route', unique: 147 },
+
+                    { url: 'cdn/system/content/scripts/libs/angular-ui/ui-bootstrap-tpls-0.14.3.min.js', key: 'ui-bootstrap', unique: 0121 },
+                    { url: 'cdn/system/content/scripts/libs/jquery/fileupload/jquery.fileupload-angular.js', key: 'ui-jquery.fileupload-angular', unique: 0122 },
+                    { url: 'cdn/system/content/scripts/libs/jquery/superbox.min.js', key: 'superbox', unique: 1 },
+
+                    { url: 'cdn/system/content/scripts/libs/jszip.min.js', key: 'jszip' },
+                    { url: 'cdn/system/content/scripts/libs/angular-ui/angular-moment.min.js', key: 'ng-moment' },
+                    { url: 'cdn/system/content/scripts/libs/angular-ui/ui-utils.min.js', key: 'ui-utils' },
+                    { url: 'cdn/system/content/scripts/libs/angular-ui/angular-block-ui.min.js', key: 'ui-block' },
+                    { url: 'cdn/system/content/scripts/libs/angular-ui/angular-css.min.js', key: 'ng-css' },
+
+                    { url: 'cdn/system/content/scripts/libs/grid/handsontable/handsontable.full.min.js', key: 'handson-table', unique: 203 },
+                    { url: 'cdn/system/content/scripts/libs/grid/datatables/datatables.min.js', key: 'data-table', unique: 20 },
+                    { url: 'cdn/system/content/scripts/libs/angular-ui/adapt-strap.min.js', key: 'adapt-strap' },
+                    { url: 'cdn/system/content/scripts/libs/angular-ui/adapt-strap.tpl.min.js', key: 'adapt-strap-tpl' },
+                    { url: 'cdn/system/content/scripts/libs/angular-ui/angular-idle.min.js', key: 'ng-idle' },
+                    { url: 'cdn/system/content/scripts/libs/angular-ui/angular-modal-service.min.js', key: 'ng-modal' },
+                    { url: 'cdn/system/content/scripts/libs/angular-ui/ngprogress.min.js', key: 'ngprogress' },
+                    { url: 'cdn/system/content/scripts/jquery.mcustomscrollbar.min.js', key: 'slim-scroll' },
+                    { url: 'cdn/system/content/scripts/require.js', unique: 111, key: 'requirejs' },
+                    { url: 'cdn/system/content/kendoui/js/kendo.ext.min.js', key: 'kendoui-ext', unique: 24 },
+                    { url: 'cdn/system/content/scripts/jsnlog.min.js', key: 'jsnlog' }
+                )
+                .then(function () {
+
+                    function loadScript(url, callback) {
+
+                        var script = document.createElement("script");
+                        script.type = "text/javascript";
+
+                        if (script.readyState) {  //IE
+                            script.onreadystatechange = function () {
+                                if (script.readyState == "loaded" ||
+                                        script.readyState == "complete") {
+                                    script.onreadystatechange = null;
+                                    callback();
+                                }
+                            };
+                        } else {  //Others
+                            script.onload = function () {
+                                callback();
+                            };
+                        }
+
+                        script.src = url;
+                        document.getElementsByTagName("head")[0].appendChild(script);
+                    }
+
+                    loadjscssfile(controllerById('GLOBALAPP'), "js");
+
+                    loadjscssfile('cdn/system/content/scripts/scrollbars.min.js', "js");
+                    loadjscssfile('cdn/system/content/scripts/fileupload.js', "js");
+
+                    var url = templateById('GLOBALFN');
+                    $.ajax({
+                        url: url
+                    }).done(function (data) {
+                        $(data).appendTo(document.body);
+                        if (window.IsDeveloper == "True") {
+                            basket.require({ url: 'cdn/system/content/scripts/app/layout.min.js', unique: 5, key: 'layout' }).then(function () {
+                                $('#btn-clear-cache').on('click', function (e) {
+                                    basket.clear();
+                                    toastr["success"]("cache clear", "Success");
+                                });
+
+                                $('#btn-save-editor').removeClass("hide");
+                                $("#btn-load-schema").removeClass("hide");
+                                $("#btn-clear-cache").removeClass("hide");
+
+                                $("#search-fld").width(500);
+
+                            });
+                        } else {
+                            loadScript('cdn/system/content/main.js', function () {
+                                $(document).ready(function () {
+                                    
+
+                                    var isContent = true;
+
+                                    //$("#refresh").on("click", function (e) {
+
+                                    //    if (isContent == true) {
+                                    //        isContent = false;
+                                    //        $("#content").addClass("hide");
+                                    //        $("#report-content").removeClass("hide");
+                                    //    } else {
+                                    //        isContent = true;
+                                    //        $("#report-content").addClass("hide");
+                                    //        $("#content").removeClass("hide");
+                                    //    }
+
+                                    //});
+
+                                });
+                            });
+                        }
+                    });
+
+                });
+        });
+
+</script>
+
+
+@if (@Model is HelperResult)
+{
+    @Model
+}
+
+@*<script src="cdn/system/content/scripts/jquery-bundle.js"></script>*@
+@*<script data-main="Content/r-config" src="cdn/system/content/scripts/require.js"></script>*@

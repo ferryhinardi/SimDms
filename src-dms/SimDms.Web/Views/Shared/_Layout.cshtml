@@ -1,0 +1,189 @@
+﻿@model IEnumerable<SimDms.Web.Models.SysNavigation>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+
+        <title>@ViewBag.Title</title>
+        @{ Html.RenderPartial("_scripts"); }
+
+        <script type="text/javascript">
+
+    $(document).ready(function () {
+
+        window.navitems = [];
+
+        SimDms.baseUrl = "@Url.Content("~/")";
+
+        $.ajax({
+            type: "POST",
+            url: SimDms.baseUrl + "layout/ListUserMenus",
+            success: function (result) {
+                if (result.success == true) {
+                    window.navitems = result.data;
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                MsgBox(errorThrown, MSG_ERROR);
+            }
+        });
+
+        SimDms.defaultEmployeePhoto = (SimDms.baseUrl + SimDms.defaultEmployeePhoto).replace("//", "/");
+        SimDms.defaultIdentityCardPhoto = (SimDms.baseUrl + SimDms.defaultIdentityCardPhoto).replace("//", "/");
+
+        layout = new SimDms.Layout();
+        layout.render({ title: "S.D.M.S", subtitle: "Suzuki Dealer Management System" });
+
+        layout.onModuleChanged(function (e, module) {
+            layout.loadNavMenu(module);
+        });
+
+        layout.onHashChanged(function (e, data) {
+            if (data == "lnk/cs") {
+                location.href = "#lnk/cs/dashboard/summary";
+            }
+            //else if (data == "lnk/sp")
+            //{
+            //    location.href = "#lnk/sp/master/aosalert";
+            //}
+        });
+
+        layout.onGroupChanged(function (e, module, group) {
+            var link = SimDms.baseUrl + module + "/" + group;
+        });
+
+        layout.onMenuChanged(function (e, module, group, menu) {
+            if (module == "sp")
+            {
+                if (menu != "aosalert")
+                    {
+                    $.ajax({
+                        type: "POST",
+                        url: SimDms.baseUrl + "sp.api/SpInquiry/checkAOS",
+                        success: function (dt) {
+                            if (dt.success == true) {
+                                MsgConfirm("Terdapat data AOS apakah ingin lakukan proses?", function (konfirm) {
+                                    if (konfirm) {
+                                        group = "master";
+                                        menu = "aosalert";
+                                    }
+                                    module = "sp";
+                                    $(".page .body .main").slideUp();
+                                    $(".page .title h3").html("&nbsp;").removeClass("fadeInLeft");
+                                    if (layout.endsWith(menu, ".js")) {
+                                        var link = SimDms.baseUrl + "assets/js/app/" + module + "/" + group + "/" + menu;
+                                        $.getScript(link, function (script, status, xhr) {
+                                            $("title").text($(".page .title h3").addClass("fadeInLeft").text());
+                                            $(".page .body .main").slideDown();
+                                            var Title = $(".page .title h3").text();
+                                            if (Title.length > 7) {
+                                                SimDms.Info(Title + " Activated...");
+                                            }
+                                        });
+                                    }
+                                    else {
+                                        var link = SimDms.baseUrl + module + "/" + group + "/" + menu;
+                                        $(".page .body .main").load(link, function () {
+                                            $("title").text($(".page .title h3").addClass("fadeInLeft").text());
+                                            $(".page .body .main").slideDown();
+                                            var Title = $(".page .title h3").text();
+                                            if (Title.length > 7) {
+                                                SimDms.Info(Title + " Activated...");
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                            else {
+                                module = "sp";
+                                $(".page .body .main").slideUp();
+                                $(".page .title h3").html("&nbsp;").removeClass("fadeInLeft");
+                                if (layout.endsWith(menu, ".js")) {
+                                    var link = SimDms.baseUrl + "assets/js/app/" + module + "/" + group + "/" + menu;
+                                    $.getScript(link, function (script, status, xhr) {
+                                        $("title").text($(".page .title h3").addClass("fadeInLeft").text());
+                                        $(".page .body .main").slideDown();
+                                        var Title = $(".page .title h3").text();
+                                        if (Title.length > 7) {
+                                            SimDms.Info(Title + " Activated...");
+                                        }
+                                    });
+                                }
+                                else {
+                                    var link = SimDms.baseUrl + module + "/" + group + "/" + menu;
+                                    $(".page .body .main").load(link, function () {
+                                        $("title").text($(".page .title h3").addClass("fadeInLeft").text());
+                                        $(".page .body .main").slideDown();
+                                        var Title = $(".page .title h3").text();
+                                        if (Title.length > 7) {
+                                            SimDms.Info(Title + " Activated...");
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    });
+                }
+            } else {
+                if (group.length > 0 && menu.length > 0) {
+
+                    $(".page .body .main").slideUp();
+                    $(".page .title h3").html("&nbsp;").removeClass("fadeInLeft");
+
+                    if (layout.endsWith(menu, ".js")) {
+                        var link = SimDms.baseUrl + "assets/js/app/" + module + "/" + group + "/" + menu;
+                        $.getScript(link, function (script, status, xhr) {
+                            $("title").text($(".page .title h3").addClass("fadeInLeft").text());
+                            $(".page .body .main").slideDown();
+                            var Title = $(".page .title h3").text();
+                            if (Title.length > 7) {
+                                SimDms.Info(Title + " Activated...");
+                            }
+                        });
+                    }
+                    else {
+                        var link = SimDms.baseUrl + module + "/" + group + "/" + menu;
+                        $(".page .body .main").load(link, function () {
+                            $("title").text($(".page .title h3").addClass("fadeInLeft").text());
+                            $(".page .body .main").slideDown();
+                            var Title = $(".page .title h3").text();
+                            if (Title.length > 7) {
+                                SimDms.Info(Title + " Activated...");
+                            }
+                        });
+                    }
+                }
+            }
+        });
+
+        //layout.autoMovePopup();
+        layout.loadAjaxLoader();
+
+        layout.loadUserInfo("@User.Identity.Name", "@ViewBag.BranchCode", "@ViewBag.BranchName", "@ViewBag.ShowHideTypePart", "@ViewContext.Controller.GetType().Assembly.GetName().Version");
+
+        
+        $(window).resize(function (evt) {
+            //layout.evt_WindowResize(evt);
+        });
+
+
+        window.onbeforeunload = confirmExit;
+        function confirmExit() {
+            return "You have attempted to leave this page.  If you have made any changes to the fields without clicking the Save button, your changes will be lost.  Are you sure you want to exit SIMDMS page?";
+        }
+
+    });
+
+        </script>
+        <script src="@Url.Content("~/assets/js/dbcontext.js")"></script>
+    </head>
+    <body class="desktop-detected fixed-navigation smart-style-2">
+        @{ Html.RenderPartial("_Aside"); }
+        <div id="main" role="main">
+            <div id="content">
+                @RenderBody()
+            </div>
+        </div>
+       
+    </body>
+</html>

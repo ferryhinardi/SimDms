@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportSchemaSv" targetNamespace="http://tempuri.org/ReportSchemaSv.xsd" xmlns:mstns="http://tempuri.org/ReportSchemaSv.xsd" xmlns="http://tempuri.org/ReportSchemaSv.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportSchemaSv" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportSchemaSv" msprop:Generator_UserDSName="ReportSchemaSv">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HeaderCancelInvoice" msprop:Generator_TableClassName="HeaderCancelInvoiceDataTable" msprop:Generator_TableVarName="tableHeaderCancelInvoice" msprop:Generator_TablePropName="HeaderCancelInvoice" msprop:Generator_RowDeletingName="HeaderCancelInvoiceRowDeleting" msprop:Generator_RowChangingName="HeaderCancelInvoiceRowChanging" msprop:Generator_RowEvHandlerName="HeaderCancelInvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="HeaderCancelInvoiceRowDeleted" msprop:Generator_UserTableName="HeaderCancelInvoice" msprop:Generator_RowChangedName="HeaderCancelInvoiceRowChanged" msprop:Generator_RowEvArgName="HeaderCancelInvoiceRowChangeEvent" msprop:Generator_RowClassName="HeaderCancelInvoiceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BranchName" msprop:Generator_ColumnVarNameInTable="columnBranchName" msprop:Generator_ColumnPropNameInRow="BranchName" msprop:Generator_ColumnPropNameInTable="BranchNameColumn" msprop:Generator_UserColumnName="BranchName" type="xs:string" minOccurs="0" />
+              <xs:element name="PeriodStartEnd" msprop:Generator_ColumnVarNameInTable="columnPeriodStartEnd" msprop:Generator_ColumnPropNameInRow="PeriodStartEnd" msprop:Generator_ColumnPropNameInTable="PeriodStartEndColumn" msprop:Generator_UserColumnName="PeriodStartEnd" type="xs:string" minOccurs="0" />
+              <xs:element name="Address1" msprop:Generator_ColumnVarNameInTable="columnAddress1" msprop:Generator_ColumnPropNameInRow="Address1" msprop:Generator_ColumnPropNameInTable="Address1Column" msprop:Generator_UserColumnName="Address1" type="xs:string" minOccurs="0" />
+              <xs:element name="Address2" msprop:Generator_ColumnVarNameInTable="columnAddress2" msprop:Generator_ColumnPropNameInRow="Address2" msprop:Generator_ColumnPropNameInTable="Address2Column" msprop:Generator_UserColumnName="Address2" type="xs:string" minOccurs="0" />
+              <xs:element name="Address3" msprop:Generator_ColumnVarNameInTable="columnAddress3" msprop:Generator_ColumnPropNameInRow="Address3" msprop:Generator_ColumnPropNameInTable="Address3Column" msprop:Generator_UserColumnName="Address3" type="xs:string" minOccurs="0" />
+              <xs:element name="Address4" msprop:Generator_ColumnVarNameInTable="columnAddress4" msprop:Generator_ColumnPropNameInRow="Address4" msprop:Generator_ColumnPropNameInTable="Address4Column" msprop:Generator_UserColumnName="Address4" type="xs:string" minOccurs="0" />
+              <xs:element name="ReportID" msprop:Generator_ColumnVarNameInTable="columnReportID" msprop:Generator_ColumnPropNameInRow="ReportID" msprop:Generator_ColumnPropNameInTable="ReportIDColumn" msprop:Generator_UserColumnName="ReportID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DtCancelInvoice" msprop:Generator_TableClassName="DtCancelInvoiceDataTable" msprop:Generator_TableVarName="tableDtCancelInvoice" msprop:Generator_TablePropName="DtCancelInvoice" msprop:Generator_RowDeletingName="DtCancelInvoiceRowDeleting" msprop:Generator_RowChangingName="DtCancelInvoiceRowChanging" msprop:Generator_RowEvHandlerName="DtCancelInvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="DtCancelInvoiceRowDeleted" msprop:Generator_UserTableName="DtCancelInvoice" msprop:Generator_RowChangedName="DtCancelInvoiceRowChanged" msprop:Generator_RowEvArgName="DtCancelInvoiceRowChangeEvent" msprop:Generator_RowClassName="DtCancelInvoiceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="JobOrderNo" msprop:Generator_ColumnVarNameInTable="columnJobOrderNo" msprop:Generator_ColumnPropNameInRow="JobOrderNo" msprop:Generator_ColumnPropNameInTable="JobOrderNoColumn" msprop:Generator_UserColumnName="JobOrderNo" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceNo" msprop:Generator_ColumnVarNameInTable="columnInvoiceNo" msprop:Generator_ColumnPropNameInRow="InvoiceNo" msprop:Generator_ColumnPropNameInTable="InvoiceNoColumn" msprop:Generator_UserColumnName="InvoiceNo" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceDate" msprop:Generator_ColumnVarNameInTable="columnInvoiceDate" msprop:Generator_ColumnPropNameInRow="InvoiceDate" msprop:Generator_ColumnPropNameInTable="InvoiceDateColumn" msprop:Generator_UserColumnName="InvoiceDate" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalInvoice" msprop:Generator_ColumnVarNameInTable="columnTotalInvoice" msprop:Generator_ColumnPropNameInRow="TotalInvoice" msprop:Generator_ColumnPropNameInTable="TotalInvoiceColumn" msprop:Generator_UserColumnName="TotalInvoice" type="xs:string" minOccurs="0" />
+              <xs:element name="UpdatedBy" msprop:Generator_ColumnVarNameInTable="columnUpdatedBy" msprop:Generator_ColumnPropNameInRow="UpdatedBy" msprop:Generator_ColumnPropNameInTable="UpdatedByColumn" msprop:Generator_UserColumnName="UpdatedBy" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceCancel" msprop:Generator_ColumnVarNameInTable="columnInvoiceCancel" msprop:Generator_ColumnPropNameInRow="InvoiceCancel" msprop:Generator_ColumnPropNameInTable="InvoiceCancelColumn" msprop:Generator_UserColumnName="InvoiceCancel" type="xs:string" minOccurs="0" />
+              <xs:element name="InvoiceDateCancel" msprop:Generator_ColumnVarNameInTable="columnInvoiceDateCancel" msprop:Generator_ColumnPropNameInRow="InvoiceDateCancel" msprop:Generator_ColumnPropNameInTable="InvoiceDateCancelColumn" msprop:Generator_UserColumnName="InvoiceDateCancel" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalInvoiceCancel" msprop:Generator_ColumnVarNameInTable="columnTotalInvoiceCancel" msprop:Generator_ColumnPropNameInRow="TotalInvoiceCancel" msprop:Generator_ColumnPropNameInTable="TotalInvoiceCancelColumn" msprop:Generator_UserColumnName="TotalInvoiceCancel" type="xs:string" minOccurs="0" />
+              <xs:element name="UpdatedByCancel" msprop:Generator_ColumnVarNameInTable="columnUpdatedByCancel" msprop:Generator_ColumnPropNameInRow="UpdatedByCancel" msprop:Generator_ColumnPropNameInTable="UpdatedByCancelColumn" msprop:Generator_UserColumnName="UpdatedByCancel" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

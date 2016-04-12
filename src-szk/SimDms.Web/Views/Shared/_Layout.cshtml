@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/assets/css/vendor/foundation.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/jquery.ui.core.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/jquery.ui.spinner.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/jquery.ui.datepicker.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/kendo/kendo.common.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/kendo/kendo.blueopal.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/themes/jquery.ui.widget.themes.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/themes/jquery.ui.spinner.themes.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/animate.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/imgareaselect/imgareaselect-default.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/toastr.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/pivot.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("~/assets/css/vendor/mdp.css")" rel="stylesheet" />*@
+
+    <link href="@Url.Content("~/assets/css/vendor/handsontable.full.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/pikaday.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/assets/css/ajax-loader.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.zurb.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.widget.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.kendo.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.chart.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.dashboard.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.responsive.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.ui.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/popup.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/nv.d3.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/jquery-ui.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/select2/select2.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/assets/js/vendors/modernizr.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/linq.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery-2.0.3.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.core.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.widget.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.spinner.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.button.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.datepicker.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.form.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/foundation.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/foundation.topbar.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/imgareaselect/jquery.imgareaselect.pack.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/bootstrap/dist/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/moment-with-locales.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/d3.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/d3.ext.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/nv.d3.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/toastr.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/pivot.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery-ui.multidatespicker.js")"></script>
+
+    <script src="@Url.Content("~/assets/js/vendors/pikaday.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/handsontable_0.20.0/handsontable.full.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery-ui.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.fileDownload.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/FileSaver.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/select2/select2.min.js")"></script>
+
+    @*<link href="@Url.Content("~/assets/css/vendor/common.css")" rel="stylesheet" />*@
+    <script src="@Url.Content("~/assets/js/vendors/webix/angular.all.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/webix/angular-block-ui.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/webix/angular-kendo.js")"></script>    
+    @*<script src="@Url.Content("~/assets/js/vendors/webix/verify.notify.min.js")"></script>*@
+    <script src="@Url.Content("~/assets/js/vendors/webix/webix.all.js")"></script>
+    
+
+    <link href="@Url.Content("~/assets/js/components/codemirror/lib/codemirror.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/codemirror/theme/monokai.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/js/components/codemirror/addon/fold/foldgutter.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/assets/js/components/codemirror/lib/codemirror.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/mode/sql/sql.js")"></script>
+    @*<script src="@Url.Content("~/assets/js/components/codemirror/addon/addon.min.js")"></script>*@
+    <script src="@Url.Content("~/assets/js/components/codemirror/keymap/sublime.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/fold/foldcode.js")"></script>
+    <script src="@Url.Content("~/assets/js/components/codemirror/addon/fold/foldgutter.js")"></script>
+
+    <script src="http://tbsdmsap01:9091/socket.io/socket.io.js"></script>
+    <script src="@Url.Content("~/assets/js/vendors/underscore.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.core.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.widget.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.util.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.kendo.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.chart.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.ui.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.print.js")"></script>
+    @*<script src="@Url.Content("~/assets/js/vendors/verify.notify.min.js")"></script>*@
+
+    <script type="text/javascript">
+        var layout;
+        $(document).ready(function () {
+
+            SimDms.baseUrl = '@Url.Content("~/")';
+            SimDms.reportUrl = '@ViewBag.ReportAddress';
+            SimDms.currentUser = '@ViewBag.CurrentUser';
+
+
+            SimDms.openReport = function (params, title) {
+
+                params.CreatedBy = SimDms.currentUser;
+
+                $.ajax({
+                    url: "doreport/CreateReportSession",
+                    data: params,
+                    type: "POST",
+                }).done(function (data) {
+                    console.log(data)
+                    if (data !== null && data.success == true) {
+                        var id = SimDms.reportUrl + "?id=" + data.SessionId;
+                        openWindow(id, title);
+                    }
+                });
+            }
+
+
+            console.log(SimDms.baseUrl)
+
+            var user = "@User.Identity.Name";
+            if (!user) {
+                window.location = SimDms.baseUrl + 'account/logout';
+            }
+
+            layout = new SimDms.Layout();
+            layout.render({ title: "Suzuki", subtitle: "Data Warehouse" });
+            layout.onModuleChanged(function (e, module) {
+                layout.loadNavMenu(module);
+            });
+            layout.onGroupChanged(function (e, module, group) {
+                var link = SimDms.baseUrl + module + "/" + group;
+            });
+            layout.onMenuChanged(function (e, module, group, menu) {
+                $.post(SimDms.baseUrl + 'account/menuvalidation', { menu: menu }, function (result) {
+                    //console.log(result);
+                    if (result) {
+                        if (SimDms.activeObject) delete SimDms.activeObject;
+                        if (SimDms.activeTimer) clearInterval(SimDms.activeTimer);
+
+                        if (group.length > 0 && menu.length > 0) {
+                            var link = SimDms.baseUrl + module + "/" + group + "/" + menu;
+                            $(".page .body .main").load(link, function () {
+                                $("title").text($(".page .body .main .title h3").text());
+                            });
+                        }
+                    }
+                    else {
+                        layout.showNotification("Anda tidak mempunyai otoritas untuk akses link tersebut...!");
+                    }
+                });
+            });
+            layout.loadAjaxLoader();
+            layout.loadUserInfo("@User.Identity.Name");
+        });
+
+        $(window).resize(function (evt) {
+            layout.evt_WindowResize(evt);
+        });
+
+        var globalUrl = "@Url.Content("~")";
+    </script>
+</head>
+
+<body>
+    @RenderBody()
+</body>
+</html>

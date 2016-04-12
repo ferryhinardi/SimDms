@@ -1,0 +1,1271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1FD0914A-45A4-4430-8F26-09466505C7F7}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimDms.Web</RootNamespace>
+    <AssemblyName>SimDms.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.66.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.3.0.0\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DoddleReport, Version=1.4.0.0, Culture=neutral, PublicKeyToken=183ffec7490b24a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\DoddleReport.dll</HintPath>
+    </Reference>
+    <Reference Include="DoddleReport.iTextSharp, Version=1.4.0.0, Culture=neutral, PublicKeyToken=183ffec7490b24a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\DoddleReport.iTextSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="DoddleReport.OpenXml, Version=1.4.0.0, Culture=neutral, PublicKeyToken=183ffec7490b24a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\DoddleReport.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DoddleReport.Web, Version=1.4.0.0, Culture=neutral, PublicKeyToken=183ffec7490b24a9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\DoddleReport.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc">
+      <HintPath>..\packages\Elmah.MVC.2.1.1\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.SqlServer.EFInitializer">
+      <HintPath>..\packages\Elmah.SqlServer.EFInitializer.1.0.0\lib\4.5\Elmah.SqlServer.EFInitializer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GeLang">
+      <HintPath>..\..\libs\GeLang.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.1.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="JSNLog">
+      <HintPath>..\packages\JSNLog.2.8.0.0\lib\net40\JSNLog.dll</HintPath>
+    </Reference>
+    <Reference Include="LoggerX, Version=1.0.5308.26275, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\LoggerX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.0\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.20105.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\ajax-loader.css" />
+    <Content Include="assets\css\jquery-ui.css" />
+    <Content Include="assets\css\jquery-ui.min.css" />
+    <Content Include="assets\css\vendor\animate-custom.min.css" />
+    <Content Include="assets\css\vendor\common.css" />
+    <Content Include="assets\css\vendor\handsontable.bootstrap.css" />
+    <Content Include="assets\css\vendor\handsontable.full.min.css" />
+    <Content Include="assets\css\vendor\jquery-ui-timepicker-addon.css" />
+    <Content Include="assets\css\vendor\kendo\kendo.common.min.css">
+      <DependentUpon>kendo.common.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\pikaday.css" />
+    <Content Include="assets\js\app\util\inq\CustomerDealerInfo.js" />
+    <Content Include="assets\js\app\util\inq\lasttransdate.js" />
+    <Content Include="assets\js\app\util\inq\RawDataTable.js" />
+    <Content Include="assets\js\app\util\monitoring\wrfreport.js" />
+    <Content Include="assets\js\app\util\tpl\publish_sql.js" />
+    <Content Include="assets\js\app\util\useraccess\calender.js" />
+    <Content Include="assets\js\app\util\useraccess\sql.js" />
+    <Content Include="assets\js\app\wh\cs\chart\customerBirthdayReport.js" />
+    <Content Include="assets\js\app\wh\cs\chart\monitoring5.js" />
+    <Content Include="assets\js\app\wh\cs\chart\monitoring7.js" />
+    <Content Include="assets\js\app\wh\cs\chart\stnkExtensionReport.js" />
+    <Content Include="assets\js\app\wh\cs\master\UnitRST.js" />
+    <Content Include="assets\js\app\wh\cs\review\input-review.js" />
+    <Content Include="assets\js\app\wh\cs\review\review.js" />
+    <Content Include="assets\js\app\wh\cs\review\reviews.js" />
+    <Content Include="assets\js\app\wh\cs\review\reviews2.js" />
+    <Content Include="assets\js\app\wh\ins\inq\inqIndent.js" />
+    <Content Include="assets\js\app\wh\ins\mst\pmquota.js" />
+    <Content Include="assets\js\app\wh\ins\trans\pmIndent.js" />
+    <Content Include="assets\js\app\wh\its\GenerateDSR.js" />
+    <Content Include="assets\js\app\wh\its\GenerateITSToExcel.js" />
+    <Content Include="assets\js\app\wh\its\inqItsReportAccumByPeriode.js" />
+    <Content Include="assets\js\app\wh\its\inqItsReportFreshInqHarianDealer.js" />
+    <Content Include="assets\js\app\wh\its\inqItsReportSPKWorkDay.js" />
+    <Content Include="assets\js\app\wh\its\RekapInqSpkFak.js" />
+    <Content Include="assets\js\app\wh\its\SummaryExecutive4.js" />
+    <Content Include="assets\js\app\wh\its\SummaryExecutive5.js" />
+    <Content Include="assets\js\app\wh\mp\DemographicCondition.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\Demotion.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\Promotion.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\monitoringoutletv2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\monitoringoutletv2dealer.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\mstQaException.js" />
+    <Content Include="assets\js\app\wh\qa\summaryperoccupation.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\inoutdata.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\mpdashboard.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\persinfocutoff.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\trainingdashboard.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\trainingdetail.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sl\InqFakturPolisi.js" />
+    <Content Include="assets\js\app\wh\sl\InqSales.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sl\liveStock.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sl\liveStockDealer.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sl\liveStockDealerMaintenance.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sl\liveStockMaintenance.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sl\modelmapping.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sl\mssi-master.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sl\mssi.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\AOSListReport.js" />
+    <Content Include="assets\js\app\wh\sp\generatelogreport.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\LiveStockPortal2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\LiveStockPortalInq2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\LiveStockPortalTransMode2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\master\MstAOSWarrantyParts.js" />
+    <Content Include="assets\js\app\wh\sp\SpAnalysisMonthlyRpt.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\SpAnalysisWeeklyRpt.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\SpAnalysisRpt.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\spAosLog.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\dashboard\CSIScoreDashboard.js" />
+    <Content Include="assets\js\app\wh\sv\dashboard\ProductivityDashboard.js" />
+    <Content Include="assets\js\app\wh\sv\dashboard\UnitRevenueDashboard.js" />
+    <Content Include="assets\js\app\wh\sv\generate-data\CampaignClaim.js" />
+    <Content Include="assets\js\app\wh\sv\generate-data\ConsistencyReportVOR.js" />
+    <Content Include="assets\js\app\wh\sv\generate-data\detailrevenueregspk.js" />
+    <Content Include="assets\js\app\wh\sv\generate-data\GenerateDRH.js" />
+    <Content Include="assets\js\app\wh\sv\generate-data\HistJobDelayVOR.js" />
+    <Content Include="assets\js\app\wh\sv\generate-data\vorReport.js" />
+    <Content Include="assets\js\app\wh\sv\inqacvtivevin.js" />
+    <Content Include="assets\js\app\wh\sv\inqmsi2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\gnDataMRSR.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\inqmsiRduaV2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\master\TargetVIN.js" />
+    <Content Include="assets\js\app\wh\sv\master\Campaign.js" />
+    <Content Include="assets\js\app\wh\sv\master\input-dealer-mapping.js" />
+    <Content Include="assets\js\app\wh\sv\master\SvMstMRSR.js" />
+    <Content Include="assets\js\app\wh\sv\pvtmsi.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\master\CSIScore.js" />
+    <Content Include="assets\js\app\wh\its\Inqkdpcoupon.js" />
+    <Content Include="assets\js\app\wh\sf\invalidemployee.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\turnoverratio.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\util\monitoring\formmonitoring.js" />
+    <Content Include="assets\js\app\wh\qa\monitoringpercustomer2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\monitoringperoutlet2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\qa2rekapsummary.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\qa2rekapsummarydealer.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\qarowdata2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\questionnaire2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\rowdatadealer2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\LiveStockPortalInq.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\LiveStockPortalTransMode.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\generate-data-submission-R2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\generate-data-submission.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\generate-sum-unit-intakeR2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\generate-unit-intakeR2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\master\UnitRST.js" />
+    <Content Include="assets\js\app\wh\sv\trans\TrnMRSR.js" />
+    <Content Include="assets\js\app\wh\sv\trans\ftir-inq.js" />
+    <Content Include="assets\js\components\ag-grid\dist\angular-grid.css" />
+    <Content Include="assets\js\components\ag-grid\dist\angular-grid.js" />
+    <Content Include="assets\js\components\ag-grid\dist\angular-grid.min.css">
+      <DependentUpon>angular-grid.css</DependentUpon>
+    </Content>
+    <Content Include="assets\js\components\ag-grid\dist\angular-grid.min.js">
+      <DependentUpon>angular-grid.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\components\ag-grid\dist\theme-dark.css" />
+    <Content Include="assets\js\components\ag-grid\dist\theme-dark.min.css">
+      <DependentUpon>theme-dark.css</DependentUpon>
+    </Content>
+    <Content Include="assets\js\components\ag-grid\dist\theme-fresh.css" />
+    <Content Include="assets\js\components\ag-grid\dist\theme-fresh.min.css">
+      <DependentUpon>theme-fresh.css</DependentUpon>
+    </Content>
+    <Content Include="assets\js\components\bootbox\bootbox.js" />
+    <Content Include="assets\js\components\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="assets\js\components\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="assets\js\components\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="assets\js\components\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="assets\js\components\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="assets\js\components\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="assets\js\components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\js\components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\js\components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\js\components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\js\components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\js\components\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="assets\js\components\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="assets\js\components\bootstrap\dist\js\npm.js" />
+    <Content Include="assets\js\components\handsontable\dist\handsontable.css" />
+    <Content Include="assets\js\components\handsontable\dist\handsontable.full.css" />
+    <Content Include="assets\js\components\handsontable\dist\handsontable.full.js" />
+    <Content Include="assets\js\components\handsontable\dist\handsontable.full.min.css">
+      <DependentUpon>handsontable.full.css</DependentUpon>
+    </Content>
+    <Content Include="assets\js\components\handsontable\dist\handsontable.full.min.js">
+      <DependentUpon>handsontable.full.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\components\handsontable\dist\handsontable.js" />
+    <Content Include="assets\js\components\handsontable\dist\moment\moment.js" />
+    <Content Include="assets\js\components\handsontable\dist\pikaday\pikaday.css" />
+    <Content Include="assets\js\components\handsontable\dist\pikaday\pikaday.js" />
+    <Content Include="assets\js\components\handsontable\dist\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="assets\js\components\handsontable\dist\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="assets\js\components\jquery\dist\jquery.min.js" />
+    <Content Include="assets\js\components\ladda-bootstrap\dist\ladda-themeless.css" />
+    <Content Include="assets\js\components\ladda-bootstrap\dist\ladda-themeless.min.css" />
+    <Content Include="assets\js\components\ladda-bootstrap\dist\ladda.css" />
+    <Content Include="assets\js\components\ladda-bootstrap\dist\ladda.jquery.min.js" />
+    <Content Include="assets\js\components\ladda-bootstrap\dist\ladda.js" />
+    <Content Include="assets\js\components\ladda-bootstrap\dist\ladda.min.css" />
+    <Content Include="assets\js\components\ladda-bootstrap\dist\ladda.min.js" />
+    <Content Include="assets\js\components\ladda-bootstrap\dist\spin.js" />
+    <Content Include="assets\js\components\ladda-bootstrap\dist\spin.min.js" />
+    <Content Include="assets\js\components\select2\.gitignore" />
+    <Content Include="assets\js\components\select2\select2-bootstrap.css" />
+    <Content Include="assets\js\components\select2\select2-spinner.gif" />
+    <Content Include="assets\js\components\select2\select2.css" />
+    <Content Include="assets\js\components\select2\select2.js" />
+    <Content Include="assets\js\components\select2\select2.min.js" />
+    <Content Include="assets\js\components\select2\select2.png" />
+    <Content Include="assets\js\components\select2\select2x2.png" />
+    <Content Include="assets\js\vendors\extjs\ext-ajax.js" />
+    <Content Include="assets\js\vendors\extjs\ext-all-debug.js" />
+    <Content Include="assets\js\vendors\extjs\ext-all.js" />
+    <Content Include="assets\js\vendors\extjs\ext-theme-classic-debug.js" />
+    <Content Include="assets\js\vendors\extjs\ext-theme-classic.js" />
+    <Content Include="assets\js\vendors\extjs\ext-theme-crisp-debug.js" />
+    <Content Include="assets\js\vendors\extjs\ext-theme-crisp.js" />
+    <Content Include="assets\js\vendors\handsontable_0.16.0\handsontable.full.min.js">
+      <DependentUpon>handsontable.full.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\handsontable_0.17.0\handsontable.full.js" />
+    <Content Include="assets\js\vendors\handsontable_0.17.0\handsontable.full.min.js">
+      <DependentUpon>handsontable.full.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\handsontable.full.min.js" />
+    <Content Include="assets\js\vendors\handsontable_0.16.0\handsontable.full.js" />
+    <Content Include="assets\js\vendors\handsontable_0.20.0\handsontable.full.js" />
+    <Content Include="assets\js\vendors\handsontable_0.20.0\handsontable.full.min.js">
+      <DependentUpon>handsontable.full.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\handsontable_0.20.2\handsontable.full.js" />
+    <Content Include="assets\js\vendors\handsontable_0.20.2\handsontable.full.min.js">
+      <DependentUpon>handsontable.full.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\moment-with-locales.min.js" />
+    <Content Include="assets\js\vendors\pivot.js" />
+    <Content Include="assets\js\vendors\jquery-ui.min.js" />
+    <Content Include="assets\js\vendors\jquery.fileDownload.js" />
+    <Compile Include="Common\FileDownload.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DoReportController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\ExcelController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SQLController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\SqlMembershipProvider.cs" />
+    <Compile Include="Membership\SqlRoleProvider.cs" />
+    <Compile Include="Membership\Crypto.cs" />
+    <Compile Include="Membership\WebSecurity.cs" />
+    <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\LogOnModel.cs" />
+    <Compile Include="Models\RegisteredUser.cs" />
+    <Compile Include="Models\SimRole.cs" />
+    <Compile Include="Models\SimUser.cs" />
+    <Compile Include="Models\SysLogger.cs" />
+    <Compile Include="Models\SysMenu.cs" />
+    <Compile Include="Models\SysModule.cs" />
+    <Compile Include="Models\SysReport.cs" />
+    <Compile Include="Models\SysRole.cs" />
+    <Compile Include="Models\SysRoleMenu.cs" />
+    <Compile Include="Models\SysRoleModule.cs" />
+    <Compile Include="Models\SysRoleUser.cs" />
+    <Compile Include="Models\SysSession.cs" />
+    <Compile Include="Models\SysUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Viewer.aspx.cs">
+      <DependentUpon>Viewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Viewer.aspx.designer.cs">
+      <DependentUpon>Viewer.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\ajax-loader.min.css" />
+    <Content Include="assets\css\dashboard.css">
+      <DependentUpon>dashboard.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\dashboard.min.css">
+      <DependentUpon>dashboard.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\login.css">
+      <DependentUpon>login.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\login.min.css">
+      <DependentUpon>login.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\popup.css">
+      <DependentUpon>popup.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\popup.min.css">
+      <DependentUpon>popup.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.chart.css">
+      <DependentUpon>sdms.chart.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.chart.min.css">
+      <DependentUpon>sdms.chart.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.css">
+      <DependentUpon>sdms.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.dashboard.css">
+      <DependentUpon>sdms.dashboard.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.dashboard.min.css">
+      <DependentUpon>sdms.dashboard.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.kendo.css">
+      <DependentUpon>sdms.kendo.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.kendo.min.css">
+      <DependentUpon>sdms.kendo.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.min.css">
+      <DependentUpon>sdms.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.responsive.css">
+      <DependentUpon>sdms.responsive.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.responsive.min.css">
+      <DependentUpon>sdms.responsive.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.ui.css">
+      <DependentUpon>sdms.ui.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.ui.min.css">
+      <DependentUpon>sdms.ui.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.widget.css">
+      <DependentUpon>sdms.widget.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.widget.min.css">
+      <DependentUpon>sdms.widget.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.zurb.css">
+      <DependentUpon>sdms.zurb.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.zurb.min.css">
+      <DependentUpon>sdms.zurb.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\animate.css" />
+    <Content Include="assets\css\vendor\animate.delay.css" />
+    <Content Include="assets\css\vendor\animate.delay.min.css">
+      <DependentUpon>animate.delay.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\animate.min.css">
+      <DependentUpon>animate.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\font-awesome.css" />
+    <Content Include="assets\css\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\css\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="assets\css\vendor\foundation.css" />
+    <Content Include="assets\css\vendor\foundation.custom.css" />
+    <Content Include="assets\css\vendor\foundation.min.css">
+      <DependentUpon>foundation.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\imgareaselect\border-anim-h.gif" />
+    <Content Include="assets\css\vendor\imgareaselect\border-anim-v.gif" />
+    <Content Include="assets\css\vendor\imgareaselect\border-h.gif" />
+    <Content Include="assets\css\vendor\imgareaselect\border-v.gif" />
+    <Content Include="assets\css\vendor\imgareaselect\imgareaselect-animated.css" />
+    <Content Include="assets\css\vendor\imgareaselect\imgareaselect-default.css" />
+    <Content Include="assets\css\vendor\imgareaselect\imgareaselect-deprecated.css" />
+    <Content Include="assets\css\vendor\kendo\kendo.blueopal.css" />
+    <Content Include="assets\css\vendor\kendo\kendo.blueopal.min.css" />
+    <Content Include="assets\css\vendor\kendo\kendo.common.css" />
+    <Content Include="assets\css\vendor\kendo\kendo.metro.css" />
+    <Content Include="assets\css\vendor\kendo\kendo.metro.min.css" />
+    <Content Include="assets\css\vendor\kendo\kendo.mobile.all.min.css" />
+    <Content Include="assets\css\vendor\kendo\textures\brushed-metal.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots1.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots10.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots11.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots12.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots13.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots2.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots3.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots4.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots5.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots6.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots7.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots8.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots9.png" />
+    <Content Include="assets\css\vendor\kendo\textures\glass-lighter.png" />
+    <Content Include="assets\css\vendor\kendo\textures\glass.png" />
+    <Content Include="assets\css\vendor\kendo\textures\highlight.png" />
+    <Content Include="assets\css\vendor\kendo\textures\hsv-gradient.png" />
+    <Content Include="assets\css\vendor\kendo\textures\hue.png" />
+    <Content Include="assets\css\vendor\kendo\textures\leather1.png" />
+    <Content Include="assets\css\vendor\kendo\textures\leather2.png" />
+    <Content Include="assets\css\vendor\kendo\textures\noise.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe1.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe2.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe3.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe4.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe5.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe6.png" />
+    <Content Include="assets\css\vendor\kendo\textures\transparency.png" />
+    <Content Include="assets\css\vendor\kendo\textures\transtexture.png" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\editor.png" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\imagebrowser.png" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\loading-image.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\loading.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\slider-h.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\slider-v.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\sprite.png" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\editor.png" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\imagebrowser.png" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\loading-image.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\loading.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\slider-h.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\slider-v.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\sprite.png" />
+    <Content Include="assets\css\vendor\nv.d3.min.css" />
+    <Content Include="assets\css\vendor\themes\icon\arrowhead-left.png" />
+    <Content Include="assets\css\vendor\themes\icon\arrowhead-right-white-24.png" />
+    <Content Include="assets\css\vendor\themes\icon\arrowhead-right-white.png" />
+    <Content Include="assets\css\vendor\themes\icon\arrowhead-right.png" />
+    <Content Include="assets\css\vendor\themes\icon\calendar_black.png" />
+    <Content Include="assets\css\vendor\themes\icon\calendar_white.png" />
+    <Content Include="assets\css\vendor\themes\icon\ui-icons_content.png" />
+    <Content Include="assets\css\vendor\themes\icon\ui-icons_error.png" />
+    <Content Include="assets\css\vendor\jquery.ui.core.css" />
+    <Content Include="assets\css\vendor\jquery.ui.datepicker.css" />
+    <Content Include="assets\css\vendor\jquery.ui.spinner.css" />
+    <Content Include="assets\css\vendor\normalize.css" />
+    <Content Include="assets\css\vendor\select2.css" />
+    <Content Include="assets\css\vendor\select2.png" />
+    <Content Include="assets\css\vendor\spinner.gif" />
+    <Content Include="assets\css\vendor\themes\jquery.ui.spinner.themes.css">
+      <DependentUpon>jquery.ui.spinner.themes.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\themes\jquery.ui.spinner.themes.min.css">
+      <DependentUpon>jquery.ui.spinner.themes.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\themes\jquery.ui.widget.themes.css">
+      <DependentUpon>jquery.ui.widget.themes.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\themes\jquery.ui.widget.themes.min.css">
+      <DependentUpon>jquery.ui.widget.themes.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\toastr.css" />
+    <Content Include="assets\img\datatables\sort_asc.png" />
+    <Content Include="assets\img\datatables\sort_desc.png" />
+    <Content Include="assets\img\employee\ktp.png" />
+    <Content Include="assets\img\employee\person.png" />
+    <Content Include="assets\img\imagebrowser.png" />
+    <Content Include="assets\img\loading-image.gif" />
+    <Content Include="assets\img\loading.gif" />
+    <Content Include="assets\img\loading_2x.gif" />
+    <Content Include="assets\img\slider-h.gif" />
+    <Content Include="assets\img\slider-v.gif" />
+    <Content Include="assets\img\sprites\metro.png" />
+    <Content Include="assets\img\sprites\metro_2x.png" />
+    <Content Include="assets\js\app\util\dcs\inq-download-file.js" />
+    <Content Include="assets\js\app\util\dcs\inq-upload-file.js" />
+    <Content Include="assets\js\app\util\inq\colldata.js" />
+    <Content Include="assets\js\app\util\inq\colldatasum.js" />
+    <Content Include="assets\js\app\util\inq\schedlog.js" />
+    <Content Include="assets\js\app\util\inq\dlrinfo.js" />
+    <Content Include="assets\js\app\util\inq\sdms.js" />
+    <Content Include="assets\js\app\wh\cs\chart\monitoring4.js" />
+    <Content Include="assets\js\app\wh\cs\chart\monitoring2.js" />
+    <Content Include="assets\js\app\wh\cs\chart\monitoring1.js" />
+    <Content Include="assets\js\app\wh\cs\chart\monitoring3.js" />
+    <Content Include="assets\js\app\wh\cs\chart\monitoring.js" />
+    <Content Include="assets\js\app\wh\cs\dashboard2.js" />
+    <Content Include="assets\js\app\wh\its\InqGenerateSalesPersonContribution.js" />
+    <Content Include="assets\js\app\wh\its\InqItsByLostCase.js" />
+    <Content Include="assets\js\app\wh\its\InqItsByPerolehanData.js" />
+    <Content Include="assets\js\app\wh\its\InqItsByTestDrive.js" />
+    <Content Include="assets\js\app\wh\its\inqItsIndent.js" />
+    <Content Include="assets\js\app\wh\its\InqItsByLeadTime.js" />
+    <Content Include="assets\js\app\wh\its\inqSalesProspect.js" />
+    <Content Include="assets\js\app\wh\its\SlideChartD3.js" />
+    <Content Include="assets\js\app\wh\its\ExecutiveChart3.js" />
+    <Content Include="assets\js\app\wh\its\ExecutiveChart2.js" />
+    <Content Include="assets\js\app\wh\its\ExecutiveChart1.js" />
+    <Content Include="assets\js\app\wh\its\inqItsWithStatusAndTestDrive.js" />
+    <Content Include="assets\js\app\wh\its\MonitoringProductivity.js" />
+    <Content Include="assets\js\app\wh\its\SlideChart.js" />
+    <Content Include="assets\js\app\wh\its\SummaryExecutive3.js" />
+    <Content Include="assets\js\app\wh\its\SummaryExecutive2.js" />
+    <Content Include="assets\js\app\wh\its\GenerateITS.js" />
+    <Content Include="assets\js\app\wh\its\inqexecits.js" />
+    <Content Include="assets\js\app\wh\its\SummaryExecutive.js" />
+    <Content Include="assets\js\app\wh\its\inqprod.js" />
+    <Content Include="assets\js\app\loginfo.js" />
+    <Content Include="assets\js\app\util\dcs\dnload.js" />
+    <Content Include="assets\js\app\util\useraccess\menu.js" />
+    <Content Include="assets\js\app\util\useraccess\user.js" />
+    <Content Include="assets\js\app\wh\cs\dashboard-negasi.js" />
+    <Content Include="assets\js\app\wh\cs\CustStat.js" />
+    <Content Include="assets\js\app\util\dms\lastupd.js" />
+    <Content Include="assets\js\app\util\dms\dataproc.js" />
+    <Content Include="assets\js\app\util\dms\datalist.js" />
+    <Content Include="assets\js\app\util\dms\user.js" />
+    <Content Include="assets\js\app\util\general\unauthorized.js" />
+    <Content Include="assets\js\app\util\useraccess\rolemenu.js" />
+    <Content Include="assets\js\app\util\useraccess\user-old.js" />
+    <Content Include="assets\js\app\util\useraccess\menu-old.js" />
+    <Content Include="assets\js\app\util\useraccess\module.js" />
+    <Content Include="assets\js\app\util\useraccess\role.js" />
+    <Content Include="assets\js\app\util\useraccess\rolemodule.js" />
+    <Content Include="assets\js\app\wh\cs\bpkbreminder.js" />
+    <Content Include="assets\js\app\wh\cs\custbday.js" />
+    <Content Include="assets\js\app\wh\cs\custholiday.js" />
+    <Content Include="assets\js\app\wh\cs\dashboard.js" />
+    <Content Include="assets\js\app\wh\cs\feedback.js" />
+    <Content Include="assets\js\app\wh\cs\InqCustStat.js" />
+    <Content Include="assets\js\app\wh\cs\jstest.js" />
+    <Content Include="assets\js\app\wh\cs\stnkext.js" />
+    <Content Include="assets\js\app\wh\cs\tdaycall.js" />
+    <Content Include="assets\js\app\wh\its\inqwithsts.js" />
+    <Content Include="assets\js\app\wh\mp\consolidation.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\inqSendData.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\MpDashboard.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\MpDataTrend.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\MpPersInfo.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\MpRotation.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\MpSalesTeamStructures.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\MpTrainingDetails.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\MpTrainingSummary.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\persachieve.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\perslist.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\mp\persmuta.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\monitoringpercustomer.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\monitoringperoutlet.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\qarekapsummary.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\qarowdata.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\questionnaire.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\rekapbytype.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\rekapbytypedealer.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\qa\rowdatadealer.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\persinfo2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\mutation.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\outstanding-training.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\persachieve.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\persinfo.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\perslist.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\persmuta.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\review-sfm.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\sales-team.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\salesman-training.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\sc-sh-bm-training.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\trend.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sf\turn-over.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sl\InqReportSalesNStock.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\spke\DailySPKReportPerDealer.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\spke\RawdataSPKExhibition.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\spke\RekapSPKExhibitionCustomer.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\spke\spkerpexsum.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\spke\SummarySPKExhibitionByDate.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\spke\SummarySPKReportByDatePerShift.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\spke\trans\SPKExhibition.js" />
+    <Content Include="assets\js\app\wh\sp\GeneratePartSales2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\LiveStockPortal.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\chart\MonitoringByPeriode.js" />
+    <Content Include="assets\js\app\wh\sv\chart\RegisterSpk2.js" />
+    <Content Include="assets\js\app\wh\sv\chart\RegisterSpk1.js" />
+    <Content Include="assets\js\app\wh\sv\chart\UnitIntakeSummary.js" />
+    <Content Include="assets\js\app\wh\sv\chart\MonitoringByPeriode-new.js" />
+    <Content Include="assets\js\app\wh\sv\generate-sum-unit-intake.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\inqdata.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\inqmsiRdua.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\inqmsiRdua.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\RegisterSpk.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\generate-unit-intake.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sp\GeneratePartSales.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\GeneratePartSales.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\inqinv.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\inqmsi.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\persachieve.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\perslist.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\persmuta.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\js\app\wh\sv\trans\ftir.js" />
+    <Content Include="assets\js\SimDms.print.js" />
+    <Content Include="assets\js\SimDms.ui.js" />
+    <Content Include="assets\js\SimDms.chart.js" />
+    <Content Include="assets\js\SimDms.core.js" />
+    <Content Include="assets\js\SimDms.inquiry.js" />
+    <Content Include="assets\js\SimDms.kendo.js" />
+    <Content Include="assets\js\SimDms.util.js" />
+    <Content Include="assets\js\SimDms.widget.js" />
+    <Content Include="assets\js\app\login.js" />
+    <Content Include="assets\js\vendors\bootstrap.js" />
+    <Content Include="assets\js\vendors\d3.min.js" />
+    <Content Include="assets\js\vendors\highcharts.js" />
+    <Content Include="assets\js\vendors\imgareaselect\jquery.imgareaselect.js" />
+    <Content Include="assets\js\vendors\imgareaselect\jquery.imgareaselect.min.js" />
+    <Content Include="assets\js\vendors\imgareaselect\jquery.imgareaselect.pack.js" />
+    <Content Include="assets\js\vendors\imgLiquid-min.js" />
+    <Content Include="assets\js\vendors\jquery.dataTables.js" />
+    <Content Include="assets\js\vendors\jquery.dataTables.min.js">
+      <DependentUpon>jquery.dataTables.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\jquery.form.min.js" />
+    <Content Include="assets\js\vendors\jquery.ui.button.js" />
+    <Content Include="assets\js\vendors\jquery.ui.core.js" />
+    <Content Include="assets\js\vendors\jquery.ui.datepicker.js" />
+    <Content Include="assets\js\vendors\jquery.ui.effect-slide.js" />
+    <Content Include="assets\js\vendors\jquery.ui.effect.js" />
+    <Content Include="assets\js\vendors\jquery.ui.spinner.js" />
+    <Content Include="assets\js\vendors\jquery.ui.widget.js" />
+    <Content Include="assets\js\vendors\jquery.validate.js" />
+    <Content Include="assets\js\vendors\jsnlog.min.js">
+      <DependentUpon>jsnlog.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\kendo-bak\kendo.binder.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.calendar.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.colorpicker.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.columnmenu.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.combobox.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.core.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.data.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.datepicker.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.draganddrop.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.dropdownlist.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.editable.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.editor.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.filtermenu.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.grid.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.groupable.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.list.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.menu.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.mobile.scroller.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.multiselect.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.numerictextbox.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.pager.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.panelbar.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.popup.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.reorderable.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.resizable.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.router.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.selectable.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.slider.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.sortable.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.splitter.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.tabstrip.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.tooltip.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.treeview.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.upload.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.userevents.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.validator.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.view.min.js" />
+    <Content Include="assets\js\vendors\kendo-bak\kendo.window.min.js" />
+    <Content Include="assets\js\vendors\kendo.all.min.js" />
+    <Content Include="assets\js\vendors\kendo.web.min.js" />
+    <Content Include="assets\js\vendors\kendo\kendo.all.min.js" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\editor.png" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\imagebrowser.png" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\indeterminate.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\loading-image.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\loading.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\loading_2x.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\markers.png" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\markers_2x.png" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\slider-h.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\slider-v.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\sprite.png" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\sprite_2x.png" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\sprite_kpi.png" />
+    <Content Include="assets\js\vendors\kendo\themes\blueopal\sprite_kpi_2x.png" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\editor.png" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\imagebrowser.png" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\indeterminate.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\loading-image.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\loading.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\loading_2x.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\markers.png" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\markers_2x.png" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\slider-h.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\slider-v.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\sprite.png" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\sprite_2x.png" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\sprite_kpi.png" />
+    <Content Include="assets\js\vendors\kendo\themes\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="assets\js\vendors\kendo\themes\kendo.blueopal.min.css" />
+    <Content Include="assets\js\vendors\kendo\themes\kendo.blueopal.mobile.min.css" />
+    <Content Include="assets\js\vendors\kendo\themes\kendo.bootstrap.min.css" />
+    <Content Include="assets\js\vendors\kendo\themes\kendo.bootstrap.mobile.min.css" />
+    <Content Include="assets\js\vendors\kendo\themes\kendo.common-bootstrap.core.min.css" />
+    <Content Include="assets\js\vendors\kendo\themes\kendo.common-bootstrap.min.css" />
+    <Content Include="assets\js\vendors\kendo\themes\kendo.common.core.min.css" />
+    <Content Include="assets\js\vendors\kendo\themes\kendo.common.min.css" />
+    <Content Include="assets\js\vendors\kendo\themes\metro\editor.png" />
+    <Content Include="assets\js\vendors\kendo\themes\metro\imagebrowser.png" />
+    <Content Include="assets\js\vendors\kendo\themes\metro\loading-image.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\metro\loading.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\metro\slider-h.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\metro\slider-v.gif" />
+    <Content Include="assets\js\vendors\kendo\themes\metro\sprite.png" />
+    <Content Include="assets\js\vendors\linq.min.js" />
+    <Content Include="assets\js\vendors\modernizr.js" />
+    <Content Include="assets\js\vendors\foundation.js" />
+    <Content Include="assets\js\vendors\foundation.min.js" />
+    <Content Include="assets\js\vendors\foundation.topbar.js" />
+    <Content Include="assets\js\vendors\jquery-2.0.3.js" />
+    <Content Include="assets\js\vendors\jquery-2.0.3.min.js">
+      <DependentUpon>jquery-2.0.3.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\moment.js" />
+    <Content Include="assets\js\vendors\d3.ext.js" />
+    <Content Include="assets\js\vendors\nv.d3.min.js" />
+    <Content Include="assets\js\vendors\pikaday.js" />
+    <Content Include="assets\js\vendors\toastr.js" />
+    <Content Include="assets\js\vendors\underscore.min.js" />
+    <Content Include="assets\js\vendors\verify.notify.min.js" />
+    <Content Include="assets\js\vendors\webix\angular-block-ui.js" />
+    <Content Include="assets\js\vendors\webix\angular-block-ui.min.js" />
+    <Content Include="assets\js\vendors\webix\angular-kendo.js" />
+    <Content Include="assets\js\vendors\webix\angular.all.js" />
+    <Content Include="assets\js\vendors\webix\select2.min.js" />
+    <Content Include="assets\js\vendors\webix\verify.notify.js" />
+    <Content Include="assets\js\vendors\webix\verify.notify.min.js" />
+    <Content Include="assets\js\vendors\webix\webix.all.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Htmls\dashboard\bootstrap.min.css" />
+    <Content Include="Htmls\dashboard\summary.css">
+      <DependentUpon>summary.less</DependentUpon>
+    </Content>
+    <Content Include="Htmls\dashboard\summary.html" />
+    <Content Include="Htmls\dashboard\summary.min.css">
+      <DependentUpon>summary.less</DependentUpon>
+    </Content>
+    <Content Include="Htmls\menu.html" />
+    <Content Include="Reports\Viewer.aspx" />
+    <Content Include="assets\js\vendors\jsnlog.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Start\" />
+    <Folder Include="assets\js\app\wh\dcs\" />
+    <Folder Include="assets\js\app\wh\its\report\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\font\segoe-ui.eot" />
+    <Content Include="assets\font\segoe-ui.svg" />
+    <Content Include="assets\font\segoe-ui.svgz" />
+    <Content Include="assets\font\segoe-ui.ttf" />
+    <Content Include="assets\font\segoe-ui.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\js\vendors\jquery-2.0.3.min.js.map">
+      <DependentUpon>jquery-2.0.3.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\sdms.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\login.less" />
+    <Content Include="assets\css\ajax-loader.less" />
+    <Content Include="assets\css\sdms.chart.less" />
+    <Content Include="assets\css\sdms.kendo.less" />
+    <Content Include="assets\css\popup.less" />
+    <Content Include="assets\css\dashboard.less" />
+    <Content Include="assets\css\sdms.dashboard.less" />
+    <Content Include="assets\css\sdms.responsive.less" />
+    <Content Include="assets\css\sdms.ui.less" />
+    <Content Include="assets\css\sdms.responsive.css.map">
+      <DependentUpon>sdms.responsive.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.widget.css.map">
+      <DependentUpon>sdms.widget.css</DependentUpon>
+    </Content>
+    <None Include="assets\css\sdms.widget.less" />
+    <Content Include="assets\css\vendor\themes\jquery.ui.spinner.themes.less" />
+    <Content Include="assets\css\vendor\themes\jquery.ui.widget.themes.less" />
+    <Content Include="assets\css\sdms.zurb.less" />
+    <Content Include="assets\font\fontawesome-webfont.eot" />
+    <Content Include="assets\font\fontawesome-webfont.svg" />
+    <Content Include="assets\font\fontawesome-webfont.ttf" />
+    <Content Include="assets\font\fontawesome-webfont.woff" />
+    <Content Include="assets\js\vendors\jquery.dataTables.min.js.map">
+      <DependentUpon>jquery.dataTables.js</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\kendo\kendo.blueopal.less" />
+    <Content Include="assets\css\vendor\kendo\kendo.metro.less" />
+    <Content Include="assets\css\vendor\kendo\template.less" />
+    <Content Include="Htmls\dashboard\summary.less" />
+    <Content Include="assets\css\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\css\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\css\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\css\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\css\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="assets\js\components\select2\.bower.json" />
+    <Content Include="assets\js\components\select2\bower.json" />
+    <Content Include="assets\js\components\select2\component.json" />
+    <Content Include="assets\js\components\select2\composer.json" />
+    <Content Include="assets\js\components\select2\LICENSE" />
+    <Content Include="assets\js\components\select2\package.json" />
+    <Content Include="assets\js\components\select2\README.md" />
+    <Content Include="assets\js\components\select2\release.sh" />
+    <Content Include="assets\js\components\select2\select2.jquery.json" />
+    <Content Include="assets\js\components\handsontable\dist\pikaday\LICENSE" />
+    <Content Include="assets\js\components\handsontable\dist\zeroclipboard\LICENSE" />
+    <Content Include="assets\js\vendors\handsontable_0.16.0\handsontable.full.min.js.map">
+      <DependentUpon>handsontable.full.min.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\handsontable_0.17.0\handsontable.full.min.js.map">
+      <DependentUpon>handsontable.full.min.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\handsontable_0.20.0\handsontable.full.min.js.map">
+      <DependentUpon>handsontable.full.min.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\handsontable_0.20.2\handsontable.full.min.js.map">
+      <DependentUpon>handsontable.full.min.js</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\20150818.pubxml" />
+    <None Include="Properties\PublishProfiles\IJal.pubxml" />
+    <None Include="Properties\PublishProfiles\SimDms Server Local Pub..pubxml" />
+    <None Include="Properties\PublishProfiles\SimDms.pubxml" />
+    <None Include="Properties\PublishProfiles\SIMDMSWEB OK.pubxml" />
+    <None Include="Properties\PublishProfiles\SimDmsWeb.pubxml" />
+    <None Include="Properties\PublishProfiles\SimSdms.pubxml" />
+    <Content Include="Views\Account\LogInfo.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Home\Secure.cshtml" />
+    <Content Include="Views\Layout\Index.cshtml" />
+    <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\Dashboard\ExecutiveSummary.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Reports\rdlc\sv\ClaimTagWarranty.rdl" />
+    <Content Include="Reports\rdlc\sv\ftir-tag-warranty.rdl" />
+    <Content Include="Reports\rdlc\sv\RekapFTIR.rdl" />
+    <Content Include="Views\SQL\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimDms.DataWarehouse\SimDms.DataWarehouse.csproj">
+      <Project>{6463ee51-fcbe-4ba1-be00-5931cead4c9e}</Project>
+      <Name>SimDms.DataWarehouse</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimDms.SUtility\SimDms.SUtility.csproj">
+      <Project>{b24a9086-ae00-4d89-99e5-555e01466d98}</Project>
+      <Name>SimDms.SUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\rdlc\cs\CsCustData.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rdlc\cs\CsCustDataTrans.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rdlc\cs\CsCustDetailsTrans.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rdlc\its\ItsGenerate.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSaldoInqProdBySales.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSaldoInqProdBySource.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSaldoInqProdByVeh.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSumInqProdBySales.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSumInqProdBySource.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSumInqProdByVeh.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51888</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4455/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

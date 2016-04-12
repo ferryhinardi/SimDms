@@ -1,0 +1,2567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2DF608C2-6421-4404-AEB3-FB81AEFD1E5A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eXpressAPP</RootNamespace>
+    <AssemblyName>APP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44301</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>3dfeae38</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.ContextProvider, Version=1.5.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Breeze.Server.ContextProvider.1.5.4\lib\Breeze.ContextProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Breeze.ContextProvider.EF6, Version=1.5.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Breeze.Server.ContextProvider.EF6.1.5.4\lib\Breeze.ContextProvider.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Breeze.WebApi2, Version=1.5.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Breeze.Server.WebApi2.1.5.4\lib\Breeze.WebApi2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.76.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.76.0\lib\net40-client\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.1.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Common.Logging.3.1.0\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Common.Logging.Core.3.1.0\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Elmah.v2">
+      <HintPath>..\packages\Common.Logging.Elmah.v2.1.0.1\lib\net45\Common.Logging.Elmah.v2.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.SqlServer.EFInitializer">
+      <HintPath>..\packages\Elmah.SqlServer.EFInitializer.1.0.0\lib\4.5\Elmah.SqlServer.EFInitializer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Ado, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Ado.1.7.3\lib\net45\Glimpse.Ado.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.AspNet, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.AspNet.1.9.2\lib\net45\Glimpse.AspNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.EF6, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.EF6.1.6.5\lib\net45\Glimpse.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.4.3\lib\net45\Hangfire.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.Dashboard.Authorization, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Dashboard.Authorization.2.1.0\lib\net45\Hangfire.Dashboard.Authorization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.4.3\lib\net45\Hangfire.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JSNLog, Version=2.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSNLog.2.9.1.0\lib\net40\JSNLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kendo.DynamicLinq">
+      <HintPath>..\packages\Kendo.DynamicLinq.1.1.2.0\lib\net40\Kendo.DynamicLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Kentor.OwinCookieSaver, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Kentor.OwinCookieSaver.1.0.2\lib\net45\Kentor.OwinCookieSaver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.2.33, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.2.206221351\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.3.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OpenIdConnect">
+      <HintPath>..\packages\Microsoft.Owin.Security.OpenIdConnect.3.0.1\lib\net45\Microsoft.Owin.Security.OpenIdConnect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.0.1\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.0.1\lib\net45\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.0.1\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.2.0.1\lib\net45\MongoDB.Driver.Legacy.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Security.3.2.3.0\lib\net45\Mono.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcCodeRouting, Version=1.3.0.0, Culture=neutral, PublicKeyToken=bf7cf9743009fe42, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcCodeRouting.1.3.0\lib\net40\MvcCodeRouting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcCodeRouting.Web.Http, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bf7cf9743009fe42, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcCodeRouting.Web.Http.1.1.0\lib\net40\MvcCodeRouting.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcCodeRouting.Web.Http.WebHost, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bf7cf9743009fe42, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcCodeRouting.Web.Http.WebHost.1.1.0\lib\net40\MvcCodeRouting.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NRepository.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=71ae69dfa47b271c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NRepository.Core.3.1.0.0\lib\net45\NRepository.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NRepository.MongoDb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=71ae69dfa47b271c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NRepository.MongoDb.2.1.0.0\lib\net45\NRepository.MongoDb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PCLCrypto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLCrypto.1.0.2.15130\lib\net40-Client\PCLCrypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Postal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=45719375b8b4d528, processorArchitecture=MSIL">
+      <HintPath>..\packages\Postal.Mvc5.1.2.0\lib\net45\Postal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.7.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.7.0\lib\net45\RazorEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Services" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Dynamic, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.4\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.5.1\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityManager">
+      <HintPath>..\packages\Thinktecture.IdentityManager.1.0.0-beta3\lib\net45\Thinktecture.IdentityManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityManager.AspNetIdentity">
+      <HintPath>..\packages\Thinktecture.IdentityManager.AspNetIdentity.1.0.0-beta3\lib\net45\Thinktecture.IdentityManager.AspNetIdentity.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Client.Net45, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Thinktecture.IdentityModel.Client.4.0.1\lib\net45\Thinktecture.IdentityModel.Client.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Core, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Thinktecture.IdentityModel.Core.1.4.0\lib\net45\Thinktecture.IdentityModel.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Owin.ResourceAuthorization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Thinktecture.IdentityModel.Owin.ResourceAuthorization.1.1.0\lib\net45\Thinktecture.IdentityModel.Owin.ResourceAuthorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Owin.ResourceAuthorization.Mvc">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Owin.ResourceAuthorization.Mvc.2.0.0\lib\net45\Thinktecture.IdentityModel.Owin.ResourceAuthorization.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Owin.ResourceAuthorization.WebApi">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Owin.ResourceAuthorization.WebApi.3.0.0\lib\net45\Thinktecture.IdentityModel.Owin.ResourceAuthorization.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.WebApi">
+      <HintPath>..\packages\Thinktecture.IdentityModel.WebApi.2.0.1\lib\net45\Thinktecture.IdentityModel.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityServer3, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinktecture.IdentityServer3.1.6.2\lib\net45\Thinktecture.IdentityServer3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityServer3.AspNetIdentity">
+      <HintPath>..\packages\Thinktecture.IdentityServer3.AspNetIdentity.1.0.0\lib\net45\Thinktecture.IdentityServer3.AspNetIdentity.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityServer3.EntityFramework, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Thinktecture.IdentityServer3.EntityFramework.1.2.1\lib\net45\Thinktecture.IdentityServer3.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\ElmahInitializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
+    <Compile Include="App_Start\JSNLogConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\ConfigController.cs" />
+    <Compile Include="Controllers\Api\FilesController.cs" />
+    <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\DevController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Codebase\Factory\AspNetIdentity\IdentityManager.cs" />
+    <Compile Include="Codebase\Factory\AspNetIdentity\SimpleEntity.cs" />
+    <Compile Include="Codebase\Factory\Factory.cs" />
+    <Compile Include="Codebase\Factory\Helper\Settings.cs" />
+    <Compile Include="Codebase\Factory\IdentityServer\AuthorizationManager.cs" />
+    <Compile Include="Codebase\Factory\IdentityServer\Certificate.cs" />
+    <Compile Include="Codebase\Factory\IdentityServer\Clients.cs" />
+    <Compile Include="Codebase\Factory\IdentityServer\Scopes.cs" />
+    <Compile Include="Codebase\Factory\IdentityServer\Users.cs" />
+    <Compile Include="Controllers\Sys\AppEngineController.cs" />
+    <Compile Include="Controllers\Sys\SysAdminController.cs" />
+    <Compile Include="Controllers\Sys\TestController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Codebase\Factory\Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.js" />
+    <Content Include="app.min.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
+    <Content Include="Content\breeze.directives.css" />
+    <Content Include="Content\css\codemirror-all.css" />
+    <Content Include="Content\css\codemirror-all.min.css">
+      <DependentUpon>codemirror-all.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\a.jquery.dataTables.min.css">
+      <DependentUpon>a.jquery.dataTables.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\dataTables.autoFill.css" />
+    <Content Include="Content\css\datatables\dataTables.autoFill.min.css">
+      <DependentUpon>dataTables.autoFill.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\datatables.bootstrap.css" />
+    <Content Include="Content\css\datatables\datatables.bootstrap.min.css">
+      <DependentUpon>datatables.bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\dataTables.colReorder.css" />
+    <Content Include="Content\css\datatables\dataTables.colReorder.min.css">
+      <DependentUpon>dataTables.colReorder.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\dataTables.colVis.css" />
+    <Content Include="Content\css\datatables\dataTables.colVis.min.css">
+      <DependentUpon>dataTables.colVis.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\dataTables.fixedColumns.css" />
+    <Content Include="Content\css\datatables\dataTables.fixedColumns.min.css">
+      <DependentUpon>dataTables.fixedColumns.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\dataTables.fixedHeader.css" />
+    <Content Include="Content\css\datatables\dataTables.fixedHeader.min.css">
+      <DependentUpon>dataTables.fixedHeader.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\dataTables.keyTable.css" />
+    <Content Include="Content\css\datatables\dataTables.keyTable.min.css">
+      <DependentUpon>dataTables.keyTable.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\dataTables.responsive.css" />
+    <Content Include="Content\css\datatables\dataTables.responsive.min.css">
+      <DependentUpon>dataTables.responsive.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\dataTables.scroller.css" />
+    <Content Include="Content\css\datatables\dataTables.scroller.min.css">
+      <DependentUpon>dataTables.scroller.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\dataTables.tableTools.css" />
+    <Content Include="Content\css\datatables\dataTables.tableTools.min.css">
+      <DependentUpon>dataTables.tableTools.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\datatables\a.jquery.dataTables.css" />
+    <Content Include="Content\css\release\angular-form-gen.css" />
+    <Content Include="Content\css\release\angular-form-gen.min.css">
+      <DependentUpon>angular-form-gen.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\bootstrap-clockpicker.css" />
+    <Content Include="Content\css\release\bootstrap-clockpicker.min.css">
+      <DependentUpon>bootstrap-clockpicker.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\breeze.directives.css" />
+    <Content Include="Content\css\release\breeze.directives.min.css">
+      <DependentUpon>breeze.directives.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\font-awesome-animation.css" />
+    <Content Include="Content\css\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Content\css\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="Content\css\release\adapt-strap.css" />
+    <Content Include="Content\css\release\adapt-strap.min.css">
+      <DependentUpon>adapt-strap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\angular-bootstrap-lightbox.css" />
+    <Content Include="Content\css\release\angular-bootstrap-lightbox.min.css">
+      <DependentUpon>angular-bootstrap-lightbox.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\angular-toggle-switch.css" />
+    <Content Include="Content\css\release\angular-toggle-switch.min.css">
+      <DependentUpon>angular-toggle-switch.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\codemirror\codemirror.min.css" />
+    <Content Include="Content\css\codemirror\dialog.css" />
+    <Content Include="Content\css\codemirror\dialog.min.css">
+      <DependentUpon>dialog.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\codemirror\foldgutter.min.css" />
+    <Content Include="Content\css\codemirror\fullscreen.min.css" />
+    <Content Include="Content\css\codemirror\layout.css" />
+    <Content Include="Content\css\codemirror\layout.min.css">
+      <DependentUpon>layout.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\codemirror\lint.min.css" />
+    <Content Include="Content\css\codemirror\matchesonscrollbar.css" />
+    <Content Include="Content\css\codemirror\matchesonscrollbar.min.css">
+      <DependentUpon>matchesonscrollbar.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\codemirror\merge.min.css" />
+    <Content Include="Content\css\codemirror\monokai.min.css" />
+    <Content Include="Content\css\codemirror\show-context-info.css" />
+    <Content Include="Content\css\codemirror\show-context-info.min.css">
+      <DependentUpon>show-context-info.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\codemirror\show-hint.css" />
+    <Content Include="Content\css\codemirror\show-hint.min.css">
+      <DependentUpon>show-hint.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\codemirror\simplescrollbars.css" />
+    <Content Include="Content\css\codemirror\simplescrollbars.min.css">
+      <DependentUpon>simplescrollbars.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\codemirror\tern.css" />
+    <Content Include="Content\css\codemirror\tern.min.css">
+      <DependentUpon>tern.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\extras\bootstrap-modal-bs3patch.min.css" />
+    <Content Include="Content\css\extras\bootstrap-modal.min.css" />
+    <Content Include="Content\css\extras\bootstrap-wizard.min.css" />
+    <Content Include="Content\css\extras\daterangepicker-bs3.min.css" />
+    <Content Include="Content\css\extras\demo-ie8.css" />
+    <Content Include="Content\css\extras\demo.css" />
+    <Content Include="Content\css\extras\invoice.min.css" />
+    <Content Include="Content\css\extras\jquery-ui.structure.min.css" />
+    <Content Include="Content\css\extras\jquery.fileupload-noscript.css" />
+    <Content Include="Content\css\extras\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Content\css\extras\jquery.fileupload-ui.css" />
+    <Content Include="Content\css\extras\jquery.fileupload.css" />
+    <Content Include="Content\css\extras\lockscreen.min.css" />
+    <Content Include="Content\css\extras\show-hint.min.css" />
+    <Content Include="Content\css\extras\style.css" />
+    <Content Include="Content\css\google-fonts.min.css" />
+    <Content Include="Content\css\release\angular-block-ui.css" />
+    <Content Include="Content\css\release\angular-block-ui.min.css">
+      <DependentUpon>angular-block-ui.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\animate.css" />
+    <Content Include="Content\css\release\animate.min.css">
+      <DependentUpon>animate.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\font-awesome-animation.min.css">
+      <DependentUpon>font-awesome-animation.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\fullcalendar.min.css" />
+    <Content Include="Content\css\release\fullcalendar.print.css" />
+    <Content Include="Content\css\release\handsontable.full.css" />
+    <Content Include="Content\css\release\handsontable.full.min.css">
+      <DependentUpon>handsontable.full.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\jquery.mCustomScrollbar.css" />
+    <Content Include="Content\css\release\jquery.mCustomScrollbar.min.css">
+      <DependentUpon>jquery.mCustomScrollbar.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\kendo.ext.css" />
+    <Content Include="Content\css\release\kendo.ext.min.css">
+      <DependentUpon>kendo.ext.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\ng-bs3-datepicker.css" />
+    <Content Include="Content\css\release\ng-bs3-datepicker.min.css">
+      <DependentUpon>ng-bs3-datepicker.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\ngDialog.css" />
+    <Content Include="Content\css\release\ngDialog.min.css">
+      <DependentUpon>ngDialog.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\nv.d3.css" />
+    <Content Include="Content\css\release\nv.d3.min.css">
+      <DependentUpon>nv.d3.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\overrides.css" />
+    <Content Include="Content\css\release\overrides.min.css">
+      <DependentUpon>overrides.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\pikaday.css" />
+    <Content Include="Content\css\release\pikaday.min.css">
+      <DependentUpon>pikaday.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\select.css" />
+    <Content Include="Content\css\release\select.min.css">
+      <DependentUpon>select.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\select2-bootstrap.css" />
+    <Content Include="Content\css\release\select2-bootstrap.min.css">
+      <DependentUpon>select2-bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\release\select2.css" />
+    <Content Include="Content\css\release\select2.min.css">
+      <DependentUpon>select2.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Content\data\data.js" />
+    <Content Include="Content\data\jsondata.min.js" />
+    <Content Include="Content\data\largedata.min.js" />
+    <Content Include="Content\data\onlinedata.js" />
+    <Content Include="Content\data\sampleslist.js" />
+    <Content Include="Content\data\templatelocaldata.js" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\img.svg" />
+    <Content Include="Content\images\collection.png" />
+    <Content Include="Content\images\collection_hover.png" />
+    <Content Include="Content\images\copy.png" />
+    <Content Include="Content\images\copy_hover.png" />
+    <Content Include="Content\images\csv.png" />
+    <Content Include="Content\images\csv_hover.png" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\filler.png" />
+    <Content Include="Content\images\insert.png" />
+    <Content Include="Content\images\loading-background.png" />
+    <Content Include="Content\images\medium-sprites.png" />
+    <Content Include="Content\images\medium-wait.gif" />
+    <Content Include="Content\images\minus.png" />
+    <Content Include="Content\images\pdf.png" />
+    <Content Include="Content\images\pdf_hover.png" />
+    <Content Include="Content\images\plus.png" />
+    <Content Include="Content\images\print.png" />
+    <Content Include="Content\images\print_hover.png" />
+    <Content Include="Content\images\small-sprites.gif" />
+    <Content Include="Content\images\sort_asc.png" />
+    <Content Include="Content\images\sort_asc_disabled.png" />
+    <Content Include="Content\images\sort_both.png" />
+    <Content Include="Content\images\sort_desc.png" />
+    <Content Include="Content\images\sort_desc_disabled.png" />
+    <Content Include="Content\images\xls.png" />
+    <Content Include="Content\images\xls_hover.png" />
+    <Content Include="Content\img\106-under_construction_transparent.png" />
+    <Content Include="Content\img\ajax-loader.gif" />
+    <Content Include="Content\img\alpha.png" />
+    <Content Include="Content\img\avatars\1.png" />
+    <Content Include="Content\img\avatars\2.png" />
+    <Content Include="Content\img\avatars\3.png" />
+    <Content Include="Content\img\avatars\4.png" />
+    <Content Include="Content\img\avatars\5.png" />
+    <Content Include="Content\img\avatars\female.png" />
+    <Content Include="Content\img\avatars\male.png" />
+    <Content Include="Content\img\avatars\sunny-big.png" />
+    <Content Include="Content\img\avatars\sunny.png" />
+    <Content Include="Content\img\avatars\user.png" />
+    <Content Include="Content\img\blank.gif" />
+    <Content Include="Content\img\border.png" />
+    <Content Include="Content\img\catatan.png" />
+    <Content Include="Content\img\chat.png" />
+    <Content Include="Content\img\clear.png" />
+    <Content Include="Content\img\config.png" />
+    <Content Include="Content\img\css3.png" />
+    <Content Include="Content\img\css3_32.png" />
+    <Content Include="Content\img\database.png" />
+    <Content Include="Content\img\design.png" />
+    <Content Include="Content\img\dropzone\spritemap%402x.png" />
+    <Content Include="Content\img\dropzone\spritemap.png" />
+    <Content Include="Content\img\excel-xls-icon.png" />
+    <Content Include="Content\img\flags\de.png" />
+    <Content Include="Content\img\flags\es.png" />
+    <Content Include="Content\img\flags\flags.png" />
+    <Content Include="Content\img\flags\us.png" />
+    <Content Include="Content\img\full-screen-exit.png" />
+    <Content Include="Content\img\full-screen-small-exit.png" />
+    <Content Include="Content\img\full-screen-small.png" />
+    <Content Include="Content\img\full-screen.png" />
+    <Content Include="Content\img\html5.png" />
+    <Content Include="Content\img\html5_32.png" />
+    <Content Include="Content\img\hue.png" />
+    <Content Include="Content\img\icon-down.png" />
+    <Content Include="Content\img\invoice\americanexpress.png" />
+    <Content Include="Content\img\invoice\mastercard.png" />
+    <Content Include="Content\img\invoice\paypal.png" />
+    <Content Include="Content\img\invoice\visa.png" />
+    <Content Include="Content\img\jcrop\Jcrop.gif" />
+    <Content Include="Content\img\jqueryui\ui-bg_flat_0_999999_40x100.png" />
+    <Content Include="Content\img\jqueryui\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\img\jqueryui\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\img\jqueryui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\img\jqueryui\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\img\jqueryui\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\img\jqueryui\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="Content\img\jqueryui\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\img\jqueryui\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_222222_256x240.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_428bca_256x240.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_454545_256x240.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_555555_256x240.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_888888_256x240.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_999999_256x240.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_f0ad4e_256x240.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_f6cf3b_256x240.png" />
+    <Content Include="Content\img\jqueryui\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\img\js.png" />
+    <Content Include="Content\img\js_32.png" />
+    <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\logo-blacknwhite.png" />
+    <Content Include="Content\img\logo-blue.png" />
+    <Content Include="Content\img\logo-o.png" />
+    <Content Include="Content\img\logo-pale.png" />
+    <Content Include="Content\img\logo-potaindo.png" />
+    <Content Include="Content\img\logo-suzuki.png" />
+    <Content Include="Content\img\logo-trio.png" />
+    <Content Include="Content\img\logo-white.png" />
+    <Content Include="Content\img\mappin-default.png" />
+    <Content Include="Content\img\minus.png" />
+    <Content Include="Content\img\mybg.png" />
+    <Content Include="Content\img\news.png" />
+    <Content Include="Content\img\pattern\divider.jpg" />
+    <Content Include="Content\img\pattern\graphy-xs.png" />
+    <Content Include="Content\img\pattern\graphy.png" />
+    <Content Include="Content\img\pattern\lightpaperfibers.png" />
+    <Content Include="Content\img\pattern\movable.png" />
+    <Content Include="Content\img\pattern\nistri-xs.png" />
+    <Content Include="Content\img\pattern\nistri.png" />
+    <Content Include="Content\img\pattern\overlay-pattern.png" />
+    <Content Include="Content\img\pattern\paper-xs.png" />
+    <Content Include="Content\img\pattern\paper.png" />
+    <Content Include="Content\img\pattern\pattern.png" />
+    <Content Include="Content\img\pattern\sneaker_mesh_fabric-xs.png" />
+    <Content Include="Content\img\pattern\sneaker_mesh_fabric.png" />
+    <Content Include="Content\img\pattern\tileable_wood_texture-xs.png" />
+    <Content Include="Content\img\pattern\tileable_wood_texture.png" />
+    <Content Include="Content\img\pdf-icon.png" />
+    <Content Include="Content\img\pertamina.png" />
+    <Content Include="Content\img\plan.png" />
+    <Content Include="Content\img\plus.png" />
+    <Content Include="Content\img\potaindo.ico" />
+    <Content Include="Content\img\progressbar.gif" />
+    <Content Include="Content\img\ribbon.png" />
+    <Content Include="Content\img\sa-dark.png" />
+    <Content Include="Content\img\sa-default.png" />
+    <Content Include="Content\img\saturation.png" />
+    <Content Include="Content\img\select2-1.png" />
+    <Content Include="Content\img\select2-spinner.gif" />
+    <Content Include="Content\img\slide-1-under-construction.png" />
+    <Content Include="Content\img\sort_asc.png" />
+    <Content Include="Content\img\sort_asc_disabled.png" />
+    <Content Include="Content\img\sort_both.png" />
+    <Content Include="Content\img\sort_desc.png" />
+    <Content Include="Content\img\sort_desc_disabled.png" />
+    <Content Include="Content\img\sosial-sharing.png" />
+    <Content Include="Content\img\suzuki.ico" />
+    <Content Include="Content\img\suzuki.png" />
+    <Content Include="Content\img\task.png" />
+    <Content Include="Content\img\Trainee-System.png" />
+    <Content Include="Content\img\trio.ico" />
+    <Content Include="Content\img\trio_oke.png" />
+    <Content Include="Content\img\under-construction.png" />
+    <Content Include="Content\img\Under-Construction_1.png" />
+    <Content Include="Content\img\under_contraction.jpg" />
+    <Content Include="Content\img\voicecommand\active-btn.gif" />
+    <Content Include="Content\img\vt-menu.png" />
+    <Content Include="Content\img\waitingpopup.gif" />
+    <Content Include="Content\img\Web_under_construction.png" />
+    <Content Include="Content\img\zoom_icon.png" />
+    <Content Include="Content\less\bootstrap.css">
+      <DependentUpon>bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\less\font-awesome.css">
+      <DependentUpon>font-awesome.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\font-awesome.min.css" />
+    <Content Include="Content\less\smartadmin-production-plugins.css">
+      <DependentUpon>smartadmin-production-plugins.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\smartadmin-production-plugins.min.css">
+      <DependentUpon>smartadmin-production-plugins.css</DependentUpon>
+    </Content>
+    <Content Include="Content\less\smartadmin-production.css">
+      <DependentUpon>smartadmin-production.less</DependentUpon>
+    </Content>
+    <Content Include="Content\less\smartadmin-production.min.css">
+      <DependentUpon>smartadmin-production.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\app.config.js" />
+    <Content Include="Content\Scripts\app.config.min.js">
+      <DependentUpon>app.config.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\app.js" />
+    <Content Include="Content\Scripts\app.min.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\app\app.js" />
+    <Content Include="Content\Scripts\app\dev.js" />
+    <Content Include="Content\Scripts\app\dev.min.js">
+      <DependentUpon>dev.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\app\layout.js" />
+    <Content Include="Content\Scripts\app\layout.min.js">
+      <DependentUpon>layout.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\app\navigation.js" />
+    <Content Include="Content\Scripts\app\navigation.min.js">
+      <DependentUpon>navigation.js</DependentUpon>
+    </Content>
+    <Content Include="Content\images\Sorting icons.psd" />
+    <Content Include="Content\data\data.json" />
+    <Content Include="Content\data\dataList.json" />
+    <Content Include="Content\data\ecma5.json" />
+    <None Include="Content\Scripts\libs\amplify-vsdoc.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-nvd3.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-nvd3.min.js">
+      <DependentUpon>angular-nvd3.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-csp.css" />
+    <Content Include="Content\Scripts\libs\angular\angular-csp.min.css">
+      <DependentUpon>angular-csp.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-message-format.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-message-format.min.js">
+      <DependentUpon>angular-message-format.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\chartjs\d3.min.js">
+      <DependentUpon>d3.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\chartjs\nv.d3.js" />
+    <Content Include="Content\Scripts\libs\chartjs\nv.d3.min.js">
+      <DependentUpon>nv.d3.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror.js" />
+    <Content Include="Content\Scripts\libs\codemirror.min.js">
+      <DependentUpon>codemirror.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\handsontable.formula.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\handsontable.formula.min.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\pikaday.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\pikaday.min.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\ruleJS.all.full.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\ruleJS.all.full.min.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\select2-editor.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\select2-editor.min.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\ZeroClipboard.Core.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\ZeroClipboard.Core.min.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\ZeroClipboard.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\ZeroClipboard.min.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\plugins\ZeroClipboard.swf" />
+    <Content Include="Content\Scripts\libs\jquery.signalR-2.2.0.js" />
+    <Content Include="Content\Scripts\libs\jquery.signalR-2.2.0.min.js">
+      <DependentUpon>jquery.signalR-2.2.0.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\jsnlog.js" />
+    <Content Include="Content\Scripts\jsnlog.min.js">
+      <DependentUpon>jsnlog.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\amplify-vsdoc.min.js">
+      <DependentUpon>amplify-vsdoc.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\amplify.js" />
+    <Content Include="Content\Scripts\libs\amplify.min.js">
+      <DependentUpon>amplify.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\amplify\amplify.core.js" />
+    <Content Include="Content\Scripts\libs\amplify\amplify.core.min.js" />
+    <Content Include="Content\Scripts\libs\amplify\amplify.request.js" />
+    <Content Include="Content\Scripts\libs\amplify\amplify.request.min.js" />
+    <Content Include="Content\Scripts\libs\amplify\amplify.store.js" />
+    <Content Include="Content\Scripts\libs\amplify\amplify.store.min.js" />
+    <Content Include="Content\Scripts\libs\angular-ui-calendar\src\calendar.js" />
+    <Content Include="Content\Scripts\libs\angular-ui-calendar\src\calendar.min.js">
+      <DependentUpon>calendar.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\adapt-strap.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\adapt-strap.min.js">
+      <DependentUpon>adapt-strap.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\adapt-strap.tpl.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\adapt-strap.tpl.min.js">
+      <DependentUpon>adapt-strap.tpl.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-block-ui.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-block-ui.min.js">
+      <DependentUpon>angular-block-ui.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-bootstrap-datepicker.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-bootstrap-datepicker.min.js">
+      <DependentUpon>angular-bootstrap-datepicker.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-bootstrap-lightbox.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-bootstrap-lightbox.min.js">
+      <DependentUpon>angular-bootstrap-lightbox.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-couch-potato.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-couch-potato.min.js">
+      <DependentUpon>angular-couch-potato.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-css-injector.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-css-injector.min.js">
+      <DependentUpon>angular-css-injector.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-css.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-css.min.js">
+      <DependentUpon>angular-css.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-form-gen.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-form-gen.min.js">
+      <DependentUpon>angular-form-gen.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-formly-templates-bootstrap.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-formly-templates-bootstrap.min.js">
+      <DependentUpon>angular-formly-templates-bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-google-maps.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-google-maps.min.js">
+      <DependentUpon>angular-google-maps.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-idle.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-idle.min.js">
+      <DependentUpon>angular-idle.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-logToServer.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-logToServer.min.js">
+      <DependentUpon>angular-logToServer.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-markdown-text.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-markdown-text.min.js">
+      <DependentUpon>angular-markdown-text.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-modal-service.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-modal-service.min.js">
+      <DependentUpon>angular-modal-service.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-moment.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-moment.min.js">
+      <DependentUpon>angular-moment.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-spectrum-colorpicker.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-spectrum-colorpicker.min.js">
+      <DependentUpon>angular-spectrum-colorpicker.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-spinner.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-spinner.min.js">
+      <DependentUpon>angular-spinner.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-toggle-switch.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-toggle-switch.min.js">
+      <DependentUpon>angular-toggle-switch.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-translate.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-translate.min.js">
+      <DependentUpon>angular-translate.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-ui-router.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-ui-router.min.js">
+      <DependentUpon>angular-ui-router.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-underscore.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-underscore.min.js">
+      <DependentUpon>angular-underscore.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-window-manager.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-window-manager.min.js">
+      <DependentUpon>angular-window-manager.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angularAMD.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angularAMD.min.js">
+      <DependentUpon>angularAMD.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\async.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\async.min.js">
+      <DependentUpon>async.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\autofields-bootstrap.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\autofields-bootstrap.min.js">
+      <DependentUpon>autofields-bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\autofields.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\autofields.min.js">
+      <DependentUpon>autofields.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\autofocus.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\autofocus.min.js">
+      <DependentUpon>autofocus.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\bootbox.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\bootbox.min.js">
+      <DependentUpon>bootbox.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-colorpicker.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-colorpicker.min.js">
+      <DependentUpon>bootstrap-colorpicker.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-datepicker.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-datepicker.min.js">
+      <DependentUpon>bootstrap-datepicker.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-decorator.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-decorator.min.js">
+      <DependentUpon>bootstrap-decorator.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-external-options.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-external-options.min.js">
+      <DependentUpon>bootstrap-external-options.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-tinymce.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-tinymce.min.js">
+      <DependentUpon>bootstrap-tinymce.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-ui-ace.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-ui-ace.min.js">
+      <DependentUpon>bootstrap-ui-ace.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-ui-select.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\bootstrap-ui-select.min.js">
+      <DependentUpon>bootstrap-ui-select.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\breeze.angular.min.js">
+      <DependentUpon>breeze.angular.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\breeze.directives.min.js">
+      <DependentUpon>breeze.directives.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\daterangepicker.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\daterangepicker.min.js">
+      <DependentUpon>daterangepicker.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\datetime-picker.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\datetime-picker.min.js">
+      <DependentUpon>datetime-picker.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\datetime-picker.tpls.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\datetime-picker.tpls.min.js">
+      <DependentUpon>datetime-picker.tpls.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\dialogs-default-translations.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\dialogs-default-translations.min.js">
+      <DependentUpon>dialogs-default-translations.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\dialogs.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\dialogs.min.js">
+      <DependentUpon>dialogs.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\formly.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\formly.min.js">
+      <DependentUpon>formly.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\loading.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\loading.min.js">
+      <DependentUpon>loading.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ng-bs3-datepicker.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ng-bs3-datepicker.min.js">
+      <DependentUpon>ng-bs3-datepicker.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ng-map.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ng-map.min.js">
+      <DependentUpon>ng-map.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ng-notify.min.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ngBootbox.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ngBootbox.min.js">
+      <DependentUpon>ngBootbox.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ngDialog.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ngDialog.min.js">
+      <DependentUpon>ngDialog.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ngHandsontable.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ngHandsontable.min.js">
+      <DependentUpon>ngHandsontable.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ngload.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ngload.min.js">
+      <DependentUpon>ngload.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ObjectPath.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ObjectPath.min.js">
+      <DependentUpon>ObjectPath.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\q.min.js">
+      <DependentUpon>q.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\schema-form.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\schema-form.min.js">
+      <DependentUpon>schema-form.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\scrollbars.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\scrollbars.min.js">
+      <DependentUpon>scrollbars.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\select.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\select.min.js">
+      <DependentUpon>select.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\Showdown.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\Showdown.min.js">
+      <DependentUpon>Showdown.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\sortable.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\sortable.min.js">
+      <DependentUpon>sortable.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\toastr.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\toastr.min.js">
+      <DependentUpon>toastr.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\tv4.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\tv4.min.js">
+      <DependentUpon>tv4.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ui-bootstrap-tpls-0.12.1.min.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ui-calendar.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ui-calendar.min.js">
+      <DependentUpon>ui-calendar.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ui-codemirror.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ui-codemirror.min.js">
+      <DependentUpon>ui-codemirror.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ui-utils-ieshiv.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ui-utils-ieshiv.min.js">
+      <DependentUpon>ui-utils-ieshiv.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\ui-utils.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\ui-utils.min.js">
+      <DependentUpon>ui-utils.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\xtForm.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\xtForm.min.js">
+      <DependentUpon>xtForm.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\xtForm.tpl.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\xtForm.tpl.min.js">
+      <DependentUpon>xtForm.tpl.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-animate.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-animate.min.js">
+      <DependentUpon>angular-animate.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-aria.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-aria.min.js">
+      <DependentUpon>angular-aria.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-cookies.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-cookies.min.js">
+      <DependentUpon>angular-cookies.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-loader.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-loader.min.js">
+      <DependentUpon>angular-loader.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-messages.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-messages.min.js">
+      <DependentUpon>angular-messages.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-mocks.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-resource.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-resource.min.js">
+      <DependentUpon>angular-resource.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-route.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-route.min.js">
+      <DependentUpon>angular-route.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-sanitize.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-sanitize.min.js">
+      <DependentUpon>angular-sanitize.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular-touch.js" />
+    <Content Include="Content\Scripts\libs\angular\angular-touch.min.js">
+      <DependentUpon>angular-touch.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular\angular.js" />
+    <Content Include="Content\Scripts\libs\angular\angular.min.js">
+      <DependentUpon>angular.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\backbone.js" />
+    <Content Include="Content\Scripts\libs\backbone.min.js">
+      <DependentUpon>backbone.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\bootstrap\bootstrap-clockpicker.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\bootstrap-progressbar.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\bootstrap-slider.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\bootstrap.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\bootstrap.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\bootstrapValidator.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\jquery.bootstrap-duallistbox.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\ar_MA.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\be_NL.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\bg_BG.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\cs_CZ.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\da_DK.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\de_DE.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\en_US.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\es_CL.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\es_ES.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\fr_FR.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\gr_EL.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\hu_HU.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\it_IT.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\nl_NL.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\pl_PL.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\pt_BR.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\tr_TR.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\vi_VN.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\zh_CN.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\language\zh_TW.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\lodash.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\markdown\bootstrap-markdown.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\markdown\lib\markdown.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\markdown\markdown.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\markdown\to-markdown.min.js" />
+    <Content Include="Content\Scripts\libs\bootstrap\seiyria-bootstrap-slider\bootstrap-slider.min.js" />
+    <Content Include="Content\Scripts\libs\breeze\breeze.bridge.angular.min.js">
+      <DependentUpon>breeze.bridge.angular.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\breeze\breeze.debug.min.js">
+      <DependentUpon>breeze.debug.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\breeze\breeze.directives.min.js">
+      <DependentUpon>breeze.directives.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\breeze\q.min.js">
+      <DependentUpon>q.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\chartjs\chart.min.js" />
+    <Content Include="Content\Scripts\libs\chartjs\d3.js" />
+    <Content Include="Content\Scripts\libs\chartjs\dygraphs\demo-data.min.js" />
+    <Content Include="Content\Scripts\libs\chartjs\dygraphs\dygraph-combined.min.js" />
+    <Content Include="Content\Scripts\libs\chartjs\easy-pie-chart\jquery.easy-pie-chart.min.js" />
+    <Content Include="Content\Scripts\libs\chartjs\jquery.easypiechart.min.js" />
+    <Content Include="Content\Scripts\libs\chartjs\jquery.sparkline.min.js" />
+    <Content Include="Content\Scripts\libs\chartjs\morris-chart-settings.min.js" />
+    <Content Include="Content\Scripts\libs\chartjs\morris.min.js" />
+    <Content Include="Content\Scripts\libs\chartjs\raphael.min.js" />
+    <Content Include="Content\Scripts\libs\codemirror\a.codemirror.js" />
+    <Content Include="Content\Scripts\libs\codemirror\a.codemirror.min.js">
+      <DependentUpon>a.codemirror.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\a.diff.js" />
+    <Content Include="Content\Scripts\libs\codemirror\a.diff.min.js">
+      <DependentUpon>a.diff.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\a.lint.min.js">
+      <DependentUpon>a.lint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\annotatescrollbar.js" />
+    <Content Include="Content\Scripts\libs\codemirror\annotatescrollbar.min.js">
+      <DependentUpon>annotatescrollbar.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\b1.acorn.js" />
+    <Content Include="Content\Scripts\libs\codemirror\b1.acorn.min.js">
+      <DependentUpon>b1.acorn.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\b1.acorn_loose.js" />
+    <Content Include="Content\Scripts\libs\codemirror\b1.acorn_loose.min.js">
+      <DependentUpon>b1.acorn_loose.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\b2.walk.js" />
+    <Content Include="Content\Scripts\libs\codemirror\b2.walk.min.js">
+      <DependentUpon>b2.walk.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\b3.polyfill.js" />
+    <Content Include="Content\Scripts\libs\codemirror\b3.polyfill.min.js">
+      <DependentUpon>b3.polyfill.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\b4.signal.js" />
+    <Content Include="Content\Scripts\libs\codemirror\b4.signal.min.js">
+      <DependentUpon>b4.signal.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\b4.tern.js" />
+    <Content Include="Content\Scripts\libs\codemirror\b4.tern.min.js">
+      <DependentUpon>b4.tern.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\b5.def.js" />
+    <Content Include="Content\Scripts\libs\codemirror\b5.def.min.js">
+      <DependentUpon>b5.def.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\b6.comment.js" />
+    <Content Include="Content\Scripts\libs\codemirror\b6.comment.min.js">
+      <DependentUpon>b6.comment.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\b7.infer.js" />
+    <Content Include="Content\Scripts\libs\codemirror\b7.infer.min.js">
+      <DependentUpon>b7.infer.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\b8.doc_comment.js" />
+    <Content Include="Content\Scripts\libs\codemirror\b8.doc_comment.min.js">
+      <DependentUpon>b8.doc_comment.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\code-completion.js" />
+    <Content Include="Content\Scripts\libs\codemirror\code-completion.min.js">
+      <DependentUpon>code-completion.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\css-completion.js" />
+    <Content Include="Content\Scripts\libs\codemirror\css-completion.min.js">
+      <DependentUpon>css-completion.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\dialog.js" />
+    <Content Include="Content\Scripts\libs\codemirror\dialog.min.js">
+      <DependentUpon>dialog.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\formatting.js" />
+    <Content Include="Content\Scripts\libs\codemirror\formatting.min.js">
+      <DependentUpon>formatting.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\html-completion.js" />
+    <Content Include="Content\Scripts\libs\codemirror\html-completion.min.js">
+      <DependentUpon>html-completion.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\mark-selection.js" />
+    <Content Include="Content\Scripts\libs\codemirror\mark-selection.min.js">
+      <DependentUpon>mark-selection.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\markdown-fold.js" />
+    <Content Include="Content\Scripts\libs\codemirror\markdown-fold.min.js">
+      <DependentUpon>markdown-fold.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\match-highlighter.js" />
+    <Content Include="Content\Scripts\libs\codemirror\match-highlighter.min.js">
+      <DependentUpon>match-highlighter.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\matchesonscrollbar.js" />
+    <Content Include="Content\Scripts\libs\codemirror\matchesonscrollbar.min.js">
+      <DependentUpon>matchesonscrollbar.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\scrollpastend.js" />
+    <Content Include="Content\Scripts\libs\codemirror\scrollpastend.min.js">
+      <DependentUpon>scrollpastend.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\search.js" />
+    <Content Include="Content\Scripts\libs\codemirror\search.min.js">
+      <DependentUpon>search.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\searchcursor.js" />
+    <Content Include="Content\Scripts\libs\codemirror\searchcursor.min.js">
+      <DependentUpon>searchcursor.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\show-context.js" />
+    <Content Include="Content\Scripts\libs\codemirror\show-context.min.js">
+      <DependentUpon>show-context.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\simplescrollbars.js" />
+    <Content Include="Content\Scripts\libs\codemirror\simplescrollbars.min.js">
+      <DependentUpon>simplescrollbars.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\sublime.js" />
+    <Content Include="Content\Scripts\libs\codemirror\sublime.min.js">
+      <DependentUpon>sublime.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\tern-extension.js" />
+    <Content Include="Content\Scripts\libs\codemirror\tern-extension.min.js">
+      <DependentUpon>tern-extension.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\tern.js" />
+    <Content Include="Content\Scripts\libs\codemirror\tern.min.js">
+      <DependentUpon>tern.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\x.browser.json.js" />
+    <Content Include="Content\Scripts\libs\codemirror\x.browser.json.min.js">
+      <DependentUpon>x.browser.json.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\x.ecma5.json.js" />
+    <Content Include="Content\Scripts\libs\codemirror\x.ecma5.json.min.js">
+      <DependentUpon>x.ecma5.json.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\x.jquery.json.js" />
+    <Content Include="Content\Scripts\libs\codemirror\x.jquery.json.min.js">
+      <DependentUpon>x.jquery.json.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\x.keywords.json.js" />
+    <Content Include="Content\Scripts\libs\codemirror\x.keywords.json.min.js">
+      <DependentUpon>x.keywords.json.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\x.show-context-info.js" />
+    <Content Include="Content\Scripts\libs\codemirror\x.show-context-info.min.js">
+      <DependentUpon>x.show-context-info.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\x.templates-hint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\x.templates-hint.min.js">
+      <DependentUpon>x.templates-hint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\domReady.min.js">
+      <DependentUpon>domReady.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\a.typeahead.js" />
+    <Content Include="Content\Scripts\libs\codemirror\active-line.js" />
+    <Content Include="Content\Scripts\libs\codemirror\active-line.min.js">
+      <DependentUpon>active-line.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\anyword-hint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\anyword-hint.min.js">
+      <DependentUpon>anyword-hint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\beautify-css.js" />
+    <Content Include="Content\Scripts\libs\codemirror\beautify-css.min.js">
+      <DependentUpon>beautify-css.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\beautify-html.js" />
+    <Content Include="Content\Scripts\libs\codemirror\beautify-html.min.js">
+      <DependentUpon>beautify-html.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\beautify.js" />
+    <Content Include="Content\Scripts\libs\codemirror\beautify.min.js">
+      <DependentUpon>beautify.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\brace-fold.js" />
+    <Content Include="Content\Scripts\libs\codemirror\brace-fold.min.js">
+      <DependentUpon>brace-fold.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\clike.js" />
+    <Content Include="Content\Scripts\libs\codemirror\clike.min.js">
+      <DependentUpon>clike.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\closebrackets.js" />
+    <Content Include="Content\Scripts\libs\codemirror\closebrackets.min.js">
+      <DependentUpon>closebrackets.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\closetag.js" />
+    <Content Include="Content\Scripts\libs\codemirror\closetag.min.js">
+      <DependentUpon>closetag.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\coffeescript-lint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\coffeescript-lint.min.js">
+      <DependentUpon>coffeescript-lint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\comment-fold.js" />
+    <Content Include="Content\Scripts\libs\codemirror\comment-fold.min.js">
+      <DependentUpon>comment-fold.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\comment.js" />
+    <Content Include="Content\Scripts\libs\codemirror\comment.min.js">
+      <DependentUpon>comment.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\continuecomment.js" />
+    <Content Include="Content\Scripts\libs\codemirror\continuecomment.min.js">
+      <DependentUpon>continuecomment.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\continuelist.js" />
+    <Content Include="Content\Scripts\libs\codemirror\continuelist.min.js">
+      <DependentUpon>continuelist.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\css-hint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\css-hint.min.js">
+      <DependentUpon>css-hint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\css-lint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\css-lint.min.js">
+      <DependentUpon>css-lint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\css.js" />
+    <Content Include="Content\Scripts\libs\codemirror\css.min.js">
+      <DependentUpon>css.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\diff_match_patch.js" />
+    <Content Include="Content\Scripts\libs\codemirror\diff_match_patch.min.js">
+      <DependentUpon>diff_match_patch.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\foldcode.js" />
+    <Content Include="Content\Scripts\libs\codemirror\foldcode.min.js">
+      <DependentUpon>foldcode.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\foldgutter.js" />
+    <Content Include="Content\Scripts\libs\codemirror\foldgutter.min.js">
+      <DependentUpon>foldgutter.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\fullscreen.js" />
+    <Content Include="Content\Scripts\libs\codemirror\fullscreen.min.js">
+      <DependentUpon>fullscreen.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\html-hint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\html-hint.min.js">
+      <DependentUpon>html-hint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\htmlembedded.js" />
+    <Content Include="Content\Scripts\libs\codemirror\htmlembedded.min.js">
+      <DependentUpon>htmlembedded.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\htmlmixed.js" />
+    <Content Include="Content\Scripts\libs\codemirror\htmlmixed.min.js">
+      <DependentUpon>htmlmixed.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\indent-fold.js" />
+    <Content Include="Content\Scripts\libs\codemirror\indent-fold.min.js">
+      <DependentUpon>indent-fold.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\javascript-hint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\javascript-hint.min.js">
+      <DependentUpon>javascript-hint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\javascript-lint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\javascript-lint.min.js">
+      <DependentUpon>javascript-lint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\javascript.js" />
+    <Content Include="Content\Scripts\libs\codemirror\javascript.min.js">
+      <DependentUpon>javascript.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\json-lint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\json-lint.min.js">
+      <DependentUpon>json-lint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\a.lint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\loadmode.js" />
+    <Content Include="Content\Scripts\libs\codemirror\loadmode.min.js">
+      <DependentUpon>loadmode.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\matchbrackets.js" />
+    <Content Include="Content\Scripts\libs\codemirror\matchbrackets.min.js">
+      <DependentUpon>matchbrackets.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\matchtags.js" />
+    <Content Include="Content\Scripts\libs\codemirror\matchtags.min.js">
+      <DependentUpon>matchtags.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\merge.js" />
+    <Content Include="Content\Scripts\libs\codemirror\merge.min.js">
+      <DependentUpon>merge.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\multiplex.js" />
+    <Content Include="Content\Scripts\libs\codemirror\multiplex.min.js">
+      <DependentUpon>multiplex.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\overlay.js" />
+    <Content Include="Content\Scripts\libs\codemirror\overlay.min.js">
+      <DependentUpon>overlay.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\panel.js" />
+    <Content Include="Content\Scripts\libs\codemirror\panel.min.js">
+      <DependentUpon>panel.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\placeholder.js" />
+    <Content Include="Content\Scripts\libs\codemirror\placeholder.min.js">
+      <DependentUpon>placeholder.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\rulers.js" />
+    <Content Include="Content\Scripts\libs\codemirror\rulers.min.js">
+      <DependentUpon>rulers.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\selection-pointer.js" />
+    <Content Include="Content\Scripts\libs\codemirror\selection-pointer.min.js">
+      <DependentUpon>selection-pointer.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\show-hint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\show-hint.min.js">
+      <DependentUpon>show-hint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\simple.js" />
+    <Content Include="Content\Scripts\libs\codemirror\simple.min.js">
+      <DependentUpon>simple.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\sql-hint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\sql-hint.min.js">
+      <DependentUpon>sql-hint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\sql.js" />
+    <Content Include="Content\Scripts\libs\codemirror\sql.min.js">
+      <DependentUpon>sql.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\theme\3024-day.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\3024-night.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\ambiance-mobile.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\ambiance.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\base16-dark.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\base16-light.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\blackboard.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\cobalt.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\eclipse.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\elegant.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\erlang-dark.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\lesser-dark.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\mbo.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\mdn-like.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\midnight.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\monokai.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\neat.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\neo.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\night.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\paraiso-dark.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\paraiso-light.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\pastel-on-dark.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\rubyblue.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\solarized.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\the-matrix.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\tomorrow-night-bright.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\tomorrow-night-eighties.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\twilight.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\vibrant-ink.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\xq-dark.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\xq-light.css" />
+    <Content Include="Content\Scripts\libs\codemirror\theme\zenburn.css" />
+    <Content Include="Content\Scripts\libs\codemirror\trailingspace.js" />
+    <Content Include="Content\Scripts\libs\codemirror\trailingspace.min.js">
+      <DependentUpon>trailingspace.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\vbscript.js" />
+    <Content Include="Content\Scripts\libs\codemirror\vbscript.min.js">
+      <DependentUpon>vbscript.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\xml-fold.js" />
+    <Content Include="Content\Scripts\libs\codemirror\xml-fold.min.js">
+      <DependentUpon>xml-fold.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\xml-hint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\xml-hint.min.js">
+      <DependentUpon>xml-hint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\xml.js" />
+    <Content Include="Content\Scripts\libs\codemirror\xml.min.js">
+      <DependentUpon>xml.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror\yaml-lint.js" />
+    <Content Include="Content\Scripts\libs\codemirror\yaml-lint.min.js">
+      <DependentUpon>yaml-lint.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\domReady.js" />
+    <Content Include="Content\Scripts\libs\extras\a.typeahead.min.js">
+      <DependentUpon>a.typeahead.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\angular-easyfb.min.js" />
+    <Content Include="Content\Scripts\libs\extras\angular-google-maps.min.js" />
+    <Content Include="Content\Scripts\libs\extras\angular-google-plus.min.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-modalmanager.min.js">
+      <DependentUpon>bootstrap-modalmanager.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\bootstrap-wysiwyg.min.js">
+      <DependentUpon>bootstrap-wysiwyg.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\script.js" />
+    <Content Include="Content\Scripts\libs\extras\script.min.js">
+      <DependentUpon>script.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\tweenMax.min.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\fullcalendar.css" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\fullcalendar.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\fullcalendar.min.css" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\fullcalendar.min.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\fullcalendar.print.css" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\gcal.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang-all.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\ar-ma.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\ar-sa.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\ar-tn.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\ar.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\bg.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\ca.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\cs.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\da.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\de-at.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\de.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\el.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\en-au.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\en-ca.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\en-gb.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\es.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\fa.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\fi.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\fr-ca.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\fr.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\he.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\hi.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\hr.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\hu.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\id.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\is.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\it.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\ja.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\ko.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\lt.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\lv.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\nb.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\nl.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\pl.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\pt-br.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\pt.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\ro.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\ru.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\sk.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\sl.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\sr-cyrl.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\sr.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\sv.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\th.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\tr.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\uk.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\vi.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\zh-cn.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\dist\lang\zh-tw.js" />
+    <Content Include="Content\Scripts\libs\fullcalendar\license.txt" />
+    <Content Include="Content\Scripts\libs\grid\datatables\a.jquery.dataTables.min.js">
+      <DependentUpon>a.jquery.dataTables.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\angular-ui\angular-datatables.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\angular-datatables.min.js">
+      <DependentUpon>angular-datatables.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.autoFill.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.autoFill.min.js">
+      <DependentUpon>dataTables.autoFill.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.bootstrap.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.bootstrap.min.js">
+      <DependentUpon>dataTables.bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.colReorder.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.colReorder.min.js">
+      <DependentUpon>dataTables.colReorder.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.colVis.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.colVis.min.js">
+      <DependentUpon>dataTables.colVis.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.fixedColumns.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.fixedColumns.min.js">
+      <DependentUpon>dataTables.fixedColumns.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.fixedHeader.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.fixedHeader.min.js">
+      <DependentUpon>dataTables.fixedHeader.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.keyTable.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.keyTable.min.js">
+      <DependentUpon>dataTables.keyTable.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\datatables.responsive.min.js">
+      <DependentUpon>datatables.responsive.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.scroller.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.scroller.min.js">
+      <DependentUpon>dataTables.scroller.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.tableTools.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\dataTables.tableTools.min.js">
+      <DependentUpon>dataTables.tableTools.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\a.jquery.dataTables.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.bootstrap.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.bootstrap.min.js">
+      <DependentUpon>angular-datatables.bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.colreorder.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.colreorder.min.js">
+      <DependentUpon>angular-datatables.colreorder.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.columnfilter.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.columnfilter.min.js">
+      <DependentUpon>angular-datatables.columnfilter.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.colvis.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.colvis.min.js">
+      <DependentUpon>angular-datatables.colvis.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.fixedcolumns.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.fixedcolumns.min.js">
+      <DependentUpon>angular-datatables.fixedcolumns.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.fixedheader.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.fixedheader.min.js">
+      <DependentUpon>angular-datatables.fixedheader.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.scroller.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.scroller.min.js">
+      <DependentUpon>angular-datatables.scroller.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.tabletools.js" />
+    <Content Include="Content\Scripts\libs\grid\datatables\plugins\angular-datatables.tabletools.min.js">
+      <DependentUpon>angular-datatables.tabletools.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\handsontable\handsontable.full.min.js">
+      <DependentUpon>handsontable.full.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\handsontable\pikaday.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\pikaday.min.js">
+      <DependentUpon>pikaday.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\apiCheck.js" />
+    <Content Include="Content\Scripts\libs\jquery\apiCheck.min.js">
+      <DependentUpon>apiCheck.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\bootbox.js" />
+    <Content Include="Content\Scripts\libs\extras\bootbox.min.js">
+      <DependentUpon>bootbox.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\bootstrap-clockpicker.min.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-colorpicker.min.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-lightbox.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-lightbox.min.js">
+      <DependentUpon>bootstrap-lightbox.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\bootstrap-maxlength.min.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-modal.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-modal.min.js">
+      <DependentUpon>bootstrap-modal.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\bootstrap-modalmanager.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-multiselect.min.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-tagsinput-angular.min.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-tagsinput.min.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-timepicker.min.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-tree.min.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-wizard.min.js" />
+    <Content Include="Content\Scripts\libs\extras\bootstrap-wysiwyg.js" />
+    <Content Include="Content\Scripts\libs\extras\jquery.bootstrap.wizard.min.js" />
+    <Content Include="Content\Scripts\libs\extras\jquery.observable.min.js" />
+    <Content Include="Content\Scripts\libs\extras\jquery.postmessage-transport.js" />
+    <Content Include="Content\Scripts\libs\extras\jquery.postmessage-transport.min.js">
+      <DependentUpon>jquery.postmessage-transport.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\jquery.xdr-transport.js" />
+    <Content Include="Content\Scripts\libs\extras\jquery.xdr-transport.min.js">
+      <DependentUpon>jquery.xdr-transport.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\extras\jsrender.min.js" />
+    <Content Include="Content\Scripts\libs\extras\jsviews.min.js" />
+    <Content Include="Content\Scripts\libs\extras\loading-overlay.min.js" />
+    <Content Include="Content\Scripts\libs\extras\summernote.min.js" />
+    <Content Include="Content\Scripts\libs\extras\waitMe.js" />
+    <Content Include="Content\Scripts\libs\extras\waitMe.min.js">
+      <DependentUpon>waitMe.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\grid\datatables\datatables.responsive.js" />
+    <Content Include="Content\Scripts\libs\grid\handsontable\handsontable.full.js" />
+    <Content Include="Content\Scripts\libs\jquery\dropzone\downloads\dropzone.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\dropzone\dropzone-amd-module.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\dropzone\dropzone.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\es5-shim\es5-shim.js" />
+    <Content Include="Content\Scripts\libs\jquery\es5-shim\es5-shim.min.js">
+      <DependentUpon>es5-shim.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\fastclick.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.canvas.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.categories.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.cust.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.image.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.orderBar.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.pie.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.resize.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.selection.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.stack.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.time.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\formula.js" />
+    <Content Include="Content\Scripts\libs\jquery\formula.min.js">
+      <DependentUpon>formula.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\fuelux\js\wizard.js" />
+    <Content Include="Content\Scripts\libs\jquery\fuelux\js\wizard.min.js">
+      <DependentUpon>wizard.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\fuelux\wizard\wizard.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\fullcalendar\jquery.fullcalendar.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\ie-placeholder\jquery.placeholder.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\ion-slider\ion.rangeSlider.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jcrop\jquery.color.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jcrop\jquery.Jcrop.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jcrop\js\jquery.Jcrop.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery-2.1.3.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery-2.1.4.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery-2.1.4.min.js">
+      <DependentUpon>jquery-2.1.4.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\jquery-form.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery-ui.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.ba-throttle-debounce.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.color.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.color.min.js">
+      <DependentUpon>jquery.color.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\jquery.cssemoticons.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.event.move.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.event.move.min.js">
+      <DependentUpon>jquery.event.move.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\jquery.knob.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.layout.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.layout.min.js">
+      <DependentUpon>jquery.layout.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\jquery.maskedinput.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.mb.browser.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.mCustomScrollbar.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.mCustomScrollbar.min.js">
+      <DependentUpon>jquery.mCustomScrollbar.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\jquery.mousewheel.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.mousewheel.min.js">
+      <DependentUpon>jquery.mousewheel.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\jquery.nestable.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.slimscroll.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.ui.touch-punch.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jquery.validate.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\json3.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\jstat.js" />
+    <Content Include="Content\Scripts\libs\jquery\jstat.min.js">
+      <DependentUpon>jstat.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\md5.js" />
+    <Content Include="Content\Scripts\libs\jquery\md5.min.js">
+      <DependentUpon>md5.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\numeral.js" />
+    <Content Include="Content\Scripts\libs\jquery\numeral.min.js">
+      <DependentUpon>numeral.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\numeric.js" />
+    <Content Include="Content\Scripts\libs\jquery\numeric.min.js">
+      <DependentUpon>numeric.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\prettify.js" />
+    <Content Include="Content\Scripts\libs\jquery\prettify.min.js">
+      <DependentUpon>prettify.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\select2.full.js" />
+    <Content Include="Content\Scripts\libs\jquery\select2.full.min.js">
+      <DependentUpon>select2.full.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\select2.js" />
+    <Content Include="Content\Scripts\libs\jquery\select2.min.js">
+      <DependentUpon>select2.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\selectToUISlider.jQuery.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\superbox.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\typeahead.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\typeaheadjs.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\underscore.string.js" />
+    <Content Include="Content\Scripts\libs\jquery\underscore.string.min.js">
+      <DependentUpon>underscore.string.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\jquery\vectormap\jquery-jvectormap-1.1.1.css" />
+    <Content Include="Content\Scripts\libs\jquery\vectormap\jquery-jvectormap-1.1.1.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\vectormap\jquery-jvectormap-1.2.2.css" />
+    <Content Include="Content\Scripts\libs\jquery\vectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="Content\Scripts\libs\jquery\vectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\Scripts\libs\jsnlog.js" />
+    <Content Include="Content\Scripts\libs\jsnlog.min.js">
+      <DependentUpon>jsnlog.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\kendo\kendo.all.js" />
+    <Content Include="Content\Scripts\libs\kendo\kendo.all.min.js">
+      <DependentUpon>kendo.all.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\kendo\kendo.ext.js" />
+    <Content Include="Content\Scripts\libs\kendo\kendo.ext.min.js">
+      <DependentUpon>kendo.ext.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\modernizr-2.8.3.js" />
+    <Content Include="Content\Scripts\libs\modernizr-2.8.3.min.js">
+      <DependentUpon>modernizr-2.8.3.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\moment\moment-timezone.js" />
+    <Content Include="Content\Scripts\libs\moment\moment-timezone.min.js">
+      <DependentUpon>moment-timezone.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\moment\moment-with-locales.js" />
+    <Content Include="Content\Scripts\libs\moment\moment-with-locales.min.js">
+      <DependentUpon>moment-with-locales.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\moment\moment.js" />
+    <Content Include="Content\Scripts\libs\moment\moment.min.js">
+      <DependentUpon>moment.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\Prettify\lang-apollo.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-basic.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-clj.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-css.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-dart.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-erlang.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-go.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-hs.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-lisp.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-llvm.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-lua.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-matlab.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-ml.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-mumps.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-n.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-pascal.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-proto.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-r.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-rd.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-scala.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-sql.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-tcl.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-tex.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-vb.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-vhdl.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-wiki.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-xq.js" />
+    <Content Include="Content\Scripts\libs\Prettify\lang-yaml.js" />
+    <Content Include="Content\Scripts\libs\Prettify\prettify.js" />
+    <Content Include="Content\Scripts\libs\Prettify\prettify.min.js">
+      <DependentUpon>prettify.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\Prettify\run_prettify.js" />
+    <Content Include="Content\Scripts\libs\smartadmin\notification\SmartNotification.min.js" />
+    <Content Include="Content\Scripts\libs\smartadmin\smart-chat-ui\smart.chat.manager.js" />
+    <Content Include="Content\Scripts\libs\smartadmin\smart-chat-ui\smart.chat.manager.min.js">
+      <DependentUpon>smart.chat.manager.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\smartadmin\smart-chat-ui\smart.chat.ui.js" />
+    <Content Include="Content\Scripts\libs\smartadmin\smart-chat-ui\smart.chat.ui.min.js">
+      <DependentUpon>smart.chat.ui.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\smartadmin\smartwidgets\jarvis.widget.js" />
+    <Content Include="Content\Scripts\libs\smartadmin\smartwidgets\jarvis.widget.min.js">
+      <DependentUpon>jarvis.widget.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\smartadmin\speech\voicecommand.js" />
+    <Content Include="Content\Scripts\libs\smartadmin\speech\voicecommand.min.js">
+      <DependentUpon>voicecommand.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\underscore.js" />
+    <Content Include="Content\Scripts\libs\underscore.min.js">
+      <DependentUpon>underscore.js</DependentUpon>
+    </Content>
+    <Content Include="main.js" />
+    <Content Include="main.min.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\q.js" />
+    <Content Include="Content\Scripts\q.min.js">
+      <DependentUpon>q.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\rconfig.js" />
+    <Content Include="Content\Scripts\rconfig.min.js">
+      <DependentUpon>rconfig.js</DependentUpon>
+    </Content>
+    <Content Include="require.js" />
+    <Content Include="require.min.js">
+      <DependentUpon>require.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\sys\bootstrap.js" />
+    <Content Include="Content\Scripts\sys\bootstrap.min.js">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\sys\dependencyResolverFor.js" />
+    <Content Include="Content\Scripts\sys\dependencyResolverFor.min.js">
+      <DependentUpon>dependencyResolverFor.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\sys\main.js" />
+    <Content Include="Content\Scripts\sys\main.min.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
+    <Content Include="Content\sound\bigbox.mp3" />
+    <Content Include="Content\sound\bigbox.ogg" />
+    <Content Include="Content\sound\messagebox.mp3" />
+    <Content Include="Content\sound\messagebox.ogg" />
+    <Content Include="Content\sound\smallbox.mp3" />
+    <Content Include="Content\sound\smallbox.ogg" />
+    <Content Include="Content\sound\voice_alert.mp3" />
+    <Content Include="Content\sound\voice_alert.ogg" />
+    <Content Include="Content\sound\voice_off.mp3" />
+    <Content Include="Content\sound\voice_off.ogg" />
+    <Content Include="Content\sound\voice_on.mp3" />
+    <Content Include="Content\sound\voice_on.ogg" />
+    <Content Include="Content\swf\copy_csv_xls.swf" />
+    <Content Include="Content\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\themes\web\BlueOpal\editor.png" />
+    <Content Include="Content\themes\web\BlueOpal\imagebrowser.png" />
+    <Content Include="Content\themes\web\BlueOpal\indeterminate.gif" />
+    <Content Include="Content\themes\web\BlueOpal\loading-image.gif" />
+    <Content Include="Content\themes\web\BlueOpal\loading.gif" />
+    <Content Include="Content\themes\web\BlueOpal\loading_2x.gif" />
+    <Content Include="Content\themes\web\BlueOpal\slider-h.gif" />
+    <Content Include="Content\themes\web\BlueOpal\slider-v.gif" />
+    <Content Include="Content\themes\web\BlueOpal\sprite.png" />
+    <Content Include="Content\themes\web\BlueOpal\sprite_2x.png" />
+    <Content Include="Content\themes\web\BlueOpal\sprite_kpi.png" />
+    <Content Include="Content\themes\web\BlueOpal\sprite_kpi_2x.png" />
+    <Content Include="Content\themes\web\Bootstrap\editor.png" />
+    <Content Include="Content\themes\web\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\themes\web\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\themes\web\Bootstrap\loading-image.gif" />
+    <Content Include="Content\themes\web\Bootstrap\loading.gif" />
+    <Content Include="Content\themes\web\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\themes\web\Bootstrap\slider-h.gif" />
+    <Content Include="Content\themes\web\Bootstrap\slider-v.gif" />
+    <Content Include="Content\themes\web\Bootstrap\sprite.png" />
+    <Content Include="Content\themes\web\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\themes\web\Bootstrap\sprite_kpi.png" />
+    <Content Include="Content\themes\web\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="Content\themes\web\Default\editor.png" />
+    <Content Include="Content\themes\web\Default\imagebrowser.png" />
+    <Content Include="Content\themes\web\Default\indeterminate.gif" />
+    <Content Include="Content\themes\web\Default\loading-image.gif" />
+    <Content Include="Content\themes\web\Default\loading.gif" />
+    <Content Include="Content\themes\web\Default\loading_2x.gif" />
+    <Content Include="Content\themes\web\Default\slider-h.gif" />
+    <Content Include="Content\themes\web\Default\slider-v.gif" />
+    <Content Include="Content\themes\web\Default\sprite.png" />
+    <Content Include="Content\themes\web\Default\sprite_2x.png" />
+    <Content Include="Content\themes\web\Default\sprite_kpi.png" />
+    <Content Include="Content\themes\web\Default\sprite_kpi_2x.png" />
+    <Content Include="Content\themes\web\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="Content\themes\web\kendo.blueopal.css">
+      <DependentUpon>kendo.blueopal.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.blueopal.min.css">
+      <DependentUpon>kendo.blueopal.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.blueopal.mobile.css">
+      <DependentUpon>kendo.blueopal.mobile.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.blueopal.mobile.min.css">
+      <DependentUpon>kendo.blueopal.mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.bootstrap.css">
+      <DependentUpon>kendo.bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.bootstrap.min.css">
+      <DependentUpon>kendo.bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.bootstrap.mobile.css">
+      <DependentUpon>kendo.bootstrap.mobile.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.bootstrap.mobile.min.css">
+      <DependentUpon>kendo.bootstrap.mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-bootstrap.core.css">
+      <DependentUpon>kendo.common-bootstrap.core.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-bootstrap.core.min.css">
+      <DependentUpon>kendo.common-bootstrap.core.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-bootstrap.css">
+      <DependentUpon>kendo.common-bootstrap.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-bootstrap.min.css">
+      <DependentUpon>kendo.common-bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-material.core.css">
+      <DependentUpon>kendo.common-material.core.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-material.core.min.css">
+      <DependentUpon>kendo.common-material.core.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-material.css">
+      <DependentUpon>kendo.common-material.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-material.min.css">
+      <DependentUpon>kendo.common-material.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common.core.css">
+      <DependentUpon>kendo.common.core.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common.core.min.css">
+      <DependentUpon>kendo.common.core.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common.css">
+      <DependentUpon>kendo.common.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common.min.css">
+      <DependentUpon>kendo.common.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.default.css">
+      <DependentUpon>kendo.default.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.default.min.css">
+      <DependentUpon>kendo.default.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.default.mobile.css">
+      <DependentUpon>kendo.default.mobile.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.default.mobile.min.css">
+      <DependentUpon>kendo.default.mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.material.css">
+      <DependentUpon>kendo.material.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.material.min.css">
+      <DependentUpon>kendo.material.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.material.mobile.css">
+      <DependentUpon>kendo.material.mobile.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.material.mobile.min.css">
+      <DependentUpon>kendo.material.mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.metro.css">
+      <DependentUpon>kendo.metro.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.metro.min.css">
+      <DependentUpon>kendo.metro.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.metro.mobile.css">
+      <DependentUpon>kendo.metro.mobile.less</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.metro.mobile.min.css">
+      <DependentUpon>kendo.metro.mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\Material\editor.png" />
+    <Content Include="Content\themes\web\Material\imagebrowser.png" />
+    <Content Include="Content\themes\web\Material\indeterminate.gif" />
+    <Content Include="Content\themes\web\Material\loading-image.gif" />
+    <Content Include="Content\themes\web\Material\loading.gif" />
+    <Content Include="Content\themes\web\Material\loading_2x.gif" />
+    <Content Include="Content\themes\web\Material\slider-h.gif" />
+    <Content Include="Content\themes\web\Material\slider-v.gif" />
+    <Content Include="Content\themes\web\Material\sprite.png" />
+    <Content Include="Content\themes\web\Material\sprite_2x.png" />
+    <Content Include="Content\themes\web\Material\sprite_kpi.png" />
+    <Content Include="Content\themes\web\Material\sprite_kpi_2x.png" />
+    <Content Include="Content\themes\web\Metro\editor.png" />
+    <Content Include="Content\themes\web\Metro\imagebrowser.png" />
+    <Content Include="Content\themes\web\Metro\indeterminate.gif" />
+    <Content Include="Content\themes\web\Metro\loading-image.gif" />
+    <Content Include="Content\themes\web\Metro\loading.gif" />
+    <Content Include="Content\themes\web\Metro\loading_2x.gif" />
+    <Content Include="Content\themes\web\Metro\slider-h.gif" />
+    <Content Include="Content\themes\web\Metro\slider-v.gif" />
+    <Content Include="Content\themes\web\Metro\sprite.png" />
+    <Content Include="Content\themes\web\Metro\sprite_2x.png" />
+    <Content Include="Content\themes\web\Metro\sprite_kpi.png" />
+    <Content Include="Content\themes\web\Metro\sprite_kpi_2x.png" />
+    <Content Include="Content\themes\web\textures\brushed-metal.png" />
+    <Content Include="Content\themes\web\textures\dots1.png" />
+    <Content Include="Content\themes\web\textures\dots10.png" />
+    <Content Include="Content\themes\web\textures\dots11.png" />
+    <Content Include="Content\themes\web\textures\dots12.png" />
+    <Content Include="Content\themes\web\textures\dots13.png" />
+    <Content Include="Content\themes\web\textures\dots2.png" />
+    <Content Include="Content\themes\web\textures\dots3.png" />
+    <Content Include="Content\themes\web\textures\dots4.png" />
+    <Content Include="Content\themes\web\textures\dots5.png" />
+    <Content Include="Content\themes\web\textures\dots6.png" />
+    <Content Include="Content\themes\web\textures\dots7.png" />
+    <Content Include="Content\themes\web\textures\dots8.png" />
+    <Content Include="Content\themes\web\textures\dots9.png" />
+    <Content Include="Content\themes\web\textures\glass-lighter.png" />
+    <Content Include="Content\themes\web\textures\glass.png" />
+    <Content Include="Content\themes\web\textures\highlight.png" />
+    <Content Include="Content\themes\web\textures\hsv-gradient.png" />
+    <Content Include="Content\themes\web\textures\hue.png" />
+    <Content Include="Content\themes\web\textures\leather1.png" />
+    <Content Include="Content\themes\web\textures\leather2.png" />
+    <Content Include="Content\themes\web\textures\noise.png" />
+    <Content Include="Content\themes\web\textures\stripe1.png" />
+    <Content Include="Content\themes\web\textures\stripe2.png" />
+    <Content Include="Content\themes\web\textures\stripe3.png" />
+    <Content Include="Content\themes\web\textures\stripe4.png" />
+    <Content Include="Content\themes\web\textures\stripe5.png" />
+    <Content Include="Content\themes\web\textures\stripe6.png" />
+    <Content Include="Content\themes\web\textures\transparency.png" />
+    <Content Include="Content\themes\web\textures\transtexture.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <EmbeddedResource Include="idsrv3test.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\less\bootstrap.less" />
+    <Content Include="Content\less\bootstrap.css.map">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\fonts\cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff" />
+    <Content Include="Content\fonts\DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff" />
+    <Content Include="Content\fonts\PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff" />
+    <Content Include="Content\fonts\xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff" />
+    <Content Include="Content\Scripts\libs\angular-ui\breeze.angular.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\breeze.debug.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\breeze.directives.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\breeze.min.js" />
+    <Content Include="Content\Scripts\libs\angular-ui\q.js" />
+    <Content Include="Content\Scripts\libs\breeze\breeze.debug.js" />
+    <Content Include="Content\Scripts\libs\breeze\breeze.min.js" />
+    <Content Include="Content\Scripts\libs\breeze\q.js" />
+    <Content Include="Content\Scripts\libs\breeze\breeze.bridge.angular.js" />
+    <Content Include="Content\Scripts\libs\breeze\breeze.directives.js" />
+    <Content Include="NuGet\readme.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\Forbidden.cshtml" />
+    <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\Shared\_Aside.cshtml" />
+    <Content Include="Views\Shared\_CurrentUser.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_LayoutApp.cshtml" />
+    <Content Include="Views\Shared\_Ribbon.cshtml" />
+    <Content Include="Views\Shared\_Scripts.cshtml" />
+    <Content Include="Views\Shared\_Tiles.cshtml" />
+    <Content Include="Views\Shared\_TopRight.cshtml" />
+    <Content Include="Views\Dev\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutDev.cshtml" />
+    <Content Include="Content\Scripts\libs\angular-ui-calendar\.bower.json" />
+    <Content Include="Content\Scripts\libs\angular-ui-calendar\bower.json" />
+    <Content Include="Content\Scripts\libs\angular-ui-calendar\LICENSE" />
+    <Content Include="Content\Scripts\libs\angular-ui-calendar\README.md" />
+    <Content Include="Content\Scripts\libs\fullcalendar\.bower.json" />
+    <Content Include="Content\Scripts\libs\fullcalendar\bower.json" />
+    <Content Include="Content\Scripts\libs\fullcalendar\changelog.md" />
+    <Content Include="Content\Scripts\libs\fullcalendar\readme.md" />
+    <Content Include="require.min.js.map">
+      <DependentUpon>require.min.js</DependentUpon>
+    </Content>
+    <Content Include="main.min.js.map">
+      <DependentUpon>main.min.js</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\libs\codemirror.min.js.map">
+      <DependentUpon>codemirror.min.js</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\Release 2.pubxml" />
+    <Content Include="Views\Emails\Web.config" />
+    <Content Include="Views\Emails\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\less\font-awesome.less" />
+    <Content Include="Content\less\font-awesome.css.map">
+      <DependentUpon>font-awesome.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Scripts\app\dev.min.js.map">
+      <DependentUpon>dev.min.js</DependentUpon>
+    </Content>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Scripts\app\layout.min.js.map">
+      <DependentUpon>layout.min.js</DependentUpon>
+    </Content>
+    <Content Include="Content\less\smartadmin-production.less" />
+    <Content Include="Content\less\smartadmin-production-plugins.less" />
+    <Content Include="Content\less\smartadmin-production-plugins.css.map">
+      <DependentUpon>smartadmin-production-plugins.css</DependentUpon>
+    </Content>
+    <Content Include="Content\less\smartadmin-production.css.map">
+      <DependentUpon>smartadmin-production.css</DependentUpon>
+    </Content>
+    <Content Include="Content\fonts\icons.ttf" />
+    <Content Include="Content\fonts\icons.woff" />
+    <Content Include="Content\less\toastr.less" />
+    <Content Include="Content\themes\web\fonts\DejaVu\dejavu.less" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="Content\themes\web\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="Content\themes\web\images\kendoui.ttf" />
+    <Content Include="Content\themes\web\images\kendoui.woff" />
+    <Content Include="Content\themes\web\kendo.blueopal.less" />
+    <Content Include="Content\themes\web\kendo.blueopal.mobile.less" />
+    <Content Include="Content\themes\web\kendo.bootstrap.less" />
+    <Content Include="Content\themes\web\kendo.bootstrap.mobile.less" />
+    <Content Include="Content\themes\web\kendo.common-bootstrap.core.less" />
+    <Content Include="Content\themes\web\kendo.common-bootstrap.less" />
+    <Content Include="Content\themes\web\kendo.common-material.core.less" />
+    <Content Include="Content\themes\web\kendo.common-material.less" />
+    <Content Include="Content\themes\web\kendo.common.core.less" />
+    <Content Include="Content\themes\web\kendo.common.less" />
+    <Content Include="Content\themes\web\kendo.default.less" />
+    <Content Include="Content\themes\web\kendo.default.mobile.less" />
+    <Content Include="Content\themes\web\kendo.material.less" />
+    <Content Include="Content\themes\web\kendo.material.mobile.less" />
+    <Content Include="Content\themes\web\kendo.metro.less" />
+    <Content Include="Content\themes\web\kendo.metro.mobile.less" />
+    <Content Include="Content\themes\web\theme-template.less" />
+    <Content Include="Content\themes\web\type-material.less" />
+    <Content Include="Content\themes\web\type-metro.less" />
+    <Content Include="Content\themes\web\kendo.blueopal.css.map">
+      <DependentUpon>kendo.blueopal.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.blueopal.mobile.css.map">
+      <DependentUpon>kendo.blueopal.mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.bootstrap.css.map">
+      <DependentUpon>kendo.bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.bootstrap.mobile.css.map">
+      <DependentUpon>kendo.bootstrap.mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-bootstrap.core.css.map">
+      <DependentUpon>kendo.common-bootstrap.core.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-bootstrap.css.map">
+      <DependentUpon>kendo.common-bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-material.core.css.map">
+      <DependentUpon>kendo.common-material.core.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common-material.css.map">
+      <DependentUpon>kendo.common-material.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common.core.css.map">
+      <DependentUpon>kendo.common.core.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.common.css.map">
+      <DependentUpon>kendo.common.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.default.css.map">
+      <DependentUpon>kendo.default.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.default.mobile.css.map">
+      <DependentUpon>kendo.default.mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.material.css.map">
+      <DependentUpon>kendo.material.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.material.mobile.css.map">
+      <DependentUpon>kendo.material.mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.metro.css.map">
+      <DependentUpon>kendo.metro.css</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\web\kendo.metro.mobile.css.map">
+      <DependentUpon>kendo.metro.mobile.css</DependentUpon>
+    </Content>
+    <Content Include="Views\Sys\SysAdmin\Index.cshtml" />
+    <Content Include="Views\Sys\SysDB\Index.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Codebase\DAL\Models\MongoDB\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\API\API.csproj">
+      <Project>{32eaab56-a80b-4a04-897d-94e5148cd8a8}</Project>
+      <Name>API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53601</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2255/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

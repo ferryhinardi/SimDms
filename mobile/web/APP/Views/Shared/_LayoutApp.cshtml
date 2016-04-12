@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en-us" id="@ViewBag.PageId" class="@Settings.CurrentTheme">
+<head>
+
+    <meta charset=" utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@Settings.AppName</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    @*<link href="~/Content/themes/web/kendo.common-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/themes/web/kendo.bootstrap.min.css" rel="stylesheet" />*@
+    @*<link href="~/Content/css/datatables-bundle" rel="stylesheet" />*@
+
+    @Styles.Render("~/Content/themes/web/kendo.common-bootstrap.min.css")
+    @Styles.Render("~/Content/themes/web/kendo.bootstrap.min.css")
+
+    @Styles.Render("~/Content/release")
+    @*@Styles.Render("~/Content/codemirror")*@
+    @Styles.Render("~/Content/bootstrap-release")
+
+    @*<script src="~/Content/Scripts/libs/jquery/jquery-2.1.3.min.js"></script>*@
+    @Scripts.Render("~/content/scripts/jquery")
+
+    <script type="text/javascript">
+        function templateById(id) {
+            return "@Settings.Home" + "api/files/templates/" + id + "/html";
+        }
+        function controllerById(id) {
+            return "@Settings.Home" + "api/files/templates/" + id + "/js";
+        }
+        function cssById(id) {
+            return "@Settings.Home" + "api/files/templates/" + id + "/css";
+        };
+    </script>
+ 
+    @Scripts.Render("~/Content/Scripts/libs/angular-ui/toastr.min.js")
+    @Scripts.Render("~/Content/Scripts/libs/jquery/jquery.layout.min.js")
+
+    <link rel="shortcut icon" href="@Settings.Favicon" type="image/x-icon">
+    <link rel="icon" href="@Settings.Favicon" type="image/x-icon">
+
+</head>
+<body data-smart-device-detect
+      data-smart-fast-click
+      data-smart-layout
+      data-smart-page-title="APP"
+      class="desktop-detected fixed-header fixed-navigation fixed-page-footer fixed-ribbon" data-ng-controller="bodyController">
+
+    @{ Html.RenderPartial("_Header", RenderSection("topright", false)); }
+    @{ Html.RenderPartialIf("_Aside", Request.IsAuthenticated); }
+
+    <div id="main" role="main" style="padding-bottom:50px">
+        @{ Html.RenderPartialIf("_Ribbon", Request.IsAuthenticated); }
+        <div id="content" ng-view>@RenderBody()</div>
+
+    </div>
+
+
+    @if (ViewBag.Admin==false)
+    {
+        Html.RenderPartial("_Footer");
+    }
+    @if (Request.IsAuthenticated)
+    {
+        Html.RenderPartialIf("_Tiles", Settings.EnableTiles);
+    }
+    @{ Html.RenderPartial("_Scripts", RenderSection("pagespecific", false)); }
+
+</body>
+
+
+
+</html>

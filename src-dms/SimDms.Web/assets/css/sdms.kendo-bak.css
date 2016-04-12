@@ -1,0 +1,88 @@
+﻿.panel.kgrid {
+  max-width: 100%;
+}
+.panel.kgrid > div.subtitle {
+  display: none;
+}
+.panel.kgrid > div > div {
+  /*position: absolute;*/
+
+  margin: 0 -10px 10px 0;
+  padding: 0;
+}
+.panel.kgrid > div > div .k-hierarchy-cell.k-header {
+  background-color: #ccebff;
+}
+.panel.kgrid > div > div .k-grid-header {
+  padding-right: 0!important;
+  height: 31px;
+  border: none;
+}
+.panel.kgrid > div > div .k-grid-header .k-grid-header-wrap {
+  border: none;
+  background-color: transparent;
+  height: 31px;
+}
+.panel.kgrid > div > div .k-grid-header .k-grid-header-wrap th {
+  background-color: #ccebff;
+  font-weight: bold;
+  height: 30px;
+}
+.panel.kgrid > div > div .k-grid-header .k-header {
+  border: 1px solid #ccebff;
+}
+.panel.kgrid > div > div .k-grid-header .k-header .k-link {
+  color: #005b99;
+  background-color: #ccebff;
+  padding: 5px 9px 0 9px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.panel.kgrid > div > div .k-grid-header .k-header .k-link.right {
+  margin-right: 4px;
+}
+.panel.kgrid > div > div .k-grid-header .k-header.k-state-focused {
+  padding: 0 0 0 8px;
+}
+.panel.kgrid > div > div .k-grid-header .k-header.k-state-focused .k-header-column-menu {
+  margin: 0;
+}
+.panel.kgrid > div > div .k-grid-header .k-header.k-state-focused .k-link {
+  margin: 5px 5px 0 0;
+  padding: 0 5px 0 1px;
+}
+.panel.kgrid > div > div .k-grid-header .k-header.k-state-focused .k-link.right {
+  margin-right: 0;
+}
+.panel.kgrid > div > div .k-grid-content {
+  overflow-y: auto;
+}
+.panel.kgrid > div > div .k-grid-content > table {
+  margin: 0;
+}
+.panel.kgrid > div > div .k-grid-content > table td {
+  padding: 4px 10px;
+  border: none;
+}
+.panel.kgrid > div > div .k-grid-footer {
+  padding-right: 0!important;
+  height: 30px;
+  border: none;
+  border-top: 1px solid #ccebff;
+}
+.panel.kgrid > div > div .k-grid-footer .k-grid-footer-wrap {
+  height: 30px;
+  border: none;
+}
+.panel.kgrid > div > div .k-grid-footer .k-grid-footer-wrap .k-footer-template td {
+  padding: 4px 10px 0;
+  border: none;
+  text-align: right;
+}
+.panel.kgrid > div > div .k-grid-pager {
+  margin: 0;
+  height: 30px;
+}
+.panel.kgrid > div > div .k-grid-pager .k-dropdown-wrap {
+  height: 32px;
+}

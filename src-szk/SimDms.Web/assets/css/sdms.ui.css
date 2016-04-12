@@ -1,0 +1,164 @@
+﻿.wg-modal {
+  width: 100%;
+}
+.wg-modal .modal {
+  outline: none;
+  position: absolute;
+  padding: 60px 5px 0 5px;
+  overflow: visible;
+  /* allow content to popup out (i.e tooltips) */
+  width: 100%;
+}
+.wg-modal .modal.fade {
+  top: -100%;
+  -webkit-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
+  transition: opacity 0.3s linear, top 0.3s ease-out, bottom 0.3s ease-out, margin-top 0.3s ease-out;
+  z-index: 9999;
+}
+.wg-modal .modal.fade.in {
+  top: 0;
+}
+.wg-modal .modal.lookup .modal-dialog {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #007acc;
+  background-color: white;
+}
+.wg-modal .modal.lookup .modal-dialog .modal-content .modal-header {
+  margin: 0;
+  padding: 0;
+}
+.wg-modal .modal.lookup .modal-dialog .modal-content .modal-body {
+  padding: 0;
+  margin: 0;
+}
+.wg-modal .modal.lookup .modal-dialog .modal-content .modal-footer {
+  padding: 8px 0;
+  height: 40px;
+  text-align: right;
+}
+.wg-modal .modal.lookup .modal-dialog .modal-content .modal-footer .btn {
+  margin: 0;
+  min-width: 80px;
+  padding: 8px 20px;
+}
+.wg-modal .modal .modal-dialog {
+  padding: 75px 0 0 250px;
+  width: 100%;
+}
+.wg-modal .modal .modal-dialog.full-width {
+  padding: 75px 0 0 0;
+}
+.wg-modal .modal .modal-dialog .modal-content .modal-header {
+  padding: 2px;
+  height: 30px;
+}
+.wg-modal .modal .modal-dialog .modal-content .modal-body {
+  padding: 14px 20px;
+  min-height: 50px;
+}
+.wg-modal .modal .modal-dialog .modal-content .modal-body p {
+  font-size: 18px;
+}
+.wg-modal .modal .modal-dialog .modal-content .modal-footer {
+  padding: 5px 0;
+  height: auto;
+  text-align: right;
+}
+.wg-modal .modal .modal-dialog .modal-content .modal-footer .btn {
+  margin: 0;
+  min-width: 80px;
+  padding: 8px 20px;
+}
+.wg-loading {
+  display: none;
+}
+.wg-print {
+  display: none;
+}
+.k-column-menu > .k-menu {
+  min-width: 200px;
+}
+@media print {
+  .page {
+    display: none;
+  }
+  body {
+    padding: 40px;
+    padding-left: 60px;
+  }
+  .wg-print {
+    display: block;
+  }
+  .wg-print .col-12 {
+    width: 100%;
+  }
+  .wg-print .col-11 {
+    width: 91.66666666666667%;
+  }
+  .wg-print .col-10 {
+    width: 83.33333333333333%;
+  }
+  .wg-print .col-9 {
+    width: 75%;
+  }
+  .wg-print .col-8 {
+    width: 66.66666666666667%;
+  }
+  .wg-print .col-7 {
+    width: 58.333333333333336%;
+  }
+  .wg-print .col-6 {
+    width: 50%;
+  }
+  .wg-print .col-5 {
+    width: 41.666666666666664%;
+  }
+  .wg-print .col-4 {
+    width: 33.333333333333336%;
+  }
+  .wg-print .col-3 {
+    width: 25%;
+  }
+  .wg-print .col-2 {
+    width: 16.666666666666668%;
+  }
+  .wg-print .col-1 {
+    width: 8.333333333333334%;
+  }
+  .wg-print .title {
+    text-align: center;
+  }
+  .wg-print div[class*=col-] {
+    float: left;
+    border-spacing: 13px 3px;
+  }
+  .wg-print div[class*=col-] .row-field > div {
+    display: inline-block;
+    padding: 2px 0;
+  }
+  .wg-print div[class*=col-] table {
+    /*background-color: #808080 !important;*/
+    /*border-spacing: 1px;*/
+    width: 100%;
+    border-top: thin solid #808080;
+    border-right: thin solid #808080;
+    border-spacing: 0;
+  }
+  .wg-print div[class*=col-] table thead th {
+    text-align: left;
+  }
+  .wg-print div[class*=col-] table th,
+  .wg-print div[class*=col-] table td {
+    /*background-color: white !important;*/
+    border-left: thin solid #808080;
+    border-bottom: thin solid #808080;
+    padding: 5px;
+  }
+  .wg-print footer {
+    page-break-after: always;
+    color: #ffffff;
+  }
+}

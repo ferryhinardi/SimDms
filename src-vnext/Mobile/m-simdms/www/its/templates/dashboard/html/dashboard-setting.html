@@ -1,0 +1,33 @@
+<!--View Information-->
+<!--View name : Expense Setting-->
+<!--Controller name : expenseDashboardSettingCtrl-->
+<!--Controller path : www/templates/themes/expense-dashboard/js/controllers.js-->
+<!--State name : app.expenseSetting-->
+<!--URL : #app/expenseSetting-->
+
+<ion-view title="My Account">
+    <!--left button on navigation bar-->
+    <ion-nav-buttons side="left">
+        <a ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item nav-back-btn">
+            <i class="ion-android-arrow-back "></i>
+        </a>
+    </ion-nav-buttons><!--end left button on navigation bar-->
+
+    <ion-content scroll="false">
+        <!--list section-->
+        <md-list>             
+            <md-list-item class="md-list-item-default" ng-click="navigateTo('app.myprofile')" ng-disabled="true">
+                <i class="fa fa-user"></i>
+                <p>My Profile</p>
+            </md-list-item>
+            <md-list-item class="md-list-item-default" ng-click="changePassword($event)">
+                <i class="fa fa-key"></i>
+                <p>Change Password</p>
+            </md-list-item>
+			<md-list-item class="md-list-item-default" ng-click="logout($event)">
+                <i class="fa fa-times"></i>
+                <p>Logout</p>
+            </md-list-item>
+        </md-list><!--end list section-->
+    </ion-content>
+</ion-view>

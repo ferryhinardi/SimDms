@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate" />
+
+    <title>DMS - DEALER MANAGEMENT STUDIO</title>
+    <script type="text/javascript">
+     var WshShell = new ActiveXObject("WScript.Shell");
+    function foo() {
+
+     var oExec = WshShell.Exec("ipconfig.exe");
+     var input = "";
+
+     while (!oExec.StdOut.AtEndOfStream) {
+             input += oExec.StdOut.ReadLine() + "<br />";
+     }
+
+     if (input)
+      console.log(input);
+
+    }
+    </script>
+
+    <link href="resources/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="main.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css" media="screen">
+        .x-grid-row-summary .x-grid-cell-inner {
+            font-weight: bold;
+            font-size: 12px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="resources/codemirror/codemirror.css">
+    <script type="text/javascript" src="resources/codemirror/codemirror.js"></script>
+    <script type="text/javascript" src="resources/codemirror/mode/sql/sql.js"></script>
+    <script src="http://tbsdmsap01:9091/socket.io/socket.io.js"></script>
+    <script src="resources/js/jquery-2.1.1.min.js"></script>
+    <script src="resources/js/jquery.signalR-2.1.1.min.js"></script>
+    <script src="resources/js/underscore-min.js"></script>
+    <script src="resources/js/moment.min.js"></script>
+    <script src="resources/js/countdown.min.js"></script>
+    <script src="resources/js/jszip.min.js"></script>
+    <script src="resources/js/breeze.min.js"></script>
+    <script src="resources/js/q.min.js"></script>
+    <script src="resources/ace/ace.js"></script>
+<!--    <script src="signalr/hubs"></script>-->
+
+    <script type="text/javascript">
+
+        function displayDate(value, metadata, record, rowIndex, colIndex, store)
+        {
+            if (value == null || value === undefined) return '';
+            return moment.utc(value).format('DD-MM-YYYY HH:mm:ss');
+        }
+
+        function displayDateOnly(value, metadata, record, rowIndex, colIndex, store)
+        {
+            if (value == null || value === undefined) return '';
+            return moment.utc(value).format('DD-MM-YYYY');
+        }
+    </script>
+
+
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script id="microloader" type="text/javascript" src="bootstrap.js"></script>
+
+</head>
+<body  onload="foo();"></body>
+</html>

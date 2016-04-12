@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[SysControlDms](
+	[CompanyCode] [varchar](25) NULL,
+	[MenuID] [varchar](25) NULL,
+	[FieldID] [varchar](100) NULL,
+	[RoleID] [varchar](36) NULL,
+	[Visibility] [tinyint] NULL,
+	[Type] [varchar](50) NULL,
+	[Title] [varchar](100) NULL
+) ON [PRIMARY]

@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Login.cshtml";
+    ViewBag.Title = "Login Form";
+}
+<script src="@Url.Content("~/assets/js/app/login.js")"></script>
+<div class="login">
+    <form method="post">
+        <div>
+            <label>User Name</label>
+            <div>
+                <input type="text" placeholder="User Name" id="UserName" name="UserName" required="required" onkeypress="runScript(event)" />
+            </div>
+        </div>
+        <div>
+            <label>Password</label>
+            <div>
+                <input type="password" placeholder="Password" id="Password" name="Password" required="required" onkeypress="runScript(event)" />
+            </div>
+        </div>
+        <div>
+            <label>&nbsp;</label>
+            <div>
+                <a href="#" class="button small" id="btnLogIn">Log In</a>
+                @*<a style="float: right;" href="@Url.Content("~/Register/Index")">Register</a>*@
+            </div>
+        </div>
+    </form>
+</div>

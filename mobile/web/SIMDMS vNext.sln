@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APP", "APP\APP.csproj", "{2DF608C2-6421-4404-AEB3-FB81AEFD1E5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{32EAAB56-A80B-4A04-897D-94E5148CD8A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E24BD246-DA27-4F48-BE4D-F8011DFE79CC}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "exhibition", "http://localhost:57689", "{670FB3CE-3DFF-4C26-9730-BC5A931E5771}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57689"
+		Debug.AspNetCompiler.PhysicalPath = "..\Android\exhibition\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57689\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57689"
+		Release.AspNetCompiler.PhysicalPath = "..\Android\exhibition\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57689\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\Android\exhibition\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DF608C2-6421-4404-AEB3-FB81AEFD1E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF608C2-6421-4404-AEB3-FB81AEFD1E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF608C2-6421-4404-AEB3-FB81AEFD1E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF608C2-6421-4404-AEB3-FB81AEFD1E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32EAAB56-A80B-4A04-897D-94E5148CD8A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32EAAB56-A80B-4A04-897D-94E5148CD8A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32EAAB56-A80B-4A04-897D-94E5148CD8A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32EAAB56-A80B-4A04-897D-94E5148CD8A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{670FB3CE-3DFF-4C26-9730-BC5A931E5771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670FB3CE-3DFF-4C26-9730-BC5A931E5771}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

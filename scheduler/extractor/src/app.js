@@ -1,0 +1,3 @@
+﻿require("./routes/extractor").extract();
+
+

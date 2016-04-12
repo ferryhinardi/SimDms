@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+   
+    <link href="@Url.Content("~/assets/css/vendor/foundation.min.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("~/assets/css/vendor/font-awesome.css")" rel="stylesheet" />*@
+    <link href="@Url.Content("~/assets/css/vendor/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/jquery.ui.core.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/jquery.ui.spinner.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/jquery.ui.datepicker.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/kendo/kendo.common.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/kendo/kendo.blueopal.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/themes/jquery.ui.widget.themes.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/themes/jquery.ui.spinner.themes.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/animate.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/imgareaselect/imgareaselect-default.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/toastr.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/ajax-loader.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.zurb.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.widget.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.kendo.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.chart.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.dashboard.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.responsive.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.ui.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/popup.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/nv.d3.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/jquery-ui.min.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/assets/js/vendors/modernizr.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/linq.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery-2.0.3.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.core.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.widget.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.spinner.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.button.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.datepicker.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.form.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/foundation.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/foundation.topbar.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/imgareaselect/jquery.imgareaselect.pack.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/bootstrap.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/kendo.all.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/moment.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/d3.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/d3.ext.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/nv.d3.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/toastr.js")"></script>
+
+    <script src="@Url.Content("~/assets/js/vendors/jquery-ui.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.fileDownload.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/FileSaver.min.js")"></script>
+
+    <script src="@Url.Content("~/assets/js/SimDms.core.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.widget.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.util.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.kendo.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.chart.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.ui.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.print.js")"></script>
+    @*<script src="@Url.Content("~/assets/js/vendors/verify.notify.min.js")"></script>*@
+
+    <script type="text/javascript">
+        var layout;
+        $(document).ready(function () {
+            SimDms.baseUrl = '@Url.Content("~/")';
+
+            var user = "@User.Identity.Name";
+            if (!user) {
+                window.location = SimDms.baseUrl + 'account/logout';
+            }
+
+            layout = new SimDms.Layout();
+            layout.render({ title: "Suzuki", subtitle: "Data Warehouse" , useExt: true});
+            layout.onModuleChanged(function (e, module) {
+                layout.loadNavMenu(module);
+            });
+            layout.onGroupChanged(function (e, module, group) {
+                var link = SimDms.baseUrl + module + "/" + group;
+            });
+            layout.onMenuChanged(function (e, module, group, menu) {
+                $.post(SimDms.baseUrl + 'account/menuvalidation', { menu: menu }, function (result) {
+                    //console.log(result);
+                    if (result) {
+                        if (SimDms.activeObject) delete SimDms.activeObject;
+                        if (SimDms.activeTimer) clearInterval(SimDms.activeTimer);
+
+                        if (group.length > 0 && menu.length > 0) {
+                            var link = SimDms.baseUrl + module + "/" + group + "/" + menu;
+                            alert(link);
+                            $(".body .main").load(link, function () {
+                                //$("title").text($(".page .body .main .title h3").text());
+                                alert('done');
+                            });
+                        }
+                    }
+                    else {
+                        layout.showNotification("Anda tidak mempunyai otoritas untuk akses link tersebut...!");
+                    }
+                });
+            });
+            layout.loadAjaxLoader();
+            layout.loadUserInfo("@User.Identity.Name");
+        });
+
+        $(window).resize(function (evt) {
+            layout.evt_WindowResize(evt);
+        });
+
+        var globalUrl = "@Url.Content("~")";
+
+        Ext.onReady(function () {
+            Ext.create('Ext.container.Viewport', {
+                layout: 'border',
+                items: [{
+                    region: 'north',
+                    html: '<h1 class="x-panel-header">Page Title</h1>',
+                    border: false,
+                    margins: '0 0 5 0'
+                }, {
+                    region: 'west',
+                    collapsible: true,
+                    title: 'Navigation',
+                    collapsible: true,
+                    //split: true,
+                    width: 220
+                }, {
+                    region: 'center',
+                    xtype: 'tabpanel',
+                    activeTab: 0,
+                    items: {
+                        title: 'Default Tab',
+                        html:  '<div class="toolbar"></div><div class="body"><div class="main animated"></div><div class="panel"></div></div>'
+                    }
+                }]
+            });
+        });
+
+
+        //Ext.application({
+        //    name: 'Fiddle',
+        //    launch: function () {
+        //        Ext.create('Ext.container.Viewport', {
+        //            layout: 'border',
+        //            renderTo: 'myContent',
+        //            items: [
+        //            {
+        //                region: 'north',
+        //                html: '<div class="header"><div class="app-title"></div><div class="app-subtitle"></div><div class="user-info"></div></div>',
+        //                border: false,
+        //                margins: '0 0 5 0'
+        //            },
+        //            {
+        //                region: 'west',
+        //                collapsible: true,
+        //                title: 'Navigation',
+        //                width: 250
+        //            },
+        //            {
+        //                region: 'center',
+        //                xtype: 'tabpanel',
+        //                // TabPanel itself has no title
+        //                activeTab: 0,
+        //                // First tab active by default
+        //                items: {
+        //                    title: 'Default Tab',
+        //                    html: 'The first tab\'s content. Others may be added dynamically'
+        //                }
+        //            }]
+        //        });
+        //    }
+        //});
+
+    </script>
+</head>
+<body>
+</body>
+</html>

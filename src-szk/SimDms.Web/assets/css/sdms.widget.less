@@ -1,0 +1,978 @@
+﻿@base-color: #007acc;
+
+.page
+{
+	> .title
+	{
+		margin: 0;
+		position: fixed;
+		top: 98px;
+		left: 0;
+		right: 0;
+
+		> h3
+		{
+			color: darken(gray, 15%);
+			background-image: linear-gradient(to bottom, white, #F2F2F2);
+			background-repeat: repeat-x;
+			border-top: none;
+			border-bottom: 1px solid lighten(gray, 30%);
+			padding: 6px 14px;
+			margin: 0;
+			font-size: 20px;
+		}
+	}
+
+	> .toolbar
+	{
+		position: fixed;
+		margin-top: -26px;
+		right: 20px;
+
+		> .button
+		{
+			color: lighten(@base-color, 70%);
+			padding: 4px 10px;
+			margin-right: 4px;
+			line-height: 18px;
+
+			.icon
+			{
+				padding-right: 4px;
+			}
+		}
+	}
+
+	.number
+	{
+		input
+		{
+			text-align: right;
+		}
+	}
+
+	.number-int
+	{
+		input
+		{
+			text-align: right;
+		}
+	}
+}
+
+.gl-widget
+{
+	position: fixed;
+	top: 135px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+
+	> .grid
+	{
+		padding-right: 10px;
+		margin-bottom: 40px;
+
+		table
+		{
+			width: 100%;
+		}
+	}
+	/*> .gl-form, > .panel, > form > .panel, > form > .panel > .panel, > .gl-form > .panel*/
+	.gl-form, .panel, .panel.dataTables_wrapper > .panel, .panel.innergrid_wrapper > .panel
+	{
+		margin: 0;
+		max-width: 1100px;
+		min-width: 570px;
+		background: 0;
+		border: 0;
+		padding-left: 14px;
+
+		&.filter
+		{
+			> div
+			{
+				display: inline-block;
+
+				> label
+				{
+					width: 110px;
+					text-align: right;
+				}
+
+				> div
+				{
+					width: 240px;
+					margin-left: 120px;
+				}
+			}
+		}
+
+		> div
+		{
+			margin-top: 4px;
+			padding: 0 10px 0 0;
+			float: left;
+			width: 100%;
+
+			> label
+			{
+				display: block;
+				/*line-height: 10px;*/
+				width: 150px;
+				text-align: right;
+
+				&.full
+				{
+					text-align: left;
+					width: auto;
+				}
+			}
+
+			> div
+			{
+				margin-top: -24px;
+				padding-left: 160px;
+
+				.inputs
+				{
+					float: left;
+					margin-right: 9px;
+
+					&.columns-3
+					{
+						width: 31%;
+					}
+
+					&.columns-2
+					{
+						width: 47%;
+					}
+				}
+
+				&.span
+				{
+					padding-left: 0px;
+					margin-left: -4px;
+				}
+
+				> textarea
+				{
+					min-height: 80px;
+				}
+
+				> input[type="checkbox"]
+				{
+					min-height: 33px;
+				}
+
+				> button
+				{
+					padding: 6px 12px;
+					margin-right: 3px;
+
+					i
+					{
+						margin-right: 5px;
+					}
+				}
+
+				> .controls-wrapper, > .lookup-wrapper
+				{
+					margin-right: -6px;
+
+					> .span1, > .span2, > .span3, > .span4, > .span5, > .span6, > .span7, > .span8
+					{
+						float: left;
+						padding-right: 6px;
+					}
+
+					> .span2
+					{
+						width: 25%;
+					}
+
+					> .span3
+					{
+						width: 37.5%;
+					}
+
+					> .span4
+					{
+						width: 50%;
+					}
+
+					> .span5
+					{
+						width: 62.5%;
+					}
+
+					> .span6
+					{
+						width: 75%;
+					}
+
+					> .span7
+					{
+						width: 87.5%;
+					}
+
+					> .span8
+					{
+						width: 100%;
+					}
+				}
+
+				> .lookup-wrapper
+				{
+					> div
+					{
+						&.span6
+						{
+							padding-right: 34px;
+						}
+
+						> .button
+						{
+							font-size: 14px;
+							padding: 0;
+							line-height: 28px;
+							width: 28px;
+							margin: -46px -28px 0 -3px;
+							float: right;
+
+							i
+							{
+								margin: 0;
+							}
+						}
+					}
+				}
+			}
+
+			&.left
+			{
+				> label
+				{
+					text-align: left;
+				}
+			}
+
+			&.full-length
+			{
+				> div
+				{
+					margin-top: 6px;
+					padding-left: 0px;
+				}
+			}
+
+			&.span1
+			{
+				width: 12.5%;
+			}
+
+            &.width20
+			{
+				width: 20%;
+			}
+
+			&.span2
+			{
+				width: 25%;
+			}
+
+            &.width33
+			{
+				width: 33.3%;
+			}
+
+			&.span3
+			{
+				width: 37.5%;
+			}
+
+			&.span4
+			{
+				width: 50%;
+			}
+
+            &.width60
+			{
+				width: 60%;
+			}
+
+			&.span5
+			{
+				width: 62.5%;
+			}
+
+			&.span6
+			{
+				width: 75%;
+			}
+
+			&.span7
+			{
+				width: 87.5%;
+			}
+
+			&.span8
+			{
+				width: 100%;
+			}
+
+			&.full
+			{
+				margin-right: 100%;
+			}
+		}
+
+		> .divider
+		{
+			height: 0px;
+			margin-bottom: 18px;
+			width: 100%;
+			float: left;
+			border-bottom: 1px solid lighten(@base-color, 10%);
+		}
+
+		> .subtitle
+		{
+			margin-top: 0px;
+			margin-bottom: 18px;
+			width: 100%;
+			float: left;
+			border-bottom: 1px solid lighten(@base-color, 10%);
+			color: darken(@base-color, 10%);
+			font-weight: normal;
+			font-size: 20px;
+			padding: 6px 0 0 0;
+
+			> .icon
+			{
+				float: right;
+				margin-right: 8px;
+				font-size: 12px;
+				width: 18px;
+				height: 18px;
+				text-align: center;
+				padding-top: 2px;
+				/*display: none;*/
+				border: 1px solid;
+				color: 1px solid lighten(@base-color, 10%);
+				/*border-radius: 10px;*/
+				cursor: pointer;
+
+				&:hover
+				{
+					background-color: lighten(@base-color, 55%);
+				}
+			}
+		}
+
+		> .toolbars
+		{
+			margin: 0 0 -15px;
+
+			button
+			{
+				padding: 5px 15px;
+				/*border: none;*/
+				/*background-color: none;*/
+				/*background: transparent;*/
+				/*color: @base-color;*/
+				i
+				{
+					margin-right: 3px;
+				}
+			}
+		}
+
+		label.error
+		{
+			margin: -10px 0 18px 0;
+			font-size: 12px;
+			font-style: italic;
+		}
+
+		&.frame
+		{
+			/*border-top: 1px solid lighten(@base-color, 10%);*/
+			margin: 0;
+			padding: 1px 0 0 0;
+			position: absolute;
+			left: 10px;
+			top: 100px;
+			right: 10px;
+			bottom: 10px;
+			width: 100%;
+
+			> iframe
+			{
+				/*background-color: lighten(@base-color, 58%);*/
+				border: 1px solid lighten(@base-color, 10%);
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	> .gl-form
+	{
+		margin-top: 20px;
+
+		> .panel
+		{
+			margin-left: -14px;
+		}
+	}
+
+	.spinner-wrapper
+	{
+		margin: 0 -12px 0 0;
+
+		.ui-spinner
+		{
+			border: none;
+			margin: -6px -6px 8px;
+			padding: 6px;
+			width: 100%;
+			background-color: transparent;
+			height: auto !important;
+
+			.ui-spinner-input
+			{
+				margin: 0 !important;
+				padding: 7px 20px 7px !important;
+				height: auto !important;
+				text-align: right;
+			}
+
+			.ui-spinner-button
+			{
+				margin: 7px;
+				height: 16px;
+			}
+
+			.ui-icon-triangle-1-n, .ui-icon-triangle-1-s
+			{
+				text-indent: -1px;
+				font-size: 12px;
+				padding-top: 2px;
+				color: darken(@base-color, 10%);
+				background-color: lighten(@base-color, 55%);
+			}
+		}
+	}
+
+	.radio-wrapper
+	{
+		margin: 8px 0 21px;
+
+		input[type='radio']
+		{
+			margin: 0;
+			padding: 0;
+		}
+
+		.radio-label
+		{
+			font-size: 14px;
+			color: rgba(0, 0, 0, 0.75);
+			display: inline-block;
+			padding: 0 18px 0 4px;
+		}
+	}
+
+	.popup-wrapper
+	{
+		input[type=text]
+		{
+			padding-right: 37px;
+			float: left;
+		}
+
+		button
+		{
+			float: right;
+			height: 32px;
+			padding: 0 0;
+			margin: -46px 0 0 0;
+			width: 28px;
+		}
+	}
+
+	.datepicker-wrapper
+	{
+		/*width: 168px;*/
+		input[type='date'], input.datepicker
+		{
+			height: 32px !important;
+			background-image: url("vendor/themes/icon/calendar_black.png");
+			background-repeat: no-repeat;
+			background-position: right;
+			background-size: 30px 40px;
+		}
+
+		input.datepicker
+		{
+			float: none;
+		}
+
+		img.ui-datepicker-trigger
+		{
+			background-image: url("../img/icon/calendar_black.png");
+			background-position: -2px -2px;
+			background-color: #ddd;
+			margin: -46px 0 0 136px;
+			width: 31px;
+			height: 31px;
+			color: transparent;
+			cursor: pointer;
+			float: left;
+		}
+
+		button.ui-datepicker-trigger
+		{
+			background-image: url("../img/icon/calendar_black.png");
+			background-position: -6px -2px;
+			background-color: #ddd;
+			margin: -47px 0 0 169px;
+			padding: 0;
+			width: 26px;
+			height: 33px;
+			color: transparent;
+			cursor: pointer;
+			float: left;
+			border: 1px solid #ccc;
+		}
+	}
+
+	.switch
+	{
+		width: auto;
+		padding-right: 20px;
+		padding-left: 5px;
+		float: right;
+		margin: 0 0 14px;
+		height: 34px;
+		z-index: 0;
+
+		&.left
+		{
+			float: left;
+			margin-right: 5px;
+		}
+	}
+
+	.gl-grid
+	{
+		margin: 0 14px;
+	}
+
+	.summary
+	{
+		margin-top: 0px;
+
+		> div
+		{
+			height: 24px;
+			margin-left: 0;
+
+			&.indent
+			{
+				margin-left: 80px;
+			}
+		}
+
+		.divider
+		{
+			display: none;
+		}
+
+		label
+		{
+			height: 12px;
+		}
+
+		input
+		{
+			background-color: transparent;
+			box-shadow: none;
+			height: 27px;
+			padding: 0 6px;
+			width: 180px;
+			/*border: none;*/
+			&:focus
+			{
+				background-color: transparent;
+				box-shadow: none;
+				/*border: none;*/
+			}
+		}
+	}
+
+	input, select, textarea, .switch
+	{
+		border: 1px solid lighten(#808080, 25%);
+		box-shadow: 0 1px 2px lighten(@base-color, 45%) inset;
+		height: 32px;
+
+		&:focus
+		{
+			-webkit-box-shadow: 0 0 5px lighten(@base-color, 45%);
+			-moz-box-shadow: 0 0 5px lighten(@base-color, 45%);
+			box-shadow: 0 0 5px lighten(@base-color, 45%);
+			border-color: lighten(@base-color, 25%);
+			background-color: lighten(@base-color, 58%);
+		}
+	}
+}
+
+
+.toast-top-right
+{
+	top: 58px;
+	right: 20px;
+}
+
+#toast-container
+{
+	border-radius: 0;
+}
+
+/* JQuery UI Themes */
+.ui-datepicker
+{
+	display: none;
+	padding: 3px 3px 0 3px;
+	margin-top: 2px;
+	width: 240px;
+
+	.ui-datepicker-header
+	{
+		position: relative;
+		padding: 0;
+	}
+
+	select
+	{
+		display: inline-block;
+		height: 26px;
+		padding: 2px;
+		width: 40%;
+
+		&.ui-datepicker-month
+		{
+			margin-right: 1px;
+			font-size: 14px;
+		}
+
+		&.ui-datepicker-year
+		{
+			margin-left: 1px;
+			font-size: 14px;
+		}
+	}
+}
+
+.dataTables_wrapper
+{
+	border-bottom: 1px solid lighten(@base-color, 30%);
+	padding-bottom: 4px;
+	margin-bottom: 10px;
+
+	.dataTables_length
+	{
+		width: 200px;
+		float: right;
+		margin-top: 18px;
+		vertical-align: bottom;
+		margin-bottom: -20px;
+
+		select
+		{
+			width: 80px;
+			display: inline-block;
+			height: 32px;
+			padding: 6px 6px;
+		}
+	}
+
+	.dataTables_filter
+	{
+		float: left;
+		width: 200px;
+		margin-top: 24px;
+
+		label
+		{
+			display: inline-block;
+
+			input
+			{
+				margin: -22px 0 0 60px;
+			}
+		}
+	}
+
+	.dataTables_processing
+	{
+		color: transparent;
+	}
+
+	.dataTable
+	{
+		min-width: 840px;
+		margin-top: 40px;
+		border: none;
+		border-top: 1px solid lighten(@base-color, 40%);
+		border-bottom: 1px solid lighten(@base-color, 40%);
+		border-spacing: 0;
+		width: 100% !important;
+
+		thead
+		{
+			cursor: pointer;
+		}
+
+		tbody
+		{
+			tr
+			{
+				cursor: pointer;
+				background-color: white;
+				font-size: 14px;
+
+				.icon
+				{
+					&:hover
+					{
+						background-color: #ccc;
+					}
+				}
+
+				&.row_selected
+				{
+					background-color: lighten(@base-color, 50%);
+
+					&:hover
+					{
+						background-color: lighten(@base-color, 50%);
+					}
+				}
+
+				&:hover
+				{
+					background-color: lighten(@base-color, 55%);
+				}
+
+				td
+				{
+					&.right
+					{
+						float: none !important;
+						text-align: right;
+					}
+
+					&.center
+					{
+						float: none !important;
+						text-align: center;
+					}
+
+					.icon
+					{
+						padding: 6px 8px 7px;
+						color: lighten(gray, 15%);
+
+						&.link
+						{
+							cursor: pointer;
+							color: lighten(@base-color, 5%);
+
+							&:hover
+							{
+								background-color: lighten(@base-color, 45%);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.table
+		{
+			thead
+			{
+				cursor: default;
+
+				th
+				{
+					&.right
+					{
+						float: none !important;
+						text-align: right;
+					}
+				}
+			}
+
+			tbody
+			{
+				tr
+				{
+					cursor: default;
+				}
+			}
+		}
+	}
+
+	.dataTables_info
+	{
+		float: left;
+		font-size: 12px;
+		margin-left: 8px;
+		margin-top: -14px;
+	}
+
+	.paging_full_numbers
+	{
+		float: right;
+		font-size: 12px;
+		margin-top: -14px;
+
+		a
+		{
+			margin-right: 4px;
+			border: 1px solid #2BA6CB;
+			padding: 0 5px;
+			border-radius: 20px;
+
+			&:hover
+			{
+				background-color: lighten(@base-color, 30%);
+				color: lighten(@base-color, 70%);
+			}
+
+			&.paginate_active
+			{
+				background-color: lighten(@base-color, 45%);
+			}
+		}
+	}
+
+	.sorting_asc
+	{
+		background: url('../img/datatables/sort_asc.png') no-repeat center right;
+	}
+
+	.sorting_desc
+	{
+		background: url('../img/datatables/sort_desc.png') no-repeat center right;
+	}
+}
+
+.innergrid_wrapper
+{
+	padding: 20px;
+
+	> .dataTable
+	{
+		width: 100%;
+	}
+
+	> .dataTables_wrapper
+	{
+		margin-bottom: 20px !important;
+		padding: 0 !important;
+
+		> .dataTables_filter
+		{
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+
+		> .dataTables_length
+		{
+			margin: -6px 0 -8px !important;
+			padding: 0 !important;
+		}
+
+		> .dataTable
+		{
+			/*margin: 0 !important;*/
+			padding: 0 !important;
+		}
+
+		> .dataTables_info
+		{
+			margin: -14px 0 0 0 !important;
+			padding: 0 !important;
+		}
+
+		> .paging_full_numbers
+		{
+			margin: -14px 0 6px 0 !important;
+			padding: 0 !important;
+		}
+	}
+}
+
+.tab_wrapper
+{
+	margin-top: 20px;
+
+	.tabs
+	{
+		width: 100%;
+		border-bottom: 3px solid lighten(@base-color, 10%);
+		margin: 0 0 18px;
+
+		p
+		{
+			display: inline-block;
+			border: 1px solid lighten(@base-color, 10%);
+			margin: 10px 0 -1px 5px;
+			padding: 5px 15px;
+			cursor: pointer;
+			border-radius: 5px 5px 0 0;
+			box-shadow: 3px 0px 2px -1px lighten(@base-color, 40%);
+
+			a
+			{
+				color: darken(@base-color, 10%);
+			}
+
+			&:hover
+			{
+				background-color: lighten(@base-color, 50%);
+			}
+
+			&.active
+			{
+				background-color: lighten(@base-color, 20%);
+				cursor: default;
+
+				a
+				{
+					color: white;
+					text-shadow: 0 0 7px lighten(@base-color, 60);
+					cursor: default;
+				}
+			}
+		}
+	}
+}
+
+.panel.innergrid_wrapper
+{
+	> .panel
+	{
+		> .divider
+		{
+			margin-left: -12px;
+		}
+	}
+}

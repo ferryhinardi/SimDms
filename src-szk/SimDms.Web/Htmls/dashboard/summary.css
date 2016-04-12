@@ -1,0 +1,36 @@
+﻿body {
+  /*margin: 0;*/
+
+}
+.row {
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+}
+.row > .col-md-4 {
+  width: 33.33%;
+  float: left;
+  background-color: gray;
+}
+.row > .col-md-4 > .cell {
+  width: 100%;
+  margin: 1px 0 0 1px;
+  background-color: white;
+}
+.das-table {
+  border-top: 1px solid gray;
+}
+.das-table > .das-tr {
+  border-right: 1px solid gray;
+}
+.das-table > .das-tr > .das-td-4 {
+  width: 33.33%;
+  float: left;
+  background-color: gray;
+}
+.das-table > .das-tr > .das-td-4 > .cell {
+  height: 80px;
+  width: 100%;
+  margin-left: 1px;
+  margin-bottom: 1px;
+  background-color: white;
+}

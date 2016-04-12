@@ -1,0 +1,151 @@
+﻿<aside id="left-panel">
+    @{ Html.RenderPartial("_CurrentUser"); }
+
+    <nav ng-controller="NavigationCtrl">
+        <ul id="myNavigation">
+            <li class="@Html.RouteIf("index", "active")">
+                <a href="#/home" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i><span class="menu-item-parent">Dashboard</span></a>
+                @if (ViewBag.Developer == true)
+                {
+                    <ul>
+                        <li>
+                            <a href="#GLOBALFN"><i class="fa fa-gear"></i>GLOBALFN</a>
+                        </li>
+                        <li>
+                            <a href="#GLOBALAPP"><i class="fa fa-gear"></i>GLOBALAPP</a>
+                        </li>
+                        <li>
+                            <a href="#GLOBALTEST"><i class="fa fa-gear"></i>GLOBALTEST</a>
+                        </li>
+                        <li>
+                            <a href="#MASTERFORM2"><i class="fa fa-gear"></i>General Form</a>
+                        </li>
+                        <li>
+                            <a href="#MASTERDETAILFORM2"><i class="fa fa-gear"></i>Master Detail</a>
+                            <ul>
+                                <li>
+                                    <a href="#DETAILFORM"><i class="fa fa-gear"></i>Detail Form</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+            </li>
+
+            @*<li class="@Html.RouteIf("inbox", "active")">
+                <a href="#"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">1</span></a>
+            </li>*@
+
+            @foreach (var nav in Model)
+            {
+                <li id="module-@nav.MenuId">
+                    <a href="#" title="@nav.MenuCaption">
+                        <i class="@nav.Icon"></i><span class="menu-item-parent">@nav.MenuCaption</span>
+                    </a>
+                    @if (nav.Detail.Count > 0)
+                    {
+                        <ul>
+                            @foreach (var nav1 in nav.Detail)
+                            {
+                                <li>
+                                    <a href="@nav1.Url"><i class="@nav1.Icon"></i> @nav1.MenuCaption</a>
+                                    @if (nav1.Detail.Count > 0)
+                                    {
+                                        <ul>
+                                            @foreach (var nav2 in nav1.Detail)
+                                            {
+                                                <li>
+                                                    <a href="@nav2.Url"><i class="@nav2.Icon"></i>@nav2.MenuCaption</a>
+                                                    @if (nav2.Detail.Count > 0)
+                                                    {
+                                                        <ul>
+                                                            @foreach (var nav3 in nav2.Detail)
+                                                            {
+                                                                <li>
+                                                                    <a href="@nav3.Url"><i class="@nav3.Icon"></i>@nav3.MenuCaption</a>
+                                                                    @if (nav3.Detail.Count > 0)
+                                                                    {
+                                                                        <ul>
+                                                                            @foreach (var nav4 in nav3.Detail)
+                                                                            {
+                                                                                <li>
+                                                                                    <a href="@nav4.Url"><i class="@nav4.Icon"></i>@nav4.MenuCaption</a>
+                                                                                </li>
+                                                                            }
+                                                                        </ul>
+                                                                    }
+                                                                </li>
+                                                            }
+                                                        </ul>
+                                                    }
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                </li>
+                            }
+                        </ul>
+                    }
+                </li>
+            }
+
+            @if (ViewBag.IsDeveloper == true && ViewBag.Admin == true && ViewBag.IsSuperuser == true)
+            {
+                if (ViewBag.Developer == true)
+                {
+                    <li>
+                        <a href="#" title="Administration Tools"><i class="fa fa-lg fa-fw fa-wrench"></i>Administration Tools</a>
+                        <ul>
+                            <li>
+                                <a href="#AdminMenuManagement" title="Administration Menu"><i class="fa fa-list"></i> Menus Management</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Data Management"><i class="fa fa-database"></i> Data Management</a>
+                                <ul>
+                                    <li>
+                                        <a href="#AdminDataFiles" title="Code Editor"><i class="fa fa-file-text-o"></i> Files Collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="#AdminConfiguration" title="Configuration"><i class="fa fa-wrench"></i> Configuration</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#AdminIconsCollection" title="Icon Collections"><i class="fa fa-fonticons"></i> Icon Collections</a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="#" title="Administration Tools"><i class="fa fa-lg fa-fw fa-wrench"></i>Administration Tools</a>
+                        <ul>
+                            <li>
+                                <a href="#/AdminMenuManagement" title="Administration Menu"><i class="fa fa-list"></i> Menus Management</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Data Management"><i class="fa fa-database"></i> Data Management</a>
+                                <ul>
+                                    <li>
+                                        <a href="#/AdminDataFiles" title="Code Editor"><i class="fa fa-file-text-o"></i> Files Collection</a>
+                                    </li>
+                                    <li>
+                                        <a href="#/AdminConfiguration" title="Configuration"><i class="fa fa-wrench"></i> Configuration</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#/AdminIconsCollection" title="Icon Collections"><i class="fa fa-fonticons"></i> Icon Collections</a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+            }
+        </ul>
+    </nav>
+
+    <span class="minifyme" data-action="minifyMenu">
+        <i class="fa fa-arrow-circle-left hit"></i>
+    </span>
+</aside>

@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Suzuki DMS</title>
+    <script src="js/jquery-2.0.1.min.js"></script>
+    <!--    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="js/bootstrap.min.js"></script>-->
+    <script src="js/master.js"></script>
+    <link href="css/master.css" rel="stylesheet" />
+    <link href="css/foundation.min.css" rel="stylesheet" />
+    <link href="css/master.css" rel="stylesheet" />
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation.orbit.js"></script>
+    <script src="js/foundation.tab.js"></script>
+    <!--<link href="css/font-awesome.min.css" rel="stylesheet" />-->
+</head>
+<body>
+    <div class="contain-to-grid sticky">
+        <nav class="top-bar " data-topbar="">
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="#">SUZUKI DMS - DATA WAREHOUSE</a></h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+            </ul>
+            <section class="top-bar-section">
+                <ul class="right">
+                    <li class="active "><a href="#">Documentation</a></li>
+                    <li class="btn-logout"><a href="#">Logout</a></li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="small-12 medium-7 large-8 columns ">
+            <div class="wraper-tag">
+                <img class="logo-suzuki left" src="images/logo-suzuki-png.png" />
+                <h2 class="left">SUZUKI DMS</h2>
+                <div class="clearfix"></div>
+                <h4>PT.Suzuki Indomobil Motor</h4>
+                <hr />
+            </div>
+            <div class="wraper-content show-for-medium-up">
+                <dl id="myTabs" class="tabs " data-tab="">
+                    <dd class="active"><a href="#panel-announcement">Announcement</a></dd>
+                    <dd><a href="#panel-log">Log Version</a></dd>
+                    <dd><a href="#panel-personal" class=" tab-personal">Personal</a></dd>
+                </dl>
+                <div class="tabs-content ">
+                    <div class="content active large-12" id="panel-announcement">
+                        <h5>ANNOUNCEMENT</h5>
+                        <p>First panel content goes here...</p>
+                        <ul class="example-orbit panel" data-orbit="" data-options="animation_speed:1000; timer_speed: 5000;resume_on_mouseout: true;">
+                            <li>
+                                <img src="images/contoh1.png" alt="slide 1" />
+                                <div class="orbit-caption">
+                                    Caption One.
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/contoh2.png" alt="slide 2" />
+                                <div class="orbit-caption">
+                                    Caption Two.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content" id="panel-log">
+                        <h5>LOG VERSION</h5>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="large-1">No</th>
+                                    <th class="large-5">Table Header</th>
+                                    <th class="large-4">Table Header</th>
+                                    <th class="large-2">Table Header</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                                    <td>Content Goes Here</td>
+                                    <td>Content Goes Here</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                                    <td>Content Goes Here</td>
+                                    <td>Content Goes Here</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                                    <td>Content Goes Here</td>
+                                    <td>Content Goes Here</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Food truck fixie locavore, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+
+                    </div>
+                    <div class="content" id="panel-personal">
+                        <h5>PERSONAL</h5>
+                        <p>Third panel content goes here...</p>
+                        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2">
+                            <li class="">
+                                <img class="th" src="images/contoh2.png" /></li>
+                            <li>
+                                <p>Food truck fixie locavore, commodo enim craft beer mlkshk aliquip. Homo nostrud organic, assumenda vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <script>
+                    $(document).foundation({
+                        tab: {
+                            callback: function (tab) {
+                                console.log(tab);
+                            }
+                        }
+                    });  </script>
+
+            </div>
+
+        </div>
+        <div class="small-12 medium-5 large-4 columns">
+            <form class="wraper-login">
+                <fieldset>
+                    <legend>
+                        <h5 class="color-tosca">LOGIN</h5>
+                    </legend>
+                    <label class="left">Username</label>
+                    <input type="text" class="left" placeholder="your id registered" />
+                    <label class="left">Password</label>
+                    <input type="password" class="left" placeholder="your password" />
+                    <hr />
+                    <div class="left">
+                        <a href="#" class="tiny button split btn-submit">Submit<span data-dropdown="drop"></span></a>
+                        <ul id="Ul1" class="f-dropdown" data-dropdown-content="">
+                            <li><a href="#">Forgot Password?</a></li>
+                        </ul>
+                    </div>
+                </fieldset>
+            </form>
+            <form class="wraper-module">
+                <fieldset>
+                    <legend>
+                        <h5 class="color-tosca">MODULE</h5>
+                    </legend>
+                    <ul>
+                        <li>
+                            <h6>Man Power</h6>
+                        </li>
+                        <li>
+                            <h6>Market Share</h6>
+                        </li>
+                        <li>
+                            <h6>Sales System</h6>
+                        </li>
+                        <li>
+                            <h6>Customer Satisfaction</h6>
+                        </li>
+                        <li>
+                            <h6>Service System</h6>
+                        </li>
+                        <li>
+                            <h6>Sparepart System</h6>
+                        </li>
+                        <li>
+                            <h6>Suzuki Network Information System</h6>
+                        </li>
+                        <li>
+                            <h6>Utility System</h6>
+                        </li>
+                    </ul>
+                </fieldset>
+            </form>
+            <div class="panel callout help ">
+                <div class="row ">
+                    <img src="images/phone-outline.png" class="hide-for-small-only left" />
+                    <div class="small-10 medium-10 large-10 columns left" style="padding: 0; margin: 0;margin-left:3px;">
+                        <h4><small>Perlu bantuan?Hubungi kami di:<br />
+                            email: sdms.support@suzuki.co.id<br />
+                            phone: (021) 882 8773, (021) 882 3080
+                        </small></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.btn-logout').hide();
+        $('.wraper-module').hide();
+        $('.tab-personal').hide();
+        $('.btn-submit').click(function () {
+            $('.wraper-login').hide();
+            $('.btn-logout').show();
+            $('.wraper-module').show();
+            $('.tab-personal').show();
+        }
+        )
+        $('.btn-logout').click(function () {
+            $('.wraper-login').show();
+            $('.btn-logout').hide();
+            $('.wraper-module').hide();
+            $('.tab-personal').hide();
+
+        });
+    </script>
+    <div class="footer">
+        <div class="row">
+            <div class="large-12 columns">
+                <h5><small>PT.Suzuki Indomobil Motor 2014</small></h5>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

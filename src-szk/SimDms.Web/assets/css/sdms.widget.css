@@ -1,0 +1,900 @@
+﻿.page > .title {
+  margin: 0;
+  position: fixed;
+  top: 98px;
+  left: 0;
+  right: 0;
+}
+.page > .title > h3 {
+  color: #5a5a5a;
+  background-image: linear-gradient(to bottom, white, #f2f2f2);
+  background-repeat: repeat-x;
+  border-top: none;
+  border-bottom: 1px solid #cdcdcd;
+  padding: 6px 14px;
+  margin: 0;
+  font-size: 20px;
+}
+.page > .toolbar {
+  position: fixed;
+  margin-top: -26px;
+  right: 20px;
+}
+.page > .toolbar > .button {
+  color: #ffffff;
+  padding: 4px 10px;
+  margin-right: 4px;
+  line-height: 18px;
+}
+.page > .toolbar > .button .icon {
+  padding-right: 4px;
+}
+.page .number input {
+  text-align: right;
+}
+.page .number-int input {
+  text-align: right;
+}
+.gl-widget {
+  position: fixed;
+  top: 135px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  /*> .gl-form, > .panel, > form > .panel, > form > .panel > .panel, > .gl-form > .panel*/
+}
+.gl-widget > .grid {
+  padding-right: 10px;
+  margin-bottom: 40px;
+}
+.gl-widget > .grid table {
+  width: 100%;
+}
+.gl-widget .gl-form,
+.gl-widget .panel,
+.gl-widget .panel.dataTables_wrapper > .panel,
+.gl-widget .panel.innergrid_wrapper > .panel {
+  margin: 0;
+  max-width: 1100px;
+  min-width: 570px;
+  background: 0;
+  border: 0;
+  padding-left: 14px;
+}
+.gl-widget .gl-form.filter > div,
+.gl-widget .panel.filter > div,
+.gl-widget .panel.dataTables_wrapper > .panel.filter > div,
+.gl-widget .panel.innergrid_wrapper > .panel.filter > div {
+  display: inline-block;
+}
+.gl-widget .gl-form.filter > div > label,
+.gl-widget .panel.filter > div > label,
+.gl-widget .panel.dataTables_wrapper > .panel.filter > div > label,
+.gl-widget .panel.innergrid_wrapper > .panel.filter > div > label {
+  width: 110px;
+  text-align: right;
+}
+.gl-widget .gl-form.filter > div > div,
+.gl-widget .panel.filter > div > div,
+.gl-widget .panel.dataTables_wrapper > .panel.filter > div > div,
+.gl-widget .panel.innergrid_wrapper > .panel.filter > div > div {
+  width: 240px;
+  margin-left: 120px;
+}
+.gl-widget .gl-form > div,
+.gl-widget .panel > div,
+.gl-widget .panel.dataTables_wrapper > .panel > div,
+.gl-widget .panel.innergrid_wrapper > .panel > div {
+  margin-top: 4px;
+  padding: 0 10px 0 0;
+  float: left;
+  width: 100%;
+}
+.gl-widget .gl-form > div > label,
+.gl-widget .panel > div > label,
+.gl-widget .panel.dataTables_wrapper > .panel > div > label,
+.gl-widget .panel.innergrid_wrapper > .panel > div > label {
+  display: block;
+  /*line-height: 10px;*/
+  width: 150px;
+  text-align: right;
+}
+.gl-widget .gl-form > div > label.full,
+.gl-widget .panel > div > label.full,
+.gl-widget .panel.dataTables_wrapper > .panel > div > label.full,
+.gl-widget .panel.innergrid_wrapper > .panel > div > label.full {
+  text-align: left;
+  width: auto;
+}
+.gl-widget .gl-form > div > div,
+.gl-widget .panel > div > div,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div {
+  margin-top: -24px;
+  padding-left: 160px;
+}
+.gl-widget .gl-form > div > div .inputs,
+.gl-widget .panel > div > div .inputs,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div .inputs,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div .inputs {
+  float: left;
+  margin-right: 9px;
+}
+.gl-widget .gl-form > div > div .inputs.columns-3,
+.gl-widget .panel > div > div .inputs.columns-3,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div .inputs.columns-3,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div .inputs.columns-3 {
+  width: 31%;
+}
+.gl-widget .gl-form > div > div .inputs.columns-2,
+.gl-widget .panel > div > div .inputs.columns-2,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div .inputs.columns-2,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div .inputs.columns-2 {
+  width: 47%;
+}
+.gl-widget .gl-form > div > div.span,
+.gl-widget .panel > div > div.span,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div.span,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div.span {
+  padding-left: 0px;
+  margin-left: -4px;
+}
+.gl-widget .gl-form > div > div > textarea,
+.gl-widget .panel > div > div > textarea,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > textarea,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > textarea {
+  min-height: 80px;
+}
+.gl-widget .gl-form > div > div > input[type="checkbox"],
+.gl-widget .panel > div > div > input[type="checkbox"],
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > input[type="checkbox"],
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > input[type="checkbox"] {
+  min-height: 33px;
+}
+.gl-widget .gl-form > div > div > button,
+.gl-widget .panel > div > div > button,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > button,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > button {
+  padding: 6px 12px;
+  margin-right: 3px;
+}
+.gl-widget .gl-form > div > div > button i,
+.gl-widget .panel > div > div > button i,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > button i,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > button i {
+  margin-right: 5px;
+}
+.gl-widget .gl-form > div > div > .controls-wrapper,
+.gl-widget .panel > div > div > .controls-wrapper,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper,
+.gl-widget .gl-form > div > div > .lookup-wrapper,
+.gl-widget .panel > div > div > .lookup-wrapper,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper {
+  margin-right: -6px;
+}
+.gl-widget .gl-form > div > div > .controls-wrapper > .span1,
+.gl-widget .panel > div > div > .controls-wrapper > .span1,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span1,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span1,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span1,
+.gl-widget .panel > div > div > .lookup-wrapper > .span1,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span1,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span1,
+.gl-widget .gl-form > div > div > .controls-wrapper > .span2,
+.gl-widget .panel > div > div > .controls-wrapper > .span2,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span2,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span2,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span2,
+.gl-widget .panel > div > div > .lookup-wrapper > .span2,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span2,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span2,
+.gl-widget .gl-form > div > div > .controls-wrapper > .span3,
+.gl-widget .panel > div > div > .controls-wrapper > .span3,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span3,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span3,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span3,
+.gl-widget .panel > div > div > .lookup-wrapper > .span3,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span3,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span3,
+.gl-widget .gl-form > div > div > .controls-wrapper > .span4,
+.gl-widget .panel > div > div > .controls-wrapper > .span4,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span4,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span4,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span4,
+.gl-widget .panel > div > div > .lookup-wrapper > .span4,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span4,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span4,
+.gl-widget .gl-form > div > div > .controls-wrapper > .span5,
+.gl-widget .panel > div > div > .controls-wrapper > .span5,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span5,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span5,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span5,
+.gl-widget .panel > div > div > .lookup-wrapper > .span5,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span5,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span5,
+.gl-widget .gl-form > div > div > .controls-wrapper > .span6,
+.gl-widget .panel > div > div > .controls-wrapper > .span6,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span6,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span6,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span6,
+.gl-widget .panel > div > div > .lookup-wrapper > .span6,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span6,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span6,
+.gl-widget .gl-form > div > div > .controls-wrapper > .span7,
+.gl-widget .panel > div > div > .controls-wrapper > .span7,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span7,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span7,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span7,
+.gl-widget .panel > div > div > .lookup-wrapper > .span7,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span7,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span7,
+.gl-widget .gl-form > div > div > .controls-wrapper > .span8,
+.gl-widget .panel > div > div > .controls-wrapper > .span8,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span8,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span8,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span8,
+.gl-widget .panel > div > div > .lookup-wrapper > .span8,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span8,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span8 {
+  float: left;
+  padding-right: 6px;
+}
+.gl-widget .gl-form > div > div > .controls-wrapper > .span2,
+.gl-widget .panel > div > div > .controls-wrapper > .span2,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span2,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span2,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span2,
+.gl-widget .panel > div > div > .lookup-wrapper > .span2,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span2,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span2 {
+  width: 25%;
+}
+.gl-widget .gl-form > div > div > .controls-wrapper > .span3,
+.gl-widget .panel > div > div > .controls-wrapper > .span3,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span3,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span3,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span3,
+.gl-widget .panel > div > div > .lookup-wrapper > .span3,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span3,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span3 {
+  width: 37.5%;
+}
+.gl-widget .gl-form > div > div > .controls-wrapper > .span4,
+.gl-widget .panel > div > div > .controls-wrapper > .span4,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span4,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span4,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span4,
+.gl-widget .panel > div > div > .lookup-wrapper > .span4,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span4,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span4 {
+  width: 50%;
+}
+.gl-widget .gl-form > div > div > .controls-wrapper > .span5,
+.gl-widget .panel > div > div > .controls-wrapper > .span5,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span5,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span5,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span5,
+.gl-widget .panel > div > div > .lookup-wrapper > .span5,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span5,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span5 {
+  width: 62.5%;
+}
+.gl-widget .gl-form > div > div > .controls-wrapper > .span6,
+.gl-widget .panel > div > div > .controls-wrapper > .span6,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span6,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span6,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span6,
+.gl-widget .panel > div > div > .lookup-wrapper > .span6,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span6,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span6 {
+  width: 75%;
+}
+.gl-widget .gl-form > div > div > .controls-wrapper > .span7,
+.gl-widget .panel > div > div > .controls-wrapper > .span7,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span7,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span7,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span7,
+.gl-widget .panel > div > div > .lookup-wrapper > .span7,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span7,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span7 {
+  width: 87.5%;
+}
+.gl-widget .gl-form > div > div > .controls-wrapper > .span8,
+.gl-widget .panel > div > div > .controls-wrapper > .span8,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .controls-wrapper > .span8,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .controls-wrapper > .span8,
+.gl-widget .gl-form > div > div > .lookup-wrapper > .span8,
+.gl-widget .panel > div > div > .lookup-wrapper > .span8,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > .span8,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > .span8 {
+  width: 100%;
+}
+.gl-widget .gl-form > div > div > .lookup-wrapper > div.span6,
+.gl-widget .panel > div > div > .lookup-wrapper > div.span6,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > div.span6,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > div.span6 {
+  padding-right: 34px;
+}
+.gl-widget .gl-form > div > div > .lookup-wrapper > div > .button,
+.gl-widget .panel > div > div > .lookup-wrapper > div > .button,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > div > .button,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > div > .button {
+  font-size: 14px;
+  padding: 0;
+  line-height: 28px;
+  width: 28px;
+  margin: -46px -28px 0 -3px;
+  float: right;
+}
+.gl-widget .gl-form > div > div > .lookup-wrapper > div > .button i,
+.gl-widget .panel > div > div > .lookup-wrapper > div > .button i,
+.gl-widget .panel.dataTables_wrapper > .panel > div > div > .lookup-wrapper > div > .button i,
+.gl-widget .panel.innergrid_wrapper > .panel > div > div > .lookup-wrapper > div > .button i {
+  margin: 0;
+}
+.gl-widget .gl-form > div.left > label,
+.gl-widget .panel > div.left > label,
+.gl-widget .panel.dataTables_wrapper > .panel > div.left > label,
+.gl-widget .panel.innergrid_wrapper > .panel > div.left > label {
+  text-align: left;
+}
+.gl-widget .gl-form > div.full-length > div,
+.gl-widget .panel > div.full-length > div,
+.gl-widget .panel.dataTables_wrapper > .panel > div.full-length > div,
+.gl-widget .panel.innergrid_wrapper > .panel > div.full-length > div {
+  margin-top: 6px;
+  padding-left: 0px;
+}
+.gl-widget .gl-form > div.span1,
+.gl-widget .panel > div.span1,
+.gl-widget .panel.dataTables_wrapper > .panel > div.span1,
+.gl-widget .panel.innergrid_wrapper > .panel > div.span1 {
+  width: 12.5%;
+}
+.gl-widget .gl-form > div.width20,
+.gl-widget .panel > div.width20,
+.gl-widget .panel.dataTables_wrapper > .panel > div.width20,
+.gl-widget .panel.innergrid_wrapper > .panel > div.width20 {
+  width: 20%;
+}
+.gl-widget .gl-form > div.span2,
+.gl-widget .panel > div.span2,
+.gl-widget .panel.dataTables_wrapper > .panel > div.span2,
+.gl-widget .panel.innergrid_wrapper > .panel > div.span2 {
+  width: 25%;
+}
+.gl-widget .gl-form > div.width33,
+.gl-widget .panel > div.width33,
+.gl-widget .panel.dataTables_wrapper > .panel > div.width33,
+.gl-widget .panel.innergrid_wrapper > .panel > div.width33 {
+  width: 33.3%;
+}
+.gl-widget .gl-form > div.span3,
+.gl-widget .panel > div.span3,
+.gl-widget .panel.dataTables_wrapper > .panel > div.span3,
+.gl-widget .panel.innergrid_wrapper > .panel > div.span3 {
+  width: 37.5%;
+}
+.gl-widget .gl-form > div.span4,
+.gl-widget .panel > div.span4,
+.gl-widget .panel.dataTables_wrapper > .panel > div.span4,
+.gl-widget .panel.innergrid_wrapper > .panel > div.span4 {
+  width: 50%;
+}
+.gl-widget .gl-form > div.width60,
+.gl-widget .panel > div.width60,
+.gl-widget .panel.dataTables_wrapper > .panel > div.width60,
+.gl-widget .panel.innergrid_wrapper > .panel > div.width60 {
+  width: 60%;
+}
+.gl-widget .gl-form > div.span5,
+.gl-widget .panel > div.span5,
+.gl-widget .panel.dataTables_wrapper > .panel > div.span5,
+.gl-widget .panel.innergrid_wrapper > .panel > div.span5 {
+  width: 62.5%;
+}
+.gl-widget .gl-form > div.span6,
+.gl-widget .panel > div.span6,
+.gl-widget .panel.dataTables_wrapper > .panel > div.span6,
+.gl-widget .panel.innergrid_wrapper > .panel > div.span6 {
+  width: 75%;
+}
+.gl-widget .gl-form > div.span7,
+.gl-widget .panel > div.span7,
+.gl-widget .panel.dataTables_wrapper > .panel > div.span7,
+.gl-widget .panel.innergrid_wrapper > .panel > div.span7 {
+  width: 87.5%;
+}
+.gl-widget .gl-form > div.span8,
+.gl-widget .panel > div.span8,
+.gl-widget .panel.dataTables_wrapper > .panel > div.span8,
+.gl-widget .panel.innergrid_wrapper > .panel > div.span8 {
+  width: 100%;
+}
+.gl-widget .gl-form > div.full,
+.gl-widget .panel > div.full,
+.gl-widget .panel.dataTables_wrapper > .panel > div.full,
+.gl-widget .panel.innergrid_wrapper > .panel > div.full {
+  margin-right: 100%;
+}
+.gl-widget .gl-form > .divider,
+.gl-widget .panel > .divider,
+.gl-widget .panel.dataTables_wrapper > .panel > .divider,
+.gl-widget .panel.innergrid_wrapper > .panel > .divider {
+  height: 0px;
+  margin-bottom: 18px;
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #0098ff;
+}
+.gl-widget .gl-form > .subtitle,
+.gl-widget .panel > .subtitle,
+.gl-widget .panel.dataTables_wrapper > .panel > .subtitle,
+.gl-widget .panel.innergrid_wrapper > .panel > .subtitle {
+  margin-top: 0px;
+  margin-bottom: 18px;
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #0098ff;
+  color: #005b99;
+  font-weight: normal;
+  font-size: 20px;
+  padding: 6px 0 0 0;
+}
+.gl-widget .gl-form > .subtitle > .icon,
+.gl-widget .panel > .subtitle > .icon,
+.gl-widget .panel.dataTables_wrapper > .panel > .subtitle > .icon,
+.gl-widget .panel.innergrid_wrapper > .panel > .subtitle > .icon {
+  float: right;
+  margin-right: 8px;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  padding-top: 2px;
+  /*display: none;*/
+  border: 1px solid;
+  color: 1px solid #0098ff;
+  /*border-radius: 10px;*/
+  cursor: pointer;
+}
+.gl-widget .gl-form > .subtitle > .icon:hover,
+.gl-widget .panel > .subtitle > .icon:hover,
+.gl-widget .panel.dataTables_wrapper > .panel > .subtitle > .icon:hover,
+.gl-widget .panel.innergrid_wrapper > .panel > .subtitle > .icon:hover {
+  background-color: #e6f5ff;
+}
+.gl-widget .gl-form > .toolbars,
+.gl-widget .panel > .toolbars,
+.gl-widget .panel.dataTables_wrapper > .panel > .toolbars,
+.gl-widget .panel.innergrid_wrapper > .panel > .toolbars {
+  margin: 0 0 -15px;
+}
+.gl-widget .gl-form > .toolbars button,
+.gl-widget .panel > .toolbars button,
+.gl-widget .panel.dataTables_wrapper > .panel > .toolbars button,
+.gl-widget .panel.innergrid_wrapper > .panel > .toolbars button {
+  padding: 5px 15px;
+  /*border: none;*/
+  /*background-color: none;*/
+  /*background: transparent;*/
+  /*color: @base-color;*/
+}
+.gl-widget .gl-form > .toolbars button i,
+.gl-widget .panel > .toolbars button i,
+.gl-widget .panel.dataTables_wrapper > .panel > .toolbars button i,
+.gl-widget .panel.innergrid_wrapper > .panel > .toolbars button i {
+  margin-right: 3px;
+}
+.gl-widget .gl-form label.error,
+.gl-widget .panel label.error,
+.gl-widget .panel.dataTables_wrapper > .panel label.error,
+.gl-widget .panel.innergrid_wrapper > .panel label.error {
+  margin: -10px 0 18px 0;
+  font-size: 12px;
+  font-style: italic;
+}
+.gl-widget .gl-form.frame,
+.gl-widget .panel.frame,
+.gl-widget .panel.dataTables_wrapper > .panel.frame,
+.gl-widget .panel.innergrid_wrapper > .panel.frame {
+  /*border-top: 1px solid lighten(@base-color, 10%);*/
+  margin: 0;
+  padding: 1px 0 0 0;
+  position: absolute;
+  left: 10px;
+  top: 100px;
+  right: 10px;
+  bottom: 10px;
+  width: 100%;
+}
+.gl-widget .gl-form.frame > iframe,
+.gl-widget .panel.frame > iframe,
+.gl-widget .panel.dataTables_wrapper > .panel.frame > iframe,
+.gl-widget .panel.innergrid_wrapper > .panel.frame > iframe {
+  /*background-color: lighten(@base-color, 58%);*/
+  border: 1px solid #0098ff;
+  width: 100%;
+  height: 100%;
+}
+.gl-widget > .gl-form {
+  margin-top: 20px;
+}
+.gl-widget > .gl-form > .panel {
+  margin-left: -14px;
+}
+.gl-widget .spinner-wrapper {
+  margin: 0 -12px 0 0;
+}
+.gl-widget .spinner-wrapper .ui-spinner {
+  border: none;
+  margin: -6px -6px 8px;
+  padding: 6px;
+  width: 100%;
+  background-color: transparent;
+  height: auto !important;
+}
+.gl-widget .spinner-wrapper .ui-spinner .ui-spinner-input {
+  margin: 0 !important;
+  padding: 7px 20px 7px !important;
+  height: auto !important;
+  text-align: right;
+}
+.gl-widget .spinner-wrapper .ui-spinner .ui-spinner-button {
+  margin: 7px;
+  height: 16px;
+}
+.gl-widget .spinner-wrapper .ui-spinner .ui-icon-triangle-1-n,
+.gl-widget .spinner-wrapper .ui-spinner .ui-icon-triangle-1-s {
+  text-indent: -1px;
+  font-size: 12px;
+  padding-top: 2px;
+  color: #005b99;
+  background-color: #e6f5ff;
+}
+.gl-widget .radio-wrapper {
+  margin: 8px 0 21px;
+}
+.gl-widget .radio-wrapper input[type='radio'] {
+  margin: 0;
+  padding: 0;
+}
+.gl-widget .radio-wrapper .radio-label {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.75);
+  display: inline-block;
+  padding: 0 18px 0 4px;
+}
+.gl-widget .popup-wrapper input[type=text] {
+  padding-right: 37px;
+  float: left;
+}
+.gl-widget .popup-wrapper button {
+  float: right;
+  height: 32px;
+  padding: 0 0;
+  margin: -46px 0 0 0;
+  width: 28px;
+}
+.gl-widget .datepicker-wrapper {
+  /*width: 168px;*/
+}
+.gl-widget .datepicker-wrapper input[type='date'],
+.gl-widget .datepicker-wrapper input.datepicker {
+  height: 32px !important;
+  background-image: url("vendor/themes/icon/calendar_black.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 30px 40px;
+}
+.gl-widget .datepicker-wrapper input.datepicker {
+  float: none;
+}
+.gl-widget .datepicker-wrapper img.ui-datepicker-trigger {
+  background-image: url("../img/icon/calendar_black.png");
+  background-position: -2px -2px;
+  background-color: #ddd;
+  margin: -46px 0 0 136px;
+  width: 31px;
+  height: 31px;
+  color: transparent;
+  cursor: pointer;
+  float: left;
+}
+.gl-widget .datepicker-wrapper button.ui-datepicker-trigger {
+  background-image: url("../img/icon/calendar_black.png");
+  background-position: -6px -2px;
+  background-color: #ddd;
+  margin: -47px 0 0 169px;
+  padding: 0;
+  width: 26px;
+  height: 33px;
+  color: transparent;
+  cursor: pointer;
+  float: left;
+  border: 1px solid #ccc;
+}
+.gl-widget .switch {
+  width: auto;
+  padding-right: 20px;
+  padding-left: 5px;
+  float: right;
+  margin: 0 0 14px;
+  height: 34px;
+  z-index: 0;
+}
+.gl-widget .switch.left {
+  float: left;
+  margin-right: 5px;
+}
+.gl-widget .gl-grid {
+  margin: 0 14px;
+}
+.gl-widget .summary {
+  margin-top: 0px;
+}
+.gl-widget .summary > div {
+  height: 24px;
+  margin-left: 0;
+}
+.gl-widget .summary > div.indent {
+  margin-left: 80px;
+}
+.gl-widget .summary .divider {
+  display: none;
+}
+.gl-widget .summary label {
+  height: 12px;
+}
+.gl-widget .summary input {
+  background-color: transparent;
+  box-shadow: none;
+  height: 27px;
+  padding: 0 6px;
+  width: 180px;
+  /*border: none;*/
+}
+.gl-widget .summary input:focus {
+  background-color: transparent;
+  box-shadow: none;
+  /*border: none;*/
+}
+.gl-widget input,
+.gl-widget select,
+.gl-widget textarea,
+.gl-widget .switch {
+  border: 1px solid #c0c0c0;
+  box-shadow: 0 1px 2px #b3e0ff inset;
+  height: 32px;
+}
+.gl-widget input:focus,
+.gl-widget select:focus,
+.gl-widget textarea:focus,
+.gl-widget .switch:focus {
+  -webkit-box-shadow: 0 0 5px #b3e0ff;
+  -moz-box-shadow: 0 0 5px #b3e0ff;
+  box-shadow: 0 0 5px #b3e0ff;
+  border-color: #4db7ff;
+  background-color: #f5fbff;
+}
+.toast-top-right {
+  top: 58px;
+  right: 20px;
+}
+#toast-container {
+  border-radius: 0;
+}
+/* JQuery UI Themes */
+.ui-datepicker {
+  display: none;
+  padding: 3px 3px 0 3px;
+  margin-top: 2px;
+  width: 240px;
+}
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: 0;
+}
+.ui-datepicker select {
+  display: inline-block;
+  height: 26px;
+  padding: 2px;
+  width: 40%;
+}
+.ui-datepicker select.ui-datepicker-month {
+  margin-right: 1px;
+  font-size: 14px;
+}
+.ui-datepicker select.ui-datepicker-year {
+  margin-left: 1px;
+  font-size: 14px;
+}
+.dataTables_wrapper {
+  border-bottom: 1px solid #66c1ff;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+}
+.dataTables_wrapper .dataTables_length {
+  width: 200px;
+  float: right;
+  margin-top: 18px;
+  vertical-align: bottom;
+  margin-bottom: -20px;
+}
+.dataTables_wrapper .dataTables_length select {
+  width: 80px;
+  display: inline-block;
+  height: 32px;
+  padding: 6px 6px;
+}
+.dataTables_wrapper .dataTables_filter {
+  float: left;
+  width: 200px;
+  margin-top: 24px;
+}
+.dataTables_wrapper .dataTables_filter label {
+  display: inline-block;
+}
+.dataTables_wrapper .dataTables_filter label input {
+  margin: -22px 0 0 60px;
+}
+.dataTables_wrapper .dataTables_processing {
+  color: transparent;
+}
+.dataTables_wrapper .dataTable {
+  min-width: 840px;
+  margin-top: 40px;
+  border: none;
+  border-top: 1px solid #99d6ff;
+  border-bottom: 1px solid #99d6ff;
+  border-spacing: 0;
+  width: 100% !important;
+}
+.dataTables_wrapper .dataTable thead {
+  cursor: pointer;
+}
+.dataTables_wrapper .dataTable tbody tr {
+  cursor: pointer;
+  background-color: white;
+  font-size: 14px;
+}
+.dataTables_wrapper .dataTable tbody tr .icon:hover {
+  background-color: #ccc;
+}
+.dataTables_wrapper .dataTable tbody tr.row_selected {
+  background-color: #ccebff;
+}
+.dataTables_wrapper .dataTable tbody tr.row_selected:hover {
+  background-color: #ccebff;
+}
+.dataTables_wrapper .dataTable tbody tr:hover {
+  background-color: #e6f5ff;
+}
+.dataTables_wrapper .dataTable tbody tr td.right {
+  float: none !important;
+  text-align: right;
+}
+.dataTables_wrapper .dataTable tbody tr td.center {
+  float: none !important;
+  text-align: center;
+}
+.dataTables_wrapper .dataTable tbody tr td .icon {
+  padding: 6px 8px 7px;
+  color: #a6a6a6;
+}
+.dataTables_wrapper .dataTable tbody tr td .icon.link {
+  cursor: pointer;
+  color: #0089e6;
+}
+.dataTables_wrapper .dataTable tbody tr td .icon.link:hover {
+  background-color: #b3e0ff;
+}
+.dataTables_wrapper .dataTable.table thead {
+  cursor: default;
+}
+.dataTables_wrapper .dataTable.table thead th.right {
+  float: none !important;
+  text-align: right;
+}
+.dataTables_wrapper .dataTable.table tbody tr {
+  cursor: default;
+}
+.dataTables_wrapper .dataTables_info {
+  float: left;
+  font-size: 12px;
+  margin-left: 8px;
+  margin-top: -14px;
+}
+.dataTables_wrapper .paging_full_numbers {
+  float: right;
+  font-size: 12px;
+  margin-top: -14px;
+}
+.dataTables_wrapper .paging_full_numbers a {
+  margin-right: 4px;
+  border: 1px solid #2BA6CB;
+  padding: 0 5px;
+  border-radius: 20px;
+}
+.dataTables_wrapper .paging_full_numbers a:hover {
+  background-color: #66c1ff;
+  color: #ffffff;
+}
+.dataTables_wrapper .paging_full_numbers a.paginate_active {
+  background-color: #b3e0ff;
+}
+.dataTables_wrapper .sorting_asc {
+  background: url('../img/datatables/sort_asc.png') no-repeat center right;
+}
+.dataTables_wrapper .sorting_desc {
+  background: url('../img/datatables/sort_desc.png') no-repeat center right;
+}
+.innergrid_wrapper {
+  padding: 20px;
+}
+.innergrid_wrapper > .dataTable {
+  width: 100%;
+}
+.innergrid_wrapper > .dataTables_wrapper {
+  margin-bottom: 20px !important;
+  padding: 0 !important;
+}
+.innergrid_wrapper > .dataTables_wrapper > .dataTables_filter {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.innergrid_wrapper > .dataTables_wrapper > .dataTables_length {
+  margin: -6px 0 -8px !important;
+  padding: 0 !important;
+}
+.innergrid_wrapper > .dataTables_wrapper > .dataTable {
+  /*margin: 0 !important;*/
+  padding: 0 !important;
+}
+.innergrid_wrapper > .dataTables_wrapper > .dataTables_info {
+  margin: -14px 0 0 0 !important;
+  padding: 0 !important;
+}
+.innergrid_wrapper > .dataTables_wrapper > .paging_full_numbers {
+  margin: -14px 0 6px 0 !important;
+  padding: 0 !important;
+}
+.tab_wrapper {
+  margin-top: 20px;
+}
+.tab_wrapper .tabs {
+  width: 100%;
+  border-bottom: 3px solid #0098ff;
+  margin: 0 0 18px;
+}
+.tab_wrapper .tabs p {
+  display: inline-block;
+  border: 1px solid #0098ff;
+  margin: 10px 0 -1px 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 3px 0px 2px -1px #99d6ff;
+}
+.tab_wrapper .tabs p a {
+  color: #005b99;
+}
+.tab_wrapper .tabs p:hover {
+  background-color: #ccebff;
+}
+.tab_wrapper .tabs p.active {
+  background-color: #33adff;
+  cursor: default;
+}
+.tab_wrapper .tabs p.active a {
+  color: white;
+  text-shadow: 0 0 7px #ffffff;
+  cursor: default;
+}
+.panel.innergrid_wrapper > .panel > .divider {
+  margin-left: -12px;
+}
+/*# sourceMappingURL=sdms.widget.css.map */

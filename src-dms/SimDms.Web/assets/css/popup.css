@@ -1,0 +1,77 @@
+﻿.overlay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 200%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+.popup-frame {
+  display: none;
+}
+.popup-frame.outer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 35%;
+  /*height: 200px;*/
+
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 10px 10px 10px;
+}
+.popup-frame.inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #F7F7F7;
+}
+.popup-frame.inner > .popup-header {
+  background-color: #2BA6CB;
+  color: #ffffff;
+  padding: 10px 10px 7px 10px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.popup-frame.inner > .popup-header > .title {
+  font-size: 16px;
+  float: left;
+}
+.popup-frame.inner > .popup-header > .corner-bar {
+  cursor: pointer;
+}
+.popup-frame.inner > .popup-header > .corner-bar.close {
+  float: right;
+  display: block;
+}
+.popup-frame.inner > .popup-header > .corner-bar.close:hover {
+  color: yellow;
+}
+.popup-frame.inner > .popup-body {
+  padding: 5px 5px 0px 5px;
+}
+.popup-frame.inner > .popup-body > form > .input-wrapper input[type='text'],
+.popup-frame.inner > .popup-body > form > .input-wrapper input[type='password'] {
+  margin-bottom: 5px;
+}
+.popup-frame.inner > .popup-footer {
+  margin-top: -9px;
+  margin-bottom: 0px;
+}
+.popup-frame.inner > .popup-footer > .buttons {
+  padding-right: 2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 3px;
+  margin-right: 3px;
+  text-align: right;
+  border-top: 1px solid #2BA6CB;
+}
+.popup-frame.inner > .popup-footer > .buttons button {
+  margin-left: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 0px;
+}
+.spacer-both {
+  clear: both;
+}

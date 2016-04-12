@@ -1,0 +1,50 @@
+﻿@gray-color: gray;
+@base-color: #00f;
+
+body
+{
+	background-color: lighten(@gray-color, 0%);
+}
+
+.app-name-wrapper
+{
+	border: none;
+	background-color: lighten(@gray-color, 10%);
+
+	.app-name
+	{
+		background-color: lighten(@gray-color, 20%);
+	}
+}
+
+.login-screen-wrapper
+{
+	border: none;
+	background-color: darken(@base-color, 20%);
+
+	.login-screen
+	{
+		border: none;
+		background-color: darken(@base-color, 10%);
+
+		.login-screen-panel
+		{
+			.controls
+			{
+				> label
+				{
+					color: white;
+				}
+
+				> div
+				{
+					.metro-button
+					{
+						border: 2px solid white;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}

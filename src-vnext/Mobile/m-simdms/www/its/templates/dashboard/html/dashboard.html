@@ -1,0 +1,97 @@
+<ion-view title="Dashboard" id="expense-dashboard">
+
+    <!--right button on navigation bar-->
+    <ion-nav-buttons side="right">
+        <md-button class="md-icon-button ion-nav-button-right" ng-click="goToSetting()"
+                   aria-label="Setting">
+            <i class="ion-android-more-vertical"></i>
+        </md-button>
+    </ion-nav-buttons> <!--end right button on navigation bar-->
+
+    <!--expense toolbar section-->
+    <md-toolbar class="bar-subheader md-tall md-primary toolbar-expense ">
+        <div>
+            <img class="user-img" src="{{imgAvatar}}"/>
+            <h1>{{profile.Name}}</h1>
+            <h2>{{profile.Company}}</h2>
+        </div>
+    </md-toolbar><!--end expense toolbar section-->
+
+    <!--expense content section-->
+    <ion-content id="expense-dashboard-content">
+	
+		<div class="feed-list row">
+
+            <div class="col">
+                <!--cube feed item section-->
+                <div class="feed-item md-tall md-primary">
+                    <div class="feed-img {{COLOR.STOCK}}" ng-click="test()">
+                        <div class="font-size-48 line-height-136" align="center">
+                             {{dataSummary.STOCK}}
+                        </div>
+                    </div>
+                    <div class="feed-content row">
+                        <div class="col left">
+                            <i class="ion-model-s" ></i>
+                            <b>{{stock}}</b>
+                        </div>                       
+                    </div>
+                </div>
+
+                <div class="feed-item md-tall md-info">
+                    <div class="feed-img {{COLOR.SPK}}">
+						<div class="font-size-48 line-height-136" align="center">
+                              {{dataSummary.SPK}}
+						</div>
+					</div>
+                    <div class="feed-content row">
+                        <div class="col left">
+                            <i class="ion-android-call"></i>
+                            <b>SPK</b>
+                        </div>
+                         
+                    </div>
+                </div>
+
+ 
+                <!--end cube feed item section-->
+            </div>
+            <div class="col">
+                <!--cube feed item section-->
+                <div class="feed-item md-tall md-primary" >
+                    <div class="feed-img {{COLOR.INVOICE}}">
+						<div class="font-size-48 line-height-136" align="center">
+                             {{dataSummary.INV}}
+						</div>
+					</div>
+                    <div class="feed-content row">
+                        <div class="col left">
+                            <i class="ion-clipboard"></i>
+                            <b>{{invoice}}</b>
+                        </div>
+                         
+                    </div>
+                </div>
+
+                <div class="feed-item md-tall md-primary">
+                    <div class="feed-img {{COLOR.INQUIRY}}">
+						<div class="font-size-48 line-height-136" align="center">
+                              {{dataSummary.INQ}}
+						</div>
+					</div>
+                    <div class="feed-content row">
+                        <div class="col left">
+                            <i class="ion-android-done-all"></i>
+                            <b>INQUIRY</b>
+                        </div>
+                        
+                    </div>
+                </div>
+
+ 
+                <!--end cube feed item section-->
+            </div>
+        </div>
+		
+    </ion-content><!--end expense content section-->
+</ion-view>

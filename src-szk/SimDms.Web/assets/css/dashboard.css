@@ -1,0 +1,23 @@
+﻿div {
+  margin: 0;
+  padding: 0;
+}
+.das-table {
+  border: 1px solid;
+  padding: 8px;
+}
+.das-table .das-tr {
+  margin: 0;
+  border: none;
+}
+.das-table .das-tr .das-td {
+  min-height: 36px;
+  width: 25%;
+  border: none;
+  display: inline-block;
+  padding: 1px;
+}
+.das-table .das-tr .das-td .cell {
+  background-color: #e6e6e6;
+}
+/*# sourceMappingURL=dashboard.css.map */

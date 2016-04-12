@@ -1,0 +1,1932 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1FD0914A-45A4-4430-8F26-09466505C7F7}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimDms.Web</RootNamespace>
+    <AssemblyName>SimDms.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\SimDms.Web.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.WebApi, Version=1.4.0.0, Culture=neutral, PublicKeyToken=f6085f1a45e2ac59, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\Breeze.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Breeze.WebApi.EF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\Breeze.WebApi.EF.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.66.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="CSScriptLibrary">
+      <HintPath>..\..\libs\CSScriptLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DoddleReport">
+      <HintPath>..\..\libs\DoddleReport.dll</HintPath>
+    </Reference>
+    <Reference Include="DoddleReport.iTextSharp">
+      <HintPath>..\..\libs\DoddleReport.iTextSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="DoddleReport.OpenXml">
+      <HintPath>..\..\libs\DoddleReport.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DoddleReport.Web">
+      <HintPath>..\..\libs\DoddleReport.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.SqlServer.EFInitializer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.SqlServer.EFInitializer.1.0.0\lib\4.5\Elmah.SqlServer.EFInitializer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GeLang, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\GeLang.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.1.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LoggerX">
+      <HintPath>..\..\libs\LoggerX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.Build.Tasks">
+      <HintPath>..\..\libs\MVC4\Microsoft.Bcl.Build.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\src-szk\SimDms.Web\Common\bin\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.5.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\FreeSpireXls\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=3.4.183.55040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\FreeSpireXls\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.XLS, Version=7.8.0.55040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\FreeSpireXls\Spire.XLS.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\libs\MVC4\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\libs\MVC4\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\libs\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivator, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BreezeWebApiConfig.cs" />
+    <Compile Include="App_Start\ElmahInitializer.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\ItsMasterController.cs" />
+    <Compile Include="Controllers\Api\ItsUtilityController.cs" />
+    <Compile Include="Controllers\Api\SalesController.cs" />
+    <Compile Include="Controllers\Api\SpRptPenjualanController.cs" />
+    <Compile Include="Controllers\Api\SpRptInventoryController.cs" />
+    <Compile Include="Controllers\Api\SpRptPenerimaanController.cs" />
+    <Compile Include="Controllers\Api\SpRptRegisterController.cs" />
+    <Compile Include="Controllers\Api\SpUtilityController.cs" />
+    <Compile Include="Controllers\Api\SpPenerimaanController.cs" />
+    <Compile Include="Controllers\Api\SpPembelianController.cs" />
+    <Compile Include="Controllers\Api\PengeluaranController.cs" />
+    <Compile Include="Controllers\Api\gnMasterController.cs" />
+    <Compile Include="Controllers\Api\spPersediaanController.cs" />
+    <Compile Include="Controllers\Api\SparePartController.cs" />
+    <Compile Include="Controllers\Api\SpStockOpnameController.cs" />
+    <Compile Include="Controllers\Api\SvMasterController.cs" />
+    <Compile Include="Controllers\Api\SvReportController.cs" />
+    <Compile Include="Controllers\Api\SvTransaksiController.cs" />
+    <Compile Include="Controllers\Api\SvUtilityController.cs" />
+    <Compile Include="Controllers\Api\TaxController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DoReportController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\Layout3Controller.cs" />
+    <Compile Include="Controllers\Layout2Controller.cs" />
+    <Compile Include="Controllers\ExcelController.cs" />
+    <Compile Include="Controllers\FormController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\MobileController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\TextReportController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\SqlMembershipProvider.cs" />
+    <Compile Include="Membership\SqlRoleProvider.cs" />
+    <Compile Include="Membership\Crypto.cs" />
+    <Compile Include="Membership\WebSecurity.cs" />
+    <Compile Include="Models\LayoutContext.cs" />
+    <Compile Include="Models\LogOnModel.cs" />
+    <Compile Include="Models\OrganizationHdr.cs" />
+    <Compile Include="Models\Others\ResultModel.cs" />
+    <Compile Include="Models\SimRole.cs" />
+    <Compile Include="Models\SimUser.cs" />
+    <Compile Include="Models\SysControlDms.cs" />
+    <Compile Include="Models\SysMenu.cs" />
+    <Compile Include="Models\SysModule.cs" />
+    <Compile Include="Models\SysReport.cs" />
+    <Compile Include="Models\SysRole.cs" />
+    <Compile Include="Models\SysRoleMenu.cs" />
+    <Compile Include="Models\SysRoleModule.cs" />
+    <Compile Include="Models\SysRoleUser.cs" />
+    <Compile Include="Models\SysSession.cs" />
+    <Compile Include="Models\SysUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\BaseXText.cs" />
+    <Compile Include="Reports\DsInqProd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsInqProd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Sales\SalesGenerateTextFileReport.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalAch.cs" />
+    <Compile Include="Reports\Sales\txtOmRpInventTrn003.cs" />
+    <Compile Include="Reports\Sales\txtOmRpInvRgs001.cs" />
+    <Compile Include="Reports\Sales\txtOmRpInvRgs003.cs" />
+    <Compile Include="Reports\Sales\txtOmRpInvRgs004.cs" />
+    <Compile Include="Reports\Sales\txtOmRpInvRgs005COGS.cs" />
+    <Compile Include="Reports\Sales\txtOmRpInvRgs005.cs" />
+    <Compile Include="Reports\Sales\txtOmRpLabaRugi002.cs" />
+    <Compile Include="Reports\Sales\txtOmRpStatSal.cs" />
+    <Compile Include="Reports\Sales\txtOmRpLabaRugi003.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn001.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn0001.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn010.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs004.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs005.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs006.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs007.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs008.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs009.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs010.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs013.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs001.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs014.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs015.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs017.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs018.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs002.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs025.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs026.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs029.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs030.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs031.cs" />
+    <Compile Include="Reports\Sales\txtOmRpStock002.cs" />
+    <Compile Include="Reports\Sales\txtOmRpDocPending.cs" />
+    <Compile Include="Reports\Sales\txtOmRpLabaRugi001.cs" />
+    <Compile Include="Reports\Sales\txtOmRpInventTrn001.cs" />
+    <Compile Include="Reports\Sales\txtOmRpInvRgs007.cs" />
+    <Compile Include="Reports\Sales\txtOmRpStock003.cs" />
+    <Compile Include="Reports\Sales\txtOmRpStock001.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs032.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs003.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalRgs028.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn008.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn007.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn006.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn005.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn009.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn002.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn003.cs" />
+    <Compile Include="Reports\Sales\txtOmRpSalesTrn004.cs" />
+    <Compile Include="Reports\Sales\XSalesText.cs" />
+    <Compile Include="Reports\Service\GenerateTextFileReport.cs" />
+    <Compile Include="Reports\Service\txtSvRpReport.cs" />
+    <Compile Include="Reports\Service\txtSvRpTrn018.cs" />
+    <Compile Include="Reports\Service\txtSvRpTrn010.cs" />
+    <Compile Include="Reports\Service\txtSvRpTrn002.cs" />
+    <Compile Include="Reports\Service\txtSvRpTrn001.cs" />
+    <Compile Include="Reports\Service\txtSvRpTrn001PrePrinted.cs" />
+    <Compile Include="Reports\Service\txtSvRpTrn004.cs" />
+    <Compile Include="Reports\Service\XServiceText.cs" />
+    <Compile Include="Reports\Sparepart\SpGenerateTextFileReport.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn001.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn002.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn003.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn004.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn005.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn006.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn007.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn009.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn011.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn012.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn013.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn026.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn027.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn028.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn030.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn031.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn033.cs" />
+    <Compile Include="Reports\Sparepart\txtSpRpTrn039.cs" />
+    <Compile Include="Reports\Sparepart\XSparepartText.cs" />
+    <Compile Include="Reports\Viewer.aspx.cs">
+      <DependentUpon>Viewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Viewer.aspx.designer.cs">
+      <DependentUpon>Viewer.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\ajax-loader.css">
+      <DependentUpon>ajax-loader.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\ajax-loader.min.css">
+      <DependentUpon>ajax-loader.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\common.css" />
+    <Content Include="assets\css\common.min.css" />
+    <Content Include="assets\css\demo.min.css" />
+    <Content Include="assets\css\handsontable.css" />
+    <Content Include="assets\css\handsontable.full.css" />
+    <Content Include="assets\css\handsontable.full.min.css">
+      <DependentUpon>handsontable.full.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\handsontable.min.css" />
+    <Content Include="assets\css\pikaday.css" />
+    <Content Include="assets\css\pikaday.min.css">
+      <DependentUpon>pikaday.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.dashboard.css" />
+    <Content Include="assets\css\sdms.dashboard.min.css">
+      <DependentUpon>sdms.dashboard.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\smartadmin-production.css" />
+    <Content Include="assets\css\smartadmin-production.min.css">
+      <DependentUpon>smartadmin-production.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\smartadmin-skins.css" />
+    <Content Include="assets\css\smartadmin-skins.min.css">
+      <DependentUpon>smartadmin-skins.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\toastr.css" />
+    <Content Include="assets\css\toastr.min.css" />
+    <Content Include="assets\css\vendor\angular-block-ui.css" />
+    <Content Include="assets\css\vendor\angular-block-ui.min.css">
+      <DependentUpon>angular-block-ui.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\bootstrap\bootstrap.min.css" />
+    <Content Include="assets\css\vendor\imgareaselect\border-anim-h.gif" />
+    <Content Include="assets\css\vendor\imgareaselect\border-anim-v.gif" />
+    <Content Include="assets\css\vendor\imgareaselect\border-h.gif" />
+    <Content Include="assets\css\vendor\imgareaselect\border-v.gif" />
+    <Content Include="assets\css\vendor\imgareaselect\imgareaselect-animated.css" />
+    <Content Include="assets\css\vendor\imgareaselect\imgareaselect-default.css" />
+    <Content Include="assets\css\vendor\imgareaselect\imgareaselect-deprecated.css" />
+    <Content Include="assets\css\login.css">
+      <DependentUpon>login.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\login.min.css">
+      <DependentUpon>login.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\popup.css">
+      <DependentUpon>popup.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\popup.min.css">
+      <DependentUpon>popup.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.chart.css">
+      <DependentUpon>sdms.chart.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.chart.min.css">
+      <DependentUpon>sdms.chart.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.css">
+      <DependentUpon>sdms.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.kendo.css">
+      <DependentUpon>sdms.kendo.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.kendo.min.css">
+      <DependentUpon>sdms.kendo.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.min.css">
+      <DependentUpon>sdms.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.widget.css">
+      <DependentUpon>sdms.widget.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.widget.min.css">
+      <DependentUpon>sdms.widget.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.zurb.css">
+      <DependentUpon>sdms.zurb.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.zurb.min.css">
+      <DependentUpon>sdms.zurb.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\animate-custom.css" />
+    <Content Include="assets\css\vendor\animate-custom.min.css">
+      <DependentUpon>animate-custom.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\animate.css" />
+    <Content Include="assets\css\vendor\animate.delay.css" />
+    <Content Include="assets\css\vendor\animate.delay.min.css">
+      <DependentUpon>animate.delay.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\animate.min.css">
+      <DependentUpon>animate.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\font-awesome.css" />
+    <Content Include="assets\css\vendor\foundation.css" />
+    <Content Include="assets\css\vendor\foundation.custom.css" />
+    <Content Include="assets\css\vendor\foundation.min.css">
+      <DependentUpon>foundation.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\jquery-ui-timepicker-addon.css" />
+    <Content Include="assets\css\vendor\kendo\kendo.blueopal.css">
+      <DependentUpon>kendo.blueopal.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\kendo\kendo.blueopal.min.css">
+      <DependentUpon>kendo.blueopal.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\kendo\kendo.metro.css">
+      <DependentUpon>kendo.metro.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\kendo\kendo.metro.min.css">
+      <DependentUpon>kendo.metro.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\kendo\kendo.common.css" />
+    <Content Include="assets\css\vendor\kendo\kendo.common.min.css">
+      <DependentUpon>kendo.common.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\kendo\kendo.mobile.all.min.css" />
+    <Content Include="assets\css\vendor\kendo\textures\brushed-metal.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots1.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots10.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots11.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots12.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots13.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots2.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots3.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots4.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots5.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots6.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots7.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots8.png" />
+    <Content Include="assets\css\vendor\kendo\textures\dots9.png" />
+    <Content Include="assets\css\vendor\kendo\textures\glass-lighter.png" />
+    <Content Include="assets\css\vendor\kendo\textures\glass.png" />
+    <Content Include="assets\css\vendor\kendo\textures\highlight.png" />
+    <Content Include="assets\css\vendor\kendo\textures\hsv-gradient.png" />
+    <Content Include="assets\css\vendor\kendo\textures\hue.png" />
+    <Content Include="assets\css\vendor\kendo\textures\leather1.png" />
+    <Content Include="assets\css\vendor\kendo\textures\leather2.png" />
+    <Content Include="assets\css\vendor\kendo\textures\noise.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe1.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe2.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe3.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe4.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe5.png" />
+    <Content Include="assets\css\vendor\kendo\textures\stripe6.png" />
+    <Content Include="assets\css\vendor\kendo\textures\transparency.png" />
+    <Content Include="assets\css\vendor\kendo\textures\transtexture.png" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\editor.png" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\imagebrowser.png" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\loading-image.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\loading.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\slider-h.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\slider-v.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\blueopal\sprite.png" />
+    <Content Include="assets\css\vendor\nv.d3.min.css" />
+    <Content Include="assets\css\vendor\pivot.css" />
+    <Content Include="assets\css\vendor\pivot.min.css">
+      <DependentUpon>pivot.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\sencha\fonts\Sencha-Examples.svg" />
+    <Content Include="assets\css\vendor\sencha\style.css" />
+    <Content Include="assets\css\vendor\themes\icon\arrowhead-left.png" />
+    <Content Include="assets\css\vendor\themes\icon\arrowhead-right-white-24.png" />
+    <Content Include="assets\css\vendor\themes\icon\arrowhead-right-white.png" />
+    <Content Include="assets\css\vendor\themes\icon\arrowhead-right.png" />
+    <Content Include="assets\css\vendor\themes\icon\calendar_black.png" />
+    <Content Include="assets\css\vendor\themes\icon\calendar_white.png" />
+    <Content Include="assets\css\vendor\themes\icon\ui-icons_content.png" />
+    <Content Include="assets\css\vendor\themes\icon\ui-icons_error.png" />
+    <Content Include="assets\css\vendor\jquery.ui.core.css" />
+    <Content Include="assets\css\vendor\jquery.ui.datepicker.css" />
+    <Content Include="assets\css\vendor\jquery.ui.spinner.css" />
+    <Content Include="assets\css\vendor\normalize.css" />
+    <Content Include="assets\css\vendor\select2.css" />
+    <Content Include="assets\css\vendor\select2.png" />
+    <Content Include="assets\css\vendor\spinner.gif" />
+    <Content Include="assets\css\vendor\themes\jquery.ui.spinner.themes.css">
+      <DependentUpon>jquery.ui.spinner.themes.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\themes\jquery.ui.spinner.themes.min.css">
+      <DependentUpon>jquery.ui.spinner.themes.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\themes\jquery.ui.widget.themes.css">
+      <DependentUpon>jquery.ui.widget.themes.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\themes\jquery.ui.widget.themes.min.css">
+      <DependentUpon>jquery.ui.widget.themes.less</DependentUpon>
+    </Content>
+    <Content Include="assets\css\vendor\kendo\themes\metro\editor.png" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\imagebrowser.png" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\loading-image.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\loading.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\slider-h.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\slider-v.gif" />
+    <Content Include="assets\css\vendor\kendo\themes\metro\sprite.png" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\editor.png" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\imagebrowser.png" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\indeterminate.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\loading-image.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\loading.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\loading_2x.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\markers.png" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\markers_2x.png" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\slider-h.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\slider-v.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\sprite.png" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\sprite_2x.png" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\sprite_kpi.png" />
+    <Content Include="assets\css\vendor\themes\kendo\BlueOpal\sprite_kpi_2x.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\editor.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\imagebrowser.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\indeterminate.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\loading-image.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\loading.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\loading_2x.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\markers.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\markers_2x.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\slider-h.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\slider-v.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\sprite.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\sprite_2x.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\sprite_kpi.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Default\sprite_kpi_2x.png" />
+    <Content Include="assets\css\vendor\themes\kendo\images\back.png" />
+    <Content Include="assets\css\vendor\themes\kendo\images\kendoui.svg" />
+    <Content Include="assets\css\vendor\themes\kendo\images\wp8_icons.png" />
+    <Content Include="assets\css\vendor\themes\kendo\images\wp8_inverseicons.png" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.blueopal.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.blueopal.mobile.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.bootstrap.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.common-material.core.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.common-material.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.common.core.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.common.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.dataviz.black.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.dataviz.blueopal.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.dataviz.default.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.dataviz.material.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.dataviz.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.dataviz.mobile.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.default.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.default.mobile.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.material.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\kendo.material.mobile.min.css" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\editor.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\imagebrowser.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\indeterminate.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\loading-image.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\loading.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\loading_2x.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\slider-h.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\slider-v.gif" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\sprite.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\sprite_2x.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\sprite_kpi.png" />
+    <Content Include="assets\css\vendor\themes\kendo\Material\sprite_kpi_2x.png" />
+    <Content Include="assets\font\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\img\datatables\sort_asc.png" />
+    <Content Include="assets\img\datatables\sort_desc.png" />
+    <Content Include="assets\img\employee\ktp.png" />
+    <Content Include="assets\img\employee\person.png" />
+    <Content Include="assets\img\favicon.ico" />
+    <Content Include="assets\img\imagebrowser.png" />
+    <Content Include="assets\img\loading-image.gif" />
+    <Content Include="assets\img\loading.gif" />
+    <Content Include="assets\img\loading_2x.gif" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\slider-h.gif" />
+    <Content Include="assets\img\slider-v.gif" />
+    <Content Include="assets\img\sprites\metro.png" />
+    <Content Include="assets\img\sprites\metro_2x.png" />
+    <Content Include="assets\js\app\ab\dashboard\empldist2.js" />
+    <Content Include="assets\js\app\ab\dashboard\emplbydept.js" />
+    <Content Include="assets\js\app\ab\dashboard\empldist.js" />
+    <Content Include="assets\js\app\ab\empl\serviceinfo.js" />
+    <Content Include="assets\js\app\ab\empl\education.js" />
+    <Content Include="assets\js\app\ab\empl\mutation.js" />
+    <Content Include="assets\js\app\ab\empl\workexp.js" />
+    <Content Include="assets\js\app\ab\empl\salesinfo.js" />
+    <Content Include="assets\js\app\ab\empl\persinfo.js" />
+    <Content Include="assets\js\app\ab\inquiry\attendance.js" />
+    <Content Include="assets\js\app\ab\inquiry\attendance_resume.js" />
+    <Content Include="assets\js\app\ab\inquiry\info\DemographicCondition.js" />
+    <Content Include="assets\js\app\ab\inquiry\info\MpDashboard.js" />
+    <Content Include="assets\js\app\ab\inquiry\sfminoutdata.js" />
+    <Content Include="assets\js\app\ab\inquiry\sfminvalidemployee.js" />
+    <Content Include="assets\js\app\ab\inquiry\sfmsummary.js" />
+    <Content Include="assets\js\app\ab\inquiry\sfmtrainingdetail.js" />
+    <Content Include="assets\js\app\ab\inquiry\sfmturnover.js" />
+    <Content Include="assets\js\app\ab\inquiry\sfmmutation.js" />
+    <Content Include="assets\js\app\ab\inquiry\persinvalid.js" />
+    <Content Include="assets\js\app\ab\inquiry\persachieve.js" />
+    <Content Include="assets\js\app\ab\inquiry\persmuta.js" />
+    <Content Include="assets\js\app\ab\inquiry\perslist.js" />
+    <Content Include="assets\js\app\ab\inquiry\sfmpersinfo.js" />
+    <Content Include="assets\js\app\ab\inquiry\sfmtrend.js" />
+    <Content Include="assets\js\app\ab\inquiry\sfmturnoverratio.js" />
+    <Content Include="assets\js\app\ab\inquiry\sfmtrainingdashboard.js" />
+    <Content Include="assets\js\app\ab\inquiry\turnover\demotion.js" />
+    <Content Include="assets\js\app\ab\inquiry\turnover\promotion.js" />
+    <Content Include="assets\js\app\ab\master\lookup.js" />
+    <Content Include="assets\js\app\ab\master\position.js" />
+    <Content Include="assets\js\app\ab\master\dept.js" />
+    <Content Include="assets\js\app\ab\master\holiday.js" />
+    <Content Include="assets\js\app\ab\master\shift.js" />
+    <Content Include="assets\js\app\ab\report\position.js" />
+    <Content Include="assets\js\app\ab\report\shift.js" />
+    <Content Include="assets\js\app\ab\report\holiday.js" />
+    <Content Include="assets\js\app\ab\trans\abovertime-old.js" />
+    <Content Include="assets\js\app\ab\trans\abovertime.js" />
+    <Content Include="assets\js\app\ab\trans\upload.js" />
+    <Content Include="assets\js\app\ab\trans\shiftmap.js" />
+    <Content Include="assets\js\app\cs\chart\Monitoring1.js" />
+    <Content Include="assets\js\app\cs\chart\monitoring2.js" />
+    <Content Include="assets\js\app\cs\chart\Monitoring3.js" />
+    <Content Include="assets\js\app\cs\chart\Monitoring4.js" />
+    <Content Include="assets\js\app\cs\chart\Monitoring5.js" />
+    <Content Include="assets\js\app\cs\chart\Monitoring6.js" />
+    <Content Include="assets\js\app\cs\chart\Monitoring7.js" />
+    <Content Include="assets\js\app\cs\chart\Monitoring8.js" />
+    <Content Include="assets\js\app\cs\dash\summary.js" />
+    <Content Include="assets\js\app\cs\inquiry\InqCustStat.js" />
+    <Content Include="assets\js\app\cs\inquiry\jstest.js" />
+    <Content Include="assets\js\app\cs\inquiry\custbday.js" />
+    <Content Include="assets\js\app\cs\inquiry\feedback.js" />
+    <Content Include="assets\js\app\cs\inquiry\outstandingDelivery.js" />
+    <Content Include="assets\js\app\cs\inquiry\stnkext.js" />
+    <Content Include="assets\js\app\cs\inquiry\bpkbreminder.js" />
+    <Content Include="assets\js\app\cs\inquiry\custholiday.js" />
+    <Content Include="assets\js\app\cs\inquiry\tdaycall.js" />
+    <Content Include="assets\js\app\cs\master\settings.js" />
+    <Content Include="assets\js\app\cs\report\bpkb.js" />
+    <Content Include="assets\js\app\cs\report\cusbday.js" />
+    <Content Include="assets\js\app\cs\report\stnkext.js" />
+    <Content Include="assets\js\app\cs\report\tdaycall.js" />
+    <Content Include="assets\js\app\cs\master\holiday.js" />
+    <Content Include="assets\js\app\cs\review\inputreview.js" />
+    <Content Include="assets\js\app\cs\review\reviewbybm.js" />
+    <Content Include="assets\js\app\cs\review\reviews.js" />
+    <Content Include="assets\js\app\cs\trans\bpkb.js" />
+    <Content Include="assets\js\app\cs\trans\choliday.js" />
+    <Content Include="assets\js\app\cs\trans\bpkb2.js" />
+    <Content Include="assets\js\app\cs\trans\feedback2.js" />
+    <Content Include="assets\js\app\cs\trans\stnkext2.js" />
+    <Content Include="assets\js\app\cs\trans\feedback.js" />
+    <Content Include="assets\js\app\cs\trans\stnkext.js" />
+    <Content Include="assets\js\app\cs\trans\tdcall.js" />
+    <Content Include="assets\js\app\cs\trans\cusbday.js" />
+    <Content Include="assets\js\app\cs\trans\tmpl.js" />
+    <Content Include="assets\js\app\gn\master\approval.js" />
+    <Content Include="assets\js\app\gn\master\customer2.js" />
+    <Content Include="assets\js\app\gn\master\setsecurityreport.js" />
+    <Content Include="assets\js\app\gn\master\reminder.js" />
+    <Content Include="assets\js\app\gn\master\supplier.js" />
+    <Content Include="assets\js\app\gn\member\autonocustomer.js" />
+    <Content Include="assets\js\app\gn\member\autonosupplier.js" />
+    <Content Include="assets\js\app\gn\master\employeeabsence.js" />
+    <Content Include="assets\js\app\gn\inquiry\customers.js" />
+    <Content Include="assets\js\app\gn\master\addholiday.js" />
+    <Content Include="assets\js\app\gn\master\addholidays.js" />
+    <Content Include="assets\js\app\gn\master\calender.js" />
+    <Content Include="assets\js\app\gn\master\chart.js" />
+    <Content Include="assets\js\app\gn\master\companyprofile.js" />
+    <Content Include="assets\js\app\gn\master\customer.js" />
+    <Content Include="assets\js\app\gn\master\customeradmin.js" />
+    <Content Include="assets\js\app\gn\master\documentsign.js" />
+    <Content Include="assets\js\app\gn\master\dokumen.js" />
+    <Content Include="assets\js\app\gn\master\employee.js" />
+    <Content Include="assets\js\app\gn\master\employeemutation.js" />
+    <Content Include="assets\js\app\gn\master\faktur.js" />
+    <Content Include="assets\js\app\gn\master\fpjsignature.js" />
+    <Content Include="assets\js\app\gn\master\inqcreditlimit.js" />
+    <Content Include="assets\js\app\gn\master\kolektor.js" />
+    <Content Include="assets\js\app\gn\master\mastercalender.js" />
+    <Content Include="assets\js\app\gn\master\masterlookup.js" />
+    <Content Include="assets\js\app\gn\master\masterparameter.js" />
+    <Content Include="assets\js\app\gn\master\messageboards.js" />
+    <Content Include="assets\js\app\gn\master\customerclass.js" />
+    <Content Include="assets\js\app\gn\master\Organisasi.js" />
+    <Content Include="assets\js\app\gn\master\pajak.js" />
+    <Content Include="assets\js\app\gn\master\periode.js" />
+    <Content Include="assets\js\app\gn\master\segmentchart.js" />
+    <Content Include="assets\js\app\gn\master\supplierclass.js" />
+    <Content Include="assets\js\app\gn\master\zipcode.js" />
+    <Content Include="assets\js\app\gn\member\adminaudit.js" />
+    <Content Include="assets\js\app\gn\member\autonocustomer.js" />
+    <Content Include="assets\js\app\gn\member\autonosupplier.js" />
+    <Content Include="assets\js\app\gn\member\backupbranchdata.js" />
+    <Content Include="assets\js\app\gn\member\backupdatabase.js" />
+    <Content Include="assets\js\app\gn\member\rolemenu2.js" />
+    <Content Include="assets\js\app\gn\member\uploadbranchdata.js" />
+    <Content Include="assets\js\app\gn\member\printersetup.js" />
+    <Content Include="assets\js\app\gn\member\languagesetup.js" />
+    <Content Include="assets\js\app\gn\member\menu.js" />
+    <Content Include="assets\js\app\gn\member\module.js" />
+    <Content Include="assets\js\app\gn\member\queryanalizer.js" />
+    <Content Include="assets\js\app\gn\member\role.js" />
+    <Content Include="assets\js\app\gn\member\rolemodule.js" />
+    <Content Include="assets\js\app\gn\member\module-old.js" />
+    <Content Include="assets\js\app\gn\member\menu-old.js" />
+    <Content Include="assets\js\app\gn\member\role-old.js" />
+    <Content Include="assets\js\app\gn\member\rolemenu.js" />
+    <Content Include="assets\js\app\gn\member\user-old.js" />
+    <Content Include="assets\js\app\gn\member\user.js" />
+    <Content Include="assets\js\app\gn\posting\backup.daily.js" />
+    <Content Include="assets\js\app\gn\posting\welcome.js" />
+    <Content Include="assets\js\app\gn\posting\daily.js" />
+    <Content Include="assets\js\app\its\inquiry\achieve.js" />
+    <Content Include="assets\js\app\its\inquiry\byperiode.js" />
+    <Content Include="assets\js\app\its\inquiry\followup.js" />
+    <Content Include="assets\js\app\its\inquiry\followup_old.js" />
+    <Content Include="assets\js\app\its\inquiry\InqIts.js" />
+    <Content Include="assets\js\app\its\inquiry\inqItsMkt.js" />
+    <Content Include="assets\js\app\its\inquiry\inqitsstatus.js" />
+    <Content Include="assets\js\app\its\inquiry\inqItsWithStatusAndTestDrive.js" />
+    <Content Include="assets\js\app\its\inquiry\Monitoring.js" />
+    <Content Include="assets\js\app\its\inquiry\MonitoringByWorkingDay.js" />
+    <Content Include="assets\js\app\its\inquiry\outstanding.js" />
+    <Content Include="assets\js\app\its\inquiry\outstandingprospek.js" />
+    <Content Include="assets\js\app\its\inquiry\outstandingprospek_old.js" />
+    <Content Include="assets\js\app\its\inquiry\Periode.js" />
+    <Content Include="assets\js\app\its\inquiry\salesachievement.js" />
+    <Content Include="assets\js\app\its\inquiry\sishistory.js" />
+    <Content Include="assets\js\app\its\inquiry\summary.js" />
+    <Content Include="assets\js\app\its\inquiry\lostcase.js" />
+    <Content Include="assets\js\app\its\inquiry\summary_old.js" />
+    <Content Include="assets\js\app\its\master\grouptypeseq.js" />
+    <Content Include="assets\js\app\its\master\organization.js" />
+    <Content Include="assets\js\app\its\master\outlets.js" />
+    <Content Include="assets\js\app\its\master\position.js" />
+    <Content Include="assets\js\app\its\master\salesmangrade.js" />
+    <Content Include="assets\js\app\its\master\teammember.js" />
+    <Content Include="assets\js\app\its\report\inqwithsts.js" />
+    <Content Include="assets\js\app\its\report\inqprod.js" />
+    <Content Include="assets\js\app\its\trans\clnupkdp.js" />
+    <Content Include="assets\js\app\its\trans\inkdp.js" />
+    <Content Include="assets\js\app\its\trans\inkdpadmin.js" />
+    <Content Include="assets\js\app\its\trans\inkdpcoupon.js" />
+    <Content Include="assets\js\app\its\trans\sales-order-print.js" />
+    <Content Include="assets\js\app\its\trans\sales-order.js" />
+    <Content Include="assets\js\app\its\utility\generatecoupon.js" />
+    <Content Include="assets\js\app\its\utility\generatekdp.js" />
+    <Content Include="assets\js\app\its\utility\transferkdp.js" />
+    <Content Include="assets\js\app\its\utility\uploadfile.js" />
+    <Content Include="assets\js\app\its\utility\utilitykdp.js" />
+    <Content Include="assets\js\app\loginfo.js" />
+    <Content Include="assets\js\app\om\inq\customer.js" />
+    <Content Include="assets\js\app\om\inq\ITS.js" />
+    <Content Include="assets\js\app\om\inq\ITSStatus.js" />
+    <Content Include="assets\js\app\om\inq\LiveStock.js" />
+    <Content Include="assets\js\app\om\inq\prodsales.js" />
+    <Content Include="assets\js\app\om\inventory\transferoutmulti.js" />
+    <Content Include="assets\js\app\om\inventory\transferinmulti.js" />
+    <Content Include="assets\js\app\om\inq\datakendaraanoutcogs.js" />
+    <Content Include="assets\js\app\om\inventory\transferoutprint.js" />
+    <Content Include="assets\js\app\om\master\listpricebranches.js" />
+    <Content Include="assets\js\app\om\master\livestokdealer.js" />
+    <Content Include="assets\js\app\om\master\print_sales_target.js" />
+    <Content Include="assets\js\app\om\purchase\GenerateBPU_HPP.js" />
+    <Content Include="assets\js\app\om\reports\inventory\stokinventoryv2.js" />
+    <Content Include="assets\js\app\om\reports\laporanlabarugiv2.js" />
+    <Content Include="assets\js\app\om\reports\dokumenpending.js" />
+    <Content Include="assets\js\app\om\reports\inventory\dealerstock.js" />
+    <Content Include="assets\js\app\om\reports\inventory\transferkendaraaninmltbranch.js" />
+    <Content Include="assets\js\app\om\reports\inventory\transferkendaraanoutmltbranch.js" />
+    <Content Include="assets\js\app\om\reports\inventory\gantiwarna.js" />
+    <Content Include="assets\js\app\om\reports\inventory\transferkendaraanout.js" />
+    <Content Include="assets\js\app\om\reports\laporanlabarugi.js" />
+    <Content Include="assets\js\app\om\reports\purchase\registerpengembalianunit.js" />
+    <Content Include="assets\js\app\om\reports\purchase\laporanstatistikpembelian.js" />
+    <Content Include="assets\js\app\om\reports\purchase\registerspkkaroseri.js" />
+    <Content Include="assets\js\app\om\reports\purchase\registerpenerimaankaroseri.js" />
+    <Content Include="assets\js\app\om\reports\purchase\sdmsinvdoattributes.js" />
+    <Content Include="assets\js\app\om\reports\purchase\registerbuktipenerimaanunit.js" />
+    <Content Include="assets\js\app\om\reports\purchase\registerpesanankendaraan.js" />
+    <Content Include="assets\js\app\om\reports\purchase\hpp.js" />
+    <Content Include="assets\js\app\om\reports\purchase\perlengkapanin.js" />
+    <Content Include="assets\js\app\om\reports\purchase\perlengkapanadjusment.js" />
+    <Content Include="assets\js\app\om\reports\purchase\bpu.js" />
+    <Content Include="assets\js\app\om\reports\purchase\po.js" />
+    <Content Include="assets\js\app\om\inq\datakendaraan.js" />
+    <Content Include="assets\js\app\om\inq\inqdatadcs.js" />
+    <Content Include="assets\js\app\om\inq\inventory\stokkendaraan.js" />
+    <Content Include="assets\js\app\om\inq\inventory\stokperlengkapan.js" />
+    <Content Include="assets\js\app\om\inq\inventory\transferin.js" />
+    <Content Include="assets\js\app\om\inq\inventory\transferout.js" />
+    <Content Include="assets\js\app\om\inq\purchase\bpu.js" />
+    <Content Include="assets\js\app\om\inq\purchase\hpp.js" />
+    <Content Include="assets\js\app\om\inq\purchase\karoseri.js" />
+    <Content Include="assets\js\app\om\inq\purchase\karoseriterima.js" />
+    <Content Include="assets\js\app\om\inq\purchase\perlengkapanadjustment.js" />
+    <Content Include="assets\js\app\om\inq\purchase\perlengkapanin.js" />
+    <Content Include="assets\js\app\om\inq\purchase\po.js" />
+    <Content Include="assets\js\app\om\inq\purchase\purchasereturn.js" />
+    <Content Include="assets\js\app\om\inq\sales.js" />
+    <Content Include="assets\js\app\om\inq\sales\bpk.js" />
+    <Content Include="assets\js\app\om\inq\sales\delivorder.js" />
+    <Content Include="assets\js\app\om\inq\sales\invoice.js" />
+    <Content Include="assets\js\app\om\inq\sales\perlengkapanout.js" />
+    <Content Include="assets\js\app\om\inq\sales\permohonanfakturpolisi.js" />
+    <Content Include="assets\js\app\om\inq\sales\retur.js" />
+    <Content Include="assets\js\app\om\inq\sales\so.js" />
+    <Content Include="assets\js\app\om\inq\sales\spktrackingbbn.js" />
+    <Content Include="assets\js\app\om\inventory\gantiwarna.js" />
+    <Content Include="assets\js\app\om\inventory\transferin.js" />
+    <Content Include="assets\js\app\om\inventory\transferout.js" />
+    <Content Include="assets\js\app\om\master\bbnkir.js" />
+    <Content Include="assets\js\app\om\master\companyaccount.js" />
+    <Content Include="assets\js\app\om\master\karoseri.js" />
+    <Content Include="assets\js\app\om\master\modelperlengkapan.js" />
+    <Content Include="assets\js\app\om\master\modelyear.js" />
+    <Content Include="assets\js\app\om\master\perlengkapan.js" />
+    <Content Include="assets\js\app\om\master\pricelistbeli.js" />
+    <Content Include="assets\js\app\om\master\model.js" />
+    <Content Include="assets\js\app\om\master\modelaccount.js" />
+    <Content Include="assets\js\app\om\master\modelcolor.js" />
+    <Content Include="assets\js\app\om\master\othersinventory.js" />
+    <Content Include="assets\js\app\om\master\pricelistjual.js" />
+    <Content Include="assets\js\app\om\master\refference.js" />
+    <Content Include="assets\js\app\om\master\salestarget.js" />
+    <Content Include="assets\js\app\om\purchase\purchaseorder.js" />
+    <Content Include="assets\js\app\om\reports\inventory\laporanstokkendaraan.js" />
+    <Content Include="assets\js\app\om\reports\inventory\perincianstok.js" />
+    <Content Include="assets\js\app\om\reports\inventory\stokinventory.js" />
+    <Content Include="assets\js\app\om\reports\inventory\transferkendaraanin.js" />
+    <Content Include="assets\js\app\om\purchase\bpu.js" />
+    <Content Include="assets\js\app\om\purchase\bpuattribute.js" />
+    <Content Include="assets\js\app\om\purchase\hpp.js" />
+    <Content Include="assets\js\app\om\purchase\karoseri.js" />
+    <Content Include="assets\js\app\om\purchase\karoseriterima.js" />
+    <Content Include="assets\js\app\om\purchase\perlengkapanadjst.js" />
+    <Content Include="assets\js\app\om\purchase\perlengkapanin.js" />
+    <Content Include="assets\js\app\om\purchase\retur.js" />
+    <Content Include="assets\js\app\om\reports\master\ReportModel.js" />
+    <Content Include="assets\js\app\om\reports\master\RptBBNdanKIR.js" />
+    <Content Include="assets\js\app\om\reports\master\RptKaroseri.js" />
+    <Content Include="assets\js\app\om\reports\master\RptModelAccount.js" />
+    <Content Include="assets\js\app\om\reports\master\RptModelColour.js" />
+    <Content Include="assets\js\app\om\reports\master\RptModelPerlengkapan.js" />
+    <Content Include="assets\js\app\om\reports\master\RptModelYear.js" />
+    <Content Include="assets\js\app\om\reports\master\RptPerlengkapan.js" />
+    <Content Include="assets\js\app\om\reports\master\RptPriceListBeli.js" />
+    <Content Include="assets\js\app\om\reports\master\RptPriceListJual.js" />
+    <Content Include="assets\js\app\om\reports\master\RptRefference.js" />
+    <Content Include="assets\js\app\om\reports\ReportSalesNStock.js" />
+    <Content Include="assets\js\app\om\reports\sales\bpk.js" />
+    <Content Include="assets\js\app\om\reports\sales\daftarbpkbperlks.js" />
+    <Content Include="assets\js\app\om\reports\sales\dailyslsallbranch.js" />
+    <Content Include="assets\js\app\om\reports\sales\dailyslsallbranchv2.js" />
+    <Content Include="assets\js\app\om\reports\sales\datacustomerprofile.js" />
+    <Content Include="assets\js\app\om\reports\sales\outstandingblnkfp.js" />
+    <Content Include="assets\js\app\om\reports\sales\custlistslsunit.js" />
+    <Content Include="assets\js\app\om\reports\sales\delor.js" />
+    <Content Include="assets\js\app\om\reports\sales\fktrpnjpreprinted.js" />
+    <Content Include="assets\js\app\om\reports\sales\fktrreqygsdhdgnrt.js" />
+    <Content Include="assets\js\app\om\reports\sales\invoice.js" />
+    <Content Include="assets\js\app\om\reports\sales\outstandingspk.js" />
+    <Content Include="assets\js\app\om\reports\sales\penjterbaik.js" />
+    <Content Include="assets\js\app\om\reports\sales\rekapharian.js" />
+    <Content Include="assets\js\app\om\reports\sales\lapfaktur.js" />
+    <Content Include="assets\js\app\om\reports\sales\lappenggblnk.js" />
+    <Content Include="assets\js\app\om\reports\sales\listbpkb.js" />
+    <Content Include="assets\js\app\om\reports\sales\lstrinciankndr.js" />
+    <Content Include="assets\js\app\om\reports\sales\outstandingblnkfp.js" />
+    <Content Include="assets\js\app\om\reports\sales\registerdo.js" />
+    <Content Include="assets\js\app\om\reports\sales\registerso.js" />
+    <Content Include="assets\js\app\om\reports\sales\rgstrbatalso.js" />
+    <Content Include="assets\js\app\om\reports\sales\rgstrbuktikrmkndddrn.js" />
+    <Content Include="assets\js\app\om\reports\sales\rgstrfktrpenjunit.js" />
+    <Content Include="assets\js\app\om\reports\sales\rgstrfktrpls.js" />
+    <Content Include="assets\js\app\om\reports\sales\rgstrhrnpnrbtfktrpls.js" />
+    <Content Include="assets\js\app\om\reports\sales\rgstrnotadebet.js" />
+    <Content Include="assets\js\app\om\reports\sales\rgstrplgnperlsg.js" />
+    <Content Include="assets\js\app\om\reports\sales\rgstrreturinvc.js" />
+    <Content Include="assets\js\app\om\reports\sales\rgstrspk.js" />
+    <Content Include="assets\js\app\om\reports\sales\salesachievementrecord.js" />
+    <Content Include="assets\js\app\om\reports\sales\so.js" />
+    <Content Include="assets\js\app\om\reports\sales\summpermhnfp.js" />
+    <Content Include="assets\js\app\om\reports\sales\tdtrmfktrpngjnpngrsnbnn.js" />
+    <Content Include="assets\js\app\om\reports\sales\ttdterimabpkb.js" />
+    <Content Include="assets\js\app\om\reports\vehicleownershipinfo.js" />
+    <Content Include="assets\js\app\om\reports\statistiksalesman.js" />
+    <Content Include="assets\js\app\om\reports\vehicleownershipinfo.js" />
+    <Content Include="assets\js\app\om\sales\bpk.js" />
+    <Content Include="assets\js\app\om\sales\delor.js" />
+    <Content Include="assets\js\app\om\sales\draftsalesorder.js" />
+    <Content Include="assets\js\app\om\sales\fakturpolisi.js" />
+    <Content Include="assets\js\app\om\sales\InformasiPengirimanKendaraan.js" />
+    <Content Include="assets\js\app\om\sales\listpricebranches.js" />
+    <Content Include="assets\js\app\om\sales\ownershipvehicle.js" />
+    <Content Include="assets\js\app\om\sales\fktrplsrev.js" />
+    <Content Include="assets\js\app\om\sales\permohonanfpsd.js" />
+    <Content Include="assets\js\app\om\sales\regrevfakpol.js" />
+    <Content Include="assets\js\app\om\sales\salesorderpo.js" />
+    <Content Include="assets\js\app\om\sales\salesordersfm.js" />
+    <Content Include="assets\js\app\om\sales\invoice.js" />
+    <Content Include="assets\js\app\om\sales\kwitansiunit.js" />
+    <Content Include="assets\js\app\om\sales\mntnfktrpls.js" />
+    <Content Include="assets\js\app\om\sales\perlengkapanout.js" />
+    <Content Include="assets\js\app\om\sales\permohonanfktrpls.js" />
+    <Content Include="assets\js\app\om\sales\permohonanfktrplsDCS.js" />
+    <Content Include="assets\js\app\om\sales\retur.js" />
+    <Content Include="assets\js\app\om\sales\spktrkbbn.js" />
+    <Content Include="assets\js\app\om\sales\tandaterimabpkb.js" />
+    <Content Include="assets\js\app\om\sales\tandaterimastnk.js" />
+    <Content Include="assets\js\app\om\stockopname\EntryInvTag.js" />
+    <Content Include="assets\js\app\om\stockopname\InvTag.js" />
+    <Content Include="assets\js\app\om\stockopname\PostingStockTaking.js" />
+    <Content Include="assets\js\app\om\stockopname\ProsesStockTaking.js" />
+    <Content Include="assets\js\app\om\stockopname\RincianVehHilang.js" />
+    <Content Include="assets\js\app\om\stockopname\StockOpnameVeh.js" />
+    <Content Include="assets\js\app\om\utility\generatepolda.js" />
+    <Content Include="assets\js\app\om\utility\repostingjurnal.js" />
+    <Content Include="assets\js\app\om\utility\tutupbulan.js" />
+    <Content Include="assets\js\app\om\utility\sendfile.js" />
+    <Content Include="assets\js\app\om\utility\postingjurnal.js" />
+    <Content Include="assets\js\app\om\utility\uploadpolda.js" />
+    <Content Include="assets\js\app\om\utility\uploadfile.js" />
+    <Content Include="assets\js\app\om\utility\uploadfromdcs.js" />
+    <Content Include="assets\js\app\om\warehouse\ReceivingUnit.js" />
+    <Content Include="assets\js\app\sp\inquiry\InqSparePart.js" />
+    <Content Include="assets\js\app\sp\inquiry\InqSparePart_demo.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquiryDataDCS.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquiryDataPartSales.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquiryDataPelanggan.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquiryDataPemasok.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquiryDataSparePart.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquiryItemSparepart.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquiryItemSparepartHQ.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquiryItemSparepartsSIMPLE.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquiryPenerimaanBarang.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquirySalesOrder.js" />
+    <Content Include="assets\js\app\sp\inquiry\InquirySupplySlip.js" />
+    <Content Include="assets\js\app\sp\inquiry\testexport.js" />
+    <Content Include="assets\js\app\sp\master\aosalert.js" />
+    <Content Include="assets\js\app\sp\pembelian\EntryOrderAOS.js" />
+    <Content Include="assets\js\app\sp\pembelian\EntryRequest.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\EntryPengeluaranStockBrnch.js" />
+    <Content Include="assets\js\app\sp\report\Mutation\MutationStock.js" />
+    <Content Include="assets\js\app\sp\pembelian\maintenancepo.js" />
+    <Content Include="assets\js\app\sp\pembelian\MaintenanceSubtitusi.js" />
+    <Content Include="assets\js\app\sp\pembelian\EntryOrder.js" />
+    <Content Include="assets\js\app\sp\pembelian\pso.js" />
+    <Content Include="assets\js\app\sp\penerimaan\claimvendor.js" />
+    <Content Include="assets\js\app\sp\penerimaan\edp.js" />
+    <Content Include="assets\js\app\sp\penerimaan\entryclaimsupplier.js" />
+    <Content Include="assets\js\app\sp\penerimaan\hpp.js" />
+    <Content Include="assets\js\app\sp\penerimaan\wrs.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\EntryPengeluaranStock.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\EntryReturnPenjualan.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\EntryReturnService.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\EntryReturnSupplySlip.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\PembuatanFakturPenjualan.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\LampiranDokumenService.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\PembatalanOutstandingBO.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\PembatalanOutstandingBOKeseluruhan.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\PembuatanLampirandokumenNonPenjualan.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\PembuatanPLdanEntryPickedQtyPL.js" />
+    <Content Include="assets\js\app\sp\Pengeluaran\PemeliharaanFakturPenjualan.js" />
+    <Content Include="assets\js\app\sp\persediaan\InventoryAdjustment.js" />
+    <Content Include="assets\js\app\sp\persediaan\ReservedSparepart.js" />
+    <Content Include="assets\js\app\sp\persediaan\WarehouseTransfer.js" />
+    <Content Include="assets\js\app\sp\report\Master\ListMstSparepart.js" />
+    <Content Include="assets\js\app\sp\report\Master\LstMstSubstitusi.js" />
+    <Content Include="assets\js\app\sp\report\Master\LstPerubahanOutsndg.js" />
+    <Content Include="assets\js\app\sp\report\Pembelian\AOSList.js" />
+    <Content Include="assets\js\app\sp\report\Pembelian\LstOnOrderperPart.js" />
+    <Content Include="assets\js\app\sp\report\Pembelian\LstPesananSparepart.js" />
+    <Content Include="assets\js\app\sp\report\Pembelian\LstSugestionOrder.js" />
+    <Content Include="assets\js\app\sp\report\Penerimaan\BinninglistPembelian.js" />
+    <Content Include="assets\js\app\sp\report\Penerimaan\ClaimVendorForm.js" />
+    <Content Include="assets\js\app\sp\report\Penerimaan\ReceivedClaimVendorForm.js" />
+    <Content Include="assets\js\app\sp\report\Penerimaan\EntryHPP.js" />
+    <Content Include="assets\js\app\sp\report\Penerimaan\WRSPembelian.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstPengeluaranStok.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstFakturPenjualan.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\lstLampiranDkmnNonPenj.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\lstLampiranFakturPenjualan.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstSalesReturMemo.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstCancelFakturService.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstSlipSupplyReturMemo.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstOutstandingSupplySlip.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstBOBulananLangganan.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstBOHarianPart.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstBOHarianLangganan.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstBOCancel.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstFakturPenjualanPrePrinted.js" />
+    <Content Include="assets\js\app\sp\report\Penjualan\LstPickingList.js" />
+    <Content Include="assets\js\app\sp\report\Posting\AnalisaSPMnrtABCclass.js" />
+    <Content Include="assets\js\app\sp\report\Posting\AnalisaSPMnrtMvngCode.js" />
+    <Content Include="assets\js\app\sp\report\Posting\MutasiStockBulanan.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegPermohonanSparepart.js" />
+    <Content Include="assets\js\app\sp\report\Reports\AktivitasTrx.js" />
+    <Content Include="assets\js\app\sp\report\Reports\AnalysisWeekly.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftItemPenjualanTerbaik.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPartPerMCABCclassDemand.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftAnalisaServiceRatioPelanggan.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPajakKeluaran.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPerubahanAverageCost.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPerubahanHrgPotonganBeliJual.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftBarangKembali.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftBarangPinjam.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPenjualanPerPelanggan.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftRingkasanServiceRatio.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPartPerNoPart.js" />
+    <Content Include="assets\js\app\sp\report\Reports\FakturSupplySlipUnit.js" />
+    <Content Include="assets\js\app\sp\report\Reports\KartuStock.js" />
+    <Content Include="assets\js\app\sp\report\Reports\LapSparepartBulanan.js" />
+    <Content Include="assets\js\app\sp\report\Reports\StockInformation.js" />
+    <Content Include="assets\js\app\sp\report\Reports\PenjualanClassAreaLokasi.js" />
+    <Content Include="assets\js\app\sp\report\Reports\LabaRugi.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftOverStock.js" />
+    <Content Include="assets\js\app\sp\report\Reports\RekapitulasiOmzet.js" />
+    <Content Include="assets\js\app\sp\report\StockTaking\DaftarInvFT.js" />
+    <Content Include="assets\js\app\sp\report\StockTaking\DaftarTrxStockTakingHarian.js" />
+    <Content Include="assets\js\app\sp\report\StockTaking\DaftarOutInvFT.js" />
+    <Content Include="assets\js\app\sp\report\StockTaking\AnalisaStockTaking.js" />
+    <Content Include="assets\js\app\sp\report\StockTaking\InvStockTakingForm.js" />
+    <Content Include="assets\js\app\sp\report\StockTaking\InvStockTakingTag.js" />
+    <Content Include="assets\js\app\sp\report\Posting\AnalisaSPMnrtABCclass.js" />
+    <Content Include="assets\js\app\sp\report\Posting\AnalisaSPMnrtMvngCode.js" />
+    <Content Include="assets\js\app\sp\report\Posting\MutasiStockBulanan.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegAverageCostChage.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegClaimCancel.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegClaimForm.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegDetailReturPenjualan.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegInvoicePenjualanPerPelanggan.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegRekonSparepart.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegRptForTaxOffice.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegHPPSparepart.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegInventoryAdjusment.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegOustandingClaim.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegPendingDocument.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegPenerimaanPembelian.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegPesananSparepart.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegRptPelangganOverlimit.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegWarehouseRecievingSheet.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegWarehouseTransfer.js" />
+    <Content Include="assets\js\app\sp\report\Reports\AktivitasTrx.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftAnalisaServiceRatioPelanggan.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftItemPenjualanTerbaik.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftBarangKembali.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftBarangPinjam.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftOverStock.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPajakKeluaran.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPartPerMCABCclassDemand.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPartPerNoPart.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPenjualanPerPelanggan.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPerubahanAverageCost.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftPerubahanHrgPotonganBeliJual.js" />
+    <Content Include="assets\js\app\sp\report\Reports\DftRingkasanServiceRatio.js" />
+    <Content Include="assets\js\app\sp\report\Reports\FakturSupplySlipUnit.js" />
+    <Content Include="assets\js\app\sp\report\Reports\KartuStock.js" />
+    <Content Include="assets\js\app\sp\report\Register\HistSupplySlipOutstanding.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegBonPengeluaranSparePart.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegBonPengeluaranSparePartOutstanding.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegFakturPenjualan.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegisterPenjualan.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegNonSalesInvoiceAttachments.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegPenjualanPerPelangganTunaiKredit.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegPenjualanTunaiKredit.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegReturPenjualan.js" />
+    <Content Include="assets\js\app\sp\report\Register\RegReturSupplySlip.js" />
+    <Content Include="assets\js\app\sp\report\Register\SupplySlip.js" />
+    <Content Include="assets\js\app\sp\report\Register\SupplySlipOutstanding.js" />
+    <Content Include="assets\js\app\sp\report\Reports\LabaRugi.js" />
+    <Content Include="assets\js\app\sp\report\Reports\PenjualanClassAreaLokasi.js" />
+    <Content Include="assets\js\app\sp\report\Reports\RekapitulasiOmzet.js" />
+    <Content Include="assets\js\app\sp\report\Reports\StockInformation.js" />
+    <Content Include="assets\js\app\sp\stockopname\CetakAnalisaStockTaking.js" />
+    <Content Include="assets\js\app\sp\stockopname\EntryInventoryFormTag.js" />
+    <Content Include="assets\js\app\sp\stockopname\PembatalanBlankInventoryFormTag.js" />
+    <Content Include="assets\js\app\sp\stockopname\PostingDataStockTakingtoMaster.js" />
+    <Content Include="assets\js\app\sp\stockopname\ProsesBlankInventoryFormTag.js" />
+    <Content Include="assets\js\app\sp\stockopname\ProsesInventoryFormTag.js" />
+    <Content Include="assets\js\app\sp\tutupperiode\ProsesTutupBulan.js" />
+    <Content Include="assets\js\app\sp\utility\aositemsplist.js" />
+    <Content Include="assets\js\app\sp\utility\MaintainHargaPokok.js" />
+    <Content Include="assets\js\app\sp\utility\MaintainTypePart.js" />
+    <Content Include="assets\js\app\sp\utility\ResetStockOpname.js" />
+    <Content Include="assets\js\app\sp\utility\SendFile.js" />
+    <Content Include="assets\js\app\sp\utility\SetupMasterPart.js" />
+    <Content Include="assets\js\app\sp\utility\SwitchTypePartUser.js" />
+    <Content Include="assets\js\app\sp\utility\UploadDataDelearSparepart.js" />
+    <Content Include="assets\js\app\sp\utility\UploadFile.js" />
+    <Content Include="assets\js\app\sp\utility\UploadFromDCS.js" />
+    <Content Include="assets\js\app\sv\dashboard\RoomQueue.js" />
+    <Content Include="assets\js\app\sv\dashboard\RoomSA.js" />
+    <Content Include="assets\js\app\sv\inquiry\dcsdata.js" />
+    <Content Include="assets\js\app\sv\inquiry\histservicevehicle.js" />
+    <Content Include="assets\js\app\sv\inquiry\histservicevehicle_wsds.js" />
+    <Content Include="assets\js\app\sv\inquiry\histservicevihice_nasional.js" />
+    <Content Include="assets\js\app\sv\inquiry\inqmsi.js" />
+    <Content Include="assets\js\app\sv\inquiry\inqmsi2.js" />
+    <Content Include="assets\js\app\sv\inquiry\inqszkmsi.js" />
+    <Content Include="assets\js\app\sv\inquiry\jobmonitoringscreen.js" />
+    <Content Include="assets\js\app\sp\master\companyacc.js" />
+    <Content Include="assets\js\app\sp\master\itemkonversi.js" />
+    <Content Include="assets\js\app\sp\master\targetpenjualan.js" />
+    <Content Include="assets\js\app\sp\master\parameterorder.js" />
+    <Content Include="assets\js\app\sp\master\glaccmapping.js" />
+    <Content Include="assets\js\app\sv\inquiry\jobmonitoring.js" />
+    <Content Include="assets\js\app\sp\master\campaignpembelian.js" />
+    <Content Include="assets\js\app\sp\master\campaignpenjualan.js" />
+    <Content Include="assets\js\app\sp\master\itemlokasi.js" />
+    <Content Include="assets\js\app\sp\master\itemmodification.js" />
+    <Content Include="assets\js\app\sp\master\itemprice.js" />
+    <Content Include="assets\js\app\sp\master\itemsubtitusi.js" />
+    <Content Include="assets\js\app\sp\master\masteritem.js" />
+    <Content Include="assets\js\app\sp\master\movingcode.js" />
+    <Content Include="assets\js\app\sv\inquiry\paketservice.js" />
+    <Content Include="assets\js\app\sv\inquiry\partmaterial.js" />
+    <Content Include="assets\js\app\sv\inquiry\pvtinv.js" />
+    <Content Include="assets\js\app\sv\inquiry\pvtmsi.js" />
+    <Content Include="assets\js\app\sv\inquiry\pvtcustomer.js" />
+    <Content Include="assets\js\app\sv\inquiry\pvtjournal.js" />
+    <Content Include="assets\js\app\sv\inquiry\pvttrans.js" />
+    <Content Include="assets\js\app\sv\inquiry\srvunitintake.js" />
+    <Content Include="assets\js\app\sv\inquiry\unitinfo.js" />
+    <Content Include="assets\js\app\sv\inquiry\workorder.js" />
+    <Content Include="assets\js\app\sv\inquiry\workshopbodypaint.js" />
+    <Content Include="assets\js\app\sv\master\account.js" />
+    <Content Include="assets\js\app\sv\master\campaign.js" />
+    <Content Include="assets\js\app\sv\master\campaignprint.js" />
+    <Content Include="assets\js\app\sv\master\copyjobs.js" />
+    <Content Include="assets\js\app\sv\master\customer_vehicle.js" />
+    <Content Include="assets\js\app\sv\master\event.js" />
+    <Content Include="assets\js\app\sv\master\garansi.js" />
+    <Content Include="assets\js\app\sv\master\historyVehicle.js" />
+    <Content Include="assets\js\app\sv\master\jobprint.js" />
+    <Content Include="assets\js\app\sv\master\kehadiran_mekanik.js" />
+    <Content Include="assets\js\app\sv\master\klub.js" />
+    <Content Include="assets\js\app\sv\master\kontrak_service.js" />
+    <Content Include="assets\js\app\sv\master\Ksg.js" />
+    <Content Include="assets\js\app\sv\master\LookUpServiceBook.js" />
+    <Content Include="assets\js\app\sv\master\paket_service.js" />
+    <Content Include="assets\js\app\sv\master\pekerjaan.js" />
+    <Content Include="assets\js\app\sv\master\pendaftaran_campaign.js" />
+    <Content Include="assets\js\app\sv\master\pend_paket_service.js" />
+    <Content Include="assets\js\app\sv\master\print_customer_vehicle.js" />
+    <Content Include="assets\js\app\sv\master\print_event.js" />
+    <Content Include="assets\js\app\sv\master\print_klub.js" />
+    <Content Include="assets\js\app\sv\master\print_kontrak_service.js" />
+    <Content Include="assets\js\app\sv\master\print_ksg.js" />
+    <Content Include="assets\js\app\sv\master\referensi_service.js" />
+    <Content Include="assets\js\app\sv\master\reffsrvprint.js" />
+    <Content Include="assets\js\app\sv\master\stall.js" />
+    <Content Include="assets\js\app\sv\master\stall2.js" />
+    <Content Include="assets\js\app\sv\master\target.js" />
+    <Content Include="assets\js\app\sv\master\tarif_jasa.js" />
+    <Content Include="assets\js\app\sv\master\tipe_pembayaran.js" />
+    <Content Include="assets\js\app\sv\master\waktu.js" />
+    <Content Include="assets\js\app\sv\master\warrantyprint.js" />
+    <Content Include="assets\js\app\om\sales\sales-order.js" />
+    <Content Include="assets\js\app\om\sales\salesorder-old.js" />
+    <Content Include="assets\js\app\sv\report\ClaimDetailList.js" />
+    <Content Include="assets\js\app\sv\report\CustomerStatus.js" />
+    <Content Include="assets\js\app\sv\report\DiffYearlySales.js" />
+    <Content Include="assets\js\app\sv\report\DtlInsentif.js" />
+    <Content Include="assets\js\app\sv\report\fktrpenjpreprinted.js" />
+    <Content Include="assets\js\app\sv\report\HistKendaraan.js" />
+    <Content Include="assets\js\app\sv\report\PendingDocument.js" />
+    <Content Include="assets\js\app\sv\report\PenjSvcJobPeriod.js" />
+    <Content Include="assets\js\app\sv\report\PenjSvcModelCust.js" />
+    <Content Include="assets\js\app\sv\report\PenjualanGroupJob.js" />
+    <Content Include="assets\js\app\sv\report\printdialogretention.js" />
+    <Content Include="assets\js\app\sv\report\RegFakturService.js" />
+    <Content Include="assets\js\app\sv\report\RegBooking.js" />
+    <Content Include="assets\js\app\sv\report\RegFakturServiceHQ.js" />
+    <Content Include="assets\js\app\sv\report\RegPekerjaanLuar.js" />
+    <Content Include="assets\js\app\sv\report\RegReturnPart.js" />
+    <Content Include="assets\js\app\sv\report\RegReturnServ.js" />
+    <Content Include="assets\js\app\sv\report\RegSpkRpt.js" />
+    <Content Include="assets\js\app\sv\report\RegSublet.js" />
+    <Content Include="assets\js\app\sv\report\RekapDtlIntensif.js" />
+    <Content Include="assets\js\app\sv\report\RptCancelInvoice.js" />
+    <Content Include="assets\js\app\sv\report\RptPenjServTahunan.js" />
+    <Content Include="assets\js\app\sv\report\RptPenjSvcGroupJob.js" />
+    <Content Include="assets\js\app\sv\report\RptPenjualanService.js" />
+    <Content Include="assets\js\app\sv\report\RptPDIFSCClaim.js" />
+    <Content Include="assets\js\app\sv\report\Service\claimdetaillist.js" />
+    <Content Include="assets\js\app\sv\report\Service\fsccamplist.js" />
+    <Content Include="assets\js\app\sv\report\Service\pdifscdealerclaim.js" />
+    <Content Include="assets\js\app\sv\report\Service\performaservice.js" />
+    <Content Include="assets\js\app\sv\report\Service\serviceactivity.js" />
+    <Content Include="assets\js\app\sv\report\Service\serviceadvisor.js" />
+    <Content Include="assets\js\app\sv\report\SummarySPK.js" />
+    <Content Include="assets\js\app\sv\report\SvcMecanic.js" />
+    <Content Include="assets\js\app\sv\report\svrptrn014.js" />
+    <Content Include="assets\js\app\sv\srs\dailyserviceretention.js" />
+    <Content Include="assets\js\app\sv\srs\servicereminder.js" />
+    <Content Include="assets\js\app\sv\tmpl\tmpl7.js" />
+    <Content Include="assets\js\app\sv\tmpl\tmpl6.js" />
+    <Content Include="assets\js\app\sv\tmpl\tmpl5.js" />
+    <Content Include="assets\js\app\sv\tmpl\tmpl4.js" />
+    <Content Include="assets\js\app\sv\tmpl\tmpl3.js" />
+    <Content Include="assets\js\app\sv\tmpl\tmpl2.js" />
+    <Content Include="assets\js\app\sv\tmpl\tmpl1.js" />
+    <Content Include="assets\js\app\sv\tmpl\tmpl8.js" />
+    <Content Include="assets\js\app\sv\trans\cancelinvoice.js" />
+    <Content Include="assets\js\app\sv\trans\genfpjhq.js" />
+    <Content Include="assets\js\app\sv\trans\genfpj.js" />
+    <Content Include="assets\js\app\sv\trans\genfpjold.js" />
+    <Content Include="assets\js\app\sv\trans\inputapprovalpdifsc.js" />
+    <Content Include="assets\js\app\sv\trans\inputvor.js" />
+    <Content Include="assets\js\app\sv\trans\ksgspkprint.js" />
+    <Content Include="assets\js\app\sv\trans\mainksg.js" />
+    <Content Include="assets\js\app\sv\trans\spkadmin.js" />
+    <Content Include="assets\js\app\sv\trans\receiveclaim.js" />
+    <Content Include="assets\js\app\sv\trans\spkprintestimasi.js" />
+    <Content Include="assets\js\app\sv\trans\subconrcvprint.js" />
+    <Content Include="assets\js\app\sv\trans\subconprint.js" />
+    <Content Include="assets\js\app\sv\trans\subconrvcprint.js" />
+    <Content Include="assets\js\app\sv\trans\uploadclaim.js" />
+    <Content Include="assets\js\app\sv\trans\generatewarantyclaim.js" />
+    <Content Include="assets\js\app\sv\report\svrptrn013.js" />
+    <Content Include="assets\js\app\sv\trans\inputinfoclaimspk.js" />
+    <Content Include="assets\js\app\sv\trans\genksg.js" />
+    <Content Include="assets\js\app\sv\trans\genksgspk.js" />
+    <Content Include="assets\js\app\sv\trans\maintain_claim.js" />
+    <Content Include="assets\js\app\sv\trans\genpackage.js" />
+    <Content Include="assets\js\app\sv\trans\getwarrantyclaim.js" />
+    <Content Include="assets\js\app\sv\trans\inputwarrantyclaim.js" />
+    <Content Include="assets\js\app\sv\trans\ksginv.js" />
+    <Content Include="assets\js\app\sv\trans\genfpjstd.js" />
+    <Content Include="assets\js\app\sv\trans\ksgspk.js" />
+    <Content Include="assets\js\app\sv\trans\inputksg.js" />
+    <Content Include="assets\js\app\sv\trans\invoice.js" />
+    <Content Include="assets\js\app\sv\trans\invoicebatch.js" />
+    <Content Include="assets\js\app\sv\trans\maintainfpj.js" />
+    <Content Include="assets\js\app\sv\trans\maintaininv.js" />
+    <Content Include="assets\js\app\sv\trans\maintainspk.js" />
+    <Content Include="assets\js\app\sv\trans\mekanik.js" />
+    <Content Include="assets\js\app\sv\trans\return.js" />
+    <Content Include="assets\js\app\sv\trans\spk.js" />
+    <Content Include="assets\js\app\sv\trans\spk2.js" />
+    <Content Include="assets\js\app\sv\trans\spkprint.js" />
+    <Content Include="assets\js\app\sv\trans\subcon.js" />
+    <Content Include="assets\js\app\sv\trans\subconrcv.js" />
+    <Content Include="assets\js\app\sv\trans\getpackage.js" />
+    <Content Include="assets\js\app\sv\trans\uploadksg.js" />
+    <Content Include="assets\js\app\sv\trans\viewjoborder.js" />
+    <Content Include="assets\js\app\sv\utility\closingmonth.js" />
+    <Content Include="assets\js\app\sv\utility\invoicecancel.js" />
+    <Content Include="assets\js\app\sv\utility\maintainchassis.js" />
+    <Content Include="assets\js\app\sv\utility\maintainservicebookno.js" />
+    <Content Include="assets\js\app\sv\utility\maintainvehicle.js" />
+    <Content Include="assets\js\app\sv\utility\postinglaporan.js" />
+    <Content Include="assets\js\app\sv\utility\sendsmr.js" />
+    <Content Include="assets\js\app\sv\utility\UploadFile.js" />
+    <Content Include="assets\js\app\sv\utility\sendcustomerdata.js" />
+    <Content Include="assets\js\app\sv\utility\uploadfromdcs.js" />
+    <Content Include="assets\js\app\tax\cetakform\fakturpajak.js" />
+    <Content Include="assets\js\app\tax\reports\akumulasippn.js" />
+    <Content Include="assets\js\app\tax\reports\skemataxin.js" />
+    <Content Include="assets\js\app\tax\reports\skemataxout.js" />
+    <Content Include="assets\js\app\tax\reports\taxoutespt.js" />
+    <Content Include="assets\js\app\tax\reports\taxinespt.js" />
+    <Content Include="assets\js\app\tax\reports\laptaxin.js" />
+    <Content Include="assets\js\app\tax\reports\ppn.js" />
+    <Content Include="assets\js\app\tax\reports\laptaxout.js" />
+    <Content Include="assets\js\app\tax\tax\gentax.js" />
+    <Content Include="assets\js\app\tax\tax\gentaxonline.js" />
+    <Content Include="assets\js\app\tax\tax\consolidationtaxin.js" />
+    <Content Include="assets\js\app\tax\tax\consolidationtaxout.js" />
+    <Content Include="assets\js\app\tax\tax\entrytaxmanual.js" />
+    <Content Include="assets\js\app\tax\tax\maintenancefps.js" />
+    <Content Include="assets\js\app\tax\utility\perbaikannopajak.js" />
+    <Content Include="assets\js\app\tax\utility\setfaktax.js" />
+    <Content Include="assets\js\Common.js" />
+    <Content Include="assets\js\DbContext.js" />
+    <Content Include="assets\js\nav.js" />
+    <Content Include="assets\js\SimDms.function.js" />
+    <Content Include="assets\js\SimDms.kendo.breeze.js" />
+    <Content Include="assets\js\SimDms.kendo.js" />
+    <Content Include="assets\js\SimDms.core.js" />
+    <Content Include="assets\js\SimDms.ui.js" />
+    <Content Include="assets\js\SimDms.util.js" />
+    <Content Include="assets\js\SimDms.widget.js" />
+    <Content Include="assets\js\app\login.js" />
+    <Content Include="assets\js\vendors\angular\angular-block-ui.js" />
+    <Content Include="assets\js\vendors\angular\angular-block-ui.min.js">
+      <DependentUpon>angular-block-ui.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\angular\angular-kendo.js" />
+    <Content Include="assets\js\vendors\angular\angular.all.js" />
+    <Content Include="assets\js\vendors\angular\c3.min.js" />
+    <Content Include="assets\js\vendors\angular\c3_renderers.js" />
+    <Content Include="assets\js\vendors\angular\c3_renderers.min.js">
+      <DependentUpon>c3_renderers.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\angular\d3.v3.min.js" />
+    <Content Include="assets\js\vendors\angular\d3_renderers.js" />
+    <Content Include="assets\js\vendors\angular\d3_renderers.min.js">
+      <DependentUpon>d3_renderers.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\angular\export_renderers.js" />
+    <Content Include="assets\js\vendors\angular\export_renderers.min.js">
+      <DependentUpon>export_renderers.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\angular\gchart_renderers.js" />
+    <Content Include="assets\js\vendors\angular\gchart_renderers.min.js">
+      <DependentUpon>gchart_renderers.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\angular\handsontable.full.js" />
+    <Content Include="assets\js\vendors\angular\handsontable.full.min.js">
+      <DependentUpon>handsontable.full.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\angular\ngHandsontable.js" />
+    <Content Include="assets\js\vendors\angular\ngHandsontable.min.js">
+      <DependentUpon>ngHandsontable.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\angular\pikaday.js" />
+    <Content Include="assets\js\vendors\angular\pikaday.min.js">
+      <DependentUpon>pikaday.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\angular\pivot.js" />
+    <Content Include="assets\js\vendors\angular\pivot.min.js">
+      <DependentUpon>pivot.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\angular\select2.min.js" />
+    <Content Include="assets\js\vendors\angular\verify.notify.js" />
+    <Content Include="assets\js\vendors\angular\webix.all.js" />
+    <Content Include="assets\js\vendors\async.js" />
+    <Content Include="assets\js\vendors\bootstrap\bootstrap.min.js" />
+    <Content Include="assets\js\vendors\extjs\ext-ajax.js" />
+    <Content Include="assets\js\vendors\extjs\ext-all-debug.js" />
+    <Content Include="assets\js\vendors\extjs\ext-all.js" />
+    <Content Include="assets\js\vendors\extjs\ext-theme-crisp.js" />
+    <Content Include="assets\js\vendors\extjs\IFrame.js" />
+    <Content Include="assets\js\vendors\handsontable.full.js" />
+    <Content Include="assets\js\vendors\highcharts.js" />
+    <Content Include="assets\js\vendors\imgLiquid-min.js" />
+    <Content Include="assets\js\vendors\jquery-2.0.3.js" />
+    <Content Include="assets\js\vendors\jquery-2.0.3.min.js" />
+    <Content Include="assets\css\toastr.less" />
+    <Content Include="assets\css\vendor\sencha\fonts\Sencha-Examples.eot" />
+    <Content Include="assets\css\vendor\sencha\fonts\Sencha-Examples.ttf" />
+    <Content Include="assets\css\vendor\sencha\fonts\Sencha-Examples.woff" />
+    <Content Include="assets\css\sdms.widget.css.map">
+      <DependentUpon>sdms.widget.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.css.map">
+      <DependentUpon>sdms.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.zurb.css.map">
+      <DependentUpon>sdms.zurb.css</DependentUpon>
+    </Content>
+    <Content Include="assets\css\sdms.kendo2015.less" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\DejaVuSerif.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\fonts\DejaVu\LICENSE" />
+    <Content Include="assets\css\vendor\themes\kendo\images\kendoui.ttf" />
+    <Content Include="assets\css\vendor\themes\kendo\images\kendoui.woff" />
+    <Content Include="assets\font\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\font\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\font\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\css\sdms.kendo.css.map">
+      <DependentUpon>sdms.kendo.css</DependentUpon>
+    </Content>
+    <Content Include="assets\custom\RoomQueue.cshtml" />
+    <Content Include="assets\custom\RoomSA.cshtml" />
+    <None Include="assets\js\vendors\jquery-2.1.0.intellisense.js" />
+    <Content Include="assets\js\vendors\jquery-2.1.0.js" />
+    <Content Include="assets\js\vendors\jquery-2.1.0.min.js" />
+    <Content Include="assets\js\vendors\jquery-2.1.1.min.js" />
+    <Content Include="assets\js\vendors\jquery-2.1.3.min.js" />
+    <Content Include="assets\js\vendors\jquery-migrate-1.2.1.js" />
+    <Content Include="assets\js\vendors\jquery-migrate-1.2.1.min.js" />
+    <Content Include="assets\js\vendors\jquery-ui-1.10.4.js" />
+    <Content Include="assets\js\vendors\jquery-ui-1.10.4.min.js" />
+    <Content Include="assets\js\vendors\jquery-ui-sliderAccess.js" />
+    <Content Include="assets\js\vendors\jquery-ui-timepicker-addon.min.js" />
+    <Content Include="assets\js\vendors\jquery.dataTables.js" />
+    <Content Include="assets\js\vendors\jquery.dataTables.min.js">
+      <DependentUpon>jquery.dataTables.js</DependentUpon>
+    </Content>
+    <Content Include="assets\js\vendors\jquery.fileDownload.js" />
+    <Content Include="assets\js\vendors\jquery.form.min.js" />
+    <Content Include="assets\js\vendors\imgareaselect\jquery.imgareaselect.js" />
+    <Content Include="assets\js\vendors\imgareaselect\jquery.imgareaselect.min.js" />
+    <Content Include="assets\js\vendors\imgareaselect\jquery.imgareaselect.pack.js" />
+    <Content Include="assets\js\vendors\jquery.maskedinput.min.js" />
+    <Content Include="assets\js\vendors\jquery.ui.button.js" />
+    <Content Include="assets\js\vendors\jquery.ui.core.js" />
+    <Content Include="assets\js\vendors\jquery.ui.datepicker.js" />
+    <Content Include="assets\js\vendors\jquery.ui.effect-slide.js" />
+    <Content Include="assets\js\vendors\jquery.ui.effect.js" />
+    <Content Include="assets\js\vendors\jquery.ui.spinner.js" />
+    <Content Include="assets\js\vendors\jquery.ui.widget.js" />
+    <None Include="assets\js\vendors\jquery.validate-vsdoc.js" />
+    <Content Include="assets\js\vendors\jquery.validate.js" />
+    <Content Include="assets\js\vendors\jquery.validate.min.js" />
+    <Content Include="assets\js\vendors\kendo.all.min.js" />
+    <Content Include="assets\js\vendors\kendo.web.min.js" />
+    <Content Include="assets\js\vendors\kendo\kendo.all.min.js" />
+    <Content Include="assets\js\vendors\linq.min.js" />
+    <Content Include="assets\js\vendors\modernizr.js" />
+    <Content Include="assets\js\vendors\foundation.js" />
+    <Content Include="assets\js\vendors\foundation.min.js" />
+    <Content Include="assets\js\vendors\foundation.topbar.js" />
+    <Content Include="assets\js\vendors\moment.js" />
+    <Content Include="assets\js\vendors\require.js" />
+    <Content Include="assets\js\vendors\toastr.js" />
+    <Content Include="assets\js\vendors\toastr.min.js" />
+    <Content Include="assets\js\vendors\underscore-min.js" />
+    <Content Include="assets\js\vendors\validetta-min.js" />
+    <Content Include="assets\js\vendors\validetta.js" />
+    <Content Include="assets\lib\css\bootstrap-theme.css" />
+    <Content Include="assets\lib\css\bootstrap-theme.min.css" />
+    <Content Include="assets\lib\css\bootstrap.css" />
+    <Content Include="assets\lib\css\bootstrap.min.css" />
+    <Content Include="assets\lib\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\lib\js\angular.js" />
+    <Content Include="assets\lib\js\angular.min.js" />
+    <Content Include="assets\lib\js\app.js" />
+    <Content Include="assets\lib\js\bootstrap.min.js" />
+    <Content Include="assets\lib\js\ctrl.js" />
+    <Content Include="assets\lib\js\jquery.js" />
+    <Content Include="assets\lib\js\knockout-3.4.0.js" />
+    <Content Include="assets\lib\js\vue.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="html\dashboard\index.html" />
+    <Content Include="html\dashboard\login.css">
+      <DependentUpon>login.less</DependentUpon>
+    </Content>
+    <Content Include="html\dashboard\login.html" />
+    <Content Include="html\dashboard\login.min.css">
+      <DependentUpon>login.less</DependentUpon>
+    </Content>
+    <Content Include="html\dashboard\login.themes.css">
+      <DependentUpon>login.themes.less</DependentUpon>
+    </Content>
+    <Content Include="html\dashboard\login.themes.min.css">
+      <DependentUpon>login.themes.less</DependentUpon>
+    </Content>
+    <Content Include="html\debug\highchart\highcharts.html" />
+    <Content Include="html\debug\highchart\highcharts.js" />
+    <Content Include="html\debug\kendo\basicchart.html" />
+    <Content Include="html\debug\kendo\basicgrid.html" />
+    <Content Include="html\debug\kendo\basicpie.html" />
+    <Content Include="html\debug\kendo\people.js" />
+    <Content Include="html\debug\mobile\basic.html" />
+    <Content Include="html\debug\mobile\starter.html" />
+    <Content Include="html\debug\mobile\layout.html" />
+    <Content Include="html\debug\mobile\demo.html" />
+    <Content Include="html\debug\mobile\SimDms.mobile.js" />
+    <Content Include="html\excel\xlslist.html" />
+    <Content Include="html\mobile\assets\css\sdms.mobile.css">
+      <DependentUpon>sdms.mobile.less</DependentUpon>
+    </Content>
+    <Content Include="html\mobile\assets\css\sdms.mobile.min.css">
+      <DependentUpon>sdms.mobile.less</DependentUpon>
+    </Content>
+    <Content Include="html\mobile\assets\css\vendor\default\slider-h.gif" />
+    <Content Include="html\mobile\assets\css\vendor\default\sprite.png" />
+    <Content Include="html\mobile\assets\css\vendor\images\back.png" />
+    <Content Include="html\mobile\assets\css\vendor\kendo.default.css" />
+    <Content Include="html\mobile\assets\css\vendor\kendo.mobile.css" />
+    <Content Include="html\mobile\assets\js\SimDms.js" />
+    <Content Include="html\mobile\assets\js\SimDms.mobile.js" />
+    <Content Include="html\mobile\assets\js\vendor\jquery-2.0.3.js" />
+    <Content Include="html\mobile\assets\js\vendor\jquery-2.0.3.min.js" />
+    <Content Include="html\mobile\assets\js\vendor\kendo.all.js" />
+    <Content Include="html\mobile\assets\js\views\mobile.js" />
+    <Content Include="html\mobile\index.html" />
+    <Content Include="Reports\Viewer.aspx" />
+    <Content Include="assets\js\SimDms.inquiry.js" />
+    <Content Include="assets\css\sdms.kendo.less" />
+    <Content Include="assets\css\sdms.chart.less" />
+    <Content Include="html\mobile\assets\css\vendor\images\kendoui.ttf" />
+    <Content Include="html\mobile\assets\css\vendor\images\kendoui.woff" />
+    <Content Include="html\mobile\assets\js\vendor\jquery-2.0.3.min.js.map" />
+    <Content Include="html\mobile\assets\css\sdms.mobile.less" />
+    <Content Include="assets\css\vendor\kendo\kendo.blueopal.less" />
+    <Content Include="assets\css\vendor\kendo\kendo.metro.less" />
+    <Content Include="assets\css\vendor\kendo\template.less" />
+    <Content Include="html\dashboard\login.less" />
+    <Content Include="html\dashboard\login.themes.less" />
+    <Content Include="assets\js\vendors\jquery-2.0.3.min.js.map" />
+    <Content Include="assets\js\vendors\toastr.min.js.map" />
+    <Content Include="assets\js\vendors\underscore-min.map" />
+    <Content Include="assets\lib\css\bootstrap-theme.css.map" />
+    <Content Include="assets\lib\css\bootstrap.css.map" />
+    <Content Include="assets\lib\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\lib\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\lib\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\lib\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\lib\js\angular.min.js.map">
+      <DependentUpon>angular.min.js</DependentUpon>
+    </Content>
+    <None Include="html\slides\animate\animate.css" />
+    <None Include="html\slides\animate\animate.delay.css" />
+    <Content Include="html\slides\animate\animate.delay.min.css">
+      <DependentUpon>animate.delay.css</DependentUpon>
+    </Content>
+    <Content Include="html\slides\animate\animate.min.css">
+      <DependentUpon>animate.css</DependentUpon>
+    </Content>
+    <None Include="html\slides\animate\jquery-2.0.3.js" />
+    <Content Include="html\slides\animate\jquery-2.0.3.min.js">
+      <DependentUpon>jquery-2.0.3.js</DependentUpon>
+    </Content>
+    <None Include="html\slides\cs\assets\css\style.css" />
+    <None Include="html\slides\cs\assets\css\style.min.css" />
+    <None Include="html\slides\cs\assets\img\Master_01_edit.png" />
+    <None Include="html\slides\cs\assets\img\Master_01_list.png" />
+    <None Include="html\slides\cs\assets\img\Trans_01.png" />
+    <None Include="html\slides\cs\assets\img\Trans_02.png" />
+    <None Include="html\slides\cs\assets\img\Trans_03.png" />
+    <None Include="html\slides\cs\assets\img\Trans_04.png" />
+    <None Include="html\slides\cs\assets\img\Trans_05.png" />
+    <None Include="html\slides\cs\assets\js\impress.js" />
+    <None Include="html\slides\cs\assets\js\jquery.js" />
+    <None Include="html\slides\cs\assets\js\simdms.js" />
+    <None Include="html\slides\cs\assets\js\simdms.slide.js" />
+    <None Include="html\slides\cs\assets\trans-x.html" />
+    <None Include="html\slides\cs\index.html" />
+    <None Include="html\slides\dev\assets\css\style.css" />
+    <None Include="html\slides\dev\assets\css\style.less" />
+    <None Include="html\slides\dev\assets\css\style.min.css" />
+    <None Include="html\slides\dev\assets\img\Screen_01.png" />
+    <None Include="html\slides\dev\assets\img\Screen_02.png" />
+    <None Include="html\slides\dev\assets\img\Screen_03.png" />
+    <None Include="html\slides\dev\assets\img\Screen_04.png" />
+    <None Include="html\slides\dev\assets\img\Screen_05.png" />
+    <None Include="html\slides\dev\assets\img\Screen_06.png" />
+    <None Include="html\slides\dev\assets\img\Screen_07.png" />
+    <None Include="html\slides\dev\assets\img\Screen_08.png" />
+    <None Include="html\slides\dev\assets\img\Screen_09.png" />
+    <None Include="html\slides\dev\assets\img\Screen_10.png" />
+    <None Include="html\slides\dev\assets\img\Screen_11.png" />
+    <None Include="html\slides\dev\assets\js\impress.js" />
+    <None Include="html\slides\dev\assets\js\jquery.js" />
+    <None Include="html\slides\dev\assets\js\simdms.js" />
+    <None Include="html\slides\dev\assets\js\simdms.slide.js" />
+    <None Include="html\slides\dev\assets\trans-x.html" />
+    <None Include="html\slides\dev\index.html" />
+    <None Include="html\slides\animate\index.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Mobile\Index.cshtml" />
+    <Content Include="Views\Shared\_Mobile.cshtml" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\local-release.pubxml" />
+    <None Include="Properties\PublishProfiles\local-release2.pubxml" />
+    <None Include="Properties\PublishProfiles\MA.pubxml" />
+    <None Include="Properties\PublishProfiles\Publish OK.pubxml" />
+    <None Include="Properties\PublishProfiles\Publish SIMDMS.pubxml" />
+    <None Include="Properties\PublishProfiles\Release.pubxml" />
+    <None Include="Properties\PublishProfiles\TEST.pubxml" />
+    <None Include="Properties\PublishProfiles\Zhee.pubxml" />
+    <Content Include="Reports\DsInqProd.xsc">
+      <DependentUpon>DsInqProd.xsd</DependentUpon>
+    </Content>
+    <None Include="Reports\DsInqProd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsInqProd.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Reports\DsInqProd.xss">
+      <DependentUpon>DsInqProd.xsd</DependentUpon>
+    </Content>
+    <Content Include="Views\Form\Index.cshtml" />
+    <Content Include="Views\Layout\SDMS.cshtml" />
+    <Content Include="Views\Layout2\Index.cshtml" />
+    <Content Include="Views\Layout3\Index.cshtml" />
+    <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\Shared\_Aside.cshtml" />
+    <Content Include="Views\Shared\Forbidden.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_scripts.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Test\SDMS.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Test\LogOn.cshtml" />
+    <Content Include="Views\Shared\_Login2.cshtml" />
+    <Content Include="Views\Test\LogInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\img\pattern\" />
+    <Folder Include="assets\js\app\ab\inquiry\training\" />
+    <Folder Include="assets\js\app\om\trans\" />
+    <Folder Include="assets\js\app\sp\report\Inventory\" />
+    <Folder Include="assets\js\app\wh\" />
+    <Folder Include="uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\font\segoe-ui.eot" />
+    <Content Include="assets\font\segoe-ui.svg" />
+    <Content Include="assets\font\segoe-ui.svgz" />
+    <Content Include="assets\font\segoe-ui.ttf" />
+    <Content Include="assets\font\segoe-ui.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\sdms.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\login.less" />
+    <Content Include="assets\css\ajax-loader.less" />
+    <Content Include="assets\css\popup.less" />
+    <None Include="assets\css\sdms.widget.less" />
+    <Content Include="assets\css\vendor\themes\jquery.ui.spinner.themes.less" />
+    <Content Include="assets\css\vendor\themes\jquery.ui.widget.themes.less" />
+    <Content Include="assets\css\sdms.zurb.less" />
+    <Content Include="assets\font\fontawesome-webfont.eot" />
+    <Content Include="assets\font\fontawesome-webfont.svg" />
+    <Content Include="assets\font\fontawesome-webfont.ttf" />
+    <Content Include="assets\font\fontawesome-webfont.woff" />
+    <Content Include="assets\js\vendors\jquery.dataTables.min.js.map">
+      <DependentUpon>jquery.dataTables.js</DependentUpon>
+    </Content>
+    <Content Include="Views\Account\LogInfo.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Home\Secure.cshtml" />
+    <Content Include="Views\Layout\Index.cshtml" />
+    <None Include="html\slides\cs\assets\css\style.less" />
+    <None Include="Properties\PublishProfiles\SimDms Dealer Local Pub..pubxml" />
+    <None Include="Properties\PublishProfiles\SimDMS Dealer Local Publish.pubxml" />
+    <Content Include="html\slides\animate\jquery-2.0.3.min.js.map">
+      <DependentUpon>jquery-2.0.3.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimDms.Absence\SimDms.Absence.csproj">
+      <Project>{5edd0b62-6d37-4375-a404-3505a70e3cc9}</Project>
+      <Name>SimDms.Absence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimDms.Common\SimDms.Common.csproj">
+      <Project>{f2c05309-7289-4cdf-99dc-6f2da9fdab05}</Project>
+      <Name>SimDms.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimDms.CStatisfication\SimDms.CStatisfication.csproj">
+      <Project>{7efa0dea-8bf5-4ecf-89b2-f6d530180f34}</Project>
+      <Name>SimDms.CStatisfication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimDms.General\SimDms.General.csproj">
+      <Project>{91cf1040-715d-4a32-9405-70ab9c66111c}</Project>
+      <Name>SimDms.General</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimDms.PreSales\SimDms.PreSales.csproj">
+      <Project>{5a8d5fae-4122-47b7-9457-b81c3430ddf9}</Project>
+      <Name>SimDms.PreSales</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimDms.Sales\SimDms.Sales.csproj">
+      <Project>{2d4fa4df-57ff-4d8c-9b95-c4f0eeb98be3}</Project>
+      <Name>SimDms.Sales</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimDms.Service\SimDms.Service.csproj">
+      <Project>{ea6a3560-950b-42a7-9752-c80646be10cd}</Project>
+      <Name>SimDms.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimDms.Sparepart\SimDms.Sparepart.csproj">
+      <Project>{6212d1b9-33cf-43ab-8d75-e9dbb228b81b}</Project>
+      <Name>SimDms.Sparepart</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimDms.Tax\SimDms.Tax.csproj">
+      <Project>{0fe1758f-25b2-4472-80de-d153e13a9452}</Project>
+      <Name>SimDms.Tax</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports\rdlc\hr\HrMstHoliday.rdlc" />
+    <Content Include="Reports\rdlc\hr\HrMstPosition.rdlc" />
+    <Content Include="Reports\rdlc\hr\HrMstShift.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\cs\CsBirthday.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\cs\CsBPKBNOF.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\cs\CsCustData.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\cs\CsCustDataTrans.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\cs\CsCustDetailsTrans.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\cs\CsHoliday.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\cs\CSMasterHolidayRpt.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\cs\CsStnkExt.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\cs\CsTDayCall.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\cleanup.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\followup.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsAchievement.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsInqWithSts.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSumInqProdBySource.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSaldoInqProdBySource.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSaldoInqProdByVeh.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSumInqProdByVeh.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSumInqProdBySales.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rdlc\its\ItsSaldoInqProdBySales.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\om\SO-A02.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\om\SO-A01.rdlc" />
+    <EmbeddedResource Include="Reports\rdlc\sv\svCancelInvoice.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13629</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

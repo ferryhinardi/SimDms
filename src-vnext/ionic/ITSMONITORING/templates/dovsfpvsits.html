@@ -1,0 +1,52 @@
+<ion-view view-title="Sales Comparation">
+
+    <ion-content ng-class="{expanded:true}" class="animate-fade-slide-in">
+
+        <div style="margin-left:10px"><strong>Previous vs Current DO, FP, INQ, SPK</strong></div>
+
+		<div class="list card {{item.color}}"  ng-repeat="item in listComparation" >
+
+		  <div class="item item-avatar">
+			<img src="img/do.png">
+			<div class="row" style="margin-top:-10px">
+			  <div class="col">
+				<h2 style="color:white"><b>{{item.name}}</b></h2>
+				<p style="color:white">{{item.currName}}
+        </p>
+			  </div>
+			  <div class="col text-right">
+				  <h2 style="color:white;font-size:32px"><b>{{item.currToDate}}</b></h2>
+			  </div>
+			</div>
+
+		  </div>
+
+		  <div class="item item-body">
+			<div class="row" >
+			  <div class="col">
+				<h2 style="color:white;font-size:20px"><b>{{item.prevName}}  </b></h2>
+			  </div>
+			  <div class="col text-right">
+				  <h2 style="color:white;font-size:22px;align:'right'"><b>{{item.prevToDate}}  </b></h2>
+			  </div>
+			  <div class="col text-right">
+				  <h2 style="color:white;font-size:22px"><b>{{item.CmpToDate}}  </b></h2>
+			  </div>
+			</div>
+			<div class="row" >
+			  <div class="col">
+				<h2 style="color:white;font-size:20px"><b>{{item.prevNameTotal}}  </b></h2>
+			  </div>
+			  <div class="col text-right">
+				  <h2 style="color:white;font-size:22px"><b>{{item.prevTotal}}  </b></h2>
+			  </div>
+			  <div class="col text-right">
+				  <h2 style="color:white;font-size:22px"><b>{{item.CmpToTotal}}  </b></h2>
+			  </div>
+			</div>
+		  </div>
+
+		</div>
+
+    </ion-content>
+</ion-view>

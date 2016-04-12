@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutApp.cshtml";
+}
+
+@section pagespecific {
+    <script type="text/javascript">
+        loadjscssfile(controllerById('GLOBALADM'), "js");
+        $('#btn-save-editor').hide();
+    </script>
+    <script data-main="Content/Scripts/main.min" src="~/Content/Scripts/require.js"></script>
+}

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="PersonalInfoDetail" Width="6.26771688461304in" Name="EmployeeReportQRCode" ShowDimensions="False" xmlns="http://schemas.telerik.com/reporting/2012/3.9">
+  <DataSources>
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="uspfn_HrInqEachPersInfo" SelectCommandType="StoredProcedure" Name="PersonalInfoDetail" ParameterValues="{&quot;@ATPMID&quot;:&quot;1293&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="AnsiString" Name="@ATPMID">
+          <Value>
+            <String>= Parameters.ATPMID.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="10.6000012291802in" Name="detailSection1">
+      <Items>
+        <PictureBox Url="= Fields.SelfPhoto" Width="0.900000214576721in" Height="1.00047397613526in" Left="0.199999968210856in" Top="0.50000007947286in" Sizing="Stretch" MimeType="" Name="pictureBox1" />
+        <TextBox Width="0.101387760679548in" Height="0.200000122189522in" Left="1.90000009536743in" Top="0.700078884760539in" Value=":" Name="textBox19">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.49914832226932in" Height="0.199999809265137in" Left="2.00146627426147in" Top="0.700078884760539in" Value="= Fields.EmployeeID" Name="textBox11">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.699921170870463in" Height="0.200078884760539in" Left="1.20000012715658in" Top="0.700000047683716in" Value="NIK" Name="textBox4">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.699999319185736in" Height="0.200000153641061in" Left="1.19992192586263in" Top="1.49984216690063in" Value="POSITION" Name="textBox46">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.49914850791296in" Height="0.199605941772461in" Left="2.00146627426147in" Top="1.50086800257365in" Value="= Fields.PosName" Name="textBox45">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.101387551209579in" Height="0.200315892696381in" Left="1.89999993642171in" Top="1.50015783309937in" Value=":" Name="textBox44">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.101388186992457in" Height="0.199053227901459in" Left="1.89999972454583in" Top="1.70055278142293in" Value=":" Name="textBox25">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.101387445310441in" Height="0.199684619903564in" Left="1.89999993642171in" Top="1.30007886886597in" Value=":" Name="textBox24">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.100000061094761in" Height="0.199289634823799in" Left="1.2993061542511in" Top="2.91041692097982in" Value=":" Name="textBox23">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.100000061094761in" Height="0.200000122189522in" Left="1.29961323738098in" Top="2.7099437713623in" Value=":" Name="textBox22">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.101387498279413in" Height="0.199999963243803in" Left="1.90000009536743in" Top="1.10000014305115in" Value=":" Name="textBox21">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.101387551248384in" Height="0.199763452013334in" Left="1.90000009536743in" Top="0.900157848993937in" Value=":" Name="textBox20">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.49914850791296in" Height="0.199132283528646in" Left="2.00146691004435in" Top="1.70055278142293in" Value="= Fields.Grade" Name="textBox17">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.4991484284401in" Height="0.199999809265137in" Left="2.00146611531576in" Top="1.30078935623169in" Value="= Fields.JoinDate" Format="{0:dd MMM yyyy}" Name="textBox16">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.09930675228437in" Height="0.19928927719593in" Left="1.39938497543335in" Top="2.91002209981283in" Value="= Fields.BirthDate" Format="{0:dd MMM yyyy}" Name="textBox15">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.09930675228437in" Height="0.199684455990791in" Left="1.3996924161911in" Top="2.7102591196696in" Value="= Fields.BirthPlace" Name="textBox14">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.49914806417655in" Height="0.19999997317791in" Left="2.00146632723045in" Top="1.10000022252401in" Value="= Fields.Gender" Name="textBox13">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.49914824295168in" Height="0.199842140078545in" Left="2.00146627426147in" Top="0.900157848993937in" Value="= Fields.EmployeeName" Name="textBox12">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.699999531110128in" Height="0.199684381484985in" Left="1.19992160797119in" Top="1.69992144902547in" Value="GRADE" Name="textBox10">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.699999339044249in" Height="0.199684381484985in" Left="1.20000076293945in" Top="1.30007886886597in" Value="JOIN DATE" Name="textBox9">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.700078802183271in" Height="0.200000047683716in" Left="1.19992152849833in" Top="1.10000014305115in" Value="GENDER" Name="textBox8">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.10524859341482in" Height="0.199684381484985in" Left="0.193978652358055in" Top="2.91002209981283in" Value="BIRTH DATE" Name="textBox7">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.10547769069672in" Height="0.199684381484985in" Left="0.193978652358055in" Top="2.70962715148926in" Value="PLACE OF BIRTH" Name="textBox6">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.699921031792959in" Height="0.199842055638631in" Left="1.20000012715658in" Top="0.900157769521078in" Value="NAME" Name="textBox5">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.10578516125679in" Height="0.199684381484985in" Left="0.193978622555733in" Top="2.30978536605835in" Value="ADDRESS" Name="textBox1">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.100000061094761in" Height="0.200000122189522in" Left="1.2999210357666in" Top="2.30978600184123in" Value=":" Name="textBox3">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.09992130267589in" Height="0.19999997317791in" Left="1.40007889270782in" Top="2.30978600184123in" Value="= Fields.Address" Name="textBox18">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <Shape Width="3.30663681030273in" Height="0.199921290079753in" Left="0.193978627522786in" Top="1.8997639020284in" Name="shape1">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <TextBox Width="1.1051700413227in" Height="0.199684381484985in" Left="0.193978622555733in" Top="3.10978571573893in" Value="EDUCATION" Name="textBox26">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.10022902154985in" Height="0.199684455990791in" Left="1.39977121353149in" Top="3.10978571573893in" Value="= Fields.Education" Name="textBox27">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.100000061094761in" Height="0.199684455990791in" Left="1.29961323738098in" Top="3.10978571573893in" Value=":" Name="textBox28">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.10586378661294in" Height="0.199684381484985in" Left="0.193978622555733in" Top="2.50954898198446in" Value="ZIP CODE" Name="textBox29">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.100000061094761in" Height="0.200000122189522in" Left="1.29999983310699in" Top="2.50986496607463in" Value=":" Name="textBox30">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.09984246559907in" Height="0.19999997317791in" Left="1.40015769004822in" Top="2.50986496607463in" Value="= Fields.ZipCode" Name="textBox31">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.09984238611327in" Height="0.199999703301324in" Left="1.40015769004822in" Top="2.10970703760783in" Value="= Fields.Religion" Name="textBox32">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.100000061094761in" Height="0.200000122189522in" Left="1.29999983310699in" Top="2.10970640182495in" Value=":" Name="textBox33">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.10586381951968in" Height="0.200000047683716in" Left="0.193978622555733in" Top="2.10970640182495in" Value="RELIGION" Name="textBox34">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.100615181028843in" Height="0.199684455990791in" Left="1.2993061542511in" Top="3.30954933166504in" Value=":" Name="textBox41">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.09984228014946in" Height="0.199684455990791in" Left="1.40015769004822in" Top="3.30954933166504in" Value="= Fields.MaritalStatus" Name="textBox42">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.10517004132271in" Height="0.199684381484985in" Left="0.193978622555733in" Top="3.30954933166504in" Value="MARITAL STATUS" Name="textBox43">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.10517001152038in" Height="0.199684381484985in" Left="0.193978622555733in" Top="3.50931231180827in" Value="STATUS" Name="textBox47">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.09984217770397in" Height="0.199684455990791in" Left="1.40015780925751in" Top="3.50931231180827in" Value="= Fields.Status" Name="textBox48">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.100386617084344in" Height="0.199684455990791in" Left="1.29961335659027in" Top="3.50931231180827in" Value=":" Name="textBox49">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.1008513768514in" Height="0.199684455990791in" Left="1.29922735691071in" Top="3.70907656351725in" Value=":" Name="textBox50">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="2.0998424423548in" Height="0.199684455990791in" Left="1.40015769004822in" Top="3.70907656351725in" Value="= Fields.Email" Name="textBox51">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.10516986569079in" Height="0.199684381484985in" Left="0.193978622555733in" Top="3.70907656351725in" Value="EMAIL" Name="textBox52">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <PictureBox Url="= Fields.IdentityCardPhoto" Width="2.28742243183983in" Height="1.79905445045895in" Left="3.70000012715658in" Top="2.10970640182495in" Sizing="Stretch" MimeType="" Name="pictureBox2" />
+        <PictureBox Url="= Fields.FamilyCardPhoto" Width="5.8000007669131in" Height="6.29996116956075in" Left="0.187422752380371in" Top="4.30000050862631in" Sizing="ScaleProportional" MimeType="" Name="pictureBox3" />
+        <Shape Width="5.80000008145968in" Height="0.199921295046806in" Left="0.187422752380371in" Top="4.10000038146973in" Name="shape2">
+          <ShapeType>
+            <LineShape Direction="EW" />
+          </ShapeType>
+        </Shape>
+        <Barcode Width="2.28742289543152in" Height="1.39960567156474in" Left="3.70000012715658in" Top="0.5in" Value="='https://dms.suzuki.co.id/mm/info/' + Fields.ATPMID" Stretch="True" Name="barcode1">
+          <Encoder>
+            <QRCodeEncoder />
+          </Encoder>
+          <Action>
+            <NavigateToReportAction>
+              <ReportSource>
+                <UriReportSource Uri="EmployeeReportQRCode.trdx">
+                  <Parameters>
+                    <Parameter Name="ATPMID">
+                      <Value>
+                        <String>= Fields.ATPMID</String>
+                      </Value>
+                    </Parameter>
+                  </Parameters>
+                </UriReportSource>
+              </ReportSource>
+            </NavigateToReportAction>
+          </Action>
+        </Barcode>
+        <TextBox Width="5.79999963442484in" Height="0.246874645352364in" Left="0.199999908606211in" Top="0.200000027815501in" Value="= Fields.CompanyCode + &quot; - &quot; + Fields.DealerName + &quot; (&quot; + Fields.BranchCode + &quot; - &quot; + Fields.BranchName + &quot;)&quot;" Name="textBox2">
+          <Style>
+            <BorderStyle Top="Solid" Bottom="Solid" Left="None" Right="None" />
+            <BorderColor Top="Black" Bottom="Black" Left="Black" Right="Black" />
+            <BorderWidth Top="1pt" Bottom="1pt" Left="1pt" Right="1pt" />
+            <Font Size="10pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.101387707710577in" Height="0.200000122189522in" Left="1.90000009536743in" Top="0.49999992052714in" Value=":" Name="textBox35">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="0.699999292691549in" Height="0.200000047683716in" Left="1.20000076293945in" Top="0.49999992052714in" Value="ATPM ID" Name="textBox36">
+          <Style VerticalAlign="Middle">
+            <Font Size="8pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="1.49914853441684in" Height="0.200000047683716in" Left="2.00146632723045in" Top="0.49999992052714in" Value="= Fields.ATPMID" Name="textBox37">
+          <Style Color="0, 112, 192" VerticalAlign="Middle">
+            <Font Size="8pt" Underline="True" />
+          </Style>
+          <Action>
+            <NavigateToReportAction>
+              <ReportSource>
+                <UriReportSource Uri="EmployeeReportDetail.trdx">
+                  <Parameters>
+                    <Parameter Name="ATPMID">
+                      <Value>
+                        <String>= Fields.ATPMID</String>
+                      </Value>
+                    </Parameter>
+                  </Parameters>
+                </UriReportSource>
+              </ReportSource>
+            </NavigateToReportAction>
+          </Action>
+        </TextBox>
+      </Items>
+    </DetailSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="A4" Landscape="False">
+      <Margins>
+        <MarginsU Left="1in" Right="1in" Top="0.5in" Bottom="0.5in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="ATPMID">
+      <AvailableValues DisplayMember="= Parameters.ATPMID.Label" ValueMember="= Parameters.ATPMID.Value" />
+    </ReportParameter>
+  </ReportParameters>
+</Report>

@@ -1,0 +1,151 @@
+<ion-view view-title="{{HeaderTitle}}">
+
+	<ion-content ng-class="{expanded:true}" class="animate-fade-slide-in">
+
+		<ion-refresher pulling-text="Pull to Refresh..." on-refresh="doRefresh()">
+		</ion-refresher>
+
+		<div style="margin-left:10px;"><h4 align="center" ng-bind-html="Title"></h4></div>
+
+		<div class="row" ng-hide="isNasional">
+			<div class="col" id="status">
+				<div style="background-color: red; width: 30px; height: 30px; display: none;"></div>
+				<div style="background-color: blue; width: 30px; height: 30px; display: none;"></div>
+				<div style="background-color: green; width: 30px; height: 30px; display: none;"></div>
+			</div>
+			<div class="col text-right" id="last-update">
+				<span style="font-style:italic">{{lastUpdateTime}}</span>
+			</div>
+		</div>
+
+        <form>
+
+            <div class="row" ng-hide="isNasional">
+                <div flex>
+                    <md-select name="CompanyCode" id="CompanyCode" ng-model="options.selectedOption" aria-label="md-option" placeholder="-- SELECT ALL COMPANY --" ng-disabled="disabledCompany" style="margin: 0 0 0 0">
+                        <md-option ng-value="ALL">-- SELECT ALL COMPANY --</md-option>
+                        <md-option ng-repeat="company in options.data" ng-value="company.DealerCode" ng-selected="{{ ((company.DealerCode == currentCompany) ? true : false) }}">{{company.DealerName}}</md-option>
+                    </md-select>
+                </div>
+            </div>
+
+            <div class="row" ng-hide="isNasional">
+                <div flex>
+                    <md-select name="BranchCode" id="BranchCode" ng-model="options.selectedOption2" placeholder="-- SELECT ALL OUTLET --" style="margin: 0 0 0 0;">
+                        <md-option ng-value="ALL">-- SELECT ALL OUTLET --</md-option>
+                        <md-option ng-repeat="outlet in ListFilterBranchs" ng-value="outlet.OutletCode">{{outlet.OutletName}}</md-option>
+                    </md-select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <md-radio-group ng-model="options.DisplayType" style="display: flex;">
+					    <md-radio-button value="T" class="md-primary">Total</md-radio-button>
+					    <md-radio-button value="W" class="md-primary">WorkingDay</md-radio-button>
+				    </md-radio-group> 
+                </div>
+            </div>
+
+        </form>
+
+		<div class="list card {{item.color}}"  ng-repeat="item in listComparation" >
+			<div class="item item-avatar">
+				<img src="img/{{item.image}}.png">
+				<div class="row" style="margin-top:-10px">
+					<div class="col  {{item.cls}}">
+						<span><b>{{item.name}}</b></span>
+						<p><b class="{{item.pcls}}">{{item.currName}}</b></p>
+					</div>
+					<div class="col text-right {{item.cls}}">
+						<span><b>{{item.currToDate}}</b></span>
+					</div>
+				</div>
+			</div>
+			<div class="item item-body"  >
+				<div class="row" ng-hide="item.name == 'STOCK'">
+                    <div class="col  {{item.cls}}  col-40">
+                        <p class="element-vertical"><b class="{{item.pcls}}">{{item.prevName}}</b></p>
+                    </div>
+					<div class="col text-right  {{item.cls}}">
+						<span  class="element-vertical"><b>{{item.prevToDate}}</b></span>
+					</div>
+					<div class="col text-right  {{item.cls}}">
+						<span class="element-vertical"><b>{{item.CmpToDate}}</b></span>
+					</div>
+				</div>
+				
+				<div class="row">
+                    <div class="col {{item.cls}}  col-40">
+                        <p class="element-vertical"><b class="{{item.pcls}}">{{item.prevNameTotal}}</b></p>
+                    </div>
+					<div class="col text-right {{item.cls}}">
+						<span class="element-vertical"><b>{{item.prevTotal}}</b></span>
+					</div>
+					<div class="col text-right {{item.cls}}">
+						<span class="element-vertical"><b>{{item.CmpToTotal}}</b></span>
+					</div>
+				</div>
+				
+				<div class="row"  ng-hide="isNasional">
+                    <div class="col {{item.cls}}  col-40">
+                        <p class="element-vertical"><b class="{{item.pcls}}">{{item.prevName2Total}}</b></p>
+                    </div>
+					<div class="col text-right {{item.cls}}">
+						<span   class="element-vertical"><b>{{item.prev2Total}}</b></span>
+					</div>
+					<div class="col text-right {{item.cls}}">
+						<span  class="element-vertical" ><b>{{item.CmpTo2Total}}</b></span>
+					</div>
+				</div>
+
+
+                <div class="row" ng-show="item.isITS">
+                    <div class="col {{item.cls}} col-40">
+                        <p class="element-vertical"><b class="{{item.pcls}}">{{item.out1name}}</b></p>
+                    </div>
+                    <div class="col text-right {{item.cls}}">
+                        <span class="element-vertical"><b>{{item.out1}}</b></span>
+                    </div>
+                    <div class="col text-right {{item.cls}}">
+                        <span class="element-vertical"><b></b></span>
+                    </div>
+                </div>
+
+
+                <div class="row" ng-show="item.isITS">
+                    <div class="col {{item.cls}} col-40">
+                        <p class="element-vertical"><b class="{{item.pcls}}" ng-bind="item.funame"></b></p>
+                    </div>
+                    <div class="col text-right {{item.cls}}">
+                        <span class="element-vertical"><b>{{item.fu}}</b></span>
+                    </div>
+                    <div class="col text-right {{item.cls}}">
+                        <span class="element-vertical"><b></b></span>
+                    </div>
+                </div>
+
+
+                <div class="row" ng-show="item.isITS">
+                    <div class="col {{item.cls}} col-40">
+                        <p class="element-vertical"><b class="{{item.pcls}}" ng-bind="item.out2name"></b></p>
+                    </div>
+                    <div class="col text-right {{item.cls}}">
+                        <span class="element-vertical"><b>{{item.out2}}</b></span>
+                    </div>
+                    <div class="col text-right {{item.cls}}">
+                        <span class="element-vertical"><b></b></span>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="item.isITS">
+                    <div class="col {{item.cls}} col-100" style="padding-top:2px">
+                        <p class="element-vertical-i"> NB: OUTS. = OUTSTANDING, FU = FOLLOW UP</p>
+                    </div>
+                </div>
+
+			</div>
+		</div>
+
+    </ion-content>
+</ion-view>

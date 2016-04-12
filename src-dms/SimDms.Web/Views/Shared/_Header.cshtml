@@ -1,0 +1,42 @@
+﻿<header id="header">
+
+    <div id="logo-group">
+        <span id="logo"> <img src="~/content/img/logo.png" alt="SmartAdmin"> </span>
+    </div>
+
+    @if (Request.IsAuthenticated)
+    {
+        <div class="project-context hidden-xs">
+            <span class="label">Company:</span>
+            <span class="project-selector dropdown-toggle" data-toggle="dropdown">PT. SUZUKI INDOMOBIL SALES  <i class="fa fa-angle-down"></i></span>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="javascript:void(0);">Online e-merchant management system - attaching integration with the iOS</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Notes on pipeline upgradee</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Assesment Report for merchant account</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="javascript:void(0);"><i class="fa fa-power-off"></i> Clear</a>
+                </li>
+            </ul>
+        </div>
+    }    
+
+    <section id="top-right">
+        @if (@Model is HelperResult)
+        {
+            @Model
+        }
+        else
+        {
+            <div class="pull-right">
+                @Html.Partial("_TopRight")
+            </div>
+        }
+    </section>
+</header>

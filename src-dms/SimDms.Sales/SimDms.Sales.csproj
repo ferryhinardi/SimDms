@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2D4FA4DF-57FF-4D8C-9B95-C4F0EEB98BE3}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimDms.Sales</RootNamespace>
+    <AssemblyName>SimDms.Sales</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\libs\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\..\libs\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14318.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.1\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\libs\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary">
+      <HintPath>..\..\libs\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="GeLang, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\GeLang.dll</HintPath>
+    </Reference>
+    <Reference Include="LoggerX, Version=1.0.5308.26275, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\LoggerX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 11.0\ReportViewer\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\..\libs\MVC4\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\MVC4\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BaseBLL.cs" />
+    <Compile Include="BLL\OmTrPurchaseHPPBLL.cs" />
+    <Compile Include="BLL\OmTrSalesReturnBLL.cs" />
+    <Compile Include="BLL\OmTrSalesSOVinBLL.cs" />
+    <Compile Include="BLL\OmFakturPajakHdrBLL.cs" />
+    <Compile Include="BLL\OmTrInventQtyVehicleBLL.cs" />
+    <Compile Include="BLL\OmTrPurchaseBPUBLL.cs" />
+    <Compile Include="BLL\OmTrPurchaseBPUDetailBLL.cs" />
+    <Compile Include="BLL\OmTrPurchaseBPUDetailModelBLL.cs" />
+    <Compile Include="BLL\OmTrPurchasePOBLL.cs" />
+    <Compile Include="BLL\OmTrSalesBLL.cs" />
+    <Compile Include="BLL\OmTrSalesDraftSOBLL.cs" />
+    <Compile Include="BLL\OmTrSalesDraftSOModelBLL.cs" />
+    <Compile Include="BLL\OmTrSalesDraftSOModelColourBLL.cs" />
+    <Compile Include="BLL\OmTrSalesDraftSOModelOthersBLL.cs" />
+    <Compile Include="BLL\OmTrSalesDraftSOVinBLL.cs" />
+    <Compile Include="BLL\OmTrSalesReqBLL.cs" />
+    <Compile Include="BLL\OmTrSalesSOBLL.cs" />
+    <Compile Include="BLL\OmTrSalesSOModelBLL.cs" />
+    <Compile Include="BLL\OmTrStockTakingDtlBLL.cs" />
+    <Compile Include="BLL\OmTrStockTakingHdrBLL.cs" />
+    <Compile Include="BLL\SendBLL.cs" />
+    <Compile Include="BLL\UploadBLL.cs" />
+    <Compile Include="Controllers\Api\BPUAttributeController.cs" />
+    <Compile Include="Controllers\Api\BPUController.cs" />
+    <Compile Include="Controllers\Api\ClosingMonthController.cs" />
+    <Compile Include="Controllers\Api\ColourModelController.cs" />
+    <Compile Include="Controllers\Api\ComboController.cs" />
+    <Compile Include="Controllers\Api\FakturPolisiRevisiController.cs" />
+    <Compile Include="Controllers\Api\GenerateBPU_HPP.cs" />
+    <Compile Include="Controllers\Api\GeneratePoldaController.cs" />
+    <Compile Include="Controllers\Api\InqDCSDataController.cs" />
+    <Compile Include="Controllers\Api\InquiryController.cs" />
+    <Compile Include="Controllers\Api\InvoiceController.cs" />
+    <Compile Include="Controllers\Api\LiveStokController.cs" />
+    <Compile Include="Controllers\Api\PerlengkapanOutController.cs" />
+    <Compile Include="Controllers\Api\PriceListController.cs" />
+    <Compile Include="Controllers\Api\ReceivingUnitController.cs" />
+    <Compile Include="Controllers\Api\RegisterRevisiFakPolController.cs" />
+    <Compile Include="Controllers\Api\RePostingJurnalController.cs" />
+    <Compile Include="Controllers\Api\ReturnController.cs" />
+    <Compile Include="Controllers\Api\SendFileController.cs" />
+    <Compile Include="Controllers\Api\PostingJurnalController.cs" />
+    <Compile Include="Controllers\Api\TransferInMultiController.cs" />
+    <Compile Include="Controllers\Api\DraftSalesOrderController.cs" />
+    <Compile Include="Controllers\Api\KwitansiUnitController.cs" />
+    <Compile Include="Controllers\Api\PermohonanFktrPlsDCSController.cs" />
+    <Compile Include="Controllers\Api\SalesBPKController.cs" />
+    <Compile Include="Controllers\Api\TransferOutMultiController.cs" />
+    <Compile Include="Controllers\Api\ReportSalesController.cs" />
+    <Compile Include="Controllers\Api\SalesDOController.cs" />
+    <Compile Include="Controllers\Api\STNKBBNController.cs" />
+    <Compile Include="Controllers\Api\FakturPolisiController.cs" />
+    <Compile Include="Controllers\Api\GantiWarnaController.cs" />
+    <Compile Include="Controllers\Api\KaroseriController.cs" />
+    <Compile Include="Controllers\Api\HPPController.cs" />
+    <Compile Include="Controllers\Api\GridController.cs" />
+    <Compile Include="Controllers\Api\InquiryInventoryController.cs" />
+    <Compile Include="Controllers\Api\InquiryPurchaseController.cs" />
+    <Compile Include="Controllers\Api\InquirySalesController.cs" />
+    <Compile Include="Controllers\Api\KaroseriTerimaController.cs" />
+    <Compile Include="Controllers\Api\MstBBNKIRController.cs" />
+    <Compile Include="Controllers\Api\MstCompanyAccountController.cs" />
+    <Compile Include="Controllers\Api\MstKaroseriController.cs" />
+    <Compile Include="Controllers\Api\MstModelAccountController.cs" />
+    <Compile Include="Controllers\Api\MstModelColorController.cs" />
+    <Compile Include="Controllers\Api\MstModelController.cs" />
+    <Compile Include="Controllers\Api\MstModelPerlengkapanController.cs" />
+    <Compile Include="Controllers\Api\MstModelYearController.cs" />
+    <Compile Include="Controllers\Api\MstOthersInventoryController.cs" />
+    <Compile Include="Controllers\Api\MstPerlengkapanController.cs" />
+    <Compile Include="Controllers\Api\MstPriceListBeliController.cs" />
+    <Compile Include="Controllers\Api\MstPriceListJualController.cs" />
+    <Compile Include="Controllers\Api\MstRefferenceController.cs" />
+    <Compile Include="Controllers\Api\MstSalesTargetController.cs" />
+    <Compile Include="Controllers\Api\PerlengkapanAdjustController.cs" />
+    <Compile Include="Controllers\Api\PerlengkapanInController.cs" />
+    <Compile Include="Controllers\Api\PermohonanFakturPolisController.cs" />
+    <Compile Include="Controllers\Api\POController.cs" />
+    <Compile Include="Controllers\Api\PurchaseReturnController.cs" />
+    <Compile Include="Controllers\Api\ReportController.cs" />
+    <Compile Include="Controllers\Api\ReportInventoryController.cs" />
+    <Compile Include="Controllers\Api\SalesModelController.cs" />
+    <Compile Include="Controllers\Api\SalesOrderController.cs" />
+    <Compile Include="Controllers\Api\SalesSOSparePartController.cs" />
+    <Compile Include="Controllers\Api\SalesStockOpnameController.cs" />
+    <Compile Include="Controllers\Api\SOColourModelController.cs" />
+    <Compile Include="Controllers\Api\SOModelOtherController.cs" />
+    <Compile Include="Controllers\Api\SOOtherController.cs" />
+    <Compile Include="Controllers\Api\TandaTerimaBPKBController.cs" />
+    <Compile Include="Controllers\Api\TandaTerimaSTNKController.cs" />
+    <Compile Include="Controllers\Api\TransferInController.cs" />
+    <Compile Include="Controllers\Api\TransferOutController.cs" />
+    <Compile Include="Controllers\Api\UploadFileController.cs" />
+    <Compile Include="Controllers\Api\UploadFromDCSController.cs" />
+    <Compile Include="Controllers\Api\UploadPoldaController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\InquiryController.cs" />
+    <Compile Include="Controllers\InventoryController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
+    <Compile Include="Controllers\StockOpnameController.cs" />
+    <Compile Include="Controllers\UtilityController.cs" />
+    <Compile Include="Controllers\WarehouseController.cs" />
+    <Compile Include="Models\ApUtlInvoiceOthersHdr.cs" />
+    <Compile Include="Models\ChassisCheck.cs" />
+    <Compile Include="Models\Combo.cs" />
+    <Compile Include="Models\CompanyMapping.cs" />
+    <Compile Include="Models\CoProfile.cs" />
+    <Compile Include="Models\CoProfileSales.cs" />
+    <Compile Include="Models\CustomerProfitCenter.cs" />
+    <Compile Include="Models\InqProdSales.cs" />
+    <Compile Include="Models\MsMstGroupModel.cs" />
+    <Compile Include="Models\omFakturPajakHdr.cs" />
+    <Compile Include="Models\omFakturPolda.cs" />
+    <Compile Include="Models\OmMstCompanyAccount.cs" />
+    <Compile Include="Models\DataContext.cs" />
+    <Compile Include="Models\DealerMapping.cs" />
+    <Compile Include="Models\DealerOutletMapping.cs" />
+    <Compile Include="Models\Employee.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\GnMstCoProfileSales.cs" />
+    <Compile Include="Models\GnMstCoProfileService.cs" />
+    <Compile Include="Models\GnMstCoProfileSpare.cs" />
+    <Compile Include="Models\GnTrnBankBook.cs" />
+    <Compile Include="Models\GroupModel.cs" />
+    <Compile Include="Models\GroupType.cs" />
+    <Compile Include="Models\HrEmployee.cs" />
+    <Compile Include="Models\Karoseri.cs" />
+    <Compile Include="Models\KaroseriTerima.cs" />
+    <Compile Include="Models\LookUpDtl.cs" />
+    <Compile Include="Models\MstAccount.cs" />
+    <Compile Include="Models\MstBBNKIR.cs" />
+    <Compile Include="Models\MstCompanyAccount.cs" />
+    <Compile Include="Models\MstKaroseri.cs" />
+    <Compile Include="Models\MstModel.cs" />
+    <Compile Include="Models\MstModelAccount.cs" />
+    <Compile Include="Models\MstModelColour.cs" />
+    <Compile Include="Models\MstModelPerlengkapan.cs" />
+    <Compile Include="Models\MstModelyear.cs" />
+    <Compile Include="Models\MstOthersInventory.cs" />
+    <Compile Include="Models\MstPerlengkapan.cs" />
+    <Compile Include="Models\MstPriceListBeli.cs" />
+    <Compile Include="Models\MstPriceListJual.cs" />
+    <Compile Include="Models\MstRefference.cs" />
+    <Compile Include="Models\MstSalesTarget.cs" />
+    <Compile Include="Models\MstSupplier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\MstTax.cs" />
+    <Compile Include="Models\OmMstIndentMapping.cs" />
+    <Compile Include="Models\OmMstModel.cs" />
+    <Compile Include="Models\OmMstModelColour.cs" />
+    <Compile Include="Models\OmMstPricelistSell.cs" />
+    <Compile Include="Models\OmMstVehicle.cs" />
+    <Compile Include="Models\omSalesBPK.cs" />
+    <Compile Include="Models\omSalesDo.cs" />
+    <Compile Include="Models\omSalesInvoice.cs" />
+    <Compile Include="Models\omSalesPerlengkapanOut.cs" />
+    <Compile Include="Models\omSDMovement.cs" />
+    <Compile Include="Models\omSlsReturn.cs" />
+    <Compile Include="Models\OmTrInventColorChange.cs" />
+    <Compile Include="Models\OMTrInventQtyPerlengkapan.cs" />
+    <Compile Include="Models\OmTrInventQtyVehicle.cs" />
+    <Compile Include="Models\omTrInventTransferIn.cs" />
+    <Compile Include="Models\omTrInventTransferInDetail.cs" />
+    <Compile Include="Models\OmTrInventTransferMultiBranch.cs" />
+    <Compile Include="Models\OmTrInventTransferOut.cs" />
+    <Compile Include="Models\omTrInventTransferOutDetail.cs" />
+    <Compile Include="Models\omTrPurchaseBPUAttribute.cs" />
+    <Compile Include="Models\OmTrPurchaseBPUDetailModel.cs" />
+    <Compile Include="Models\omTrSalesBPKB.cs" />
+    <Compile Include="Models\omTrSalesBPKBDetail.cs" />
+    <Compile Include="Models\omTrSalesDN.cs" />
+    <Compile Include="Models\OmTrSalesDNModel.cs" />
+    <Compile Include="Models\OmTrSalesDNVin.cs" />
+    <Compile Include="Models\OmTrSalesDraftSO.cs" />
+    <Compile Include="Models\OmTrSalesFakturPolisi.cs" />
+    <Compile Include="Models\omTrSalesInvoiceAccs.cs" />
+    <Compile Include="Models\OmTrSalesInvoiceAccsSeq.cs" />
+    <Compile Include="Models\OmTrSalesInvoiceOthers.cs" />
+    <Compile Include="Models\OmTrSalesPerlengkapanOutDetail.cs" />
+    <Compile Include="Models\OmTrSalesReceipt.cs" />
+    <Compile Include="Models\omTrSalesReq.cs" />
+    <Compile Include="Models\omTrSalesReqDetail.cs" />
+    <Compile Include="Models\omTrSalesSPK.cs" />
+    <Compile Include="Models\omTrSalesSPKDetail.cs" />
+    <Compile Include="Models\omTrSalesSTNK.cs" />
+    <Compile Include="Models\omTrSalesSTNKDetail.cs" />
+    <Compile Include="Models\omUtlFpolReq.cs" />
+    <Compile Include="Models\OmUtlSACCSDtl.cs" />
+    <Compile Include="Models\OmUtlSACCSHdr.cs" />
+    <Compile Include="Models\OmUtlSDORDDtl1.cs" />
+    <Compile Include="Models\OmUtlSDORDDtl2.cs" />
+    <Compile Include="Models\OmUtlSDORDDtl3.cs" />
+    <Compile Include="Models\OmUtlSDORDHdr.cs" />
+    <Compile Include="Models\OmUtlSSJALDtl1.cs" />
+    <Compile Include="Models\OmUtlSSJALDtl2.cs" />
+    <Compile Include="Models\OmUtlSSJALDtl3.cs" />
+    <Compile Include="Models\OmUtlSSJALHdr.cs" />
+    <Compile Include="Models\OrganizationDtl.cs" />
+    <Compile Include="Models\OrganizationHdr.cs" />
+    <Compile Include="Models\PostingJurnal.cs" />
+    <Compile Include="Models\ReportInventory.cs" />
+    <Compile Include="Models\Reports\OmRpDocPending.cs" />
+    <Compile Include="Models\Reports\OmRpSalesTrn004.cs" />
+    <Compile Include="Models\Reports\OmRpSalesTrn001.cs" />
+    <Compile Include="Models\SalesModelForm.cs" />
+    <Compile Include="Models\SendFile.cs" />
+    <Compile Include="Models\SysUser.cs" />
+    <Compile Include="Models\omTrSalesInvoiceBPK.cs" />
+    <Compile Include="Models\omTrSalesInvoiceModel.cs" />
+    <Compile Include="Models\omTrSalesInvoiceVin.cs" />
+    <Compile Include="Models\omTrSalesPerlengkapanOut.cs" />
+    <Compile Include="Models\OmTrSalesPerlengkapanOutModel.cs" />
+    <Compile Include="Models\omTrSalesReturn.cs" />
+    <Compile Include="Models\omTrSalesReturnDetailModel.cs" />
+    <Compile Include="Models\omTrSalesReturnVIN.cs" />
+    <Compile Include="Models\TrInventWH.cs" />
+    <Compile Include="Models\UtilityFAPIO.cs" />
+    <Compile Include="Models\UtilitySFPLB.cs" />
+    <Compile Include="Models\UtilitySFPOL.cs" />
+    <Compile Include="Models\UtilitySHPOK.cs" />
+    <Compile Include="Models\UtilitySPORD.cs" />
+    <Compile Include="Models\PerlengkapanAdjustment.cs" />
+    <Compile Include="Models\PerlengkapanIn.cs" />
+    <Compile Include="Models\PurchaseBPU.cs" />
+    <Compile Include="Models\PurchaseHPP.cs" />
+    <Compile Include="Models\PurchasePO.cs" />
+    <Compile Include="Models\OmTrSalesBPK.cs" />
+    <Compile Include="Models\OmTrSalesBPKDetail.cs" />
+    <Compile Include="Models\OmTrSalesBPKModel.cs" />
+    <Compile Include="Models\OmTrSalesDO.cs" />
+    <Compile Include="Models\OmTrSalesDODetail.cs" />
+    <Compile Include="Models\OmTrSalesInvoice.cs" />
+    <Compile Include="Models\omTRSalesSO.cs" />
+    <Compile Include="Models\OmTrSalesSOAccs.cs" />
+    <Compile Include="Models\OmTrSalesSOAccsSeq.cs" />
+    <Compile Include="Models\OmTrSalesSOModel.cs" />
+    <Compile Include="Models\OmTrSalesSOModelAdditional.cs" />
+    <Compile Include="Models\OmTrSalesSOModelColour.cs" />
+    <Compile Include="Models\omTrSalesSoModelOther.cs" />
+    <Compile Include="Models\omTrSalesSOVin.cs" />
+    <Compile Include="Models\PmActivity.cs" />
+    <Compile Include="Models\PmBranchOutlet.cs" />
+    <Compile Include="Models\PmHstITS.cs" />
+    <Compile Include="Models\PmKdp.cs" />
+    <Compile Include="Models\PmStatusHistory.cs" />
+    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\PurchaseReturn.cs" />
+    <Compile Include="Models\Result\ResultModel.cs" />
+    <Compile Include="Models\Result\ValidationResult.cs" />
+    <Compile Include="Models\SalesOrder.cs" />
+    <Compile Include="Models\SalesStockOpname.cs" />
+    <Compile Include="Models\SOReport.cs" />
+    <Compile Include="Models\SpMstItemPrice.cs" />
+    <Compile Include="Models\SpMstItem.cs" />
+    <Compile Include="Models\SysUserProfitCenter.cs" />
+    <Compile Include="Models\TeamMember.cs" />
+    <Compile Include="Models\UtilitySPRIC.cs" />
+    <Compile Include="Models\UtilitySUADE.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimDms.Common\SimDms.Common.csproj">
+      <Project>{f2c05309-7289-4cdf-99dc-6f2da9fdab05}</Project>
+      <Name>SimDms.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1223</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:10718/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

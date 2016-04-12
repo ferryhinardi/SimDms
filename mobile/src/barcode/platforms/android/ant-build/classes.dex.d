@@ -1,0 +1,21 @@
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes.dex : \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\phonegap\plugins\barcodescanner\BarcodeScanner.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\BuildConfig.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$array.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$attr.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$color.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$dimen.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$drawable.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$id.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$layout.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$menu.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$raw.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$string.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R$xml.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\R.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\com\suzuki\sdmspart\SdmsPart.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\org\apache\cordova\camera\CameraLauncher.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\org\apache\cordova\camera\ExifHelper.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\classes\org\apache\cordova\camera\FileHelper.class \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\dexedLibs\classes-0d37f9d9fdefe548327702d24d93f5da.jar \
+D:\sdms\01 SVN\SimDms\mobile\src\barcode\platforms\android\ant-build\dexedLibs\com.google.zxing.client.android.captureactivity-bacbb5cda878f71721aed46e6b82fecd.jar \

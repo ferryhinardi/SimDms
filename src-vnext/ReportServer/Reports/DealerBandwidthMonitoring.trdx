@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="7.23993968963623in" Name="DealerBandwidthMonitoring" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="SELECT GroupNo, AreaDealer FROM [dbo].[GroupArea]" Name="CBOArea" />
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="SELECT DISTINCT CompanyCode, CompanyName FROM SysDealerBandwidth WHERE ProductType = '4W'" Name="CBODealer" />
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="SELECT DISTINCT ISP FROM [dbo].[SysDealerBandwidth]" Name="CBOISP" />
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="SELECT CompanyCode, CompanyName, CompanyAbbr, CompanyGroup, GroupNo, AreaDealer, ISP, Ping, Download, Upload, CONVERT(VARCHAR, LastUpdate, 105) + ' ' + CONVERT(VARCHAR(5), LastUpdate, 114) AS LastUpdate&#xD;&#xA;FROM SysDealerBandwidth a JOIN [dbo].[GroupArea] b &#xD;&#xA;ON a.CompanyGroup = b.GroupNo&#xD;&#xA;WHERE ProductType = '4W'&#xD;&#xA;AND NOT ISP IS NULL&#xD;&#xA;ORDER BY CompanyGroup, CompanyName" Name="DealerMonitoring" />
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.600000226497632in" Name="detailSection1">
+      <Items>
+        <Table DataSourceName="DealerMonitoring" Width="7.23993980809444in" Height="0.60000005487662in" Left="0in" Top="0in" Name="table1" StyleName="Normal.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.96406517080992in" Height="0.200000024252672in" Left="0in" Top="0in" Value="= Fields.CompanyCode" CanGrow="False" Multiline="False" TextWrap="True" Name="textBox11" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="2.03360214713959in" Height="0.200000018292241in" Left="0in" Top="0in" Value="= Fields.CompanyName" CanGrow="False" Multiline="False" TextWrap="True" Name="textBox12" StyleName="Normal.TableBody">
+                    <Style Color="0, 112, 192" VerticalAlign="Middle">
+                      <Font Size="8pt" Underline="True" />
+                    </Style>
+                    <Action>
+                      <NavigateToReportAction>
+                        <ReportSource>
+                          <UriReportSource Uri="DealerControlMonitoring.trdx">
+                            <Parameters>
+                              <Parameter Name="Dealer">
+                                <Value>
+                                  <String>= Fields.CompanyCode</String>
+                                </Value>
+                              </Parameter>
+                              <Parameter Name="DealerName">
+                                <Value>
+                                  <String>= Fields.CompanyName</String>
+                                </Value>
+                              </Parameter>
+                            </Parameters>
+                          </UriReportSource>
+                        </ReportSource>
+                      </NavigateToReportAction>
+                    </Action>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.542742732612505in" Height="0.200000030213139in" Left="0in" Top="0in" Value="= Fields.CompanyAbbr" CanGrow="False" Multiline="False" TextWrap="True" Name="textBox13" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.52037191519028in" Height="0.200000018292231in" Left="0in" Top="0in" Value="= Fields.ISP" CanGrow="False" Multiline="False" TextWrap="True" Name="textBox14" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.428418265600103in" Height="0.200000030213142in" Left="0in" Top="0in" Value="= Fields.Ping" Format="{0:N0}" CanGrow="False" Multiline="False" TextWrap="True" Name="textBox15" StyleName="Normal.TableBody">
+                    <Style TextAlign="Right" VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.354813561499394in" Height="0.200000018292213in" Left="0in" Top="0in" Value="= Fields.Download" Format="{0:N2}" CanGrow="False" Multiline="False" TextWrap="True" Name="textBox16" StyleName="Normal.TableBody">
+                    <Style TextAlign="Right" VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.334840496893219in" Height="0.200000024252677in" Left="0in" Top="0in" Value="= Fields.Upload" Format="{0:N2}" CanGrow="False" Multiline="False" TextWrap="True" Name="textBox17" StyleName="Normal.TableBody">
+                    <Style TextAlign="Right" VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="7" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.06108307293731in" Height="0.20000002425271in" Left="0in" Top="0in" Value="= Fields.LastUpdate" Format="" CanGrow="False" Multiline="False" TextWrap="True" Name="textBox18" StyleName="Normal.TableBody">
+                    <Style TextAlign="Center" VerticalAlign="Middle">
+                      <Font Size="8pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.542742732612505in" Height="0.200000030213139in" Left="0in" Top="0in" Name="textBox31" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="0, 176, 240" Color="255, 255, 255" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.52037191519028in" Height="0.200000018292231in" Left="0in" Top="0in" Name="textBox32" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="0, 176, 240" Color="255, 255, 255" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.428418265600103in" Height="0.200000030213142in" Left="0in" Top="0in" Name="textBox33" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="0, 176, 240" Color="255, 255, 255" TextAlign="Right" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.354813561499394in" Height="0.200000018292213in" Left="0in" Top="0in" Name="textBox34" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="0, 176, 240" Color="255, 255, 255" TextAlign="Right" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.334840496893219in" Height="0.200000024252677in" Left="0in" Top="0in" Name="textBox35" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="0, 176, 240" Color="255, 255, 255" TextAlign="Right" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="7" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.06108307293731in" Height="0.20000002425271in" Left="0in" Top="0in" Name="textBox36" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="0, 176, 240" Color="255, 255, 255" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="2">
+                <ReportItem>
+                  <TextBox Width="2.9976669630248in" Height="0.200000024252672in" Left="0in" Top="0in" Value="= Fields.AreaDealer" Name="textBox29" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="0, 176, 240" Color="255, 255, 255" TextAlign="Left" VerticalAlign="Middle">
+                      <Font Bold="True" Italic="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.96406517080992in" />
+              <Column Width="2.03360179221488in" />
+              <Column Width="0.542742736119588in" />
+              <Column Width="1.52037296372424in" />
+              <Column Width="0.428418229830194in" />
+              <Column Width="0.354813653190578in" />
+              <Column Width="0.334840477720326in" />
+              <Column Width="1.06108459568857in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.200000024252672in" />
+              <Row Height="0.200000024252672in" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup Name="rowGroup">
+              <ChildGroups>
+                <TableGroup Name="group2">
+                  <ChildGroups>
+                    <TableGroup Name="group3" />
+                  </ChildGroups>
+                </TableGroup>
+                <TableGroup Name="Detail">
+                  <ChildGroups>
+                    <TableGroup Name="group" />
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.CompanyCode" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="= Fields.CompanyGroup" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.CompanyGroup" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="0.96406517080992in" Height="0.200000024252672in" Left="0in" Top="0in" Value="Dealer Code" Name="textBox3" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="2.03360214713959in" Height="0.200000018292241in" Left="0in" Top="0in" Value="Dealer Name" Name="textBox4" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="0.542742732612505in" Height="0.200000030213139in" Left="0in" Top="0in" Value="Abbr" Name="textBox5" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="1.52037191519028in" Height="0.200000018292231in" Left="0in" Top="0in" Value="ISP" Name="textBox6" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="0.428418265600103in" Height="0.200000030213142in" Left="0in" Top="0in" Value="Ping" Name="textBox7" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="0.354813561499394in" Height="0.200000018292213in" Left="0in" Top="0in" Value="Dw" Name="textBox8" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="0.334840496893219in" Height="0.200000024252677in" Left="0in" Top="0in" Value="Up" Name="textBox9" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup>
+              <ReportItem>
+                <TextBox Width="1.06108307293731in" Height="0.20000002425271in" Left="0in" Top="0in" Value="Last Update" Name="textBox10" StyleName="Normal.TableHeader">
+                  <Style TextAlign="Center">
+                    <Font Bold="True" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+          <Filters>
+            <Filter Expression="= IIf(Fields.CompanyGroup is Null, &quot;true&quot;, Fields.CompanyGroup)" Operator="Equal" Value="= IIf(Parameters.Area.Value is Null, IsNull(Fields.CompanyGroup, &quot;true&quot;), Parameters.Area.Value)" />
+            <Filter Expression="= IIf(Fields.ISP is Null, &quot;true&quot;, Fields.ISP)" Operator="Equal" Value="= IIf(Parameters.ISP.Value is Null, IsNull(Fields.ISP, &quot;true&quot;), Parameters.ISP.Value)" />
+            <Filter Expression="= IIf(Fields.CompanyCode is Null, &quot;true&quot;, Fields.CompanyCode)" Operator="Equal" Value="= IIf(Parameters.Dealer.Value is Null, IsNull(Fields.CompanyCode, &quot;true&quot;), Parameters.Dealer.Value)" />
+          </Filters>
+        </Table>
+      </Items>
+    </DetailSection>
+    <PageHeaderSection Height="1in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="7.23993968963628in" Height="0.787401556968689in" Left="0in" Top="0in" Value="Dealer Bandwidth Monitoring" Anchoring="Top, Bottom" Name="ReportNameTextBox">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="1in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="1.82519733905792in" Height="0.393700778484344in" Left="5.41474278767904in" Top="0.606299213in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="9pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+        <Font Name="Tahoma" Size="10pt" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+      <Margins>
+        <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="Area" Text="Area" Visible="True" AllowNull="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="CBOArea" DisplayMember="= Fields.AreaDealer" ValueMember="= Fields.GroupNo">
+        <Sortings>
+          <Sorting Expression="= Fields.GroupNo" Direction="Asc" />
+        </Sortings>
+      </AvailableValues>
+    </ReportParameter>
+    <ReportParameter Name="Dealer" Text="Dealer" Visible="True" AllowNull="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="CBODealer" DisplayMember="= Fields.CompanyName" ValueMember="= Fields.CompanyCode">
+        <Sortings>
+          <Sorting Expression="= Fields.CompanyCode" Direction="Asc" />
+        </Sortings>
+      </AvailableValues>
+    </ReportParameter>
+    <ReportParameter Name="ISP" Text="ISP" Visible="True" AllowNull="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="CBOISP" DisplayMember="= Fields.ISP" ValueMember="= Fields.ISP">
+        <Sortings>
+          <Sorting Expression="= Fields.ISP" Direction="Asc" />
+        </Sortings>
+      </AvailableValues>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

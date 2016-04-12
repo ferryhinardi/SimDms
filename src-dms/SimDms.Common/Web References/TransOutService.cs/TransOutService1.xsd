@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" />
+  <xs:element name="HelloWorld2">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HelloWorld2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HelloWorld2Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOmTransOutNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="companyCodeTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchCodeTo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOmTransOutNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetOmTransOutNoResult" nillable="true" type="q1:ArrayOfOmTransferOut" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOmTransOutNo2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOmTransOutNo2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetOmTransOutNo2Result" nillable="true" type="q2:ArrayOfOmTransferOut" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesModelCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transferOutNo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesModelCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetSalesModelCodeResult" nillable="true" type="q3:ArrayOfSalesModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesModelYear">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transferOutNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesModelYearResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetSalesModelYearResult" nillable="true" type="q4:ArrayOfSalesModelYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transferOutNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelYear" type="xs:decimal" />
+        <xs:element minOccurs="0" name="chassisCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesVehicleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetSalesVehicleResult" nillable="true" type="q5:ArrayOfSalesVehicle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInfoVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chassisCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chassisNo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInfoVehicleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetInfoVehicleResult" nillable="true" type="q6:SalesVehicle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="compCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="compCodeTo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetCompanyAccountResult" nillable="true" type="q7:ArrayOfCompanyAccount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransferOutDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transferOut" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="salesModelCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="salesModelYear" type="xs:decimal" />
+        <xs:element minOccurs="0" name="chassisCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chassisNo" type="xs:decimal" />
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isDelete" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransferOutDetailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransferOutDetail2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transferOut" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransferOutDetail2Response">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chassisCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chassisNo" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMasterVehicleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetMasterVehicleResult" nillable="true" type="q8:ArrayOfSalesVehicle" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateVehicle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCodeFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chassisCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chassisNo" type="xs:decimal" />
+        <xs:element minOccurs="0" name="transferInNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateVehicleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesModel1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="compCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesModel1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetSalesModel1Result" nillable="true" type="q9:ArrayOfSalesModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesModel2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="compCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSalesModel2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetSalesModel2Result" nillable="true" type="q10:ArrayOfSalesModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizationDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetOrganizationDetailResult" nillable="true" type="q11:ArrayOfOrganization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWareHouse1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWareHouse1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetWareHouse1Result" nillable="true" type="q12:ArrayOfRefference" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWareHouse2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="refCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWareHouse2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetWareHouse2Result" nillable="true" type="q13:ArrayOfRefference" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLookUpDtl1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="compCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codeId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLookUpDtl1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetLookUpDtl1Result" nillable="true" type="q14:ArrayOfLookUp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLookUpDtl2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="compCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codeId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lookupvalue" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLookUpDtl2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" minOccurs="0" name="GetLookUpDtl2Result" nillable="true" type="q15:ArrayOfLookUp" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportLabaRugi1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateStart" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="salesType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="salesFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="salesTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pDok" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportLabaRugi1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReportLabaRugi1Result" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportLabaRugi2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="companyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="branchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dateStart" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dateEnd" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="salesType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="salesFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="salesTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="param" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportLabaRugi2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReportLabaRugi2Result" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaporanStok1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtpFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WHCodeFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WHCodeTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodeFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodeTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pDok" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sortBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaporanStok1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLaporanStok1Result" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaporanStok2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BranchCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtpFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WHCodeFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="WHCodeTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodeFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="CodeTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pDok" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sortBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaporanStok2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLaporanStok2Result" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaporanDailySales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="company" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="period1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="period2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipe" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaporanDailySalesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLaporanDailySalesResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaporanDailySales2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="company" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="period1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="period2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tipe" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLaporanDailySales2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLaporanDailySales2Result" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:element ref="xs:schema" />
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

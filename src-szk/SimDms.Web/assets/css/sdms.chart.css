@@ -1,0 +1,311 @@
+﻿.panel.chart > .subtitle {
+  margin-bottom: 20px;
+}
+.panel.chart > .chart-wrapper {
+  margin: 0;
+  padding: 1px;
+  float: left;
+}
+.panel.chart > .chart-wrapper > .k-chart {
+  padding: 0;
+  margin: 0 5px 5px 0;
+  border: 1px solid #66c1ff;
+}
+.panel.chart > .chart-wrapper > .highcharts-container {
+  padding: 0;
+  margin: 0 5px 5px 0;
+  border: 1px solid #66c1ff;
+}
+.panel.chart > .chart-wrapper.span4 {
+  width: 50%;
+}
+.presenter.slide .step {
+  position: fixed;
+  left: 0!important;
+  right: 0!important;
+  -webkit-animation-duration: 3.0s;
+  animation-duration: 3.0s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  opacity: 0;
+  padding: 10px 20px;
+}
+.presenter.slide .step.active {
+  display: block;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  opacity: 1;
+}
+.presenter.slide .step.inactive {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+.presenter.slide .step.hide {
+  display: none;
+}
+.presenter.slide .step .chart {
+  height: 550px;
+  width: 100%;
+}
+.presenter.slide .step table {
+  width: 100%;
+  border: none;
+  border-spacing: 0px;
+}
+.presenter.slide .step table.dashboard {
+  margin-top: 20px;
+}
+.presenter.slide .step table.dashboard th,
+.presenter.slide .step table.dashboard td {
+  font-size: 26px;
+  font-family: sans-serif;
+  padding: 14px 10px;
+  border: 1px solid white !important;
+}
+.presenter.slide .step table.dashboard th.blank.info,
+.presenter.slide .step table.dashboard td.blank.info {
+  font-size: 50px !important;
+}
+.presenter.slide .step table thead th,
+.presenter.slide .step table thead td {
+  background-color: #006bb3;
+  border-top: 1px solid #005b99;
+  border-right: 1px solid #005b99;
+  color: #ffff66;
+}
+.presenter.slide .step table thead th.info,
+.presenter.slide .step table thead td.info {
+  background-color: white;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+}
+.presenter.slide .step table thead th:nth-child(2),
+.presenter.slide .step table thead td:nth-child(2) {
+  border-left: 1px solid #005b99;
+}
+.presenter.slide .step table tbody th,
+.presenter.slide .step table tbody td {
+  background-color: #007acc;
+  color: white;
+}
+.presenter.slide .step table tbody th {
+  border-left: 1px solid #005b99;
+  border-bottom: 1px solid #005b99;
+}
+.presenter.slide .step table tbody td {
+  border-right: 1px solid #005b99;
+  border-bottom: 1px solid #005b99;
+}
+.presenter.slide .step table tbody td:nth-child(2) {
+  border-left: 1px solid #005b99;
+}
+.presenter.slide .step table tbody tr:nth-child(1) th,
+.presenter.slide .step table tbody tr:nth-child(1) td {
+  border-top: 1px solid #005b99;
+}
+.table-chart {
+  width: 100%;
+  border: 1px solid #007acc;
+  margin-bottom: 5px;
+}
+.table-chart thead {
+  background-color: #007acc;
+}
+.table-chart thead th {
+  color: white;
+}
+.table-chart thead th.date {
+  text-align: center;
+}
+.table-chart thead th.number {
+  text-align: right;
+}
+.table-chart tbody {
+  background-color: #0089e6;
+}
+.table-chart tbody tr.even {
+  background-color: #0092f5;
+}
+.table-chart tbody tr th {
+  color: white;
+  text-align: left;
+}
+.table-chart tbody tr th.date {
+  text-align: center;
+}
+.table-chart tbody tr td {
+  color: white;
+}
+.table-chart tbody tr td.number {
+  text-align: right;
+  color: #ffff66;
+  font-weight: bold;
+}
+.table-chart tfoot {
+  background-color: #0089e6;
+}
+.table-chart tfoot tr.even {
+  background-color: #0092f5;
+}
+.table-chart tfoot tr th {
+  color: white;
+  text-align: left;
+}
+.table-chart tfoot tr th.date {
+  text-align: center;
+}
+.table-chart tfoot tr td {
+  color: white;
+}
+.table-chart tfoot tr td.number {
+  text-align: right;
+  color: #ffff66;
+  font-weight: bold;
+}
+.table-info {
+  font-size: 12px;
+  color: #001f33;
+  /*font-style: italic;*/
+
+}
+svg {
+  /*border: 1px solid lighten(@base-color, 10%) !important;*/
+
+  /***********
+	*  Pie Chart
+	*/
+
+}
+svg.debug {
+  border: 1px solid #0098ff !important;
+}
+svg .axis path,
+svg .axis line {
+  fill: none;
+  stroke: #003d66;
+  stroke-width: 2px;
+  shape-rendering: crispEdges;
+}
+svg .axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+svg .x.axis text {
+  display: none;
+}
+svg .x.axis-info path,
+svg .x.axis-info line {
+  fill: none;
+}
+svg .x.axis-info text {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+svg .nvd3 .nv-legend .nv-series {
+  cursor: pointer;
+  font-size: 11px;
+}
+svg .nvd3 .nv-legend .disabled circle {
+  fill-opacity: 0;
+}
+svg .nvd3.nv-pie path {
+  stroke-opacity: 0;
+  transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+  -moz-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+  -webkit-transition: fill-opacity 250ms linear, stroke-width 250ms linear, stroke-opacity 250ms linear;
+  stroke: #fff;
+  stroke-width: 1px;
+  stroke-opacity: 1;
+}
+svg .nvd3.nv-pie .nv-slice text {
+  stroke: #000;
+  stroke-width: 0;
+}
+svg .nvd3.nv-pie .hover path {
+  fill-opacity: .7;
+}
+svg .nvd3.nv-pie .nv-label {
+  pointer-events: none;
+  font-size: 8px;
+}
+svg .nvd3.nv-pie .nv-label rect {
+  fill-opacity: 0;
+  stroke-opacity: 0;
+}
+.nvtooltip {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  font-family: sans-serif;
+  font-size: 12px;
+  text-align: left;
+  pointer-events: none;
+  white-space: nowrap;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 3px;
+}
+.nvtooltip.with-3d-shadow {
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+.nvtooltip.with-transitions {
+  transition: opacity 250ms linear;
+  -moz-transition: opacity 250ms linear;
+  -webkit-transition: opacity 250ms linear;
+  transition-delay: 250ms;
+  -moz-transition-delay: 250ms;
+  -webkit-transition-delay: 250ms;
+}
+.nvtooltip.x-nvtooltip {
+  padding: 2px;
+}
+.nvtooltip.y-nvtooltip {
+  padding: 2px;
+}
+.nvtooltip h3 {
+  margin: 0;
+  padding: 4px 14px;
+  line-height: 18px;
+  font-weight: normal;
+  background-color: rgba(247, 247, 247, 0.75);
+  text-align: center;
+  border-bottom: 1px solid #ebebeb;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  font-size: 12px;
+}
+.nvtooltip p {
+  margin: 0;
+  padding: 5px 14px;
+  text-align: center;
+  font-size: 9px;
+}
+@media only screen and (min-width: 1600px) {
+  .presenter.slide .table table thead th {
+    font-size: 16px !important;
+  }
+  .presenter.slide .table table tbody td {
+    font-size: 16px !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .presenter.slide .table table thead th {
+    font-size: 8px !important;
+  }
+  .presenter.slide .table table tbody td {
+    font-size: 8px !important;
+  }
+}

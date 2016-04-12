@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Dashboard Application</title>
+    <script src="../../assets/js/vendors/jquery-2.0.3.min.js"></script>
+    <link href="../../assets/css/vendor/animate.min.css" rel="stylesheet" />
+    <link href="../../assets/css/vendor/animate.delay.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="module-box-wrapper"></div>
+    <div data-ltype="menu-box" class="animated">
+        <div class="menu-box"></div>
+    </div>
+    <div data-ltype="content-box" class="animated"></div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $("[data-ltype=content-box]").addClass("k-content-box1");
+        $("[data-ltype=content-box]").on("click", function () {
+            var _this = $(this)
+            if (_this.hasClass("k-content-box1")) {
+                _this.addClass("k-content-box2");
+                setTimeout(function () { _this.removeClass("k-content-box1 slideInRight"); }, 1000);
+            } else if (_this.hasClass("k-content-box2")) {
+                _this.addClass("k-content-box1 slideOutRight");
+                setTimeout(function () { _this.removeClass("k-content-box2 slideOutRight"); }, 1000);
+            }
+        });
+    });
+</script>
+<style>
+    .menu-box-wrapper
+    {
+        border: 1px solid;
+        width: 220px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        bottom: 10px;
+    }
+
+    .k-content-box1:hover
+    {
+        cursor: pointer;
+        background-color: lightblue;
+    }
+
+    .k-content-box1
+    {
+        border: 1px solid;
+        border-right: none;
+        position: absolute;
+        width: 40px;
+        top: 10px;
+        right: 0;
+        bottom: 10px;
+    }
+
+    .k-content-box2
+    {
+        border: 1px solid;
+        position: absolute;
+        width: auto;
+        top: 10px;
+        left: 240px;
+        right: 10px;
+        bottom: 10px;
+
+        -webkit-animation-name: slideInRight;
+        -moz-animation-name: slideInRight;
+        -o-animation-name: slideInRight;
+        animation-name: slideInRight;
+    }
+</style>

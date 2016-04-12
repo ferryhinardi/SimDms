@@ -1,0 +1,2 @@
+update sysmenudms set MenuUrl = 'sales/permohonanfpsd' where MenuId = 'omSlsPrmhnFktrPlsDCS'
+update sysmenudms set MenuCaption = 'Permohonan Faktur Polisi (Sub-Dealer)' where MenuId = 'omSlsPrmhnFktrPlsDCS'

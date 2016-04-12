@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>FreeSpire.XLS</id>
+    <version>7.8</version>
+    <title>Free Spire.XLS for .NET</title>
+    <authors>E-iceblue</authors>
+    <owners>E-iceblue</owners>
+    <licenseUrl>http://www.e-iceblue.com/Knowledgebase/Licensing/License-Agreement.html</licenseUrl>
+    <projectUrl>http://www.e-iceblue.cohttp//www.e-iceblue.com/Introduce/free-xls-component.html</projectUrl>
+    <iconUrl>http://www.e-iceblue.com/images/product_logo/product_buy/xlsnetfree.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Free Spire.XLS for .NET is a standalone Excel .NET library and does not depend on Microsoft Office Excel. It supports both for the old Excel 97-2003 format (.xls) and for the new Excel 2007 and Excel 2010 (.xlsx, .xlsm).
+
+Powerful &amp; High Quality Excel File Conversion
+Free Spire.XLS for .NET has powerful conversion ability and it enables converting Excel files to most common and popular formats. Convert Excel to HTML/XML
+Convert XML to Excel
+Convert Excel to Text
+Convert Excel to PDF
+
+Create Excel Report from Comprehensive Workbook Designer
+Free Spire.XLS for .NET enables developers to generate Excel workbook from scratch, or load a workbook from either folder or file stream. Developers can also save it to file, file stream or web response. Free Spire.XLS for .NET offers a wide range of security features including Excel encryption/decryption, cells hide/unhide, and worksheets lock/unlock. 
+
+Freely operate worksheet
+Free Spire.XLS for .NET enables developers to create, add, delete, rename, edit and move worksheet in either C#, VB.NET or ASP.NET. Developers can also copy, move, and consolidate across worksheets with full contents. This professional Excel .NET class library also embeds many flexible options for displaying worksheets, such as page breaks, zoom-setting, freeze panes, headers/footers, print paper size and print area etc. 
+
+Easily Manipulate cells &amp; Excel Calculation Engine at run time
+Free Spire.XLS for .NET supports merge/unmerge excel cells, add/delete excel cell, insert excel rows and interiors, hide/unhide excel rows and columns, freeze/unfreeze Excel Panes
+Free Spire.XLS for .NET supports add, read and calculate Excel formulas.
+
+Chart, Data and other Elements
+Free Spire.XLS for .NET provides a wide range of Charts: Pie Chart, Bar Chart, Column Chart, Line Chart, Radar Chart and etc. 
+Free Spire.XLS for .NET component supports data transportation between database and Excel in C# VB.NET or ASP.NET.</description>
+    <summary>A standalone C#/VB.NET component, Free Spire.XLS for .NET enables developers to create, manage and manipulate Excel files on any .NET applications.</summary>
+    <releaseNotes>Release version of Free Spire.XLS 7.8
+
+There is no any limitation for .xlsx format.
+
+
+Hotfix version of Free Spire.XLS 7.3.5</releaseNotes>
+    <copyright>Copyright © 2015 e-iceblue. All Rights Reserved.</copyright>
+    <language>en-US</language>
+    <tags>.NET Excel C# VB.NET ASP.NET free controls .xlsb .xlsx .xlsm .ods</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Spire.XLS" targetFramework=".NETFramework2.0, .NETFramework3.5, .NETFramework4.0, .NETFramework4.0-Client" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

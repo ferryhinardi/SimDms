@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="6.5in" Name="Report1" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="exec uspfn_ComboDemographicCondition @type, @param" Name="CBODealer" ParameterValues="{&quot;@type&quot;:&quot;dealer&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@type">
+          <Value>
+            <String>dealer</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@param">
+          <Value>
+            <String></String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="exec uspfn_ComboDemographicCondition @type, @param" Name="CBOOutlet" ParameterValues="{&quot;@type&quot;:&quot;branch&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@type">
+          <Value>
+            <String>branch</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@param">
+          <Value>
+            <String>= Parameters.CompanyCode.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="exec uspfn_ComboDemographicCondition @type, @param" Name="CBOPosition" ParameterValues="{&quot;@type&quot;:&quot;position&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@type">
+          <Value>
+            <String>position</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@param">
+          <Value>
+            <String></String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="exec uspfn_ComboDemographicCondition @type, @param" Name="CBOCategory" ParameterValues="{&quot;@type&quot;:&quot;category&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@type">
+          <Value>
+            <String>category</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@param">
+          <Value>
+            <String></String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="exec uspfn_CombineCalculateDemographicCondition @CompanyCode, @BranchCode, @Position, @PeriodFrom, @Category" Name="sqlDataSource1" ParameterValues="{&quot;@CompanyCode&quot;:&quot;6006406&quot;,&quot;@PeriodFrom&quot;:&quot;2014-04-01&quot;,&quot;@Category&quot;:&quot;Working Period&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@CompanyCode">
+          <Value>
+            <String>= Parameters.CompanyCode.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@BranchCode">
+          <Value>
+            <String>= Parameters.BranchCode.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@Position">
+          <Value>
+            <String>= Parameters.Position.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="DateTime" Name="@PeriodFrom">
+          <Value>
+            <String>= Parameters.PeriodFrom.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+        <SqlDataSourceParameter DbType="String" Name="@Category">
+          <Value>
+            <String>= Parameters.Category.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="3.10000014305115in" Name="detailSection1">
+      <Items>
+        <Graph DataSourceName="sqlDataSource1" Width="5.20000044504801in" Height="3.10000006357829in" Left="0.599999964237213in" Top="0in" Name="graph1">
+          <PlotAreaStyle LineWidth="0in" LineColor="LightGray" />
+          <Axes>
+            <GraphAxis Name="graphAxis1">
+              <Style Visible="False" />
+              <MajorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <NumericalScale />
+              </Scale>
+            </GraphAxis>
+            <GraphAxis Name="graphAxis2">
+              <Style Visible="False" />
+              <MajorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <CategoryScale PositionMode="OnTicks" SpacingSlotCount="0" />
+              </Scale>
+            </GraphAxis>
+          </Axes>
+          <CoordinateSystems>
+            <PolarCoordinateSystem RadialAxis="graphAxis2" AngularAxis="graphAxis1" Name="polarCoordinateSystem1" />
+          </CoordinateSystems>
+          <Style>
+            <Padding Left="10px" Right="10px" Top="10px" Bottom="10px" />
+          </Style>
+          <SeriesGroups>
+            <GraphGroup Name="nameGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.name" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.id" Direction="Asc" />
+              </Sortings>
+            </GraphGroup>
+          </SeriesGroups>
+          <CategoryGroups>
+            <GraphGroup Name="categoryGroup" />
+          </CategoryGroups>
+          <Series>
+            <BarSeries CoordinateSystem="polarCoordinateSystem1" CategoryGroup="categoryGroup" SeriesGroup="nameGroup" DataPointLabelAlignment="OutsideColumn" DataPointLabelOffset="5mm" X="= Sum(Fields.value)" ArrangeMode="Stacked100" DataPointLabel="= Sum(Fields.value) / CDbl(Exec('graph1', Sum(Fields.value)))" DataPointLabelFormat="{0:P}" Name="barSeries1">
+              <DataPointStyle Visible="True" LineWidth="0in" />
+              <DataPointLabelStyle Visible="True" />
+              <DataPointLabelConnectorStyle>
+                <Padding Top="2pt" Bottom="2pt" />
+              </DataPointLabelConnectorStyle>
+              <LegendItem Value="= Fields.name" />
+            </BarSeries>
+          </Series>
+          <Legend>
+            <Style LineWidth="0in" LineColor="LightGray" />
+          </Legend>
+          <Titles>
+            <GraphTitle Text="= Format(&quot;{0:dd MMM yyyy}&quot;,Parameters.PeriodFrom.Value)" Position="TopCenter">
+              <Style LineWidth="0in" LineColor="LightGray" />
+            </GraphTitle>
+          </Titles>
+          <Sortings>
+            <Sorting Expression="= Fields.id" Direction="Asc" />
+          </Sortings>
+        </Graph>
+      </Items>
+    </DetailSection>
+    <PageHeaderSection Height="0.787401596705119in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="5.905511805in" Height="0.787401574in" Left="0in" Top="0in" Value="= Parameters.Category.Label" Name="ReportNameTextBox">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="1in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="1.574803148in" Height="0.393700787in" Left="4.925196852in" Top="0.606299213in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+      <Margins>
+        <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="CompanyCode" Text="CompanyCode" Visible="True" AllowNull="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="CBODealer" DisplayMember="= Fields.text" ValueMember="= Fields.value" />
+    </ReportParameter>
+    <ReportParameter Name="BranchCode" Text="BranchCode" Visible="True" AllowNull="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="CBOOutlet" DisplayMember="= Fields.text" ValueMember="= Fields.value" />
+    </ReportParameter>
+    <ReportParameter Name="Position" Text="Position" Visible="True" AllowNull="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="CBOPosition" DisplayMember="= Fields.text" ValueMember="= Fields.value" />
+    </ReportParameter>
+    <ReportParameter Name="PeriodFrom" Type="DateTime" Text="PeriodFrom" Visible="True" AllowNull="True" AutoRefresh="True">
+      <Value>
+        <String>2014-04-01</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="Category" Text="Category" Visible="True" AllowNull="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="CBOCategory" DisplayMember="= Fields.text" ValueMember="= Fields.value" />
+      <Value>
+        <String>Working Period</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>

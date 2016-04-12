@@ -1,0 +1,9 @@
+<ion-view view-title="Exhibitions">
+  <ion-content>
+    <ion-list>
+        <ion-item ng-repeat="item in exhibitions" href="#/app/playlists/{{item.Id}}/{{item.TEXT}}">
+           <span class="labelx">{{item.TEXT}}</span> 
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

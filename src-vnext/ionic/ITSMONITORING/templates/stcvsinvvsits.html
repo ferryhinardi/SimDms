@@ -1,0 +1,102 @@
+<ion-view view-title="Sales Comparation">
+
+	<ion-content ng-class="{expanded:true}" class="animate-fade-slide-in">
+		<ion-refresher pulling-text="Pull to Refresh..." on-refresh="doRefresh()">
+		</ion-refresher>
+		<div style="margin-left:10px"><strong>Previous vs Current Stock, Invoice, INQ, SPK</strong></div>
+
+		<div class="row" >
+			<div class="col" id="status">
+				<div style="background-color: red; width: 30px; height: 30px; display: none;"></div>
+				<div style="background-color: blue; width: 30px; height: 30px; display: none;"></div>
+				<div style="background-color: green; width: 30px; height: 30px; display: none;"></div>
+			</div>
+			<div class="col text-right" id="last-update">
+				<span style="font-style:italic">{{lastUpdateTime}}</span>
+			</div>
+		</div>
+
+		<div class="row" >
+			<div class="col">
+				<!-- <select name="CompanyCode" id="CompanyCode" ng-model="options.selectedOption" ng-
+				options="company as company.DealerName for company in options.data" ng-disabled="disabledCompany"> -->
+				<md-select name="CompanyCode" id="CompanyCode" ng-model="options.selectedOption" aria-label="md-option" placeholder="-- SELECT ALL COMPANY --" ng-disabled="disabledCompany" style="margin: 0 0 0 0">
+					<md-option ng-value="ALL">-- SELECT ALL COMPANY --</md-option>
+					<md-option ng-repeat="company in options.data" ng-value="company.DealerCode" ng-selected="{{ ((company.DealerCode == currentCompany) ? true : false) }}">{{company.DealerName}}</md-option>
+				</md-select>
+			</div>
+		</div>
+		
+		<div class="row" >
+			<div class="col">
+				<!-- <select style="width: 100%;" name="BranchCode" id="BranchCode" ng-model="options.selectedOption2" ng-options="outlet as outlet.OutletName for outlet in ListFilterBranchs"> -->
+				<md-select name="BranchCode" id="BranchCode" ng-model="options.selectedOption2" placeholder="-- SELECT ALL OUTLET --" style="margin: 0 0 0 0;">
+					<md-option ng-value="ALL">-- SELECT ALL OUTLET --</md-option>
+					<md-option ng-repeat="outlet in ListFilterBranchs" ng-value="outlet.OutletCode">{{outlet.OutletCode}} - {{outlet.OutletName}}</md-option>
+				</md-select>
+			</div>
+		</div>
+		
+		<div class="row" >
+			<div class="col">
+				<md-radio-group ng-model="options.DisplayType" style="display: flex;">
+					<md-radio-button value="T" class="md-primary">Total</md-radio-button>
+					<md-radio-button value="W" class="md-primary">WorkingDay</md-radio-button>
+				</md-radio-group> 
+			</div>
+		</div>
+
+		<div class="list card {{item.color}}"  ng-repeat="item in listComparation" >
+			<div class="item item-avatar">
+				<img src="img/do.png">
+				<div class="row" style="margin-top:-10px">
+					<div class="col">
+						<h2 style="color:white"><b>{{item.name}}</b></h2>
+						<p style="color:white">{{item.currName}}</p>
+					</div>
+					<div class="col text-right">
+						<h2 style="color:white;font-size:32px"><b>{{item.currToDate}}</b></h2>
+					</div>
+				</div>
+			</div>
+			<div class="item item-body"  >
+				<div class="row" ng-hide="item.name == 'STOCK'">
+					<div class="col">
+						<h2 style="color:white;font-size:20px"><b>{{item.prevName}}</b></h2>
+					</div>
+					<div class="col text-right">
+						<h2 style="color:white;font-size:22px;align:'right'"><b>{{item.prevToDate}}  </b></h2>
+					</div>
+					<div class="col text-right">
+						<h2 style="color:white;font-size:22px"><b>{{item.CmpToDate}}  </b></h2>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+						<h2 style="color:white;font-size:20px"><b>{{item.prevNameTotal}}  </b></h2>
+					</div>
+					<div class="col text-right">
+						<h2 style="color:white;font-size:22px"><b>{{item.prevTotal}}  </b></h2>
+					</div>
+					<div class="col text-right">
+						<h2 style="color:white;font-size:22px"><b>{{item.CmpToTotal}}  </b></h2>
+					</div>
+				</div>
+				
+				<div class="row" >
+					<div class="col">
+						<h2 style="color:white;font-size:20px"><b>{{item.prevName2Total}}  </b></h2>
+					</div>
+					<div class="col text-right">
+						<h2 style="color:white;font-size:22px"><b>{{item.prev2Total}}  </b></h2>
+					</div>
+					<div class="col text-right">
+						<h2 style="color:white;font-size:22px"><b>{{item.CmpTo2Total}}  </b></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    </ion-content>
+</ion-view>

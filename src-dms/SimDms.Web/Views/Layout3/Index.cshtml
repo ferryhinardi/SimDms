@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate" />
+    <title>Dashboard</title>
+    <link href="@Url.Content("~/assets/themes/ext-theme-crisp/ext-theme-crisp-all.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/sencha/style.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/assets/js/vendors/jquery-2.1.1.min.js")"></script> 
+    <script src="@Url.Content("~/assets/js/vendors/extjs/ext-all-debug.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/extjs/ext-theme-crisp.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/extjs/ext-ajax.js")"></script>  
+    <script src="@Url.Content("~/assets/js/vendors/extjs/iframe.js")"></script>  
+      
+    <script type="text/javascript">
+
+        var extReady = false;
+        var jQueryReady = false;
+        
+
+        var Ext = Ext || {};
+        Ext.manifest = { // the same content as "app.json"
+            compatibility: {
+                ext: '4.2'
+            }
+        }
+		
+		Ext.require([
+			'Ext.grid.*',
+			'Ext.data.*',
+			'Ext.form.field.*',
+			'Ext.tip.QuickTipManager',
+			'Ext.layout.container.Fit',
+            'Ext.ux.IFrame'
+		]);
+
+        var LibrariesReady = function () {
+            if (jQueryReady && extReady) {
+                var myBaseUrl = "@Url.Content("~/")";
+                var url = myBaseUrl + localStorage.getItem("LayoutUrl");
+                $.getScript(url, function (script, status, xhr) {
+                });
+            }
+        };
+
+        $(document).ready(function () {
+            jQueryReady = true;
+            LibrariesReady();
+        });
+
+        Ext.onReady(function () {
+            extReady = true;
+			Ext.tip.QuickTipManager.init();
+            LibrariesReady();
+        });
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

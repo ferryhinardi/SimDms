@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TransOutService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SdmsWcf.Models" />
+      <xsd:import schemaLocation="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc?xsd=xsd3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITransOutService_HelloWorld2_InputMessage">
+    <wsdl:part name="parameters" element="tns:HelloWorld2" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_HelloWorld2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HelloWorld2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetOmTransOutNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOmTransOutNo" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetOmTransOutNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOmTransOutNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetOmTransOutNo2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOmTransOutNo2" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetOmTransOutNo2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOmTransOutNo2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetSalesModelCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesModelCode" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetSalesModelCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesModelCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetSalesModelYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesModelYear" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetSalesModelYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesModelYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetSalesVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesVehicle" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetSalesVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetInfoVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoVehicle" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetInfoVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetCompanyAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyAccount" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetCompanyAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_UpdateTransferOutDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransferOutDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_UpdateTransferOutDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransferOutDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_UpdateTransferOutDetail2_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransferOutDetail2" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_UpdateTransferOutDetail2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransferOutDetail2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetMasterVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterVehicle" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetMasterVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMasterVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_UpdateVehicle_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVehicle" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_UpdateVehicle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVehicleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetSalesModel1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesModel1" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetSalesModel1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesModel1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetSalesModel2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesModel2" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetSalesModel2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalesModel2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetOrganizationDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationDetail" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetOrganizationDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetWareHouse1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWareHouse1" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetWareHouse1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWareHouse1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetWareHouse2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWareHouse2" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetWareHouse2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWareHouse2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLookUpDtl1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLookUpDtl1" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLookUpDtl1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLookUpDtl1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLookUpDtl2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLookUpDtl2" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLookUpDtl2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLookUpDtl2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetReportLabaRugi1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportLabaRugi1" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetReportLabaRugi1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportLabaRugi1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetReportLabaRugi2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportLabaRugi2" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetReportLabaRugi2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportLabaRugi2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLaporanStok1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLaporanStok1" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLaporanStok1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLaporanStok1Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLaporanStok2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLaporanStok2" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLaporanStok2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLaporanStok2Response" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLaporanDailySales_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLaporanDailySales" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLaporanDailySales_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLaporanDailySalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLaporanDailySales2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLaporanDailySales2" />
+  </wsdl:message>
+  <wsdl:message name="ITransOutService_GetLaporanDailySales2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLaporanDailySales2Response" />
+  </wsdl:message>
+  <wsdl:portType name="ITransOutService">
+    <wsdl:operation name="HelloWorld2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/HelloWorld2" message="tns:ITransOutService_HelloWorld2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/HelloWorld2Response" message="tns:ITransOutService_HelloWorld2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOmTransOutNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetOmTransOutNo" message="tns:ITransOutService_GetOmTransOutNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetOmTransOutNoResponse" message="tns:ITransOutService_GetOmTransOutNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOmTransOutNo2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetOmTransOutNo2" message="tns:ITransOutService_GetOmTransOutNo2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetOmTransOutNo2Response" message="tns:ITransOutService_GetOmTransOutNo2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesModelCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetSalesModelCode" message="tns:ITransOutService_GetSalesModelCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetSalesModelCodeResponse" message="tns:ITransOutService_GetSalesModelCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesModelYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetSalesModelYear" message="tns:ITransOutService_GetSalesModelYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetSalesModelYearResponse" message="tns:ITransOutService_GetSalesModelYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetSalesVehicle" message="tns:ITransOutService_GetSalesVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetSalesVehicleResponse" message="tns:ITransOutService_GetSalesVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetInfoVehicle" message="tns:ITransOutService_GetInfoVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetInfoVehicleResponse" message="tns:ITransOutService_GetInfoVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetCompanyAccount" message="tns:ITransOutService_GetCompanyAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetCompanyAccountResponse" message="tns:ITransOutService_GetCompanyAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransferOutDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/UpdateTransferOutDetail" message="tns:ITransOutService_UpdateTransferOutDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/UpdateTransferOutDetailResponse" message="tns:ITransOutService_UpdateTransferOutDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransferOutDetail2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/UpdateTransferOutDetail2" message="tns:ITransOutService_UpdateTransferOutDetail2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/UpdateTransferOutDetail2Response" message="tns:ITransOutService_UpdateTransferOutDetail2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetMasterVehicle" message="tns:ITransOutService_GetMasterVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetMasterVehicleResponse" message="tns:ITransOutService_GetMasterVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/UpdateVehicle" message="tns:ITransOutService_UpdateVehicle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/UpdateVehicleResponse" message="tns:ITransOutService_UpdateVehicle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesModel1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetSalesModel1" message="tns:ITransOutService_GetSalesModel1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetSalesModel1Response" message="tns:ITransOutService_GetSalesModel1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesModel2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetSalesModel2" message="tns:ITransOutService_GetSalesModel2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetSalesModel2Response" message="tns:ITransOutService_GetSalesModel2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetOrganizationDetail" message="tns:ITransOutService_GetOrganizationDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetOrganizationDetailResponse" message="tns:ITransOutService_GetOrganizationDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWareHouse1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetWareHouse1" message="tns:ITransOutService_GetWareHouse1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetWareHouse1Response" message="tns:ITransOutService_GetWareHouse1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWareHouse2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetWareHouse2" message="tns:ITransOutService_GetWareHouse2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetWareHouse2Response" message="tns:ITransOutService_GetWareHouse2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLookUpDtl1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetLookUpDtl1" message="tns:ITransOutService_GetLookUpDtl1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetLookUpDtl1Response" message="tns:ITransOutService_GetLookUpDtl1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLookUpDtl2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetLookUpDtl2" message="tns:ITransOutService_GetLookUpDtl2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetLookUpDtl2Response" message="tns:ITransOutService_GetLookUpDtl2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportLabaRugi1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetReportLabaRugi1" message="tns:ITransOutService_GetReportLabaRugi1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetReportLabaRugi1Response" message="tns:ITransOutService_GetReportLabaRugi1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportLabaRugi2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetReportLabaRugi2" message="tns:ITransOutService_GetReportLabaRugi2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetReportLabaRugi2Response" message="tns:ITransOutService_GetReportLabaRugi2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLaporanStok1">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetLaporanStok1" message="tns:ITransOutService_GetLaporanStok1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetLaporanStok1Response" message="tns:ITransOutService_GetLaporanStok1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLaporanStok2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetLaporanStok2" message="tns:ITransOutService_GetLaporanStok2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetLaporanStok2Response" message="tns:ITransOutService_GetLaporanStok2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLaporanDailySales">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetLaporanDailySales" message="tns:ITransOutService_GetLaporanDailySales_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetLaporanDailySalesResponse" message="tns:ITransOutService_GetLaporanDailySales_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLaporanDailySales2">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransOutService/GetLaporanDailySales2" message="tns:ITransOutService_GetLaporanDailySales2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransOutService/GetLaporanDailySales2Response" message="tns:ITransOutService_GetLaporanDailySales2_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITransOutService" type="tns:ITransOutService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld2">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/HelloWorld2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOmTransOutNo">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetOmTransOutNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOmTransOutNo2">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetOmTransOutNo2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesModelCode">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetSalesModelCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesModelYear">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetSalesModelYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesVehicle">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetSalesVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoVehicle">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetInfoVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyAccount">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetCompanyAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransferOutDetail">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/UpdateTransferOutDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransferOutDetail2">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/UpdateTransferOutDetail2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterVehicle">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetMasterVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVehicle">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/UpdateVehicle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesModel1">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetSalesModel1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalesModel2">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetSalesModel2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationDetail">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetOrganizationDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWareHouse1">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetWareHouse1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWareHouse2">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetWareHouse2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookUpDtl1">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetLookUpDtl1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookUpDtl2">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetLookUpDtl2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportLabaRugi1">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetReportLabaRugi1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportLabaRugi2">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetReportLabaRugi2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLaporanStok1">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetLaporanStok1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLaporanStok2">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetLaporanStok2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLaporanDailySales">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetLaporanDailySales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLaporanDailySales2">
+      <soap:operation soapAction="http://tempuri.org/ITransOutService/GetLaporanDailySales2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TransOutService">
+    <wsdl:port name="BasicHttpBinding_ITransOutService" binding="tns:BasicHttpBinding_ITransOutService">
+      <soap:address location="http://tbsdmsap01/SDMSWCF_IJMGKEDIRI13316/TransOutService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

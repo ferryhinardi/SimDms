@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Forbidden Access</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    @Styles.Render("cdn/system/Content/css/release.min.css")
+    <link rel="stylesheet" href="cdn/system/content/css/waves/waves.min.css" type="text/css"/>
+    <link rel="stylesheet" href="cdn/system/content/css/errorpage.min.css" type="text/css" />
+</head>
+<body>
+    <div class="app">
+        <div class="red-600 bg-big">
+            <div class="text-center">
+                <h1 class="text-shadow no-margin text-white text-4x p-v-lg">
+                    <span class="text-2x font-bold m-t-lg block">403</span>
+                </h1>
+                <h2 class="h1 m-v-lg text-black">OOPS!</h2>
+                <p class="h4 m-v-lg text-u-c font-bold text-black">You do not have permission to access this page.</p>
+                <div class="p-v-lg">
+                    <a href="/" md-ink-ripple class="md-btn indigo md-raised p-h-lg">
+                        <span class="text-white">Go to the home page</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cdn/system/content/scripts/libs/jquery/jquery-2.1.4.min.js"></script>
+    <script src="cdn/system/content/scripts/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="cdn/system/content/scripts/libs/jquery/waves/waves.min.js"></script>
+    <script>
+        $(function () {
+            Waves.attach('[md-ink-ripple]');
+            Waves.init();
+        });
+    </script>
+</body>
+</html>

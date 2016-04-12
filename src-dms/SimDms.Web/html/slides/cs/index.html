@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <title>SimDms Widget</title>
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="impress"></div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/impress.js"></script>
+    <script src="assets/js/simdms.js"></script>
+    <script src="assets/js/simdms.slide.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var slide = new SimDms.Slide({
+                //debug: true,
+                contents: [
+                    { cls: "step overview", x: 2400, y: 2000, scale: 7, h2: "Customer Statisfication" },
+                    { cls: "step slide home", h2: "Customer Statisfication", h5: "Sdms Team", x: 0 },
+                    {
+                        cls: "step slide", h2: "Feature", x: 1200,
+                        items: [
+                            { text: "Master" },
+                            { text: "Transaction" },
+                            { text: "Inquiry" },
+                        ]
+                    },
+                    {
+                        cls: "step slide", h2: "Master", x: 2400,
+                        items: [
+                            { text: "Master Holiday" },
+                        ]
+                    },
+                    { cls: "step slide", h2: "Master Holiday (List)", img: "Master_01_list.png", x: 2400, y: 800 },
+                    { cls: "step slide", h2: "Master Holiday (Edit)", img: "Master_01_edit.png", x: 2400, y: 1600 },
+                    {
+                        cls: "step slide", h2: "Transaction", x: 3600,
+                        items: [
+                            { text: "3 Days Call Input" },
+                            { text: "Customer Birthday" },
+                            { text: "STNK Extension" },
+                            { text: "BPKB Input" },
+                            { text: "Customer Holiday" },
+                        ]
+                    },
+                    { cls: "step slide", h2: "3 Days Call Input", img: "Trans_01.png", x: 3600, y: 800 },
+                    { cls: "step slide", h2: "Customer Birthday", img: "Trans_02.png", x: 3600, y: 1600 },
+                    { cls: "step slide", h2: "STNK Extension", img: "Trans_03.png", x: 3600, y: 2400 },
+                    { cls: "step slide", h2: "BPKB Input", img: "Trans_04.png", x: 3600, y: 3200 },
+                    { cls: "step slide", h2: "Customer Holiday", img: "Trans_05.png", x: 3600, y: 4000 },
+                    {
+                        cls: "step slide", h2: "Inquiry", x: 4800,
+                        items: [
+                        ]
+                    },
+                    //{ name: "end", cls: "step overview", x: 3600, y: 2000, scale: 7, h2: "Thanks" },
+                    { cls: "step overview", x: 2400, y: 2000, scale: 7, h2: "Thanks" },
+                ]
+            });
+            slide.render();
+            //impress().init();
+        });
+    </script>
+</body>
+</html>
+

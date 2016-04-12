@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="11.4000007854775in" Name="DealerControlMonitoring" xmlns="http://schemas.telerik.com/reporting/2012/3.8">
+  <DataSources>
+    <SqlDataSource ConnectionString="DataContext" SelectCommand="exec uspfn_spGetBandwidthDealer @CompanyCode" Name="sqlDataSource1" ParameterValues="{&quot;@CompanyCode&quot;:&quot;6015401&quot;}">
+      <Parameters>
+        <SqlDataSourceParameter DbType="String" Name="@CompanyCode">
+          <Value>
+            <String>= Parameters.Dealer.Value</String>
+          </Value>
+        </SqlDataSourceParameter>
+      </Parameters>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="3.90000051922268in" Name="detailSection1">
+      <Items>
+        <Graph DataSourceName="sqlDataSource1" Width="11.099962079525in" Height="3.10000028908252in" Left="0.00003948807715259in" Top="0.400000202655786in" Name="graph1">
+          <PlotAreaStyle LineWidth="0in" LineColor="LightGray" />
+          <Axes>
+            <GraphAxis Name="graphAxis2" Title="Hour">
+              <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <CategoryScale PositionMode="OnTicks" />
+              </Scale>
+            </GraphAxis>
+            <GraphAxis Name="graphAxis1" Title="Mbps">
+              <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <NumericalScale />
+              </Scale>
+            </GraphAxis>
+          </Axes>
+          <CoordinateSystems>
+            <CartesianCoordinateSystem XAxis="graphAxis2" YAxis="graphAxis1" Name="cartesianCoordinateSystem1" />
+          </CoordinateSystems>
+          <Style>
+            <Padding Left="10px" Right="10px" Top="10px" Bottom="10px" />
+          </Style>
+          <SeriesGroups>
+            <GraphGroup Name="infoGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.Info" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.Info" Direction="Asc" />
+              </Sortings>
+            </GraphGroup>
+          </SeriesGroups>
+          <CategoryGroups>
+            <GraphGroup Name="lastUpdateHourGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.LastUpdate.Hour" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.LastUpdate.Hour" Direction="Asc" />
+              </Sortings>
+            </GraphGroup>
+          </CategoryGroups>
+          <Series>
+            <LineSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="lastUpdateHourGroup" SeriesGroup="infoGroup" Size="null" MarkerSize="5px" MarkerMinSize="5px" MarkerMaxSize="50px" Y="= (Fields.Value)" ArrangeMode="Stacked" DataPointLabel="= (Fields.Value)" Name="lineSeries1">
+              <LineStyle LineWidth="1px" />
+              <DataPointStyle Visible="True" />
+              <DataPointLabelStyle Visible="False" />
+              <LegendItem Value="= Fields.Info" />
+            </LineSeries>
+          </Series>
+          <Legend>
+            <Style LineWidth="0in" LineColor="LightGray" />
+          </Legend>
+          <Titles>
+            <GraphTitle Text="= Fields.LastUpdate.Day + '-' + Fields.LastUpdate.Month + '-' + Fields.LastUpdate.Year" Position="TopCenter">
+              <Style LineWidth="0in" LineColor="LightGray" />
+            </GraphTitle>
+          </Titles>
+        </Graph>
+      </Items>
+    </DetailSection>
+    <PageHeaderSection Height="1in" Name="pageHeaderSection1">
+      <Items>
+        <TextBox Width="11.100001335144in" Height="0.787401556968689in" Left="0in" Top="0in" Value="= Parameters.DealerName.Label" Name="ReportNameTextBox">
+          <Style TextAlign="Center" VerticalAlign="Middle">
+            <Font Name="Segoe UI" Size="14pt" Bold="True" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <PageFooterSection Height="1in" Name="pageFooterSection1">
+      <Items>
+        <TextBox Width="1.7999986410141in" Height="0.393700778484344in" Left="9.30000368754069in" Top="0.606299221515656in" Value="Page: {PageNumber}" Name="ReportPageNumberTextBox">
+          <Style>
+            <Font Name="Segoe UI" />
+          </Style>
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+  </Items>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <PageSettings>
+    <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+      <Margins>
+        <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+      </Margins>
+    </PageSettings>
+  </PageSettings>
+  <ReportParameters>
+    <ReportParameter Name="Dealer" Visible="True" AllowNull="True" AutoRefresh="True">
+      <AvailableValues DisplayMember="= Fields.DealerName" ValueMember="= Fields.CompanyCode">
+        <Sortings>
+          <Sorting Expression="= Fields.CompanyCode" Direction="Asc" />
+        </Sortings>
+      </AvailableValues>
+    </ReportParameter>
+    <ReportParameter Name="DealerName" AllowNull="True" AutoRefresh="True" />
+  </ReportParameters>
+</Report>

@@ -1,0 +1,78 @@
+﻿<!-- SHORTCUT AREA : With large tiles (activated via clicking user name tag)
+Note: These tiles are completely responsive,
+you can add as many as you like
+-->
+<div id="shortcut">
+    <ul>
+        @*<li>
+            <a href="@Url.Action("inbox", "home")" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+        </li>
+        <li>
+            <a href="@Url.Action("calendar", "home")" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+        </li>
+        <li>
+            <a href="@Url.Action("googlemap", "home")" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>
+        </li>
+        <li>
+            <a href="@Url.Action("invoice", "misc")" class="jarvismetro-tile big-cubes bg-color-blueDark"> <span class="iconbox"> <i class="fa fa-book fa-4x"></i> <span>Invoice <span class="label pull-right bg-color-darken">99</span></span> </span> </a>
+        </li>
+        <li>
+            <a href="@Url.Action("gallery", "appviews")" class="jarvismetro-tile big-cubes bg-color-greenLight"> <span class="iconbox"> <i class="fa fa-picture-o fa-4x"></i> <span>Gallery </span> </span> </a>
+        </li>*@
+        <li>
+            <a href="#/profile" class="jarvismetro-tile big-cubes selected bg-color-green"> <span class="iconbox"> <i class="fa fa-user fa-3x"></i> <span>My Profile </span> </span> </a>
+        </li>
+        <li>
+            <a ng-click="changePassword()" href="javascript:void(0)"  class="jarvismetro-tile big-cubes bg-color-orange"> <span class="iconbox"> <i class="fa fa-key fa-3x"></i> <span>Change Pwd</span> </span> </a>
+        </li>
+    </ul>
+</div>
+<!-- END SHORTCUT AREA -->
+
+<script type="text/ng-template" id="change-password.html">
+    <div class="modal fade " data-backdrop="static">
+        <div class="modal-dialog modal-xs">
+            <div class="modal-content">
+                <div class="modal-header dialog-header-wait">
+                    <button type="button" class="close" ng-click="cancel()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Change Password !!!</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="form.changePassword" xt-form name="form.changePassword" class="form-horizontal" role="form" novalidate>
+                        <fieldset>
+                            <xt-validation-summary></xt-validation-summary>
+                            <div class="form-group">
+                                <label for="oldPassword" class="col-xs-3 control-label">Old Password</label>
+                                <div class="col-xs-7">
+                                    <input name="oldPassword" ng-model="data.oldPassword" type="password" xt-validate class="form-control" id="oldPassword" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword" class="col-xs-3 control-label">New Password</label>
+                                <div class="col-xs-7">
+                                    <input name="newPassword" ng-model="data.newPassword" type="password" xt-validate class="form-control" id="newPassword" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword" class="col-xs-3 control-label">Confirm</label>
+                                <div class="col-xs-7">
+                                    <input name="confirmPassword" ng-model="data.confirmPassword"
+                                           ui-validate=" '$value==data.newPassword' "
+                                           ui-validate-watch=" 'data.newPassword' " type="password" xt-validate class="form-control" id="confirmPassword" required>
+
+                                    <div ng-show="form.changePassword.confirmPassword.$error.validator">
+                                        Password are not equal!
+                                    </div>
+                                </div>
+
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class='modal-footer'>
+                    <button type='button' ng-click='changePwd()' class='btn btn-success' ng-disabled='form.changePassword.$invalid'> Change Password </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

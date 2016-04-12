@@ -1,0 +1,283 @@
+﻿@font-face {
+  font-family: 'segoeui';
+  src: url('../font/segoe-ui.eot');
+  src: url('../font/segoe-ui.eot?#iefix') format('embedded-opentype'), url('../font/segoe-ui.woff') format('woff'), url('../font/segoe-ui.ttf') format('truetype'), url('../font/segoe-ui.svg#segoe-ui') format('svg');
+}
+/*@base-color: white;*/
+body {
+  background-color: #ffffff;
+  font-family: "segoeui";
+  margin: 0;
+  overflow: hidden;
+  min-width: 800px;
+}
+body input[disabled],
+body select[disabled],
+body textarea[disabled],
+body input[readonly],
+body select[readonly],
+body textarea[readonly] {
+  cursor: not-allowed;
+  background-color: #ececec;
+}
+body input[type="radio"][disabled],
+body input[type="checkbox"][disabled],
+body input[type="radio"][readonly],
+body input[type="checkbox"][readonly] {
+  background-color: transparent;
+}
+.page {
+  width: 100%;
+  height: 600px;
+  /*margin-top: -16px;*/
+}
+.page > .header {
+  height: 65px;
+  min-height: 65px;
+  background-color: #000000;
+  top: 0;
+  position: relative;
+}
+.page > .header > .app-title {
+  color: #EEEEFF;
+  font-size: 28px;
+  font-weight: normal;
+  margin: 10px 14px;
+  /*padding: 10px;*/
+  position: absolute;
+  text-shadow: 0 1px 0 #FFFFFF;
+}
+.page > .header > .app-subtitle {
+  color: #EEEEFF;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 40px 14px;
+  position: absolute;
+  text-shadow: 0 1px 0 #FFFFFF;
+}
+.page > .header .user-info {
+  float: right;
+  color: white;
+  font-size: 12px;
+  margin: 20px 20px;
+}
+.page > .header .user-info a {
+  color: #d5e6ff;
+  font-weight: bold;
+  border: none;
+}
+.page > .header .branch-info {
+  color: white;
+  margin-top: 40px;
+  right: 0px;
+  position: absolute;
+  right: 20px;
+}
+.page > .header > .notification-corner-wrapper {
+  display: none;
+  float: right;
+  padding: 2px 3px 2px 3px;
+  margin-top: 30px;
+  margin-right: -204px;
+  background-color: #eeeeee;
+}
+.page > .header > .notification-corner-wrapper > .notification-corner {
+  color: #000000;
+  font-size: 11px;
+  font-weight: bolder;
+}
+.page > .title {
+  min-width: 800px;
+}
+.page > .body .main {
+  margin-top: -30px;
+}
+.page > .body > .panel {
+  position: fixed;
+  display: none;
+  left: 220px;
+  /*top: 97px;*/
+  /*top: 134px;*/
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 20px;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  border-right: 0;
+  /*min-width: 80%;*/
+  /*max-width: 90%;*/
+  overflow: auto;
+  width: 100%;
+  z-index: 10;
+  padding: 15px 25px 0;
+  opacity: 0.6;
+}
+.page > .body > .panel.shadow {
+  background-color: #6fabff;
+}
+.page > .body > .panel.lookup {
+  opacity: 1;
+  width: 90%;
+}
+.page > .body > .panel .lookup {
+  margin: 0 20px 10px 10px !important;
+  padding-right: 30px !important;
+}
+.page > .body > .panel .lookup .title {
+  border-bottom: 1px solid #3c8dff;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+.page > .body > .panel .lookup .buttons {
+  float: right !important;
+  margin-top: -20px;
+  margin-right: 30px;
+}
+.page > .body > .panel .lookup .buttons button {
+  padding: 2px 14px;
+}
+.page > .body > .panel .klookup {
+  margin: 0 20px 10px 10px;
+  padding: 0 30px  !important;
+  border: none;
+}
+.page > .body > .panel .klookup > .header .title {
+  border-bottom: 1px solid #3c8dff;
+  font-size: 24px;
+  margin-top: -8px;
+  padding-bottom: 4px;
+}
+.page > .body > .panel .klookup > .header .buttons {
+  float: right;
+  margin-top: -28px;
+  margin-right: 28px;
+}
+.page > .body > .panel .klookup > .header .buttons button {
+  padding: 2px 14px;
+  height: 20px;
+  width: 28px;
+}
+.page > .body > .panel .klookup > .content {
+  min-height: 100px;
+  padding: 2px 20px 20px 5px;
+}
+.page > .body > .panel .klookup > .content tr {
+  cursor: pointer;
+  font-size: 14px;
+}
+.page > .body > .panel .klookup > iframe {
+  padding: 2px 20px 10px 0;
+}
+.page > .body > .panel .klookup > button {
+  float: left;
+}
+.page > .body > .panel .klookup > .buttons {
+  /*float: left !important;*/
+  margin-right: 30px;
+}
+.page > .body > .panel .klookup > .buttons button {
+  margin: 10px 20px 4px 4px;
+  padding: 7px 10px;
+}
+.page > .body > .panel .klookup > .footer {
+  /*border-top: 1px solid lighten(@base-color, 30%);*/
+}
+.page > .body > .panel .klookup > .footer .buttons {
+  float: left;
+}
+.page > .body > .panel .klookup > .footer .buttons button {
+  margin: 10px 10px 4px 4px;
+  padding: 7px 10px;
+}
+.page > .notif-wrapper {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  min-height: 10px;
+  min-width: 10px;
+  background: #e6e6e6;
+  border: 1px solid #333333;
+  padding: 5px 10px;
+  display: none;
+}
+.page > .notif-wrapper .notification {
+  color: #333333;
+  font-size: 12px;
+  padding: 2px 8px;
+  font-weight: bold;
+}
+.hide {
+  display: none;
+}
+.top-bar-section > ul.right {
+  background-color: rgba(0, 0, 0, 0);
+}
+.webix_column > div,
+.webix_hcell {
+  padding: 0 5px !important;
+}
+.webix_view,
+.webix_column > div {
+  font-size: 12px!important;
+  font-family: "Segoe UI" !important;
+}
+.webix_modal {
+  height: 500% !important;
+}
+
+.followup-color{
+    background-color: #adff2f;
+}
+
+.dataTable tr, .dataTable td {
+	/* essential */
+	text-overflow: ellipsis;
+	width: auto;
+	white-space: nowrap;
+	overflow: hidden;
+	
+	/* for good looks */
+	padding: 10px;
+}
+
+#tblGridLookup td, #tblGridLookup td{
+	text-overflow: ellipsis;
+	width: auto;
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 10px;
+}
+
+#tblGridLookup{
+    padding-right: 100px;
+}
+
+#tblGrid td, #tblGrid td{
+	text-overflow: ellipsis;
+	width: auto;
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 10px;
+}
+
+#tblGrid_wrapper{
+    position: static;
+    overflow: auto;
+}
+
+#tblGrid td, #tblGrid td{
+	text-overflow: ellipsis;
+	width: auto;
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 10px;
+}
+
+#tblGrid_wrapper{
+    position: static;
+    overflow: auto;
+}
+/*# sourceMappingURL=sdms.css.map */

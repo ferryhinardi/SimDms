@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>   
+
+    <link href="@Url.Content("~/assets/css/vendor/foundation.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/font-awesome.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/jquery.ui.core.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/jquery.ui.spinner.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/jquery.ui.datepicker.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/jquery-ui-timepicker-addon.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/validetta.css")" rel="stylesheet" />    
+    <link href="@Url.Content("~/assets/css/vendor/kendo/kendo.common.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/kendo/kendo.blueopal.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/themes/jquery.ui.widget.themes.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/themes/jquery.ui.spinner.themes.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/animate.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/imgareaselect/imgareaselect-default.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/select2.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/vendor/sencha/style.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/assets/css/ajax-loader.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.zurb.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.widget.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.kendo.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/sdms.chart.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/popup.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/assets/css/toastr.min.css")" rel="stylesheet" />    
+    <link href="@Url.Content("~/assets/css/common.css")" rel="stylesheet" />    
+
+
+    <script src="@Url.Content("~/assets/js/vendors/jquery-2.1.0.min.js")"></script>    
+    <script src="@Url.Content("~/assets/js/vendors/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.core.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.widget.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.spinner.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.button.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.ui.datepicker.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery-ui-sliderAccess.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery-ui-timepicker-addon.min.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/imgareaselect/jquery.imgareaselect.pack.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/kendo.all.min.js")"></script>	
+    <script src="@Url.Content("~/assets/js/vendors/angular/verify.notify.js")"></script>    
+    <script src="@Url.Content("~/assets/js/vendors/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/moment.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/jquery.form.min.js")"></script>   
+     
+	@*<script src="@Url.Content("~/assets/js/vendors/angular.combine.min.js")"></script>*@ 
+    <script src="@Url.Content("~/assets/js/vendors/angular/angular.all.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/angular/webix.all.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/angular/angular-kendo.js")"></script>
+
+    <script src="@Url.Content("~/assets/js/vendors/require.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/foundation.js")"></script>
+    <script src="@Url.Content("~/assets/js/vendors/foundation.topbar.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.core.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.widget.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.util.js")"></script>    
+    <script src="@Url.Content("~/assets/js/SimDms.kendo.js")"></script>
+    <script src="@Url.Content("~/assets/js/SimDms.kendo.breeze.js")"></script>
+
+    <script src="@Url.Content("~/assets/js/common.js")"></script>
+    <script src="@Url.Content("~/assets/js/dbcontext.js")"></script>
+
+    @*<script src="@Url.Content("~/assets/js/SimDms.function.js")"></script>*@
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            SimDms.baseUrl = "@Url.Content("~/")";
+            SimDms.defaultEmployeePhoto = (SimDms.baseUrl + SimDms.defaultEmployeePhoto).replace("//", "/");
+            SimDms.defaultIdentityCardPhoto = (SimDms.baseUrl + SimDms.defaultIdentityCardPhoto).replace("//", "/");
+
+            layout = new SimDms.Layout();
+            layout.render({ title: "S.D.M.S", subtitle: "Suzuki Dealer Management System" });
+
+            layout.onModuleChanged(function (e, module) {
+                layout.loadHeaderNavMenu(module);
+            });
+
+            layout.onHashChanged(function (e, data) {
+                // if (data == "lnk/cs") {
+                //     location.href = "#lnk/cs/dashboard/summary";
+                //     return;
+                // }
+                var n = data.split("/");
+                if (n.length == 2) {
+                    layout.loadHeaderNavMenu(n[1]);
+                } else
+                    if (n.length == 3) {
+                        layout.loadDynamicChildNavMenu(n[2]);
+                    }
+
+            });
+            layout.onGroupChanged(function (e, module, group) {
+                var link = SimDms.baseUrl + module + "/" + group;
+                layout.loadDynamicChildNavMenu(group);
+            });
+            layout.onMenuChanged(function (e, module, group, menu) {
+
+                $("div#ext-target").html("");
+
+                if (group.length > 0 && menu.length > 0) {
+
+                    $(".page .body .main").slideUp();
+                    
+                    $(".page .title h3").html("&nbsp;").removeClass("fadeInLeft");
+
+
+                    if (layout.endsWith(menu, ".js")) {
+                        var link = SimDms.baseUrl + "assets/js/app/" + module + "/" + group + "/" + menu;
+                        $.getScript(link, function (script, status, xhr) {
+                            $("title").text($(".page .title h3").addClass("fadeInLeft").text());
+                            $(".page .body .main").slideDown();
+                            var Title = $(".page .title h3").text();
+                            if (Title.length > 7) {
+                                SimDms.Info(Title + " Activated...");
+                            }
+                        });
+                    }
+                    else {
+                        var link = SimDms.baseUrl + module + "/" + group + "/" + menu;
+                        $(".page .body .main").load(link, function () {
+                            $("title").text($(".page .title h3").addClass("fadeInLeft").text());
+                            $(".page .body .main").slideDown();
+                            var Title = $(".page .title h3").text();
+                            if (Title.length > 7) {
+                                SimDms.Info(Title + " Activated...");
+                            }
+                        });
+                    }
+                }
+            });
+
+            //layout.autoMovePopup();
+            layout.loadAjaxLoader();
+            layout.loadUserInfo("@User.Identity.Name", "@ViewBag.BranchCode", "@ViewBag.BranchName");
+            $(window).resize(function (evt) {
+                //layout.evt_WindowResize(evt);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

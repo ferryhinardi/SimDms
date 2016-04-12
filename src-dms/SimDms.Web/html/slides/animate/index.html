@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <title>SimDms Widget</title>
+    <link href="animate.css" rel="stylesheet" />
+    <link href="animate.delay.css" rel="stylesheet" />
+    <script src="jquery-2.0.3.js"></script>
+    <style>
+        #block1, #block2, #block3
+        {
+            width: 100px;
+            height: 50px;
+            margin: 5px;
+            background-color: #808080;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$("#button1").on("click", function () {
+            //    $("#block3").addClass("bounceInLeft");
+            //});
+
+            $("#button1").on("click", function () {
+                $("#block1").removeClass("fadeInLeft");
+                $("#block2").removeClass("fadeInLeft");
+                $("#block3").removeClass("fadeInLeft");
+
+                $("#block1").addClass("fadeOutRight");
+                $("#block2").addClass("fadeOutRight");
+                $("#block3").addClass("fadeOutRight");
+            });
+
+            $("#button2").on("click", function () {
+                $("#block1").removeClass("fadeOutRight");
+                $("#block2").removeClass("fadeOutRight");
+                $("#block3").removeClass("fadeOutRight");
+
+                $("#block1").addClass("fadeInLeft");
+                $("#block2").addClass("fadeInLeft");
+                $("#block3").addClass("fadeInLeft");
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="button1" value="button1"/>
+    <input type="button" id="button2" value="button2" />
+    <div id="block1" class="animated animate0 fadeInLeft"></div>
+    <div id="block2" class="animated animate1 fadeInLeft"></div>
+    <div id="block3" class="animated animate2 fadeInLeft"></div>
+</body>
+</html>
+

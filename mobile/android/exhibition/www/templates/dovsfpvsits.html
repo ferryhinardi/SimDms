@@ -1,0 +1,9 @@
+<ion-view view-title="Previous vs Current DO, FP, ITS, SPK">
+  <ion-content>
+    <ion-list>
+        <ion-item ng-repeat="item in exhibitions" href="#/app/playlists/{{item.Id}}/{{item.TEXT}}">
+           <span class="labelx">{{item.TEXT}}</span> 
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

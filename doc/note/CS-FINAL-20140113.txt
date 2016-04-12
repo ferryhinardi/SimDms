@@ -1,0 +1,19 @@
+13 January 2013
+---------------
+
+3DaysCall :
+ - No Change
+StnkExt :
+ - Tambahan flag kepemilikan
+BpkbRem :
+ - Pickup / Delivery --> baca dari sdms
+ - Tambahkan Perkiraan diambil + Comment
+Cust Birthday :
+ - Non Customer bisa masuk ke list
+Cust Feedback :
+ - Sementara dihilangkan dari menu
+ 
+ 
+ 
+
+

@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimDms.Web</name>
+    </assembly>
+    <members>
+        <member name="T:SimDms.Web.App_Start.BreezeWebApiConfig">
+            <summary>
+             Inserts the Breeze Web API controller route at the front of all Web API routes
+            </summary>
+            <remarks>
+             This class is discovered and run during startup; see
+             http://blogs.msdn.com/b/davidebb/archive/2010/10/11/light-up-your-nupacks-with-startup-code-and-webactivator.aspx
+            </remarks>
+        </member>
+        <member name="M:SimDms.Web.Controllers.Api.ItsMasterController.TeamMemberLookup">
+            <summary>
+            Deprecated
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SimDms.Web.Controllers.Api.ItsMasterController.TeamMembers(System.String)">
+            <summary>
+            Deprecated
+            </summary>
+            <param name="branchCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimDms.Web.Controllers.FileDownloadAttribute.CheckAndHandleFileResult(System.Web.Mvc.ActionExecutedContext)">
+            <summary>
+            If the current response is a FileResult (an MVC base class for files) then write a
+            cookie to inform jquery.fileDownload that a successful file download has occured
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.dtInqProdDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.uspfn_RptSO_A01_RptDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.gnMstCoProfileDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.uspfn_RptSO_A01_DtlDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.usprpt_OmRpSalesTrn001BDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.dtInqProdRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.uspfn_RptSO_A01_RptRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.gnMstCoProfileRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.uspfn_RptSO_A01_DtlRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.usprpt_OmRpSalesTrn001BRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.dtInqProdRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.uspfn_RptSO_A01_RptRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.gnMstCoProfileRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.uspfn_RptSO_A01_DtlRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:SimDms.Web.Reports.DsInqProd.usprpt_OmRpSalesTrn001BRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="F:SimDms.Web.Reports.Viewer.form1">
+            <summary>
+            form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:SimDms.Web.Reports.Viewer.Label1">
+            <summary>
+            Label1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:SimDms.Web.Reports.Viewer.ScriptManager1">
+            <summary>
+            ScriptManager1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:SimDms.Web.Reports.Viewer.ReportViewer1">
+            <summary>
+            ReportViewer1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
+</doc>

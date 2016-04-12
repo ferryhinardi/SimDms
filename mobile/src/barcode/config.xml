@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.suzuki.sdmspart" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Sdms Part</name>
+    <description>
+        SDMS PART
+    </description>
+    <author email="sdms.support@suzuki.co.id" href="http://cordova.io">
+        Sdms Team
+    </author>
+    <content src="index.html" />
+	<preference name="Orientation" value="portrait" />
+    <access origin="*" />
+</widget>

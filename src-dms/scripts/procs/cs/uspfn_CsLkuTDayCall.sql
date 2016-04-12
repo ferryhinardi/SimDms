@@ -1,0 +1,105 @@
+
+if object_id('uspfn_CsLkuTDayCall') is not null
+	drop procedure uspfn_CsLkuTDayCall
+
+go
+create procedure uspfn_CsLkuTDayCall
+	@CompanyCode varchar(20),
+	@BranchCode  varchar(20),
+	@OutStanding bit
+as
+begin
+	declare @IsHolding bit
+	set @IsHolding = isnull((select top 1 1 from gnMstOrganizationDtl where CompanyCode = @CompanyCode and BranchCode = @BranchCode and IsBranch = 0), 0)
+
+	if @OutStanding = 1 
+	begin
+		select top 5000 a.CompanyCode     
+			 , a.BranchCode
+			 , b.CustomerCode
+			 , c.CustomerName
+			 , a.ChassisCode + convert(varchar, a.ChassisNo) Chassis
+			 , a.EngineCode + convert(varchar, a.EngineNo) Engine
+			 , a.SalesModelCode
+			 , a.SalesModelYear
+			 , e.DODate
+			 , PoliceRegNo = f.PoliceRegistrationNo
+		  from omTrSalesInvoiceVin a    
+		  left join omTrSalesInvoice b    
+			on b.CompanyCode = a.CompanyCode    
+		   and b.BranchCode = a.BranchCode    
+		   and b.InvoiceNo = a.InvoiceNo    
+		  left join gnMstCustomer c
+			on c.CompanyCode = a.CompanyCode    
+		   and c.CustomerCode = b.CustomerCode
+		  left join omTrSalesDODetail d
+			on d.CompanyCode = a.CompanyCode    
+		   and d.BranchCode = a.BranchCode
+		   and d.ChassisCode = a.ChassisCode
+		   and d.ChassisNo = a.ChassisNo
+		  left join omTrSalesDO e
+			on e.CompanyCode = d.CompanyCode    
+		   and e.BranchCode = d.BranchCode
+		   and e.DONo = d.DONo
+		  left join omTrSalesBPKBDetail f
+			on f.CompanyCode = a.CompanyCode    
+		   and f.ChassisCode = a.ChassisCode
+		   and f.ChassisNo = a.ChassisNo
+		 where 1 = 1
+		   and a.CompanyCode = @CompanyCode
+		   and a.BranchCode = (case @IsHolding when 1 then a.BranchCode else @BranchCode end)
+		   and isnull(a.IsReturn, 0) = 0
+		   and e.DODate is not null
+		   and year(e.DODate) = year(getdate())
+		   and not exists (
+				select 1 from CsTDayCall 
+				 where CompanyCode = a.CompanyCode
+				   and CustomerCode = b.CustomerCode
+				   and Chassis = a.ChassisCode + convert(varchar, a.ChassisNo))
+	end   
+	else
+	begin
+		select a.CompanyCode     
+			 , a.BranchCode
+			 , b.CustomerCode
+			 , c.CustomerName
+			 , a.ChassisCode + convert(varchar, a.ChassisNo) Chassis
+			 , a.EngineCode + convert(varchar, a.EngineNo) Engine
+			 , a.SalesModelCode
+			 , a.SalesModelYear
+			 , e.DODate
+			 , PoliceRegNo = f.PoliceRegistrationNo
+		  from omTrSalesInvoiceVin a    
+		  left join omTrSalesInvoice b    
+			on b.CompanyCode = a.CompanyCode    
+		   and b.BranchCode = a.BranchCode    
+		   and b.InvoiceNo = a.InvoiceNo    
+		  left join gnMstCustomer c
+			on c.CompanyCode = a.CompanyCode    
+		   and c.CustomerCode = b.CustomerCode
+		  left join omTrSalesDODetail d
+			on d.CompanyCode = a.CompanyCode    
+		   and d.BranchCode = a.BranchCode
+		   and d.ChassisCode = a.ChassisCode
+		   and d.ChassisNo = a.ChassisNo
+		  left join omTrSalesDO e
+			on e.CompanyCode = d.CompanyCode    
+		   and e.BranchCode = d.BranchCode
+		   and e.DONo = d.DONo
+		  left join omTrSalesBPKBDetail f
+			on f.CompanyCode = a.CompanyCode    
+		   and f.ChassisCode = a.ChassisCode
+		   and f.ChassisNo = a.ChassisNo
+		 where 1 = 1
+		   and a.CompanyCode = @CompanyCode
+		   and a.BranchCode = (case @IsHolding when 1 then a.BranchCode else @BranchCode end)
+		   and isnull(a.IsReturn, 0) = 0
+		   and year(e.DODate) = year(getdate())
+		   and exists (
+				select 1 from CsTDayCall 
+				 where CompanyCode = a.CompanyCode
+				   and CustomerCode = b.CustomerCode
+				   and Chassis = a.ChassisCode + convert(varchar, a.ChassisNo))
+	end   
+end
+

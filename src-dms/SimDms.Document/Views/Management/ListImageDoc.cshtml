@@ -1,0 +1,21 @@
+﻿@using SimDms.Document.Models;
+@{
+    ViewBag.Title = "ListImageDoc";
+    Layout = null;
+}
+@foreach (var item in (List<DocImage>)ViewData["listImage"])
+{
+    <div class="photo" id="@item.ImageId"><i class="fa icon-remove-circle fa-6x" style="position:absolute;margin-top:15px; margin-left:20px;cursor:pointer;font-size: 5em;" onclick="DeleteFoto('@item.ImageId')"></i><img class="photo" src='@Url.Content("~/Management/GetImage?ImageID=")@item.ImageId' /></div>
+}
+<script>
+    function DeleteFoto(imageID) {
+        $.ajax({
+            url: '@Url.Content("~/Management/DeleteImage")',
+            data: { ImageID: imageID },
+             type: 'POST',
+             success: function (value) {
+                 $('#' + imageID).fadeOut();
+             }
+         });
+    }
+</script>

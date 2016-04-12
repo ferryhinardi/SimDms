@@ -1,0 +1,93 @@
+﻿using Elmah;
+using System;
+using System.Web;
+using System.Web.Mvc;
+using Microsoft.CodeAnalysis.Scripting;
+using Microsoft.CodeAnalysis.CSharp.Scripting;
+
+namespace eXpressAPP
+{
+    public class FilterConfig
+    {
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        {
+            //filters.Add(new ElmahErrorAttribute());
+            //var eReportingServer = new EmbeddedReportingServer(Settings.JsReportPort);
+            //eReportingServer.RelativePathToServer = "../App_Data";
+            ////eReportingServer.StartAsync().Wait();
+            //filters.Add(new JsReportFilterAttribute(eReportingServer.ReportingService));
+        }
+    }
+
+    public class ElmahErrorAttribute : System.Web.Http.Filters.ExceptionFilterAttribute
+    {
+        public override void OnException(
+             System.Web.Http.Filters.HttpActionExecutedContext actionExecutedContext)
+        {
+            if (actionExecutedContext.Exception != null)
+                Elmah.ErrorSignal.FromCurrentContext().Raise(actionExecutedContext.Exception);
+            base.OnException(actionExecutedContext);
+        }
+    }
+
+    public class HandleErrorWithELMAHAttribute : HandleErrorAttribute
+    {
+        public override void OnException(ExceptionContext context)
+        {
+            base.OnException(context);
+
+            var e = context.Exception;
+            if (!context.ExceptionHandled   // if unhandled, will be logged anyhow
+                    || RaiseErrorSignal(e)      // prefer signaling, if possible
+                    || IsFiltered(context))     // filtered?
+                return;
+
+            LogException(e);
+        }
+
+        private static bool RaiseErrorSignal(Exception e)
+        {
+            var context = HttpContext.Current;
+            if (context == null)
+                return false;
+            var signal = ErrorSignal.FromContext(context);
+            if (signal == null)
+                return false;
+            signal.Raise(e, context);
+            return true;
+        }
+
+        private static bool IsFiltered(ExceptionContext context)
+        {
+            var config = context.HttpContext.GetSection("elmah/errorFilter")
+                                     as ErrorFilterConfiguration;
+
+            if (config == null)
+                return false;
+
+            var testContext = new ErrorFilterModule.AssertionHelperContext(
+                                                                context.Exception, HttpContext.Current);
+
+            return config.Assertion.Test(testContext);
+        }
+
+        private static void LogException(Exception e)
+        {
+            var context = HttpContext.Current;
+            ErrorLog.GetDefault(context).Log(new Error(e, context));
+        }
+    }
+
+    public class CSharpScriptEngine
+    {
+        private static ScriptState<object> scriptState = null;
+        public static object Execute(string code)
+        {
+            scriptState = scriptState == null ? CSharpScript.RunAsync(code).Result : scriptState.ContinueWithAsync(code).Result;
+            if (scriptState.ReturnValue != null && !string.IsNullOrEmpty(scriptState.ReturnValue.ToString()))
+                return scriptState.ReturnValue;
+            return null;
+        }
+    }
+
+}

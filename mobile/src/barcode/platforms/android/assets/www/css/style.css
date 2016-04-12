@@ -1,0 +1,477 @@
+﻿@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/OpenSans.eot');
+  src: url('fonts/OpenSans.eot?iefix') format('eot'), url('fonts/OpenSans.woff') format('woff'), url('fonts/OpenSans.ttf') format('truetype'), url('fonts/OpenSans.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'Sans Bold';
+  src: url('fonts/ClearSans-Bold-webfont.eot');
+  src: url('fonts/ClearSans-Bold-webfont.eot?iefix') format('eot'), url('fonts/ClearSans-Bold-webfont.woff') format('woff'), url('fonts/ClearSans-Bold-webfont.ttf') format('truetype'), url('fonts/ClearSans-Bold-webfont.svg#webfont') format('svg');
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  /*background-color: lighten(@base-color, 10%);*/
+
+}
+body .page {
+  display: none;
+}
+body .page.active {
+  display: block;
+}
+body .page.active .content {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+body .page.login {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+body .page.login .form-wrapper {
+  padding: 10px;
+  margin-top: 50px;
+  height: 200px;
+}
+body .page.login .form-wrapper .form-group input {
+  margin: 4px 0;
+}
+body .page > .header {
+  background-color: #0860a8;
+  height: 50px;
+  padding: 0 5px;
+}
+body .page > .header .toolbar {
+  color: #e4f2fe;
+  font-size: 24px;
+  padding: 0 5px;
+  margin: 0 0;
+  float: left;
+  min-height: 50px;
+}
+body .page > .header .toolbar.right {
+  float: right;
+}
+body .page > .header .toolbar i {
+  padding: 12px 10px;
+}
+body .page > .header .toolbar i.left {
+  padding: 12px 5px;
+}
+body .page > .header .toolbar:hover {
+  /*background-color: darken( @base-color, 10%);*/
+
+  color: #ffff99;
+  cursor: pointer;
+}
+body .page > .header .toolbar:hover.blank {
+  background-color: #0860a8;
+  cursor: default;
+}
+body .page > .header .title {
+  color: #e4f2fe;
+}
+body .page > .header .title .title-brand {
+  font-size: 14px;
+  padding-top: 4px;
+}
+body .page > .header .title .title-page {
+  font-size: 22px;
+  font-family: 'Sans Bold';
+  padding-top: 0;
+  margin-top: -8px;
+}
+body .page > .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #0860a8;
+  height: 50px;
+  padding: 0 5px;
+}
+body .page > .footer .footer-bar {
+  display: inline-block;
+  width: 60px;
+  height: 100%;
+}
+body .page > .footer .footer-bar:hover {
+  cursor: pointer;
+  background-color: #0a7cd9;
+}
+body .page > .footer .footer-bar:hover i,
+body .page > .footer .footer-bar:hover a {
+  color: yellow;
+}
+body .page > .footer .footer-bar i {
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding: 6px 0 2px;
+}
+body .page > .footer .footer-bar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 10px;
+}
+body .page > .footer .title {
+  color: #e4f2fe;
+}
+body .page > .footer .title .title-brand {
+  font-size: 14px;
+  padding-top: 4px;
+}
+body .page > .footer .title .title-page {
+  font-size: 22px;
+  font-family: 'Sans Bold';
+  padding-top: 0;
+  margin-top: -8px;
+}
+body .page > .logo {
+  margin-top: 50px;
+  text-align: center;
+}
+body .page > .logo img {
+  height: 100px;
+}
+body .page > .content {
+  padding: 20px 25px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  bottom: 0;
+  overflow-y: auto;
+}
+body .page > .content.hasfooter {
+  bottom: 50px;
+}
+body .page > .content i {
+  padding-right: 10px;
+}
+body .page > .content .title {
+  color: #0860a8;
+  font-size: 18px;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+body .page > .content .list {
+  padding-top: 10px;
+}
+body .page > .content .list > .row {
+  border: 1px solid #0860a8;
+  background-color: #e4f2fe;
+  color: #000000;
+  padding: 10px 0 10px 15px;
+  margin-bottom: 10px;
+}
+body .page > .content .list > .row .list-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+body .page > .content .list > .row .list-subtitle {
+  font-size: 10px;
+}
+body .page > .content .list > .row .list-info1 {
+  font-size: 10px;
+  float: right;
+  margin-top: -40px;
+  margin-right: 10px;
+}
+body .page > .content .list > .row .list-info2 {
+  font-size: 10px;
+  float: right;
+  margin-top: -10px;
+  margin-right: 10px;
+}
+body .page > .content .list > .row:hover {
+  cursor: pointer;
+}
+body .page > .content .form {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+body .page > .content .form .row {
+  margin-bottom: 10px;
+  color: #0860a8;
+}
+body .page > .content .form .row.theader {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #e4f2fe;
+}
+body .page > .content .form .row.theader > div {
+  border-top: 1px solid #0860a8;
+  border-right: 1px solid #0860a8;
+  border-bottom: 1px solid #0860a8;
+  padding: 4px 8px;
+}
+body .page > .content .form .row.theader > div:nth-child(1) {
+  border-left: 1px solid #0860a8;
+}
+body .page > .content .form .row.theader > div.right {
+  text-align: right;
+}
+body .page > .content .form .row.theader > div.center {
+  text-align: center;
+}
+body .page > .content .form .row.tbody {
+  margin: 0;
+}
+body .page > .content .form .row.tbody:nth-child(1) {
+  border-top: 1px solid #0860a8;
+}
+body .page > .content .form .row.tbody > div {
+  border-right: 1px solid #0860a8;
+  border-bottom: 1px solid #0860a8;
+  min-height: 24px;
+  padding: 1px;
+}
+body .page > .content .form .row.tbody > div:nth-child(1) {
+  border-left: 1px solid #0860a8;
+}
+body .page > .content .form .row.tbody > div label {
+  padding: 2px 8px;
+  font-weight: normal;
+}
+body .page > .content .form .row.tbody > div input {
+  width: 100%;
+  height: 21px;
+  border: none;
+  color: #0860a8;
+  padding: 2px 8px;
+  background-color: #e4f2fe;
+}
+body .page > .content .form .row.tbody > div input.right {
+  text-align: right;
+}
+body .page > .content .form .row.tbody > div input.center {
+  text-align: center;
+}
+body .page > .content .form .row.tbody > div i:hover {
+  cursor: pointer;
+  color: #b4dbfb;
+}
+body .page > .content .form .row.buttons {
+  margin-left: -24px;
+  margin-right: -24px;
+}
+body .page > .content .form .row.control {
+  margin-left: 0;
+  margin-right: 0;
+}
+body .page > .content .form .row .col-6 {
+  float: left;
+  width: 50%;
+  padding-right: 5px;
+}
+body .page > .content .form .row .panel {
+  border: 1px solid;
+  min-height: 280px;
+}
+body .page > .content .form .row button {
+  color: #0860a8;
+}
+body .page > .content .form .form-group label {
+  color: #0860a8;
+}
+body .page > .content .form .input-group input[type=number] {
+  text-align: right;
+}
+body .page > .content .form .input-group .input-group-addon i {
+  padding: 0;
+}
+body .page > .content .form table {
+  margin: 0;
+}
+body .page > .content .form table th {
+  border-top: 1px solid #3aa1f6;
+}
+body .page > .content .form table td {
+  border-top: 1px solid #3aa1f6;
+}
+body .page > .content .form .table-wrapper {
+  /*padding: 0 !important;
+                    margin: 0 !important;*/
+
+  border: 1px solid #3aa1f6;
+  background-color: #ffffff;
+}
+body .page > .content .form .tbody-list {
+  margin-top: -1px;
+}
+body .shortcut {
+  display: none;
+  position: absolute;
+  top: 52px;
+  right: 2px;
+  min-width: 220px;
+  min-height: 40px;
+  border: 1px solid #0860a8;
+  background-color: white;
+  z-index: 999;
+}
+body .shortcut.active {
+  display: block;
+}
+body .shortcut a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+body .shortcut a:hover {
+  background-color: #0860a8;
+  color: white;
+}
+body .list-group {
+  min-height: 1px;
+  background-color: white;
+  margin-bottom: 5px;
+}
+body .list-group .list-group-item .icon-button {
+  float: right;
+}
+body .list-group .list-group-item h5 i {
+  color: #f2f2f2;
+}
+body .list-group .list-group-item.selected h5 {
+  font-weight: bold;
+}
+body .list-group .list-group-item.selected h5 i {
+  color: #404040;
+}
+body .pageblock {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 999;
+}
+body .pageblock.active {
+  display: block;
+}
+body .ajaxloader {
+  display: none;
+  position: absolute;
+  top: 50%;
+  height: 180px;
+  margin-top: -100px;
+  left: 10px;
+  right: 10px;
+  background-color: transparent;
+  text-align: center;
+  z-index: 999;
+}
+body .ajaxloader i {
+  font-size: 120px;
+  color: white;
+}
+body .ajaxloader.active {
+  display: block;
+}
+.animated {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes slideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes slideInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
